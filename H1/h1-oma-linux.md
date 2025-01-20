@@ -33,12 +33,12 @@ Asensin Debian Linuxin onnistuneesti VirtualBoxilla toteutettuun virtuaalikonees
 
 ### Tietokoneen tiedot
 
-OS:      Windows 11 Pro
-CPU:     Intel Core i7-9700k @ 3.6GHz, 8 Core
-Emolevy: Z390 AORUS ELITE-CF
-Muisti:  32GB DDR4-3200
-OS SSD:  250GB Samsung EVO 860
-VM SSD:  1TB Samsung EVO 860
+OS:      Windows 11 Pro  
+CPU:     Intel Core i7-9700k @ 3.6GHz, 8 Core  
+Emolevy: Z390 AORUS ELITE-CF  
+Muisti:  32GB DDR4-3200  
+OS SSD:  250GB Samsung EVO 860  
+VM SSD:  1TB Samsung EVO 860  
 GPU:     Nvidia RTX 4070 12GB
 
 ### VirtualBox -asennus
