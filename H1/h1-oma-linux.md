@@ -2,7 +2,7 @@
 
 ## x)
 
-### Raportin kirjoittaminen
+### Raportin kirjoittaminen (https://terokarvinen.com/2006/raportin-kirjoittaminen-4/)
 
 Raportin tulee olla:
 
@@ -14,10 +14,18 @@ Raportin tulee olla:
 
 **Lähteet**: Raportissa tulee olla lähdeviittaukset kunnossa.
 
+**Rehellisyys**: Kaiken raportissa olevan pitää perustua todellisiin kokeiluihin ja havaintoihin. Sepittely on rangaistavaa. Tekoälyä ei tule käyttää tekstin luontiin ja sen käytöstä on mainittava lähteissä. Myös Plagiointi on rangaistavaa.
 
+### What is free software? (https://www.gnu.org/philosophy/free-sw.html)
 
+Vapaa ohjelmisto kunnioittaa käyttäjän oikeutta käyttää, kopioida, tutkia, jakaa tai muokata ohjelmistoa. Vapaa ei siis tässä yhteydessä liity ohjelmiston hintaan oston tai myynnin yhteydessä, vaan edellä mainittuihin oikeuksiin.
 
+Vapaudet:
 
+0. Vapaus käyttää ohjelmistoa mihin tahansa tarkoitukseen.
+1. Vapaus tutkia ohjelmistoa ja muokata sitä tarpeen mukaan.
+2. Vapaus jakaa ohjelmistoa vapaasti toisia auttaakseen
+3. Vapaus jakaa ohjelmistosta myös muokattuja versioita.
 
 ## a)
 
