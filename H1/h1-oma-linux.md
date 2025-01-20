@@ -12,9 +12,9 @@ Aloitin VirtualBoxin asentamisen hakemalla asennuspaketin VirtuaBoxin sivuilta (
 
 Eteeni auenneissa virtuaalikoneen asetuksissa oli joitain eroja tehtävän ohjeiden kuvitukseen verrattuna. Käyttöjärjestelmävalikon alla oli 'Edition' kohta, jota en voinut muuttaa. Ohitin sen huoletta, koska se ei vaikuttanut tehtävän kannalta oleelliselta. Rautavalikossa oli poikkeuksena CPU asetus prosessoreiden määrälle. Jätin prosessori- ja muistiasetukset oletusarvoihinsa (1 ja 4GB). Kovalevyn asetuksissa suurimpana erona oli 'Dynamically allocated' vaihtoehdon puuttuminen. Koska vastaavalla paikalla oli asetus 'Pre-allocate Full Size', oletin dynaamisen allokoinnin olevan nykyään oletuksena. Seuraavaksi loin virtuaalikoneen, joka ilmestyi näkyviin vasempaan laitaan. Lähdin asettamaan .iso tiedostoa optiseen asemaan, mutta yllätyksekseni huomasin, että asia oli jo oletuksena kunnossa.
 
-![NameOS.png](NameOS.png "VirtualBox")
-![Hardware.png](Hardware.png "VirtualBox")
-![HardDisk.png](HardDisk.png "VirtualBox")
+![NameOS.png](NameOS.png "Name & Os")
+![Hardware.png](Hardware.png "Hardware")
+![HardDisk.png](HardDisk.png "Hard Disk")
 
 ### Debian -asennus
 
@@ -28,12 +28,18 @@ Varoitusviesteistä ehdin lukea sanat Spectre ja CPU, joten oletin niiden olevan
 
 Aloitin varsinaisen asennuksen työpöydältä (Install Debian). Valitsin kieleksi englannin (US), sijainniksi Suomen ja näppäimistön suomalaisella layoutilla. Näppäimistö oli tyypiltään 'Generic 105-key'. Testasin samalla ääkkösten toimivuuden. Kovalevyn partitioimisen asetuksissa valitsin kohdan 'Erase disk'. Tarkistin myös 'Boot loader location' kohdan ja sen, että salaus ei ollut päällä. Seuraavaksi asetin käyttäjätiedot ja tarkistin ettei automaattinen kirjautuminen ole käytössä. Yhteenvedon tarkistamisen jälkeen aloitin asennuksen, joka kesti noin 9 minuuttia.
 
-![Partition.png](Partition.png "VirtualBox")
-![User.png](User.png "VirtualBox")
+![Partition.png](Partition.png "Partition")
+![User.png](User.png "User")
 
+Uudelleenkäynnistymisen yhteydessä ruudulla kävi hetkellisesti boottivalikko, jonka annoin valita oletusvaihtoehdon automaattisesti. Koska en kärsinyt tehtävänannossa mainitusta mustasta ruudusta, kirjautumisruutu avautui normaalisti.
 
+![Login.png](Login.png "Login")
 
-Uudelleenkäynnistymisen yhteydessä ruudulla kävi hetkellisesti boottivalikko, jonka annoin valita oletusvaihtoehdon automaattisesti. Koska en kärsinyt tehtävänannossa mainitusta mustasta ruudusta, kirjautumisruutu avautui normaalisti. Sisäänkirjautumisen jälkeen ruudulle ilmestyi outo 'Ibus notification', joka on ilmeisesti lähtöisin VirtualBoxista. Koska kaikki toimi normaalisti, en lähtenyt selvittelemään ilmoituksen syitä tarkemmin. Kirjautumisen yhteydessä ei mielestäni auennut ohjeissa mainittua 'Welcome' paneelia, josta olisin voinut valita 'Use default config'. Voi toki olla, että onnistuin sen ajatuksissani ohittamaan. Testasin taas nettiselainta, ja kaikki tuntui toimivan.
+Sisäänkirjautumisen jälkeen ruudulle ilmestyi outo 'Ibus notification', joka on ilmeisesti lähtöisin VirtualBoxista. Koska kaikki toimi normaalisti, en lähtenyt selvittelemään ilmoituksen syitä tarkemmin. 
+
+![Ibus.png](Ibus.png "Ibus notification")
+
+Kirjautumisen yhteydessä ei mielestäni auennut ohjeissa mainittua 'Welcome' paneelia, josta olisin voinut valita 'Use default config'. Voi toki olla, että onnistuin sen ajatuksissani ohittamaan. Testasin taas nettiselainta, ja kaikki tuntui toimivan.
 
 ### Terminaali
 
@@ -44,6 +50,8 @@ Käynnistin terminaalin (Terminal Emulator) Applications-valikosta ja aloin ajam
 
 Salasanan antamisen jälkeen komennot suorittivat tehtävänsä ilman virheilmoituksia. Komentojen tuottama sekava ulosanti ei kertonut minulle juuri mitään tässä vaiheessa, mutta oleellisinta, että ne toimivat oikein.
 
+![AptUpdate.png](AptUpdate.png "sudo apt-get update")
+
 Seuraavaksi asensin ja käynnistin palomuurin komennoilla:
 
 *sudo apt-get -y install ufw*
@@ -51,9 +59,18 @@ Seuraavaksi asensin ja käynnistin palomuurin komennoilla:
 
 Komennot tuntuivat toimivan oikein ja sain ilmoituksen, että palomuuri toimii uudelleenkäynnistämisen jälkeen.
 
+![FireWarll.png](FireWarll.png "Firewall")
+
 ### Guest Additions -asennus
 
 Seuraavaksi aloin asentamaan 'VirtualBox Guest Additions' ominaisuuksia. Asennus (sudo bash VBoxLinuxAdditions.run) sujui hyvin ja kuvaruudun koon muuttaminen onnistui jo ennen jäjrestelmän uudelleenkäynnistämistä. Copy-pasten toiminnassa oli pienenä ongelmana ctrl + c/v toimimattomuus terminaalissa. Muualla, kuten selaimessa, näppäinyhdistelmä toimii. Terminaalissa asia täytyy hoitaa valikon kautta. Nopealla googlauksella (AskUbuntu) ratkaisuksi löytyi ctrl + shift + c/v näppäinyhdistelmä.
+
+![GA1.png](GA1.png "Guest Additions")
+![GA2.png](GA2.png "Guest Additions")
+
+Tässä vaiheessa otin virtuaalikoneesta snapshotin. 'Take snapshot' löytyin VirtualBoxin 'Machine' valikosta.
+
+![SnapShot.png](SnapShot.png "Snapshot")
 
 ## k)
 
@@ -86,5 +103,5 @@ Kolmannelta riviltä löytyykin jo aiemmista osista tuttuja komentoja, joilla Sp
 
 Komentojen ajamisen jälkeen Spotify asentuu kiltisti ja kirjautuminen onnistuu tutulla tavalla. Kuten odotinkin, musiikin kuuntelu ei onnistu audio-ongelmien takia. Ehkä myöhemmissä tehtävissä ja omissa testeissä tähänkin löytyy vastaus.
 
-
+![Spotify.png](Spotify.png "Spotify")
 
