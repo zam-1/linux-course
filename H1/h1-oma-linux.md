@@ -15,29 +15,40 @@ Eteeni auenneissa virtuaalikoneen asetuksissa oli joitain eroja tehtävän ohjei
 ![NameOS.png](NameOS.png "Name & Os")
 ![Hardware.png](Hardware.png "Hardware")
 ![HardDisk.png](HardDisk.png "Hard Disk")
-
+<br />
+<br />
 ### Debian -asennus
 
 Käynnistin virtuaalikoneen tuplaklikkaamalla ja hetken päästä eteeni aukesi Debianin boottivalikko. Valitsin valikosta 'Live system (amd64)' vaihtoehdon. Hetken odottelun ja muutaman ruudulla vilahtaneen varoitusviestin jälkeen olin Linux-työpöydällä.
 
 ![BootMenu.png](BootMenu.png "VirtualBox")
+<br />
+<br />
 
 Varoitusviesteistä ehdin lukea sanat Spectre ja CPU, joten oletin niiden olevan Debianin omia varoituksia vanhoista haavoittuvuuksista. Jätin ne huomiotta, koska ne eivät tuntuneet olevan tämän tehtävän kannalta oleellisia. Testasin hiiren, näppäimistön, näytön ja netin toimivuudet käynnistämällä selaimen ja tekemällä Google-haun. Kaikki tuntui toimivan moitteetta, mutta selain avautui huomattavan hitaasti. Syynä oli luultavasti virtuaalikoneelle annetut vaatimattomat resurssit.
 
 ![GoogleHaku.png](GoogleHaku.png "VirtualBox")
+<br />
+<br />
 
 Aloitin varsinaisen asennuksen työpöydältä (Install Debian). Valitsin kieleksi englannin (US), sijainniksi Suomen ja näppäimistön suomalaisella layoutilla. Näppäimistö oli tyypiltään 'Generic 105-key'. Testasin samalla ääkkösten toimivuuden. Kovalevyn partitioimisen asetuksissa valitsin kohdan 'Erase disk'. Tarkistin myös 'Boot loader location' kohdan ja sen, että salaus ei ollut päällä. Seuraavaksi asetin käyttäjätiedot ja tarkistin ettei automaattinen kirjautuminen ole käytössä. Yhteenvedon tarkistamisen jälkeen aloitin asennuksen, joka kesti noin 9 minuuttia.
 
 ![Partition.png](Partition.png "Partition")
 ![User.png](User.png "User")
+<br />
+<br />
 
 Uudelleenkäynnistymisen yhteydessä ruudulla kävi hetkellisesti boottivalikko, jonka annoin valita oletusvaihtoehdon automaattisesti. Koska en kärsinyt tehtävänannossa mainitusta mustasta ruudusta, kirjautumisruutu avautui normaalisti.
 
 ![Login.png](Login.png "Login")
+<br />
+<br />
 
 Sisäänkirjautumisen jälkeen ruudulle ilmestyi outo 'Ibus notification', joka on ilmeisesti lähtöisin VirtualBoxista. Koska kaikki toimi normaalisti, en lähtenyt selvittelemään ilmoituksen syitä tarkemmin. 
 
 ![Ibus.png](Ibus.png "Ibus notification")
+<br />
+<br />
 
 Kirjautumisen yhteydessä ei mielestäni auennut ohjeissa mainittua 'Welcome' paneelia, josta olisin voinut valita 'Use default config'. Voi toki olla, että onnistuin sen ajatuksissani ohittamaan. Testasin taas nettiselainta, ja kaikki tuntui toimivan.
 
@@ -51,6 +62,8 @@ Käynnistin terminaalin (Terminal Emulator) Applications-valikosta ja aloin ajam
 Salasanan antamisen jälkeen komennot suorittivat tehtävänsä ilman virheilmoituksia. Komentojen tuottama sekava ulosanti ei kertonut minulle juuri mitään tässä vaiheessa, mutta oleellisinta, että ne toimivat oikein.
 
 ![AptUpdate.png](AptUpdate.png "sudo apt-get update")
+<br />
+<br />
 
 Seuraavaksi asensin ja käynnistin palomuurin komennoilla:
 
@@ -60,6 +73,8 @@ Seuraavaksi asensin ja käynnistin palomuurin komennoilla:
 Komennot tuntuivat toimivan oikein ja sain ilmoituksen, että palomuuri toimii uudelleenkäynnistämisen jälkeen.
 
 ![FireWarll.png](FireWarll.png "Firewall")
+<br />
+<br />
 
 ### Guest Additions -asennus
 
@@ -67,10 +82,14 @@ Seuraavaksi aloin asentamaan 'VirtualBox Guest Additions' ominaisuuksia. Asennus
 
 ![GA1.png](GA1.png "Guest Additions")
 ![GA2.png](GA2.png "Guest Additions")
+<br />
+<br />
 
 Tässä vaiheessa otin virtuaalikoneesta snapshotin. 'Take snapshot' löytyin VirtualBoxin 'Machine' valikosta.
 
 ![SnapShot.png](SnapShot.png "Snapshot")
+<br />
+<br />
 
 ## k)
 
