@@ -31,6 +31,16 @@ Vapaudet:
 
 Asensin Debian Linuxin onnistuneesti VirtualBoxilla toteutettuun virtuaalikoneeseen. En etukäteen tiennyt juuri mitään Linuxin käytöstä, mutta käyttöjärjestelmien, myös Linuxin, asentaminen on tuttua jo MS-DOS ajoista lähtien. En siis odottanut suuria ongelmia tämän tehtävän parissa ja asennus menikin odotusten mukaisesti. Haasteet alkavat vasta seuraavilla viikoilla, kun käyttöjärjestelmää aletaan varsinaisesti käyttämään.
 
+### Tietokoneen tiedot
+
+OS:      Windows 11 Pro
+CPU:     Intel Core i7-9700k @ 3.6GHz, 8 Core
+Emolevy: Z390 AORUS ELITE-CF
+Muisti:  32GB DDR4-3200
+OS SSD:  250GB Samsung EVO 860
+VM SSD:  1TB Samsung EVO 860
+GPU:     Nvidia RTX 4070 12GB
+
 ### VirtualBox -asennus
 
 Aloitin VirtualBoxin asentamisen hakemalla asennuspaketin VirtuaBoxin sivuilta (https://www.virtualbox.org/wiki/Downloads) tehtävän ohjeiden mukaisesti. Valitsin tarjolla olevista vaihtoehdoista Windows Hosts-version. Asennus sujui ilman ongelmia. Olin asentanut edellisen periodin Python kurssilla liittyviä sidonnaisuuksia, joten VirtualBoxin asennuksella ei ollut niistä huomauttamista. Valitsin VirtualBoxin aloitusnäkymästä oikealta 'Expert mode' vaihtoehdon ja aloitin uuden virtuaalikoneen luomisen 'New' napista.
