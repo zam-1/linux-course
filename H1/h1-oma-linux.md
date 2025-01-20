@@ -150,10 +150,10 @@ Komentojen ajamisen jälkeen Spotify asentuu kiltisti ja kirjautuminen onnistuu 
 ![Spotify.png](Spotify.png "Spotify")
 
 ### Lähteet:
-Karvinen, Tero 2025: Linux Palvelimet 2025 alkukevät. https://terokarvinen.com/linux-palvelimet/
-Karvinen, Tero 2006: Raportin kirjoittaminen. https://terokarvinen.com/2006/raportin-kirjoittaminen-4/
-GNU Operating system 2024: What is free software?. https://www.gnu.org/philosophy/free-sw.html
-Karvinen, Tero 2024: Install Debian on Virtualbox. https://terokarvinen.com/2021/install-debian-on-virtualbox/
+Karvinen, Tero 2025: Linux Palvelimet 2025 alkukevät. https://terokarvinen.com/linux-palvelimet/  
+Karvinen, Tero 2006: Raportin kirjoittaminen. https://terokarvinen.com/2006/raportin-kirjoittaminen-4/  
+GNU Operating system 2024: What is free software?. https://www.gnu.org/philosophy/free-sw.html  
+Karvinen, Tero 2024: Install Debian on Virtualbox. https://terokarvinen.com/2021/install-debian-on-virtualbox/  
 Spotify AB 2025: Spotify for Linux. https://www.spotify.com/us/download/linux/
 <br />
 <br />
