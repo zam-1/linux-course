@@ -103,7 +103,7 @@ Komennot tuntuivat toimivan oikein ja sain ilmoituksen, että palomuuri toimii u
 
 ### Guest Additions -asennus
 
-Seuraavaksi aloin asentamaan 'VirtualBox Guest Additions' ominaisuuksia. Asennus (sudo bash VBoxLinuxAdditions.run) sujui hyvin ja kuvaruudun koon muuttaminen onnistui jo ennen jäjrestelmän uudelleenkäynnistämistä. Copy-pasten toiminnassa oli pienenä ongelmana ctrl + c/v toimimattomuus terminaalissa. Muualla, kuten selaimessa, näppäinyhdistelmä toimii. Terminaalissa asia täytyy hoitaa valikon kautta. Nopealla googlauksella (AskUbuntu) ratkaisuksi löytyi ctrl + shift + c/v näppäinyhdistelmä.
+Seuraavaksi aloin asentamaan 'VirtualBox Guest Additions' ominaisuuksia. Asennus (sudo bash VBoxLinuxAdditions.run) sujui hyvin ja kuvaruudun koon muuttaminen onnistui jo ennen jäjrestelmän uudelleenkäynnistämistä. Copy-paste lähti toimimaan VirtualBoxin 'Device' valikosta 'Shared clipboard' valinnan takaa löytyneen 'Bidirectional' asetuksen avulla. 
 
 ![GA1.png](GA1.png "Guest Additions")
 ![GA2.png](GA2.png "Guest Additions")
@@ -148,6 +148,13 @@ Kolmannelta riviltä löytyykin jo aiemmista osista tuttuja komentoja, joilla Sp
 Komentojen ajamisen jälkeen Spotify asentuu kiltisti ja kirjautuminen onnistuu tutulla tavalla. Kuten odotinkin, musiikin kuuntelu ei onnistu audio-ongelmien takia. Ehkä myöhemmissä tehtävissä ja omissa testeissä tähänkin löytyy vastaus.
 
 ![Spotify.png](Spotify.png "Spotify")
+
+### Lähteet:
+Karvinen, Tero 2025: Linux Palvelimet 2025 alkukevät. https://terokarvinen.com/linux-palvelimet/
+Karvinen, Tero 2006: Raportin kirjoittaminen. https://terokarvinen.com/2006/raportin-kirjoittaminen-4/
+GNU Operating system 2024: What is free software?. https://www.gnu.org/philosophy/free-sw.html
+Karvinen, Tero 2024: Install Debian on Virtualbox. https://terokarvinen.com/2021/install-debian-on-virtualbox/
+Spotify AB 2025: Spotify for Linux. https://www.spotify.com/us/download/linux/
 <br />
 <br />
 <br />
