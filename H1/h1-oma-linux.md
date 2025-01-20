@@ -2,9 +2,26 @@
 
 ## x)
 
+### Raportin kirjoittaminen
+
+Raportin tulee olla:
+
+**Toistettava**: Raportissa esitettyjen toimenpiteiden tulee olla toistettavissa ja johtaa samanlaisiin tuloksiin. Raportin tulee siis sisältää tiedot myös käytetyisstä välineistä ja ympäristötekijöistä.
+
+**Täsmällinen**: Raportin pitää kuvata käytetyt metodit ja niitä seuranneet onnistumiset ja epäonnistumiset täsmällisesti ja kokonaisvaltaisesti. Ongelmatilanteissa pitää selvitttää myös miten vika ilmeni, ja minkälaisia keinoja sen selvittämiseen on käytetty tuloksineen.
+
+**Helppolukuinen**:  Raportissa tulee kiinnittää huomiota oikeinkirjoitukseen ja tekstin sujuvuuteen esimerkiksi väliotsikoiden avulla. Raportin ei tarvitse välttämättä noudattaa Haaga-Helian raportointiohjeita.
+
+**Lähteet**: Raportissa tulee olla lähdeviittaukset kunnossa.
+
+
+
+
+
+
 ## a)
 
-Alkusanoina mainittakoon, että en ennen tätä tehtävää tiennyt Linuxin käytöstä juuri mitään, mutta olen sen kuitenkin asentanut useamman kerran vuosien varrella. Sama pätee muihinkin käyttöjärjestelmiin MS-DOS ajoista lähtien. En siis odottanut tämän tehtävän osalta suurempia ongelmia. Hankaluudet alkavat luultavasti vasta seuraavien tehtävien parissa.
+Asensin Debian Linuxin onnistuneesti VirtualBoxilla toteutettuun virtuaalikoneeseen. En etukäteen tiennyt juuri mitään Linuxin käytöstä, mutta käyttöjärjestelmien, myös Linuxin, asentaminen on tuttua jo MS-DOS ajoista lähtien. En siis odottanut suuria ongelmia tämän tehtävän parissa ja asennus menikin odotusten mukaisesti. Haasteet alkavat vasta seuraavilla viikoilla, kun käyttöjärjestelmää aletaan varsinaisesti käyttämään.
 
 ### VirtualBox -asennus
 
