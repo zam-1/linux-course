@@ -104,4 +104,13 @@ Kolmannelta riviltä löytyykin jo aiemmista osista tuttuja komentoja, joilla Sp
 Komentojen ajamisen jälkeen Spotify asentuu kiltisti ja kirjautuminen onnistuu tutulla tavalla. Kuten odotinkin, musiikin kuuntelu ei onnistu audio-ongelmien takia. Ehkä myöhemmissä tehtävissä ja omissa testeissä tähänkin löytyy vastaus.
 
 ![Spotify.png](Spotify.png "Spotify")
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+Tätä dokumenttia saa kopioida ja muokata GNU General Public License (versio 2 tai uudempi) mukaisesti. http://www.gnu.org/licenses/gpl.html  
+Pohjana Tero Karvinen 2012: Linux kurssi, http://terokarvinen.com
+
 
