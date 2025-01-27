@@ -52,16 +52,20 @@ Aloitin tehtävän etsimällä tarkoitukseen sopivia ohjelmia. En tiennyt etukä
 
 Aloitin asennuksen etsimällä ohjelmien paketeille nimiä 'apt search' -komentoa hyödyntämällä. Kaikkien hakujen listauksissa oli ohjelmia, jotka eivät päällisin puolin liittyneet käytettyihin hakutermeihin mitenkään. Onneksi joukosta löytyivät myös haluamani paketit.
 
-&emsp;*apt-search tldr*  
-&emsp;*apt-search cowsay*  
-&emsp;*apt-search midnight commander*
+&emsp;*apt search tldr*  
+&emsp;*apt search cowsay*  
+&emsp;*apt search midnight commander*
 
 ![tldr.png](tldr.png "tldr")  
 ![cowsay.png](cowsay.png "cowsay")  
 ![mc.png](mc.png "mc")
 <br />
 <br />
+&emsp;*sudo apt-get install tldr cowsay mc*
+
 Komento kaikkien ohjelmien asentamiseen kerrallaan syntyi arvaamalla edellisen tunnin mkdir-komentojen avulla. Jos kansioita voi luoda tietyllä tavalla useamman kerrallaan, niin miksei sama logiikka toimisi myös asennuksissa. Asennus alkoi ja loppui ilman virheilmoituksia. Tämän jälkeen testasin ohjelmia seuraavilla komennoilla:
+
+
 
 &emsp;*tldr cowsay*
 
