@@ -61,19 +61,39 @@ Komento kaikkien ohjelmien asentamiseen kerrallaan syntyi arvaamalla edellisen t
 
 Tiedostojärjestelmän ylin taso, eli juurihakemisto. Hakemiston alta löytyvät kaikki järjestelmän tiedostot ja hakemistot. Esimerkkinä hakemiston sisällöstä mainittakoon etc-hakemisto, jonka alta löytyy koko käyttöjärjestelmän laajuiisiin asetuksiin liittyviä tiedostoja.
 
-![etc.png](etc.png "etc")
+*ls -p*
+
+![juuri.png](juuri.png "juuri")
 <br />
 <br />
 **/home/**
 
 Tämän hakemiston sisältä löytyvät kaikkien käyttäjien kotihakemistot. Omasta virtuaalikoneestani löytyi vain yhden käyttäjän kansio.
 
+*ls-p*
+
 ![home.png](home.png "home")
+<br />
+<br />
+**/etc/**
+
+Tämä hakemisto sisältää käyttöjärjestelmän laajuiset asetukset selkokielisinä tekstitiedostoina. Hakemisto sisältää esimerkiksi asetukset aiemmin asentamalleni Midnight Commander-ohjelmalle. Siirryin ohjelman kansioon ja tutkin sen sisältöä. Valitsin tarkasteluun mc.keymap tiedoston, josta näytin viisi ensimmäistä riviä. Riveillä näkyy muutettavissa olevia näppäinasetuksia. Käytetty head-komento (ja myöhemmin käytetty tail-komento) löytyivät Google-haun AI-osasta (How to see first lines of a file in Linux command line?)
+
+*cd mc*
+*ls*
+*head -n 5 mc.keymap*
+
+![etc.png](etc.png "etc")
 <br />
 <br />
 **/home/otus/**
 
-Käyttäjän kotihakemisto. Tämä on ainoa hakemisto johon tavallinen käyttäjä voi tallentaa tietoa pysyvästi. Hakemisto sisältää alihakemistot esimerkiksi dokumenteille, kuville ja medialle. Kansiosta löytyy myös Desktop-hakemisto, johon sisältää käyttäjän työpöydän tiedostot.
+Käyttäjän kotihakemisto. Tämä on ainoa hakemisto johon tavallinen käyttäjä voi tallentaa tietoa pysyvästi. Hakemisto sisältää alihakemistot esimerkiksi dokumenteille, kuville ja medialle. Kansiosta löytyy myös Desktop-hakemisto, joka sisältää käyttäjän työpöydän tiedostot.
+
+*ls -p*
+*cd desktop*
+*echo test > test.txt*
+*ls*
 
 ![desktop.png](desktop.png "desktop")
 <br />
@@ -82,7 +102,20 @@ Käyttäjän kotihakemisto. Tämä on ainoa hakemisto johon tavallinen käyttäj
 
 Tästä hakemistosta löytyvät ulkoiset tallennusmediat, kuten optiset asemat ja usb-tikut. Omassa järjestelmässäni löytyi vain yksi käyttäjän mukaan nimetty kansio, jonka tarkoituksena on luultavasti käytettyjen medioiden organisointi käyttäjien mukaan. Tämäkin hakemisto on tyhjä, koska virtuaalikoneeseeni ei ole liitetty mitään ylimääräistä.
 
+*ls -p*
+
 ![media.png](media.png "media")
+
+**/var/log/**
+
+Tähän hakemistoon sisältyy käyttöjärjestelmän laajuisten lokien tiedostot. Hakemistoa tutkimalla löysin alihakemiston apt, joka sisältää history.log tiedoston. Kyseisestä tiedostosta löytyi aiemmin ajamiani apt-get komentoja.
+
+*ls -p*
+*cd apt*
+*ls -p*
+*tail -n 5 history.log*
+
+![log.png](log.png "log")
 
 
 
