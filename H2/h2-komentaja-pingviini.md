@@ -140,6 +140,41 @@ Kokeilin seuraavaksi grep-komentoa kotihakemistosta käsin aiemmin mainittuun hi
 <br />
 <br />
 
+## e)
+
+Alkuperäisenä tavoitteena oli käyttää yhden tiedoston (cow.txt) sisältöä (yksi rivi tekstiä) grep-kommenon ohjeistuksena toisen tiedoston (aiemmin käytetty history.log) tutkimiseen. Tämän jälkeen grep-komennon ulosanti siirtyisi lehmän suuhun cowsay-ohjelman kautta. Lopullisen tuotoksen oli tämän jälkeen tarkoitus korvata ensimmäisen tiedoston sisältö.
+
+Löysin grepin ohjeista -f valinnan, joka vaikutti hyvältä.
+
+*cat cow.txt|grep -f /var/log/apt/history.log*
+
+Komento näytti vain cow.txt -tiedoston sisällön, joten se ei toiminut toivotulla tavalla. Seuraavaksi koitin yksinkertaistaa komentoa poistamalla putken kokonaan ja muokkaamalla grep-komentoa mielestäni loogisella tavalla.
+
+*grep -f cow.txt /var/log/apt/history.log*
+
+Tämä käsky toimi odotetulla tavalla ja näytti halutun rivin history.log -tiedostosta. Valitettavasti se tarkoitti myös sitä, että koko putki-idea oli tarpeeton. Halusin kuitenkin yrittää ratkaista ongelman alkuperäisen suunnitelman mukaisesti.
+
+*cat cow.txt|grep -f - /var/log/apt/history.log*
+
+Yhden vaivaisen - merkin takia käytin aivan liian kauan aikaa grepin ohjeiden parissa. Ongelma selvisi lopulta lähinnä kokeilemalla eri vaihtoehtoja. En ymmärrä täysin vieläkään, mitä - tarkalleen tekee komennossa.
+
+*cat cow.txt|grep -f - /var/log/apt/history.log|cowsay*
+
+Seuraava vaihe onnistui helposti, joten jäljelle jäi vain lehmän ulkoasun hiominen ja alkuperäisen tiedoston sisällön korvaaminen.
+
+*cat cow.txt|grep -f - /var/log/apt/history.log|cowsay -e @@ -T U > cow.txt*
+
+Cow.txt tiedoston korvaaminen lehmällä onnistui, mutta jostain syystä lehmän puhekupla tyhjeni toimenpiteen seurauksena. En keksinyt ongelmaan ratkaisua, joten tyydyin sisällön korvaamisen sijaan täydentämään sitä. Lopullisessa cow.txt tiedostossa on siis alkuperäinen sisältö ja cowsay:n tuottama lehmä, joka kertoo meille rivin history.log tiedostosta. Lopullinen komento on:
+
+*cat cow.txt|grep -f - /var/log/apt/history.log|cowsay -e @@ -T U >> cow.txt*
+
+![historycow.png](historycow.png "historycow")
+<br />
+<br />
+
+
+
+
 
 
 
