@@ -238,9 +238,6 @@ Aloitin etsimällä Micron manuaalista plugineihin liittyviä kohtia. Manuaalist
 &emsp;*micro -plugin available*  
 &emsp;*micro -plugin install palettero*
 
-![lokit.png](lokit.png "lokit")
-<br />
-<br />
 Ensimmäinen yritys päättyi epäonnistumiseen. Avasin micron ja koitin ohjelman sisällä ohjelman sivuilla annettua näppäinkomentoa (ctrl+space), mutta mitään ei tapahtunut. Kun palasin takaisin terminaaliin, oli sinne yllättäen ilmestynyt virheilmoitus.
 
 ![errorp.png](errorp.png "errorp")
