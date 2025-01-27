@@ -238,12 +238,12 @@ Päättelin virheilmoituksesta, että minun pitää asentaa myös ilmoituksessa 
 <br />
 <br />
 <br />
-https://terokarvinen.com/linux-palvelimet/
-https://terokarvinen.com/2020/command-line-basics-revisited/?fromSearch=command%20line%20basics%20revisited
-https://en.wikipedia.org/wiki/Intel_440FX
-https://en.wikipedia.org/wiki/List_of_Intel_codenames
-https://www.linux.fi/wiki/Midnight_Commander
-https://github.com/terokarvinen/palettero
+Karvinen, Tero 2025: Linux Palvelimet 2025 alkukevät. https://terokarvinen.com/linux-palvelimet/  
+Karvinen, Tero 2020: Command Line Basics Revisited. https://terokarvinen.com/2020/command-line-basics-revisited/?fromSearch=command%20line%20basics%20revisited  
+Wikipedia 2023: Intel 440FX. https://en.wikipedia.org/wiki/Intel_440FX  
+Wikipedia 2025: List of Intel codenames. https://en.wikipedia.org/wiki/List_of_Intel_codenames  
+Linux.fi 2024: Midnight Commander. https://www.linux.fi/wiki/Midnight_Commander  
+Karvinen, Tero 2024: palettero. https://github.com/terokarvinen/palettero
 
 
 
