@@ -75,27 +75,27 @@ Tämän hakemiston sisältä löytyvät kaikkien käyttäjien kotihakemistot. Om
 ![home.png](home.png "home")
 <br />
 <br />
-**/etc/**
-
-Tämä hakemisto sisältää käyttöjärjestelmän laajuiset asetukset selkokielisinä tekstitiedostoina. Hakemisto sisältää esimerkiksi asetukset aiemmin asentamalleni Midnight Commander-ohjelmalle. Siirryin ohjelman kansioon ja tutkin sen sisältöä. Valitsin tarkasteluun mc.keymap tiedoston, josta näytin viisi ensimmäistä riviä. Riveillä näkyy muutettavissa olevia näppäinasetuksia. Käytetty head-komento (ja myöhemmin käytetty tail-komento) löytyivät Google-haun AI-osasta (How to see first lines of a file in Linux command line?)
-
-*cd mc*
-*ls*
-*head -n 5 mc.keymap*
-
-![etc.png](etc.png "etc")
-<br />
-<br />
 **/home/otus/**
 
 Käyttäjän kotihakemisto. Tämä on ainoa hakemisto johon tavallinen käyttäjä voi tallentaa tietoa pysyvästi. Hakemisto sisältää alihakemistot esimerkiksi dokumenteille, kuville ja medialle. Kansiosta löytyy myös Desktop-hakemisto, joka sisältää käyttäjän työpöydän tiedostot.
 
-*ls -p*
-*cd desktop*
-*echo test > test.txt*
+*ls -p*  
+*cd desktop*  
+*echo test > test.txt*  
 *ls*
 
 ![desktop.png](desktop.png "desktop")
+<br />
+<br />
+**/etc/**
+
+Tämä hakemisto sisältää käyttöjärjestelmän laajuiset asetukset selkokielisinä tekstitiedostoina. Hakemisto sisältää esimerkiksi asetukset aiemmin asentamalleni Midnight Commander-ohjelmalle. Siirryin ohjelman kansioon ja tutkin sen sisältöä. Valitsin tarkasteluun mc.keymap tiedoston, josta näytin viisi ensimmäistä riviä. Riveillä näkyy muutettavissa olevia näppäinasetuksia. Käytetty head-komento (ja myöhemmin käytetty tail-komento) löytyivät Google-haun AI-osasta (How to see first lines of a file in Linux command line?)
+
+*cd mc*  
+*ls*  
+*head -n 5 mc.keymap*
+
+![etc.png](etc.png "etc")
 <br />
 <br />
 **/media/**
@@ -110,9 +110,9 @@ Tästä hakemistosta löytyvät ulkoiset tallennusmediat, kuten optiset asemat j
 
 Tähän hakemistoon sisältyy käyttöjärjestelmän laajuisten lokien tiedostot. Hakemistoa tutkimalla löysin alihakemiston apt, joka sisältää history.log tiedoston. Kyseisestä tiedostosta löytyi aiemmin ajamiani apt-get komentoja.
 
-*ls -p*
-*cd apt*
-*ls -p*
+*ls -p*  
+*cd apt*  
+*ls -p*  
 *tail -n 5 history.log*
 
 ![log.png](log.png "log")
