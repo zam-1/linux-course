@@ -63,7 +63,7 @@ Aloitin asennuksen etsimällä ohjelmien paketeille nimiä 'apt search' -komento
 <br />
 &emsp;*sudo apt-get install tldr cowsay mc*
 
-Komento kaikkien ohjelmien asentamiseen kerrallaan syntyi arvaamalla edellisen tunnin mkdir-komentojen avulla. Jos kansioita voi luoda tietyllä tavalla useamman kerrallaan, niin miksei sama logiikka toimisi myös asennuksissa. Asennus alkoi ja loppui ilman virheilmoituksia. Tämän jälkeen testasin ohjelmia seuraavilla komennoilla:
+Komento kaikkien ohjelmien asentamiseen kerrallaan syntyi arvaamalla edellisen tunnin mkdir-komentojen avulla. Jos kansioita voi luoda tietyllä tavalla useamman kerrallaan, niin miksei sama logiikka toimisi myös asennuksissa. Myöhemmin huomasin, että komento olisi löytynyt myös x) -tehtävässä läpi käydyistä ohjeista. Asennus alkoi ja loppui ilman virheilmoituksia. Tämän jälkeen testasin ohjelmia seuraavilla komennoilla:
 
 
 
