@@ -20,9 +20,14 @@ Harddisk: 60GB
 
 ## a)
 
-Aloitin tehtävän ajamalla edelliseltä oppitunnilta tutun asennuskomennon. Asennus sujui ilman virheilmoituksia. Tämän jälkeen testasin ohjelmaa luomallta test.txt tiedoston.
+Aloitin tehtävän ajamalla edelliseltä oppitunnilta tutun asennuskomennon. Asennus sujui ilman virheilmoituksia. Tämän jälkeen testasin ohjelmaa luomallta test.txt tiedoston onnistuneesti.
 
 ![MicroA.png](MicroA.png "MicroA")
+<br />
+<br />
+gaerg
+
+
 
 
 
