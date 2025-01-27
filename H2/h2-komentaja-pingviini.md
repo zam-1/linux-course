@@ -1,5 +1,19 @@
 # H2 Komentaja Pingviini
 
+## x)
+
+-Command Line Basics Revisited -Sivut sisältävät hyödyllistä tietoa Linuxin komentokehotteen käytöstä ja sen peruskäskyistä.  
+
+-Ohjeet sisältävät käskyjä tiedostojen ja hakemistojen kanssa työskentelyyn ja ohjeista käskyjä esimerkiksi hakemistojen välillä liikkumiseen, niiden sisällön tutkimiseen ja niiden muokkaamiseen. Tiedostoihin käsittelyyn on tarjolla käskyjä niiden siirtelyyn, kopioimiseen, poistamiseen ja muokkaamiseen liittyen.
+
+-Ohjeista löytyy käskyjä myös etäkäyttöön SSH- ja SCP-komentoja hyödyntäen.
+
+-Sivut sisältävät ohjeet yleisimmille tavoille saada apua ohjelmien käyttöön. Esimerkiksi man-komento ja --help valinta käskyjen yhteydessä.
+
+-Ohjeet sisältävät kuvauksen Linuxin tiedostojärjestelmän tärkeimmistä kansioista, kuten juuri, etc/ ja käyttäjän kotikansio.
+
+-Lopuksi ohjeista löytyy ohjeita pakettien hallintaan ja ohjelmien asennukseen liittyviin komentoihin.
+
 ## Rauta & VirtualBox asetukset
 
 OS:      Windows 11 Pro  
