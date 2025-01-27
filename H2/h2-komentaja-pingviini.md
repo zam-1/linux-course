@@ -1,4 +1,4 @@
-****# H2 Komentaja Pingviini
+# H2 Komentaja Pingviini
 
 ## Rauta & VirtualBox asetukset
 
@@ -244,6 +244,16 @@ Wikipedia 2025: List of Intel codenames. https://en.wikipedia.org/wiki/List_of_I
 Linux.fi 2024: Midnight Commander. https://www.linux.fi/wiki/Midnight_Commander
 
 Karvinen, Tero 2024: palettero. https://github.com/terokarvinen/palettero
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+Tätä dokumenttia saa kopioida ja muokata GNU General Public License (versio 2 tai uudempi) mukaisesti. http://www.gnu.org/licenses/gpl.html  
+Pohjana Tero Karvinen 2012: Linux kurssi, http://terokarvinen.com
 
 
 
