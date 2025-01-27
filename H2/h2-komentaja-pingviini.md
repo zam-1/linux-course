@@ -164,13 +164,88 @@ Seuraava vaihe onnistui helposti, joten jäljelle jäi vain lehmän ulkoasun hio
 
 *cat cow.txt|grep -f - /var/log/apt/history.log|cowsay -e @@ -T U > cow.txt*
 
-Cow.txt tiedoston korvaaminen lehmällä onnistui, mutta jostain syystä lehmän puhekupla tyhjeni toimenpiteen seurauksena. En keksinyt ongelmaan ratkaisua, joten tyydyin sisällön korvaamisen sijaan täydentämään sitä. Lopullisessa cow.txt tiedostossa on siis alkuperäinen sisältö ja cowsay:n tuottama lehmä, joka kertoo meille rivin history.log tiedostosta. Lopullinen komento on:
+Cow.txt tiedoston korvaaminen lehmällä onnistui, mutta jostain syystä lehmän puhekupla tyhjeni toimenpiteen seurauksena. En keksinyt ongelmaan ratkaisua, joten tyydyin sisällön korvaamisen sijaan täydentämään sitä. Lopullisessa cow.txt tiedostossa on siis alkuperäinen sisältö ja cowsay:n tuottama lehmä, joka kertoo meille rivin history.log tiedostosta. Lopullinen komento oli:
 
 *cat cow.txt|grep -f - /var/log/apt/history.log|cowsay -e @@ -T U >> cow.txt*
 
 ![historycow.png](historycow.png "historycow")
 <br />
 <br />
+## f)
+
+Aloitin tehtävän asentamalla lshw-ohjelman. Tämän jälkeen ajoin tehtävänannossa annetun komennon nähdäkseni tietoa virtuaalikoneesta. Komennon -short valinta liittyy ohjeiden mukaan siihen, miten laitepuu tai -polku näytetään. Komennosta löytyvä -sanitaze siistii ulosannista arkaluontoista tietoa, kuten sarjanumeroita.
+
+*sudo apt-get install lshw*  
+*sudo lshw -short -sanitize*
+
+![lshw.png](lshw.png "lshw")
+<br />
+<br />
+Ohjelman ulosannissa kiinnitin ensin huomion 'H/W path' -sarakkeeseen. H/W lienee tässä tapauksessa lyhenne hardware-sanasta. Sarake kertoo koneen fyysisten osien hierarkiasta, jossa korkeimmalta (/0) tasolta löytyy tärkeitä komponentteja, kuten keskusmuisti (8GiB System memory) ja CPU (Intel(R) Core(TM) i7-9700K). Seuraavaksi listalla näkyy emolevyn piirisarjaan komponentteja, virtuaalikoneen laitteita ja liitäntöjä.
+
+Ensimmäinen erikoisuus listauksessa on se, että suurin osa komponenteista on VirtualBoxin emuloimia, mutta CPU vastaa isäntäkoneen vastaavaa. Virtuaalikone on ymmärtääkseni täysin riippuvainen isäntäkoneen prosessorista, ja tästä syystä sen osalta ei ehkä voida toteuttaa emulointia. 
+
+Virtuaalikoneen bridge osioista löytyvät 8244FX (northbridge) ja PIIX3 (southbridge) ovat vanhoja piirisarjoja (https://en.wikipedia.org/wiki/Intel_440FX). Sama pätee myös esimerkiksi verkkoadapteriin, 82540EM (https://en.wikipedia.org/wiki/List_of_Intel_codenames), joka ei vastaa isäntäkoneen vastaavaa. Virtuaalikoneen emulointiin on valittu komponentteja luultavasti yhteensopivuuden ja toimintavarmuuden perusteella.
+
+Listauksesta löytyi myös kovalevyyn liittyvää tietoa. VirtualBoxin asetuksissa olin laittanut kovalevyn kooksi 60GB, mutta listauksesta löytyi diskiksi määriteltynä kohta '64GB VBOX HARDDISK'. En tiedä mistä ero johtuu. Kovalevy oli myös jaettuna osioihin '51GiB EXT4 volume' ja '8402MiB Linux swap volume' Näistä ensimmäinen on järjestelmän käytössä oleva tila ja jälkimmäinen on swappia varten (Kovalevyltä varattu tila, jota käytetään muistina, kun järjestelmän keskusmuisti on täynnä). Arvot 51GiB ja 8402MiB vastaavat yhteen laskettua kovalevyn kokonaiskooksi ilmoitettua arvoa (64GB). Swapin arvo 8402MiB on lähellä virtuaalikoneelle annettua keskusmuistia (8GiB), joten nämä ovat luultavasti keskenään sidoksissa VirtualBoxin oletusasetuksissa.
+
+Listauksesta löytyi myös piirisarjan käyttämiä väyliä, mutta en pureudu näihin sen syvällisemmin. Sen lisäksi lista sisältää laitteeseen emuloituja laitteita, kuten hiiri, ja fyysisestä laitteesta normaalisti löytyviä ominaisuuksia, kuten virtanappi ja PC speaker.
+
+## g)
+
+Ajoin ohjeissa annetun komennon hieman muunneltuna saadakseni lokin kaksi viimeistä riviä näkyviin.
+
+*sudo journalctl|tail -n 2*
+
+![lokit.png](lokit.png "lokit")
+<br />
+<br />
+Löysin lokien viestien tulkitsemiseen aika huonosti tietoa netistä, joten joudun tekemään oletuksia aiempaan kokemukseeni perustuen. Ensimmäinen rivi kertoo käyttäjän suorittamasta komennosta. Rivin voi purkaa osiin suurinpiirtein seuraavasti:
+
+Aika ; Koneen nimi ; Sudo-komento [prosessin yksilöivä numero?] ; Käyttäjä ; Miten tai missä komento suoritettiin ; Kotikansio ; Käyttäjällä root oikeudet ; Ajettu ohjelma ja sen polku.
+
+Seuraava rivi liittyi luultavasti käyttäjän oikeuksien väliaikaiseen korottamiseen sudo-komennon seurauksena. Koska sudo[3089] täsmää molemmissa, oletin sen kertovan, että ne liittyvät samaan tapahtumaan.
+
+## f)
+
+Aloitin etsimällä Micron manuaalista plugineihin liittyviä kohtia. Manuaalista löytyi komento, joka listasi tarjolla olevia plugineja. Valitsin listalta tehtävän ohjeissa mainitun Paletteron ja asensin sen. Seuraavaksi hain tietoa pluginin toiminnasta ja päädyin yllättäen (olisihan se pitänyt pluginin nimestä jo arvata) tutun miehen githubiin (https://github.com/terokarvinen/palettero). Ohjeiden tutkimisen jälkeen testasin pluginin toimintaa.
+
+*man micro|grep plugin*  
+*micro -plugin available*  
+*micro -plugin install palettero*
+
+![lokit.png](lokit.png "lokit")
+<br />
+<br />
+Ensimmäinen yritys päätyi epäonnistumiseen. Avasin micron ja koitin ohjelman sisällä ohjelman sivuilla anettua näppäinkomentoa (ctrl+space), mutta mitään ei tapahtunut. Kun palasin takaisin terminaaliin, oli sinne yllättäen ilmestynyt virheilmoitus.
+
+![errorp.png](errorp.png "errorp")
+<br />
+<br />
+Päättelin virheilmoituksesta, että minun pitää asentaa myös ilmoituksessa mainittu 'fzf'. Palasin vielä ohjelman sivuille ja luin ohjeet tällä kertaa loppuun asti. Ohjeissa mainittiin selkeästi 'fzf' riippuvuutena ja annettiin komento sen asentamiselle. Asennuksen jälkeen testasin Paletteroa Microssa ja totesin sen toimivaksi. Pluginin käyttötarkoitus on vielä tällä osaamisella hämärän peitossa.
+
+*sudo apt-get -y install fzf*
+
+![palettero.png](palettero.png "palettero")
+<br />
+<br />
+## Lähteet
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+
+
+
+
+
+
+
+
 
 
 
