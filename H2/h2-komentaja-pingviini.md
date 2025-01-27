@@ -46,15 +46,18 @@ Komento kaikkien ohjelmien asentamiseen kerrallaan syntyi arvaamalla edellisen t
 *tldr cowsay*
 
 ![tldr2.png](tldr2.png "tldr2")
-
+<br />
+<br />
 *cowsay -e @@ Iltaa...*
 
 ![cowsay2.png](cowsay2.png "cowsay2")
-
+<br />
+<br />
 *mc*
 
 ![mc2.png](mc2.png "mc2")
-
+<br />
+<br />
 ## c)
 
 **/**
@@ -105,7 +108,8 @@ Tästä hakemistosta löytyvät ulkoiset tallennusmediat, kuten optiset asemat j
 *ls -p*
 
 ![media.png](media.png "media")
-
+<br />
+<br />
 **/var/log/**
 
 Tähän hakemistoon sisältyy käyttöjärjestelmän laajuisten lokien tiedostot. Hakemistoa tutkimalla löysin alihakemiston apt, joka sisältää history.log tiedoston. Kyseisestä tiedostosta löytyi aiemmin ajamiani apt-get komentoja.
@@ -116,6 +120,27 @@ Tähän hakemistoon sisältyy käyttöjärjestelmän laajuisten lokien tiedostot
 *tail -n 5 history.log*
 
 ![log.png](log.png "log")
+<br />
+<br />
+## d)
+
+Koitin ensin grep-komentoa Micron manuaaliin putkea hyödyntämällä. Tarkoituksena oli löytää manuaalista quit-pikanappi ilman koko manuaalin selaamista. Kokeilu onnistui mainiosti.
+
+*man micro|grep "quit"*
+
+![mgrep.png](mgrep.png "mgrep")
+<br />
+<br />
+Kokeilin seuraavaksi grep-komentoa kotihakemistosta käsin aiemmin mainittuun history.log tiedostoon ja sain tulokseksi pari riviä tekstiä, jotka sisälsivät 'cowsay' hakusanan. Valitsin riveistä oleellisimman, eli sen jossa oli listattu tehtävässä b) käytetty asennuskäsky ja tarkensin grep-komentoa lisäämällä sen hakuehtoon tarvittavat tiedot. Sen jälkeen hioin komentoa ottamalla mukaan '-C 3' valinnan, jonka piti käsittääkseni näyttää kolme riviä halutun rivin molemmilta puolilta. Tuloksena sain grep-komennon antamaan history.log tiedostosta kaikki rivit, jotka liittyivät haluttuun asennustapahtumaan.
+
+*grep "cowsay" /var/log/apt/history.log*  
+*grep -C 3 "apt-get install tldr cowsay mc" /var/log/apt/history.log*
+
+![grepcow.png](grepcow.png "grepcow")
+<br />
+<br />
+
+
 
 
 
