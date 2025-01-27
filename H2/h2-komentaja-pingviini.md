@@ -22,8 +22,8 @@ Harddisk: 60GB
 
 Käytin Micron asentamiseen edelliseltä tunnilta tuttua komentoa. Asennus sujui ilman virheilmoituksia. Tämän jälkeen testasin ohjelmaa luomalla test.txt tiedoston onnistuneesti.
 
-*sudo apt-get install micro*  
-*micro test.txt*
+&emsp;*sudo apt-get install micro*  
+&emsp;*micro test.txt*
 
 ![MicroA.png](MicroA.png "MicroA")
 <br />
@@ -34,9 +34,9 @@ Aloitin tehtävän etsimällä tarkoitukseen sopivia ohjelmia. En tiennyt etukä
 
 Aloitin asennuksen etsimällä ohjelmien paketeille nimiä 'apt search' -komentoa hyödyntämällä. Kaikkien hakujen listauksissa oli ohjelmia, jotka eivät päällisin puolin liittyneet käytettyihin hakutermeihin mitenkään. Onneksi joukosta löytyivät myös haluamani paketit.
 
-*apt-search tldr*  
-*apt-search cowsay*  
-*apt-search midnight commander*
+&emsp;*apt-search tldr*  
+&emsp;*apt-search cowsay*  
+&emsp;*apt-search midnight commander*
 
 ![tldr.png](tldr.png "tldr")  
 ![cowsay.png](cowsay.png "cowsay")  
@@ -45,17 +45,17 @@ Aloitin asennuksen etsimällä ohjelmien paketeille nimiä 'apt search' -komento
 <br />
 Komento kaikkien ohjelmien asentamiseen kerrallaan syntyi arvaamalla edellisen tunnin mkdir-komentojen avulla. Jos kansioita voi luoda tietyllä tavalla useamman kerrallaan, niin miksei sama logiikka toimisi myös asennuksissa. Asennus alkoi ja loppui ilman virheilmoituksia. Tämän jälkeen testasin ohjelmia seuraavilla komennoilla:
 
-*tldr cowsay*
+&emsp;*tldr cowsay*
 
 ![tldr2.png](tldr2.png "tldr2")
 <br />
 <br />
-*cowsay -e @@ Iltaa...*
+&emsp;*cowsay -e @@ Iltaa...*
 
 ![cowsay2.png](cowsay2.png "cowsay2")
 <br />
 <br />
-*mc*
+&emsp;*mc*
 
 ![mc2.png](mc2.png "mc2")
 <br />
@@ -66,7 +66,7 @@ Komento kaikkien ohjelmien asentamiseen kerrallaan syntyi arvaamalla edellisen t
 
 Tiedostojärjestelmän ylin taso, eli juurihakemisto. Hakemiston alta löytyvät kaikki järjestelmän tiedostot ja hakemistot. Esimerkkinä hakemiston sisällöstä mainittakoon etc-hakemisto, jonka alta löytyy koko käyttöjärjestelmän laajuisiin asetuksiin liittyviä tiedostoja.
 
-*ls -p*
+&emsp;*ls -p*
 
 ![juuri.png](juuri.png "juuri")
 <br />
@@ -75,7 +75,7 @@ Tiedostojärjestelmän ylin taso, eli juurihakemisto. Hakemiston alta löytyvät
 
 Tämän hakemiston sisältä löytyvät kaikkien käyttäjien kotihakemistot. Omasta virtuaalikoneestani löytyi vain yhden käyttäjän kansio.
 
-*ls-p*
+&emsp;*ls-p*
 
 ![home.png](home.png "home")
 <br />
@@ -84,10 +84,10 @@ Tämän hakemiston sisältä löytyvät kaikkien käyttäjien kotihakemistot. Om
 
 Käyttäjän kotihakemisto. Tämä on ainoa hakemisto, johon tavallinen käyttäjä voi tallentaa tietoa pysyvästi. Hakemisto sisältää alihakemistot esimerkiksi dokumenteille, kuville ja medialle. Kansiosta löytyy myös Desktop-hakemisto, joka sisältää käyttäjän työpöydän tiedostot.
 
-*ls -p*  
-*cd desktop*  
-*echo test > test.txt*  
-*ls*
+&emsp;*ls -p*  
+&emsp;*cd desktop*  
+&emsp;*echo test > test.txt*  
+&emsp;*ls*
 
 ![desktop.png](desktop.png "desktop")
 <br />
@@ -96,9 +96,9 @@ Käyttäjän kotihakemisto. Tämä on ainoa hakemisto, johon tavallinen käyttä
 
 Tämä hakemisto sisältää käyttöjärjestelmän laajuiset asetukset selkokielisinä tekstitiedostoina. Hakemisto sisältää esimerkiksi asetukset aiemmin asentamalleni Midnight Commander-ohjelmalle. Siirryin ohjelman kansioon ja tutkin sen sisältöä. Valitsin tarkasteluun mc.keymap tiedoston, josta näytin viisi ensimmäistä riviä. Riveillä näkyy muutettavissa olevia näppäinasetuksia. Käytetty head-komento (ja myöhemmin käytetty tail-komento) löytyivät Google-haun AI-osasta (How to see first lines of a file in Linux command line?)
 
-*cd mc*  
-*ls*  
-*head -n 5 mc.keymap*
+&emsp;*cd mc*  
+&emsp;*ls*  
+&emsp;*head -n 5 mc.keymap*
 
 ![etc.png](etc.png "etc")
 <br />
@@ -107,7 +107,7 @@ Tämä hakemisto sisältää käyttöjärjestelmän laajuiset asetukset selkokie
 
 Tästä hakemistosta löytyvät ulkoiset tallennusmediat, kuten optiset asemat ja usb-tikut. Omassa järjestelmässäni löytyi vain yksi käyttäjän mukaan nimetty kansio, jonka tarkoituksena on luultavasti käytettyjen medioiden organisointi käyttäjien mukaan. Tämäkin hakemisto on tyhjä, koska virtuaalikoneeseeni ei ole liitetty mitään ylimääräistä.
 
-*ls -p*
+&emsp;*ls -p*
 
 ![media.png](media.png "media")
 <br />
@@ -116,10 +116,10 @@ Tästä hakemistosta löytyvät ulkoiset tallennusmediat, kuten optiset asemat j
 
 Tähän hakemistoon sisältyy käyttöjärjestelmän laajuisten lokien tiedostot. Hakemistoa tutkimalla löysin alihakemiston apt, joka sisältää history.log tiedoston. Kyseisestä tiedostosta löytyi aiemmin ajamiani apt-get komentoja.
 
-*ls -p*  
-*cd apt*  
-*ls -p*  
-*tail -n 5 history.log*
+&emsp;*ls -p*  
+&emsp;*cd apt*  
+&emsp;*ls -p*  
+&emsp;*tail -n 5 history.log*
 
 ![log.png](log.png "log")
 <br />
@@ -128,15 +128,15 @@ Tähän hakemistoon sisältyy käyttöjärjestelmän laajuisten lokien tiedostot
 
 Koitin ensin grep-komentoa Micron manuaaliin putkea hyödyntämällä. Tarkoituksena oli löytää manuaalista quit-pikanappi ilman koko manuaalin selaamista. Kokeilu onnistui mainiosti.
 
-*man micro|grep "quit"*
+&emsp;*man micro|grep "quit"*
 
 ![mgrep.png](mgrep.png "mgrep")
 <br />
 <br />
 Kokeilin seuraavaksi grep-komentoa kotihakemistosta käsin aiemmin mainittuun history.log tiedostoon ja sain tulokseksi pari riviä tekstiä, jotka sisälsivät 'cowsay' hakusanan. Valitsin riveistä oleellisimman, eli sen jossa oli listattu tehtävässä b) käytetty asennuskäsky ja tarkensin grep-komentoa lisäämällä sen hakuehtoon tarvittavat tiedot. Sen jälkeen hioin komentoa ottamalla mukaan '-C 3' valinnan, jonka piti käsittääkseni näyttää kolme riviä halutun rivin molemmilta puolilta. Tuloksena sain grep-komennon antamaan history.log tiedostosta kaikki rivit, jotka liittyivät haluttuun asennustapahtumaan.
 
-*grep "cowsay" /var/log/apt/history.log*  
-*grep -C 3 "apt-get install tldr cowsay mc" /var/log/apt/history.log*
+&emsp;*grep "cowsay" /var/log/apt/history.log*  
+&emsp;*grep -C 3 "apt-get install tldr cowsay mc" /var/log/apt/history.log*
 
 ![grepcow.png](grepcow.png "grepcow")
 <br />
@@ -148,27 +148,27 @@ Alkuperäisenä tavoitteena oli käyttää yhden tiedoston (cow.txt) sisältöä
 
 Löysin grepin ohjeista -f valinnan, joka vaikutti hyvältä.
 
-*cat cow.txt|grep -f /var/log/apt/history.log*
+&emsp;*cat cow.txt|grep -f /var/log/apt/history.log*
 
 Komento näytti vain cow.txt -tiedoston sisällön, joten se ei toiminut toivotulla tavalla. Seuraavaksi koitin yksinkertaistaa komentoa poistamalla putken kokonaan ja muokkaamalla grep-komentoa mielestäni loogisella tavalla.
 
-*grep -f cow.txt /var/log/apt/history.log*
+&emsp;*grep -f cow.txt /var/log/apt/history.log*
 
 Tämä käsky toimi odotetulla tavalla ja näytti halutun rivin history.log -tiedostosta. Valitettavasti se tarkoitti myös sitä, että koko putki-idea oli tarpeeton. Halusin kuitenkin yrittää ratkaista ongelman alkuperäisen suunnitelman mukaisesti.
 
-*cat cow.txt|grep -f - /var/log/apt/history.log*
+&emsp;*cat cow.txt|grep -f - /var/log/apt/history.log*
 
 Yhden vaivaisen - merkin takia käytin aivan liian kauan aikaa grepin ohjeiden parissa. Ongelma selvisi lopulta lähinnä kokeilemalla eri vaihtoehtoja. En ymmärrä täysin vieläkään, mitä - tarkalleen tekee komennossa.
 
-*cat cow.txt|grep -f - /var/log/apt/history.log|cowsay*
+&emsp;*cat cow.txt|grep -f - /var/log/apt/history.log|cowsay*
 
 Seuraava vaihe onnistui helposti, joten jäljelle jäi vain lehmän ulkoasun hiominen ja alkuperäisen tiedoston sisällön korvaaminen.
 
-*cat cow.txt|grep -f - /var/log/apt/history.log|cowsay -e @@ -T U > cow.txt*
+&emsp;*cat cow.txt|grep -f - /var/log/apt/history.log|cowsay -e @@ -T U > cow.txt*
 
 Cow.txt tiedoston korvaaminen lehmällä onnistui, mutta jostain syystä lehmän puhekupla tyhjeni toimenpiteen seurauksena. En keksinyt ongelmaan ratkaisua, joten tyydyin sisällön korvaamisen sijaan täydentämään sitä. Lopullisessa cow.txt tiedostossa on siis alkuperäinen sisältö ja cowsay:n tuottama lehmä, joka kertoo meille rivin history.log tiedostosta. Lopullinen komento oli:
 
-*cat cow.txt|grep -f - /var/log/apt/history.log|cowsay -e @@ -T U >> cow.txt*
+&emsp;*cat cow.txt|grep -f - /var/log/apt/history.log|cowsay -e @@ -T U >> cow.txt*
 
 ![historycow.png](historycow.png "historycow")
 <br />
@@ -177,8 +177,8 @@ Cow.txt tiedoston korvaaminen lehmällä onnistui, mutta jostain syystä lehmän
 
 Aloitin tehtävän asentamalla lshw-ohjelman. Tämän jälkeen ajoin tehtävänannossa annetun komennon nähdäkseni tietoa virtuaalikoneesta. Komennon -short valinta liittyy ohjeiden mukaan siihen, miten laitepuu tai -polku näytetään. Komennosta löytyvä -sanitaze siistii ulosannista arkaluontoista tietoa, kuten sarjanumeroita.
 
-*sudo apt-get install lshw*  
-*sudo lshw -short -sanitize*
+&emsp;*sudo apt-get install lshw*  
+&emsp;*sudo lshw -short -sanitize*
 
 ![lshw.png](lshw.png "lshw")
 <br />
@@ -197,7 +197,7 @@ Listauksesta löytyi myös piirisarjan käyttämiä väyliä, mutta en pureudu n
 
 Ajoin ohjeissa annetun komennon hieman muunneltuna saadakseni lokin kaksi viimeistä riviä näkyviin.
 
-*sudo journalctl|tail -n 2*
+&emsp;*sudo journalctl|tail -n 2*
 
 ![lokit.png](lokit.png "lokit")
 <br />
@@ -212,9 +212,9 @@ Seuraava rivi liittyi luultavasti käyttäjän oikeuksien väliaikaiseen korotta
 
 Aloitin etsimällä Micron manuaalista plugineihin liittyviä kohtia. Manuaalista löytyi komento, joka listasi tarjolla olevia plugineja. Valitsin listalta tehtävän ohjeissa mainitun Paletteron ja asensin sen. Seuraavaksi hain tietoa pluginin toiminnasta ja päädyin yllättäen (olisihan se pitänyt pluginin nimestä jo arvata) tutun miehen githubiin (https://github.com/terokarvinen/palettero). Ohjeiden tutkimisen jälkeen testasin pluginin toimintaa.
 
-*man micro|grep plugin*  
-*micro -plugin available*  
-*micro -plugin install palettero*
+&emsp;*man micro|grep plugin*  
+&emsp;*micro -plugin available*  
+&emsp;*micro -plugin install palettero*
 
 ![lokit.png](lokit.png "lokit")
 <br />
@@ -226,7 +226,7 @@ Ensimmäinen yritys päättyi epäonnistumiseen. Avasin micron ja koitin ohjelma
 <br />
 Päättelin virheilmoituksesta, että minun pitää asentaa myös ilmoituksessa mainittu 'fzf'. Palasin vielä ohjelman sivuille ja luin ohjeet tällä kertaa loppuun asti. Ohjeissa mainittiin selkeästi 'fzf' riippuvuutena ja annettiin komento sen asentamiselle. Asennuksen jälkeen testasin Paletteroa Microssa ja totesin sen toimivaksi. Pluginin käyttötarkoitus on vielä tällä osaamisella hämärän peitossa.
 
-*sudo apt-get -y install fzf*
+&emsp;*sudo apt-get -y install fzf*
 
 ![palettero.png](palettero.png "palettero")
 <br />
