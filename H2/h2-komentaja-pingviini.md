@@ -1,4 +1,4 @@
-# H2 Komentaja Pingviini
+****# H2 Komentaja Pingviini
 
 ## Rauta & VirtualBox asetukset
 
@@ -238,6 +238,12 @@ Päättelin virheilmoituksesta, että minun pitää asentaa myös ilmoituksessa 
 <br />
 <br />
 <br />
+https://terokarvinen.com/linux-palvelimet/
+https://terokarvinen.com/2020/command-line-basics-revisited/?fromSearch=command%20line%20basics%20revisited
+https://en.wikipedia.org/wiki/Intel_440FX
+https://en.wikipedia.org/wiki/List_of_Intel_codenames
+https://www.linux.fi/wiki/Midnight_Commander
+https://github.com/terokarvinen/palettero
 
 
 
