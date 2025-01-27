@@ -20,9 +20,9 @@ Harddisk: 60GB
 
 ## a)
 
-Käytin Micron asentamiseen edelliseltä tunnilta tuttua komentoa. Asennus sujui ilman virheilmoituksia. Tämän jälkeen testasin ohjelmaa luomallta test.txt tiedoston onnistuneesti.
+Käytin Micron asentamiseen edelliseltä tunnilta tuttua komentoa. Asennus sujui ilman virheilmoituksia. Tämän jälkeen testasin ohjelmaa luomalla test.txt tiedoston onnistuneesti.
 
-*sudo apt-get install micro*
+*sudo apt-get install micro*  
 *micro test.txt*
 
 ![MicroA.png](MicroA.png "MicroA")
@@ -32,16 +32,18 @@ Käytin Micron asentamiseen edelliseltä tunnilta tuttua komentoa. Asennus sujui
 
 Aloitin tehtävän etsimällä tarkoitukseen sopivia ohjelmia. En tiennyt etukäteen mitään hyviä vaihtoehtoja, joten kahlasin läpi useita Reddit-keskusteluita, tein Google-hakuja ja selasin Linux.fi:n wikiä. Useassa lähteessä oli mainittu TLDR-ohjelma, jonka tarkoitus on tiivistää manuaaleja (man) helpommin pureskeltavaan muotoon. Toiseksi ohjelmaksi valikoitui Midnight Commander (https://www.linux.fi/wiki/Midnight_Commander). Käytin MS-DOS aikoina sen esikuvana toiminutta Norton Commanderia, joten nostalgian yliannostus oli lähellä ohjelman avauduttua. Kolmas valitsemani ohjelma oli tunneillakin nähty Cowsay, joka vaikutti hauskalta. Kukapa ei lehmistä pitäisi.
 
-Aloitin asennuksen etsimällä ohjelmien paketeille nimiä 'apt search' - komentoa hyödyntämällä. Kaikkien hakujen listauksissa oli ohjelmia, jotka eivät päällisin puolin liittyneet käytettyihin hakutermeihin mitenkään. Onneksi joukosta löytyivät myös haluamani paketit.
+Aloitin asennuksen etsimällä ohjelmien paketeille nimiä 'apt search' -komentoa hyödyntämällä. Kaikkien hakujen listauksissa oli ohjelmia, jotka eivät päällisin puolin liittyneet käytettyihin hakutermeihin mitenkään. Onneksi joukosta löytyivät myös haluamani paketit.
 
-*apt-search tldr*, *apt-search cowsay*, *apt search midnight commander*
+*apt-search tldr*  
+*apt-search cowsay*  
+*apt-search midnight commander*
 
-![tldr.png](tldr.png "tldr")
-![cowsay.png](cowsay.png "cowsay")
+![tldr.png](tldr.png "tldr")  
+![cowsay.png](cowsay.png "cowsay")  
 ![mc.png](mc.png "mc")
 <br />
 <br />
-Komento kaikkien ohjelmien asentamiseen kerrallaan syntyi arvaamalla edellisen tunnin mkdir komentojen avulla. Jos kansioita voi luoda tietyllä tavalla usemman kerrallaan, niin miksei sama logiikka toimisi myös asennuksissa. Asennus alkoi ja loppui ilman virheilmoituksia. Tämän jälkeen testasin ohjelmia seuraavilla komennoilla:
+Komento kaikkien ohjelmien asentamiseen kerrallaan syntyi arvaamalla edellisen tunnin mkdir-komentojen avulla. Jos kansioita voi luoda tietyllä tavalla useamman kerrallaan, niin miksei sama logiikka toimisi myös asennuksissa. Asennus alkoi ja loppui ilman virheilmoituksia. Tämän jälkeen testasin ohjelmia seuraavilla komennoilla:
 
 *tldr cowsay*
 
@@ -62,7 +64,7 @@ Komento kaikkien ohjelmien asentamiseen kerrallaan syntyi arvaamalla edellisen t
 
 **/**
 
-Tiedostojärjestelmän ylin taso, eli juurihakemisto. Hakemiston alta löytyvät kaikki järjestelmän tiedostot ja hakemistot. Esimerkkinä hakemiston sisällöstä mainittakoon etc-hakemisto, jonka alta löytyy koko käyttöjärjestelmän laajuiisiin asetuksiin liittyviä tiedostoja.
+Tiedostojärjestelmän ylin taso, eli juurihakemisto. Hakemiston alta löytyvät kaikki järjestelmän tiedostot ja hakemistot. Esimerkkinä hakemiston sisällöstä mainittakoon etc-hakemisto, jonka alta löytyy koko käyttöjärjestelmän laajuisiin asetuksiin liittyviä tiedostoja.
 
 *ls -p*
 
@@ -80,7 +82,7 @@ Tämän hakemiston sisältä löytyvät kaikkien käyttäjien kotihakemistot. Om
 <br />
 **/home/otus/**
 
-Käyttäjän kotihakemisto. Tämä on ainoa hakemisto johon tavallinen käyttäjä voi tallentaa tietoa pysyvästi. Hakemisto sisältää alihakemistot esimerkiksi dokumenteille, kuville ja medialle. Kansiosta löytyy myös Desktop-hakemisto, joka sisältää käyttäjän työpöydän tiedostot.
+Käyttäjän kotihakemisto. Tämä on ainoa hakemisto, johon tavallinen käyttäjä voi tallentaa tietoa pysyvästi. Hakemisto sisältää alihakemistot esimerkiksi dokumenteille, kuville ja medialle. Kansiosta löytyy myös Desktop-hakemisto, joka sisältää käyttäjän työpöydän tiedostot.
 
 *ls -p*  
 *cd desktop*  
@@ -200,7 +202,7 @@ Ajoin ohjeissa annetun komennon hieman muunneltuna saadakseni lokin kaksi viimei
 ![lokit.png](lokit.png "lokit")
 <br />
 <br />
-Löysin lokien viestien tulkitsemiseen aika huonosti tietoa netistä, joten joudun tekemään oletuksia aiempaan kokemukseeni perustuen. Ensimmäinen rivi kertoo käyttäjän suorittamasta komennosta. Rivin voi purkaa osiin suurinpiirtein seuraavasti:
+Löysin lokien viestien tulkitsemiseen aika huonosti tietoa netistä, joten joudun tekemään oletuksia aiempaan kokemukseeni perustuen. Ensimmäinen rivi kertoo käyttäjän suorittamasta komennosta. Rivin voi purkaa osiin suurin piirtein seuraavasti:
 
 Aika ; Koneen nimi ; Sudo-komento [prosessin yksilöivä numero?] ; Käyttäjä ; Miten tai missä komento suoritettiin ; Kotikansio ; Käyttäjällä root oikeudet ; Ajettu ohjelma ja sen polku.
 
@@ -217,7 +219,7 @@ Aloitin etsimällä Micron manuaalista plugineihin liittyviä kohtia. Manuaalist
 ![lokit.png](lokit.png "lokit")
 <br />
 <br />
-Ensimmäinen yritys päätyi epäonnistumiseen. Avasin micron ja koitin ohjelman sisällä ohjelman sivuilla anettua näppäinkomentoa (ctrl+space), mutta mitään ei tapahtunut. Kun palasin takaisin terminaaliin, oli sinne yllättäen ilmestynyt virheilmoitus.
+Ensimmäinen yritys päättyi epäonnistumiseen. Avasin micron ja koitin ohjelman sisällä ohjelman sivuilla annettua näppäinkomentoa (ctrl+space), mutta mitään ei tapahtunut. Kun palasin takaisin terminaaliin, oli sinne yllättäen ilmestynyt virheilmoitus.
 
 ![errorp.png](errorp.png "errorp")
 <br />
