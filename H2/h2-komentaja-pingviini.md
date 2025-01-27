@@ -11,11 +11,11 @@ VM SSD:  1TB Samsung EVO 860, Vapaana 280GB
 GPU:     Nvidia RTX 4070 12GB  
 Näyttö:  MSI OPTIX MAG341CQ
 
-VirtualBox asetukset:
-Oletusasetukset, muutamia poikkeuksia lukuunottamatta:
-OS: Debian 12.9.0
-Video Memory: 256MB
-Base Memory: 8192MB
+VirtualBox asetukset:  
+Oletusasetukset, muutamia poikkeuksia lukuunottamatta:  
+OS: Debian 12.9.0  
+Video Memory: 256MB  
+Base Memory: 8192MB  
 Harddisk: 60GB
 
 ## a)
