@@ -13,7 +13,7 @@ Asensin Apache-weppipalvelimen tuntien aikana. Asennus onnistui hyvin tunnilla s
 <br />
 ## b)
 
-Tein tehtäviä hieman eri järjestyksessä, joten tässä tehtävässä on jo käytössä c) tehtävässä toteutettu oletussivun vaihto. Aloin tutkimaan /var/log/apache2/access.log -tiedostoa. Hieman yllättäen se sisälsi vain vanhoja merkintöjä tuntien aikana tehdyistä kokeiluista. Tarkistin varalta myös other_vhosts_access.log -tiedoston ja löysin tuoreet lokimerkinnät yllättäen sen sisältä. Ensimmäinen reaktioni oli tarkistaa Apache2 asennuksen oletussivu, tarkemmin ottaen sen asetustiedosto, 000-default.conf, sites-available -kansiossa. Oletusasetuksista löytyikin kaiksi lokeihin liittyvää kohtaa, jotka lisäsin omaan hattu.example.com.conf -tiedostoon.
+Tein tehtäviä hieman eri järjestyksessä, joten tässä tehtävässä on jo käytössä c) tehtävässä toteutettu oletussivun vaihto. Aloin tutkimaan /var/log/apache2/access.log -tiedostoa. Hieman yllättäen se sisälsi vain vanhoja merkintöjä tuntien aikana tehdyistä kokeiluista. Tarkistin varalta myös other_vhosts_access.log -tiedoston ja löysin tuoreet lokimerkinnät yllättäen sen sisältä. Ensimmäinen reaktioni oli tarkistaa Apache2 asennuksen oletussivu, tarkemmin ottaen sen asetustiedosto, 000-default.conf, sites-available -kansiossa. Oletusasetuksista löytyikin kaksi lokeihin liittyvää kohtaa, jotka lisäsin omaan hattu.example.com.conf -tiedostoon.
 
 ![confchange.png](confchange.png "confchange")
 
@@ -35,6 +35,73 @@ Löysin avukseni ohjeet (https://httpd.apache.org/docs/2.4/logs.html), joilla tu
 * Tämän jälkeen seuraa kaksi numeroa, joista ensimmäinen kertoo yhteydenoton statuksen. 2-alkuiset numerot kertovat onnistuneesta yhteydenotosta, 3-alkuiset uudelleenohjauksesta, 4-alkuiset virheestä yhteydenottajan päässä ja 5-alkuiset virheestä palvelimen puolella. Toinen numero kertoo lähetetyn datan tavumäärän.
 * Seuraava "-merkkien välissä olevan tieto kertoo luultavasti sen mistä yhteys on linkitetty.
 * Loppuosio kertoo kokonaisuudessaan yhteydenottoon liittyvistä ohjelmista ja käyttöjärjestelmistä. Omissa lokimerkinnöissäni nämä kertoivat minun käyttäneen Firefoxia Debian-kääyttöjärjestelmässä.
+
+## c)
+
+Sain myös Apachen oletussivun asetettua tuntien aikana. Koska en tiukasta aikarajasta johtuen ottanut ylös tehtyjä vaiheita, yritin seuraavaksi päästä toimivaan lopputulokseen tehtävässä annettun hattu.example.com -sivun kanssa. Tein alkuun /etc/apache2/sites-available kansioon hattu.example.com.conf tiedoston, johon kopion ja päivitin toimivaksi havaitun sisällön tunnilla tehdystä sivusta.
+
+Tämä on tiedoston alkuperäinen sisältö. Lopullinen versio käsiteltiin kohdassa b).
+![hattuconf.png](hattuconf.png "hattuconf")
+
+Tämän jälkeen tein hakemiston uusia sivuja varten ja lisäsin hakemistoon index.html tiedoston, joka sisälsi tekstin hattu.example.com.
+
+&emsp;*mkdir /home/otus/public_sites/hattu.example.com*  
+&emsp;*echo "hattu.example.com" > /home/otus/public_sites/hattu.example.com/index.html*
+
+![hattuhtml.png](hattuhtml.png "hattuhtml")
+
+Viimeisenä työnä lisäsin uuden sivun sites-enabled kansioon aktiiviseksi. Samassa yhteydessä varmistin, ettei kansiossa ollut muita sivuja aktiivisena. Kun sain kansion kuntoon, käynnistin Apachen uudelleen ja testasin uusien asetusten toimintaa. Sivut toimivat toivotulla tavalla.
+
+&emsp;*sudo a2ensite hattu.example.com.conf*  
+&emsp;*sudo a2dissite test.example.com.conf*  
+&emsp;*sudo systemctl restart apache2*  
+&emsp;*curl localhost*
+
+![sitesenabled.png](sitesenabled.png "sitesenabled")
+
+## e)
+
+Ajattelin aluksi tehdä vain yksinkertaisimman mahdollisen HTML5-sivun, mutta innostuin kertaamaan myös CSS-perusteita. Tuloksena syntyi aavistuksen tyylitelty, mutta silti yksinkertainen aloitussivu. HTML-osuus tehtävästä meni kivuttomasti, joten siitä ei ole juuri raportoitavaa kuvan lisäksi. CSS aiheutti sitäkin enemmän harmaita hiuksia, mutta se ei varsinaisesti kuulu tehtävänannon piiriin, joten en kommentoi sitä sen tarkemmin. 
+
+![sivu.png](sivu.png "sivu")
+![koodi.png](koodi.png "koodi")
+![validi.png](validi.png "validi")
+ 
+Ajauduin kuitenkin ongelmiin, kun yritin asettaa sivuja Apachen aloitussivuksi. En tehnyt sivuja virtuaalikoneen sisällä, joten tiedostojen siirtäminen ja käyttäminen eivät olleet niin helppoja kuin ajattelin. Ensimmäinen vaihe oli saada tiedostot virtuaalikoneen sisään. Tähän löysin virtuaalikoneen asetuksista osion Shared folders. Sen kautta oli epäilyttävän yksinkertaista jakaa kansio isäntäkoneelta ohjeiden avulla (https://docs.oracle.com/en/virtualization/virtualbox/6.0/user/sharedfolders.html).
+
+![shared.png](shared.png "shared")
+
+En kuitenkaan osannut laittaa käyttöoikeuksia toimenpiteen aikana kuntoon, joten mountatut tiedostot vaativat root-oikeuksia. Tiedostojen siirto oikeaan paikkaan sujui sudoa hyödyntäen. Sivut tarjosivat aluksi 'Unable to access' virheilmoituksen. Error.logia tutkimalla löysin virheilmoituksen, joka kertoi hyvin selkeästi ongelman olevan käyttöoikeuksissa.
+
+&emsp;*sudo tail -5 /var/log/apache2/error.log*
+
+![error.png](error.png "error")
+
+Menin sivujen hakemistoon, jonka sisältöä tutkimalla kävi heti selväksi, että tiedostot vaativat root-oikeuksia.
+
+&emsp;*ls -l*
+
+![perm1.png](perm1.png "perm1")
+
+Ensimmäinen toimenpide oli selvittää kuinka käyttöoikeuksista vaihdetaan selkein osuus, eli 'root' korvataan arvolla 'otus'. Löysin Google-haulla lähteeksi ohjeet (https://www.redhat.com/en/blog/manage-permissions), joiden avulla muutin käyttäjän ja ryhmän oikeudet rootin sijaan käyttäjälle 'otus'. Suoritin ohjeista selvitetyn komennon kaikille tiedostoille hakemistossa.
+
+&emsp;*sudo chown otus:otus index.html*
+
+![perm2.png](perm2.png "perm2")
+
+Tämän toimenpiteen jälkeen selaimen virheilmoitus muuttui forbidden-muotoon. Error.log antoi taas saman käyttöoikeuksiin liittyvän viestin kuin aiemminkin. Koska en tiennyt, minkälaiset oikeudet tiedostoilla pitäisi tarkalleen olla, päätin luoda uuden testitiedoston ilman sudoa. Oletettavasti siinä olevat oikeudet toimisivat myös uusien tiedostojen kanssa, koska olin aiemman testisivunkin saanut toimimaan. Testitiedostosta näki heti, että sen käyttöoikeudet olivat erilaiset sivun tiedostoihin verrattuna. 
+
+![perm3.png](perm3.png "perm3")
+
+Tämän jälkeen selvitin ohjeista, miten muutan käyttöoikeuksia. Ohjeista löytyi kätevä numerojärjestelmä, jonka avulla komento oli helppo muodostaa. Halusin tiedostoille oikeudet -rw-r--r--, kuten testitiedostossa. Käyttöoikeuksista kertova sekava merkkirivi on muodossa, jossa ensimmäinen merkki kertoo onko kyseessä tiedosto vai kansio (- = tiedosto, d = kansio). Loput merkit on jaettu kolmen merkin ryhmiin, jotka ovat järjestyksessä owner, group ja others. Jokaisen ryhmän ensimmäinen merkki r tarkoittaa lukuoikeuksia (read), toinen merkki w tarkoittaa kirjoitusoikeuksia (write) ja kolmas, x, oikeutta ajaa tiedosto (execute). Seuraavaksi selvitin miten voisin asettaa testiedoston oikeudet hakemiston muille tiedostoille numerojärjestelmää hyödyntämällä. Järjestelmässä käytetään kolmen numeron koodia. Numeroiden laskeminen tapahtuu siten, että oikeuksille annetaan arvot r = 4, w = 2 ja x = 1 ja - = 0. Sen jälkeen lasketaan yhteen kunkin ryhmän halutut oikeudet. Täydet oikeudet olisivat siis 4+2+1=7 per ryhmä, eli 777 kokonaisuudessaan. Koska halusin oikeudet -rw-r--r--, voidaan ne muuntaa numeroksi 644 (4+2, 4 ja 4). Ajoin seuraavan komennon kaikille tiedostoille. 
+
+&emsp;*chmod 644 index.html*
+
+![perm4.png](perm4.png "perm4")
+
+Kaiken tämän jälkeen sivut avautuivat selaimessa. Tajusin myös vasta tässä vaiheessa, että tehtävässä pyydettiin vain tekemään validi HTML5-sivu. Sen asettamista palvelimen oletussivuksi ei pyydetty tekemään. No, oppimaanhan tänne on tultu.
+
+
 
 
 
