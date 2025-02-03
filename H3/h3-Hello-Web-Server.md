@@ -40,8 +40,8 @@ Harddisk: 60GB
 
 Asensin Apache2 Web Serverin tuntien aikana. Asennus onnistui hyvin tunnilla saatujen ohjeiden ja tehtävänannossakin mainittujen ohjeiden avulla (https://terokarvinen.com/2018/04/10/name-based-virtual-hosts-on-apache-multiple-websites-to-single-ip-address/). Palvelin ei vaatinut erillistä käynnistämistä, vaan toimi automaattisesti heti asennuksen jälkeen. Vaihdoin tunneilla myös palvelimen aloitussivun, joten curl-komento ei enää hae asennuksen oletussivua.
 
-&emsp;*sudo systemctl status apache2*  
-&emsp;*curl localhost*
+> &emsp;sudo systemctl status apache2  
+> &emsp;curl localhost
 
 ![status.png](status.png "status")
 ![curltesti.png](curltesti.png "curltesti")
@@ -55,7 +55,7 @@ Tein tehtäviä hieman eri järjestyksessä, joten tässä tehtävässä on jo k
 
 Muutoksen jälkeen Access.log -tiedostoon tuli selaimella tehdyn yhteydenoton seurauksena kaksi uutta merkintää.
 
-&emsp;*sudo tail -5 /var/log/apache2/access.log*
+> &emsp;sudo tail -5 /var/log/apache2/access.log
 
 ![access.png](access.png "access")
 
@@ -81,17 +81,17 @@ Tämä on tiedoston alkuperäinen sisältö. Lopullinen versio käsiteltiin kohd
 
 Tämän jälkeen tein hakemiston uusia sivuja varten ja lisäsin hakemistoon index.html tiedoston, joka sisälsi tekstin hattu.example.com.
 
-&emsp;*mkdir /home/otus/public_sites/hattu.example.com*  
-&emsp;*echo "hattu.example.com" > /home/otus/public_sites/hattu.example.com/index.html*
+> &emsp;mkdir /home/otus/public_sites/hattu.example.com  
+> &emsp;echo "hattu.example.com" > /home/otus/public_sites/hattu.example.com/index.html
 
 ![hattuhtml.png](hattuhtml.png "hattuhtml")
 
 Seuraavaksi lisäsin uuden sivun sites-enabled kansioon aktiiviseksi. Samassa yhteydessä varmistin, että kansiossa ei ollut muita sivuja aktiivisena. Kun sain kansion kuntoon, käynnistin Apachen uudelleen ja testasin uusien asetusten toimintaa. Sivut toimivat toivotulla tavalla.
 
-&emsp;*sudo a2ensite hattu.example.com.conf*  
-&emsp;*sudo a2dissite test.example.com.conf*  
-&emsp;*sudo systemctl restart apache2*  
-&emsp;*curl localhost*
+> &emsp;sudo a2ensite hattu.example.com.conf  
+> &emsp;sudo a2dissite test.example.com.conf  
+> &emsp;sudo systemctl restart apache2  
+> &emsp;curl localhost
 
 ![sitesenabled.png](sitesenabled.png "sitesenabled")
 
@@ -109,19 +109,19 @@ Ajauduin kuitenkin ongelmiin, kun yritin asettaa sivuja Apachen aloitussivuksi. 
 
 En kuitenkaan osannut laittaa käyttöoikeuksia toimenpiteen aikana kuntoon, joten /media/ hakemistoon mountattu tiedostot sisältävä hakemisto vaati root-oikeuksia. Tiedostojen siirto oikeaan paikkaan sujui sudoa hyödyntäen. Sivut tarjosivat aluksi 'Unable to access' virheilmoituksen. Error.logia tutkimalla löysin virheilmoituksen, joka kertoi hyvin selkeästi ongelman olevan käyttöoikeuksissa.
 
-&emsp;*sudo tail -5 /var/log/apache2/error.log*
+> &emsp;sudo tail -5 /var/log/apache2/error.log
 
 ![error.png](error.png "error")
 
 Menin sivujen hakemistoon, jonka sisältöä tutkimalla kävi heti selväksi, että tiedostot vaativat root-oikeuksia.
 
-&emsp;*ls -l*
+> &emsp;ls -l
 
 ![perm1.png](perm1.png "perm1")
 
 Ensimmäinen toimenpide oli selvittää, kuinka käyttöoikeuksista vaihdetaan selkein osuus, eli 'root' korvataan arvolla 'otus'. Löysin Google-haulla lähteeksi ohjeet (https://www.redhat.com/en/blog/manage-permissions), joiden avulla muutin käyttäjän ja ryhmän oikeudet rootin sijaan käyttäjälle 'otus'. Suoritin ohjeista selvitetyn komennon kaikille tiedostoille hakemistossa.
 
-&emsp;*sudo chown otus:otus index.html*
+> &emsp;sudo chown otus:otus index.html
 
 ![perm2.png](perm2.png "perm2")
 
@@ -131,7 +131,7 @@ Tämän toimenpiteen jälkeen selaimen virheilmoitus muuttui forbidden-muotoon. 
 
 Tämän jälkeen selvitin ohjeista, miten muutan käyttöoikeuksia. Ohjeista löytyi kätevä numerojärjestelmä, jonka avulla komento oli helppo muodostaa. Halusin tiedostoille oikeudet -rw-r--r--, kuten testitiedostossa. Käyttöoikeuksista kertova sekava merkkirivi on muodossa, jossa ensimmäinen merkki kertoo onko kyseessä tiedosto vai kansio (- = tiedosto, d = kansio). Loput merkit on jaettu kolmen merkin ryhmiin, jotka ovat järjestyksessä owner, group ja others. Jokaisen ryhmän ensimmäinen merkki r tarkoittaa lukuoikeuksia (read), toinen merkki w tarkoittaa kirjoitusoikeuksia (write) ja kolmas, x, oikeutta ajaa tiedosto (execute). Seuraavaksi selvitin, miten voisin asettaa testitiedoston oikeudet hakemiston muille tiedostoille numerojärjestelmää hyödyntämällä. Järjestelmässä käytetään kolmen numeron koodia. Numeroiden laskeminen tapahtuu siten, että oikeuksille annetaan arvot r = 4, w = 2 ja x = 1 ja - = 0. Sen jälkeen lasketaan yhteen kunkin ryhmän halutut oikeudet. Täydet oikeudet olisivat siis 4+2+1=7 per ryhmä, eli 777 kokonaisuudessaan. Koska halusin oikeudet -rw-r--r--, voidaan ne muuntaa numeroksi 644 (4+2, 4 ja 4). Ajoin seuraavan komennon kaikille tiedostoille. 
 
-&emsp;*chmod 644 index.html*
+> &emsp;chmod 644 index.html
 
 ![perm4.png](perm4.png "perm4")
 
@@ -141,13 +141,13 @@ Kaiken tämän jälkeen sivut avautuivat selaimessa. Tajusin myös vasta tässä
 
 Curlia käytetään manuaalin perusteella kahdensuuntaiseen tiedonsiirtoon palvelinten välillä. Ajattelin ensimmäiseksi yrittää hakea palvelimeltani localhost-osoitteesta aloitussivun sijaan sivun taustakuvan. Yritin ensin komentoa ilman mitään valintoja (curl http:<!-- -->//localhost/background.jpg), mutta sain vastaukseksi varoitusviestin, jossa ei suositeltu käyttämään käskyä näin. Viestissä mainittiin --output vaihtoehtoinen --output valinta. Tarkensin tietoja curlin ohjeista ja yritin seuraavaksi komentoa onnistuneesti. Siirsin siis kuvan palvelimeni sivujen hakemistosta käytössä olleeseen työhakemistoon eri nimellä.
 
-&emsp;*curl --output kuva.jpg http:<!-- -->//localhost/background.jpg*
+> &emsp;curl --output kuva.jpg http:<!-- -->//localhost/background.jpg
 
 ![curlkuva.png](curlkuva.png "curlkuva")
 
 curl-I näyttää yksityiskohtia (response header) suoritettavasta hausta ilman, että hakua varsinaisesti suoritetaan. Esimerkissä hain tiedot tekemiltäni sivuilta.
 
-&emsp;*curl -I localhost*
+> &emsp;curl -I localhost
 
 ![curli.png](curli.png "curli")
 
@@ -161,8 +161,8 @@ Olin löytänyt hosts tiedoston jo aiemmin tutkiessani /etc/ hakemiston sisält�
 
 Tallensin tiedon ja koitin sivuja selaimessa ja komentokehotteessa käyttäen localhostin sijaan palvelinten nimiä (hattu.example.com ja huivi.example.com). Kokeilu onnistui. Vaikka poistin localhostin hosts tiedostosta (luultavasti virhe), localhostin takaa löytyy silti hattu.example.com.
 
-&emsp;*curl -I hattu.example.com*  
-&emsp;*curl -I huivi.example.com*
+> &emsp;curl -I hattu.example.com  
+> &emsp;curl -I huivi.example.com
 
 ![curlx2.png](curlx2.png "curlx2")
 <br />
