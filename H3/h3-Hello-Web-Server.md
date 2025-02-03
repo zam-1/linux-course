@@ -31,7 +31,7 @@ GPU: Integrated AMD Radeon™ 660M
 VirtualBox asetukset:  
 Oletusasetukset, muutamia poikkeuksia lukuunottamatta.  
 OS: Debian 12.9.0  
-CPU: 2  
+Number of CPUs: 2  
 Video Memory: 256MB  
 Base Memory: 8192MB  
 Harddisk: 60GB
