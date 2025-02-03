@@ -36,6 +36,10 @@ Video Memory: 256MB
 Base Memory: 8192MB  
 Harddisk: 60GB
 
+## Alkusanat
+
+Tämän raportin aiheena oli Apache2 asennus ja käyttöönotto paikallisesti VirtualBox VM:n päällä pyörivässä Debianissa. Koska itse asennus oli jo tehty aiemmin, raportti keskittyy lähinnä palvelimen oletussivun vaihtoon. Vaihdoin sivun onnistuusti yksinkertaiseen testitiedostoon, jonka korvasin myöhemmin itse tehdyllä HTML5-sivulla. Tehtävissä käytiin läpi myös aiheeseen liittyvää curl-komentoa ja Apachen lokitiedoston tulkintaa. Vapaaehtoisessa osiossa selvittelin useamman palvelimen käyttöä yhdessä IP-osoitteessa.
+
 ## a)
 
 Asensin Apache2 Web Serverin tuntien aikana. Asennus onnistui hyvin tunnilla saatujen ohjeiden ja tehtävänannossakin mainittujen ohjeiden avulla (https://terokarvinen.com/2018/04/10/name-based-virtual-hosts-on-apache-multiple-websites-to-single-ip-address/). Palvelin ei vaatinut erillistä käynnistämistä, vaan toimi automaattisesti heti asennuksen jälkeen. Vaihdoin tunneilla myös palvelimen aloitussivun, joten curl-komento ei enää hae asennuksen oletussivua.
