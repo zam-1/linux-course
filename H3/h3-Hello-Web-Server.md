@@ -143,7 +143,7 @@ Kaiken tämän jälkeen sivut avautuivat selaimessa. Tajusin myös vasta tässä
 
 ## f)
 
-Curlia käytetään manuaalin perusteella kahdensuuntaiseen tiedonsiirtoon palvelinten välillä. Ajattelin ensimmäiseksi yrittää hakea palvelimeltani localhost-osoitteesta aloitussivun sijaan sivun taustakuvan. Yritin ensin komentoa ilman mitään valintoja (curl http:<!-- -->//localhost/background.jpg), mutta sain vastaukseksi varoitusviestin, jossa ei suositeltu käyttämään käskyä näin. Viestissä mainittiin --output valinta, jonka tarkempaan toimintaan perehdyin curlin ohjeista. Testasin komentoa uudessa muodossa ja saavutin toivotun lopputuloksen. Siirsin siis kuvan palvelimeni sivujen hakemistosta käytössä olleeseen työhakemistoon eri nimellä.
+Curlia käytetään manuaalin perusteella kahdensuuntaiseen tiedonsiirtoon palvelinten välillä. Ajattelin ensimmäiseksi yrittää hakea palvelimeltani localhost-osoitteesta aloitussivun sijaan sivun taustakuvan. Yritin ensin komentoa ilman mitään valintoja (curl http:<!-- -->//localhost/background.jpg), mutta sain vastaukseksi varoitusviestin, jossa ei suositeltu käyttämään käskyä näin. Viestissä mainittiin --output valinta, jonka tarkempaan toimintaan perehdyin curlin ohjeista. Testasin komentoa uudessa muodossa ja saavutin toivotun lopputuloksen. Hain siis kuvan palvelimeni sivujen hakemistosta käytössä olleeseen työhakemistoon eri nimellä.
 
 > &emsp;curl --output kuva.jpg http:<!-- -->//localhost/background.jpg
 
