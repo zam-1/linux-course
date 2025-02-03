@@ -19,7 +19,7 @@ Harddisk: 60GB
 
 ## a)
 
-Asensin Apache2 Web Serverin tuntien aikana. Asennus onnistui hyvin tunnilla saatujen ohjeiden ja tehtävänannossakin mainittujen ohjeiden avulla (https://terokarvinen.com/2018/04/10/name-based-virtual-hosts-on-apache-multiple-websites-to-single-ip-address/). Palvelin ei vaatinut erillistä käynnistämistä, vaan toimi automaattisesti heti asennuksen jälkeen.
+Asensin Apache2 Web Serverin tuntien aikana. Asennus onnistui hyvin tunnilla saatujen ohjeiden ja tehtävänannossakin mainittujen ohjeiden avulla (https://terokarvinen.com/2018/04/10/name-based-virtual-hosts-on-apache-multiple-websites-to-single-ip-address/). Palvelin ei vaatinut erillistä käynnistämistä, vaan toimi automaattisesti heti asennuksen jälkeen. Vaihdoin tunneilla myös palvelimen aloitussivun, joten curl-komento ei enää hae asennuksen oletussivua.
 
 &emsp;*sudo systemctl status apache2*  
 &emsp;*curl localhost*
@@ -30,7 +30,7 @@ Asensin Apache2 Web Serverin tuntien aikana. Asennus onnistui hyvin tunnilla saa
 <br />
 ## b)
 
-Tein tehtäviä hieman eri järjestyksessä, joten tässä tehtävässä on jo käytössä c) tehtävässä toteutettu oletussivun vaihto. Aloin tutkimaan /var/log/apache2/access.log -tiedostoa. Hieman yllättäen se sisälsi vain vanhoja merkintöjä tuntien aikana tehdyistä kokeiluista. Tarkistin varalta myös other_vhosts_access.log -tiedoston ja löysin tuoreet lokimerkinnät sen sisältä. Ensimmäinen reaktioni oli tarkistaa Apache2 asennuksen oletussivu, tarkemmin ottaen sen asetustiedosto, 000-default.conf, sites-available-kansiossa. Oletusasetuksista löytyikin kaksi lokeihin liittyvää kohtaa, jotka lisäsin omaan hattu.example.com.conf -tiedostoon.
+Tein tehtäviä hieman eri järjestyksessä, joten tässä tehtävässä on jo käytössä c) tehtävässä toteutettu sivujen vaihto. Aloin tutkimaan /var/log/apache2/access.log -tiedostoa. Hieman yllättäen se sisälsi vain vanhoja merkintöjä tuntien aikana tehdyistä kokeiluista. Tarkistin varalta myös other_vhosts_access.log -tiedoston ja löysin tuoreet lokimerkinnät sen sisältä. Ensimmäinen reaktioni oli tarkistaa Apache2 asennuksen oletussivu, tarkemmin ottaen sen asetustiedosto, 000-default.conf, sites-available-kansiossa. Oletusasetuksista löytyikin kaksi lokeihin liittyvää kohtaa, jotka lisäsin omaan hattu.example.com.conf -tiedostoon.
 
 ![confchange.png](confchange.png "confchange")
 
@@ -55,7 +55,7 @@ Löysin avukseni ohjeet (https://httpd.apache.org/docs/2.4/logs.html), joilla tu
 
 ## c)
 
-Sain myös Apachen oletussivun asetettua tuntien aikana. Koska en tiukasta aikarajasta johtuen ottanut ylös tehtyjä vaiheita, yritin seuraavaksi päästä toimivaan lopputulokseen tehtävässä annettun hattu.example.com -sivun kanssa. Tein alkuun /etc/apache2/sites-available kansioon hattu.example.com.conf tiedoston, johon kopion ja päivitin toimivaksi havaitun sisällön tunnilla tehdystä sivusta.
+Koska en tiukasta aikarajasta johtuen ottanut ylös tunneilla tehtyjen toimenpiteideiden vaiheita, yritin seuraavaksi päästä toimivaan lopputulokseen tehtävässä annettun hattu.example.com -sivun kanssa. Tein alkuun /etc/apache2/sites-available kansioon hattu.example.com.conf tiedoston, johon kopion ja päivitin toimivaksi havaitun sisällön tunnilla tehdystä sivusta.
 
 Tämä on tiedoston alkuperäinen sisältö. Lopullinen versio käsiteltiin kohdassa b).
 ![hattuconf.png](hattuconf.png "hattuconf")
