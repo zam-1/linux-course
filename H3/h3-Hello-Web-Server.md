@@ -102,11 +102,10 @@ Seuraavaksi lisäsin uuden palvelimen sites-enabled kansioon aktiiviseksi. Samas
 
 ## e)
 
-Ajattelin aluksi tehdä vain yksinkertaisimman mahdollisen HTML5-sivun, mutta innostuin kertaamaan myös CSS-perusteita. Tuloksena syntyi aavistuksen tyylitelty, mutta silti yksinkertainen aloitussivu. HTML-osuus tehtävästä meni kivuttomasti, joten siitä ei ole juuri raportoitavaa kuvan lisäksi. CSS aiheutti sitäkin enemmän harmaita hiuksia, mutta se ei varsinaisesti kuulu tehtävänannon piiriin, joten en kommentoi sitä sen tarkemmin. 
+Ajattelin aluksi tehdä vain yksinkertaisimman mahdollisen HTML5-sivun, mutta innostuin kertaamaan myös CSS-perusteita. Tuloksena syntyi aavistuksen tyylitelty, mutta silti yksinkertainen aloitussivu. HTML-osuus tehtävästä meni kivuttomasti, joten siitä ei ole juuri raportoitavaa kuvan lisäksi. CSS aiheutti sitäkin enemmän harmaita hiuksia, mutta se ei varsinaisesti kuulu tehtävänannon piiriin, joten en kommentoi sitä sen tarkemmin. Validoin HTML-osuuden osoitteessa https://validator.w3.org/.
 
 ![sivu.png](sivu.png "sivu")
 ![koodi.png](koodi.png "koodi")
-Validoin sivujen HTML-osuuden osoitteessa https://validator.w3.org/.
 ![validi.png](validi.png "validi")
  
 Ajauduin kuitenkin ongelmiin, kun yritin asettaa sivuja Apachen aloitussivuksi. En tehnyt sivuja virtuaalikoneen sisällä, joten tiedostojen siirtäminen ja käyttäminen eivät olleet niin helppoja kuin ajattelin. Ensimmäinen vaihe oli saada tiedostot virtuaalikoneen sisään. Tähän löysin virtuaalikoneen asetuksista osion Shared folders. Sen kautta oli epäilyttävän yksinkertaista jakaa kansio isäntäkoneelta ohjeiden avulla (https://docs.oracle.com/en/virtualization/virtualbox/6.0/user/sharedfolders.html).
