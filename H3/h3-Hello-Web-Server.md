@@ -50,7 +50,7 @@ Tämän jälkeen tein hakemiston uusia sivuja varten ja lisäsin hakemistoon ind
 
 ![hattuhtml.png](hattuhtml.png "hattuhtml")
 
-Viimeisenä työnä lisäsin uuden sivun sites-enabled kansioon aktiiviseksi. Samassa yhteydessä varmistin, ettei kansiossa ollut muita sivuja aktiivisena. Kun sain kansion kuntoon, käynnistin Apachen uudelleen ja testasin uusien asetusten toimintaa. Sivut toimivat toivotulla tavalla.
+Seuraavaksi lisäsin uuden sivun sites-enabled kansioon aktiiviseksi. Samassa yhteydessä varmistin, että kansiossa ei ollut muita sivuja aktiivisena. Kun sain kansion kuntoon, käynnistin Apachen uudelleen ja testasin uusien asetusten toimintaa. Sivut toimivat toivotulla tavalla.
 
 &emsp;*sudo a2ensite hattu.example.com.conf*  
 &emsp;*sudo a2dissite test.example.com.conf*  
@@ -99,7 +99,7 @@ Tämän jälkeen selvitin ohjeista, miten muutan käyttöoikeuksia. Ohjeista lö
 
 ![perm4.png](perm4.png "perm4")
 
-Kaiken tämän jälkeen sivut avautuivat selaimessa. Tajusin myös vasta tässä vaiheessa, että tehtävässä pyydettiin vain tekemään validi HTML5-sivu. Sen asettamista palvelimen oletussivuksi ei mainittu. No, oppimaanhan tänne on tultu.
+Kaiken tämän jälkeen sivut avautuivat selaimessa. Tajusin myös vasta tässä vaiheessa, että tehtävässä pyydettiin vain tekemään validi HTML5-sivu. Sen asettamista palvelimen oletussivuksi ei pyydetty. No, oppimaanhan tänne on tultu.
 
 ## f)
 
@@ -132,6 +132,25 @@ Tallensin tiedon ja koitin sivuja selaimessa ja komentokehotteessa mainiosti kä
 <br />
 <br />
 ## Lähteet
+
+Karvinen, Tero 2025: Linux Palvelimet 2025 alkukevät. https://terokarvinen.com/linux-palvelimet/  
+Karvinen, Tero 2018: Name Based Virtual Hosts on Apache – Multiple Websites to Single IP Address. https://terokarvinen.com/2018/04/10/name-based-virtual-hosts-on-apache-multiple-websites-to-single-ip-address/  
+Apache.org 2025: Name-based Virtual Host Support. https://httpd.apache.org/docs/2.4/vhosts/name-based.html  
+Apache.org 2025: Log Files. https://httpd.apache.org/docs/2.4/logs.html  
+Wikipedia 2024: Ident protocol. https://en.wikipedia.org/wiki/Ident_protocol  
+Oracle.com: Shared Folders. https://docs.oracle.com/en/virtualization/virtualbox/6.0/user/sharedfolders.html  
+Redhat.com 2020: How to manage Linux permissions for users, groups, and others. https://www.redhat.com/en/blog/manage-permissions  
+Serverfault.com 2011: Howto use Apache virtualHost with etc/hosts. https://serverfault.com/questions/288815/howto-use-apache-virtualhost-with-etc-hosts
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+Tätä dokumenttia saa kopioida ja muokata GNU General Public License (versio 2 tai uudempi) mukaisesti. http://www.gnu.org/licenses/gpl.html  
+Pohjana Tero Karvinen 2012: Linux kurssi, http://terokarvinen.com
 
 
 
