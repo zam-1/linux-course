@@ -63,7 +63,7 @@ Muutoksen jälkeen Access.log -tiedostoon tuli selaimella tehdyn yhteydenoton se
 
 ![access.png](access.png "access")
 
-Ensimmäinen lokirivi kertoo onnistuneesta (200) yrityksestä hakea tietoa sivuille määritellystä juuresta. Apache2 antaa käsittääkseni oletuksena juuresta löytyvän index.html tiedoston. Seuraava rivi kertoo epäonnistuneesta yrityksestä (404, file not found). Haettu favicon.ico on käsittääkseni oletushaku, jonka selaimet tekevät löytääkseen osoiteriville ikonin (https://appwrk.com/resolving-favicon-ico-404-errors). Kyseessä ei ole siis apache2:n asetuksiin liittyvä ongelma.
+Ensimmäinen lokirivi kertoo onnistuneesta (200) yrityksestä hakea tietoa sivuille määritellystä juuresta. Apache2 tarjoilee oletuksena palvelimen juuresta löytyvän index.html tiedoston. Seuraava rivi kertoo epäonnistuneesta yrityksestä (404, file not found). Haettu favicon.ico on käsittääkseni oletushaku, jonka selaimet tekevät löytääkseen osoiteriville ikonin (https://appwrk.com/resolving-favicon-ico-404-errors). Kyseessä ei ole siis apache2:n asetuksiin liittyvä ongelma.
 
 Löysin avukseni ohjeet (https://httpd.apache.org/docs/2.4/logs.html), joilla tulkitsin lokitiedostoa seuraavasti:
 
@@ -180,7 +180,8 @@ Apache.org 2025: Log Files. https://httpd.apache.org/docs/2.4/logs.html
 Wikipedia 2024: Ident protocol. https://en.wikipedia.org/wiki/Ident_protocol  
 Oracle.com: Shared Folders. https://docs.oracle.com/en/virtualization/virtualbox/6.0/user/sharedfolders.html  
 Redhat.com 2020: How to manage Linux permissions for users, groups, and others. https://www.redhat.com/en/blog/manage-permissions  
-Serverfault.com 2011: Howto use Apache virtualHost with etc/hosts. https://serverfault.com/questions/288815/howto-use-apache-virtualhost-with-etc-hosts
+Serverfault.com 2011: Howto use Apache virtualHost with etc/hosts. https://serverfault.com/questions/288815/howto-use-apache-virtualhost-with-etc-hosts  
+Khanna, Gourav 2024: How to Fix Favicon.ico 404 Errors Like a Pro: Tips and Tricks. https://appwrk.com/resolving-favicon-ico-404-errors)
 <br />
 <br />
 <br />
