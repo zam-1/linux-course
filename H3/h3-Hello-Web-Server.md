@@ -2,7 +2,7 @@
 
 ## a)
 
-Asensin Apache-weppipalvelimen tuntien aikana. Asennus onnistui hyvin tunnilla saatujen ohjeiden ja tehtävänannossakin mainittujen ohjeiden avulla (https://terokarvinen.com/2018/04/10/name-based-virtual-hosts-on-apache-multiple-websites-to-single-ip-address/). Weppipalvelin ei vaatinut erillistä käynnistämistä, vaan toimi automaattisesti heti asennuksen jälkeen.
+Asensin Apache2 Web Serverin tuntien aikana. Asennus onnistui hyvin tunnilla saatujen ohjeiden ja tehtävänannossakin mainittujen ohjeiden avulla (https://terokarvinen.com/2018/04/10/name-based-virtual-hosts-on-apache-multiple-websites-to-single-ip-address/). Palvelin ei vaatinut erillistä käynnistämistä, vaan toimi automaattisesti heti asennuksen jälkeen.
 
 &emsp;*sudo systemctl status apache2*  
 &emsp;*curl localhost*
@@ -13,7 +13,7 @@ Asensin Apache-weppipalvelimen tuntien aikana. Asennus onnistui hyvin tunnilla s
 <br />
 ## b)
 
-Tein tehtäviä hieman eri järjestyksessä, joten tässä tehtävässä on jo käytössä c) tehtävässä toteutettu oletussivun vaihto. Aloin tutkimaan /var/log/apache2/access.log -tiedostoa. Hieman yllättäen se sisälsi vain vanhoja merkintöjä tuntien aikana tehdyistä kokeiluista. Tarkistin varalta myös other_vhosts_access.log -tiedoston ja löysin tuoreet lokimerkinnät sen sisältä. Ensimmäinen reaktioni oli tarkistaa Apache2 asennuksen oletussivu, tarkemmin ottaen sen asetustiedosto, 000-default.conf, sites-available -kansiossa. Oletusasetuksista löytyikin kaksi lokeihin liittyvää kohtaa, jotka lisäsin omaan hattu.example.com.conf -tiedostoon.
+Tein tehtäviä hieman eri järjestyksessä, joten tässä tehtävässä on jo käytössä c) tehtävässä toteutettu oletussivun vaihto. Aloin tutkimaan /var/log/apache2/access.log -tiedostoa. Hieman yllättäen se sisälsi vain vanhoja merkintöjä tuntien aikana tehdyistä kokeiluista. Tarkistin varalta myös other_vhosts_access.log -tiedoston ja löysin tuoreet lokimerkinnät sen sisältä. Ensimmäinen reaktioni oli tarkistaa Apache2 asennuksen oletussivu, tarkemmin ottaen sen asetustiedosto, 000-default.conf, sites-available-kansiossa. Oletusasetuksista löytyikin kaksi lokeihin liittyvää kohtaa, jotka lisäsin omaan hattu.example.com.conf -tiedostoon.
 
 ![confchange.png](confchange.png "confchange")
 
@@ -27,14 +27,14 @@ Ensimmäinen lokirivi kertoo onnistuneesta (200) yrityksestä hakea tietoa sivui
 
 Löysin avukseni ohjeet (https://httpd.apache.org/docs/2.4/logs.html), joilla tulkitsin lokitiedostoa seuraavasti:
 
-* IP-osoite alussa yksilöi sivuihin yhteydeyden ottaneen laitteen.
+* IP-osoite alussa yksilöi sivuihin yhteyden ottaneen laitteen.
 * Ensimmäinen '-' kertoo ettei kohdassa haettavaa tietoa löydy. Tieto olisi liittynyt yhteyden omistajan määrittelyyn Ident-protokollan (https://en.wikipedia.org/wiki/Ident_protocol) avulla. Tieto ei lähteiden perusteella vaikuta luotettavalta tai nykyaikaiselta.
 * Seuraava '-' kertoo taas tiedosta, jota ei ole tarjolla. Tässä kohdassa olisi yhteyden ottaneen käyttäjän userid, jolla pyritään tunnistamaan käyttäjä ja tämän oikeus päästä käsiksi haluttuun tietoon.
 * Tiedossa on seuraavaksi yhteydenoton aika, päivämäärä ja aikavyöhyke.
-* "-merkkien sisältä löytyy tieto siitä, mitä metodia yhteyteen käytetään. Tässä tapauksessa kyseessä on GET (Hakee tietoa, esim. .html ja kuvatiedostoja). Tästä osiosta löytyy myös se mitä haetaan (/ ei tässä tapauksessa ole ymmärtääkseni järjestelmän juuri, vaan apachen asetuksissa mainittu hakemistojuuri /home/otus/public_sites.hattu.example.com/) ja hakuun käytetty protokolla (HTTP/1.1).
+* "-merkkien sisältä löytyy tieto siitä, mitä metodia yhteyteen käytetään. Tässä tapauksessa kyseessä on GET (Hakee tietoa, esim. .html ja kuvatiedostoja). Tästä osiosta löytyy myös se mitä haetaan (/ ei tässä tapauksessa ole ymmärtääkseni järjestelmän juuri, vaan Apachen asetuksissa mainittu hakemistojuuri /home/otus/public_sites.hattu.example.com/) ja hakuun käytetty protokolla (HTTP/1.1).
 * Tämän jälkeen seuraa kaksi numeroa, joista ensimmäinen kertoo yhteydenoton statuksen. 2-alkuiset numerot kertovat onnistuneesta yhteydenotosta, 3-alkuiset uudelleenohjauksesta, 4-alkuiset virheestä yhteydenottajan päässä ja 5-alkuiset virheestä palvelimen puolella. Toinen numero kertoo lähetetyn datan tavumäärän.
 * Seuraava "-merkkien välissä olevan tieto kertoo luultavasti sen mistä yhteys on linkitetty.
-* Loppuosio kertoo kokonaisuudessaan yhteydenottoon liittyvistä ohjelmista ja käyttöjärjestelmistä. Omissa lokimerkinnöissäni nämä kertoivat minun käyttäneen Firefoxia Debian-kääyttöjärjestelmässä.
+* Loppuosio kertoo kokonaisuudessaan yhteydenottoon liittyvistä ohjelmista ja käyttöjärjestelmistä. Omissa lokimerkinnöissäni nämä kertoivat minun käyttäneen Firefoxia Debian-käyttöjärjestelmässä.
 
 ## c)
 
@@ -83,7 +83,7 @@ Menin sivujen hakemistoon, jonka sisältöä tutkimalla kävi heti selväksi, et
 
 ![perm1.png](perm1.png "perm1")
 
-Ensimmäinen toimenpide oli selvittää kuinka käyttöoikeuksista vaihdetaan selkein osuus, eli 'root' korvataan arvolla 'otus'. Löysin Google-haulla lähteeksi ohjeet (https://www.redhat.com/en/blog/manage-permissions), joiden avulla muutin käyttäjän ja ryhmän oikeudet rootin sijaan käyttäjälle 'otus'. Suoritin ohjeista selvitetyn komennon kaikille tiedostoille hakemistossa.
+Ensimmäinen toimenpide oli selvittää, kuinka käyttöoikeuksista vaihdetaan selkein osuus, eli 'root' korvataan arvolla 'otus'. Löysin Google-haulla lähteeksi ohjeet (https://www.redhat.com/en/blog/manage-permissions), joiden avulla muutin käyttäjän ja ryhmän oikeudet rootin sijaan käyttäjälle 'otus'. Suoritin ohjeista selvitetyn komennon kaikille tiedostoille hakemistossa.
 
 &emsp;*sudo chown otus:otus index.html*
 
@@ -93,7 +93,7 @@ Tämän toimenpiteen jälkeen selaimen virheilmoitus muuttui forbidden-muotoon. 
 
 ![perm3.png](perm3.png "perm3")
 
-Tämän jälkeen selvitin ohjeista, miten muutan käyttöoikeuksia. Ohjeista löytyi kätevä numerojärjestelmä, jonka avulla komento oli helppo muodostaa. Halusin tiedostoille oikeudet -rw-r--r--, kuten testitiedostossa. Käyttöoikeuksista kertova sekava merkkirivi on muodossa, jossa ensimmäinen merkki kertoo onko kyseessä tiedosto vai kansio (- = tiedosto, d = kansio). Loput merkit on jaettu kolmen merkin ryhmiin, jotka ovat järjestyksessä owner, group ja others. Jokaisen ryhmän ensimmäinen merkki r tarkoittaa lukuoikeuksia (read), toinen merkki w tarkoittaa kirjoitusoikeuksia (write) ja kolmas, x, oikeutta ajaa tiedosto (execute). Seuraavaksi selvitin miten voisin asettaa testiedoston oikeudet hakemiston muille tiedostoille numerojärjestelmää hyödyntämällä. Järjestelmässä käytetään kolmen numeron koodia. Numeroiden laskeminen tapahtuu siten, että oikeuksille annetaan arvot r = 4, w = 2 ja x = 1 ja - = 0. Sen jälkeen lasketaan yhteen kunkin ryhmän halutut oikeudet. Täydet oikeudet olisivat siis 4+2+1=7 per ryhmä, eli 777 kokonaisuudessaan. Koska halusin oikeudet -rw-r--r--, voidaan ne muuntaa numeroksi 644 (4+2, 4 ja 4). Ajoin seuraavan komennon kaikille tiedostoille. 
+Tämän jälkeen selvitin ohjeista, miten muutan käyttöoikeuksia. Ohjeista löytyi kätevä numerojärjestelmä, jonka avulla komento oli helppo muodostaa. Halusin tiedostoille oikeudet -rw-r--r--, kuten testitiedostossa. Käyttöoikeuksista kertova sekava merkkirivi on muodossa, jossa ensimmäinen merkki kertoo onko kyseessä tiedosto vai kansio (- = tiedosto, d = kansio). Loput merkit on jaettu kolmen merkin ryhmiin, jotka ovat järjestyksessä owner, group ja others. Jokaisen ryhmän ensimmäinen merkki r tarkoittaa lukuoikeuksia (read), toinen merkki w tarkoittaa kirjoitusoikeuksia (write) ja kolmas, x, oikeutta ajaa tiedosto (execute). Seuraavaksi selvitin, miten voisin asettaa testitiedoston oikeudet hakemiston muille tiedostoille numerojärjestelmää hyödyntämällä. Järjestelmässä käytetään kolmen numeron koodia. Numeroiden laskeminen tapahtuu siten, että oikeuksille annetaan arvot r = 4, w = 2 ja x = 1 ja - = 0. Sen jälkeen lasketaan yhteen kunkin ryhmän halutut oikeudet. Täydet oikeudet olisivat siis 4+2+1=7 per ryhmä, eli 777 kokonaisuudessaan. Koska halusin oikeudet -rw-r--r--, voidaan ne muuntaa numeroksi 644 (4+2, 4 ja 4). Ajoin seuraavan komennon kaikille tiedostoille. 
 
 &emsp;*chmod 644 index.html*
 
@@ -119,11 +119,11 @@ Vastauksesta selviää päivämäärien lisäksi tietoa, kuten palvelintyyppi (s
 
 ## o)
 
-Olin löytänyt hosts tiedoston jo aiemmin tutkiesssani etc/ hakemiston sisältöä, joten säästin huomattavasti aikaa tehtävän tässä vaiheessa. Seuraavaksi loin toisen yksinkertaisen sivun noudatten aiemmin toimiviksi todettuja keinoja. Tein tarvittavan kansion, loin index.html tiedoston, kopioin hattu.example.com.conf tiedoston nimelle huivi.example.com.conf ja muutin sen sisällöstä oleelliset kohdat. Tämän jälkeen aktivoin sivun ja käynnistin Apachen uudestaan. Kokeilin uteliaisuudesta tässä vaiheessa hakea sivuja localhostin takaa ja sain esiin vain hattu.example.com:in. Seuraavaksi siirryin tutkimaan hosts tiedostoa. En ollut varma mitä sille tulisi tehdä, joten lähdin metsästämään netistä ohjeita. Lopulta löysin esimerkin (https://serverfault.com/questions/288815/howto-use-apache-virtualhost-with-etc-hosts)hyvin yksinkertaiseen muutokseen tiedostossa.
+Olin löytänyt hosts tiedoston jo aiemmin tutkiessani /etc/ hakemiston sisältöä, joten säästin huomattavasti aikaa tehtävän tässä vaiheessa. Seuraavaksi loin toisen yksinkertaisen sivun noudattaen aiemmin toimiviksi todettuja keinoja. Tein tarvittavan kansion, loin index.html tiedoston, kopioin hattu.example.com.conf tiedoston nimelle huivi.example.com.conf ja muutin sen sisällöstä oleelliset kohdat. Tämän jälkeen aktivoin sivun ja käynnistin Apachen uudestaan. Kokeilin uteliaisuudesta tässä vaiheessa hakea sivuja localhostin takaa ja sain esiin vain hattu.example.com:in. Seuraavaksi siirryin tutkimaan hosts tiedostoa. En ollut varma mitä sille tulisi tehdä, joten lähdin metsästämään netistä ohjeita. Lopulta löysin esimerkin (https://serverfault.com/questions/288815/howto-use-apache-virtualhost-with-etc-hosts)hyvin yksinkertaiseen muutokseen tiedostossa.
 
 ![hosts.png](hosts.png "hosts")
 
-Tallensin tiedon ja koitin sivuja selaimessa ja komentokehoitteessa mainiosti käyttäen localhostin sijaan palvelinten nimiä (hattu.example.com ja huivi.example.com). Vaikka poistin localhostin hosts tiedostosta (luultavasti virhe), localhostin takaa löytyy silti hattu.example.com.
+Tallensin tiedon ja koitin sivuja selaimessa ja komentokehotteessa mainiosti käyttäen localhostin sijaan palvelinten nimiä (hattu.example.com ja huivi.example.com). Vaikka poistin localhostin hosts tiedostosta (luultavasti virhe), localhostin takaa löytyy silti hattu.example.com.
 
 &emsp;*curl -I hattu.example.com*  
 &emsp;*curl -I huivi.example.com*
