@@ -1,5 +1,22 @@
 # H3 Hello Web Server
 
+## Rauta & VirtualBox asetukset
+
+PC: Lenovo L14 Gen 5  
+OS: Windows 11 Pro 24H2  
+CPU: AMD Ryzen 5 PRO 7535u  
+Muisti: 16 GB DDR5-5600MHz  
+Storage: 512 GB SSD M.2 2280 PCIe Gen4 TLC Opal  
+GPU: Integrated AMD Radeon™ 660M
+
+VirtualBox asetukset:  
+Oletusasetukset, muutamia poikkeuksia lukuunottamatta.  
+OS: Debian 12.9.0  
+CPU: 2  
+Video Memory: 256MB  
+Base Memory: 8192MB  
+Harddisk: 60GB
+
 ## a)
 
 Asensin Apache2 Web Serverin tuntien aikana. Asennus onnistui hyvin tunnilla saatujen ohjeiden ja tehtävänannossakin mainittujen ohjeiden avulla (https://terokarvinen.com/2018/04/10/name-based-virtual-hosts-on-apache-multiple-websites-to-single-ip-address/). Palvelin ei vaatinut erillistä käynnistämistä, vaan toimi automaattisesti heti asennuksen jälkeen.
