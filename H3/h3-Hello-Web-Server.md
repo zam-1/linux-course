@@ -53,7 +53,7 @@ Asensin Apache2 Web Serverin tuntien aikana. Asennus onnistui hyvin tunnilla saa
 <br />
 ## b)
 
-Tein tehtäviä hieman eri järjestyksessä, joten tässä tehtävässä on jo käytössä c) tehtävässä toteutettu sivujen vaihto. Aloin tutkimaan /var/log/apache2/access.log -tiedostoa. Hieman yllättäen se sisälsi vain vanhoja merkintöjä tuntien aikana tehdyistä kokeiluista. Tarkistin varalta myös other_vhosts_access.log -tiedoston ja löysin tuoreet lokimerkinnät sen sisältä. Ensimmäinen reaktioni oli tarkistaa Apache2 asennuksen oletusasetukset, tarkemmin ottaen sites-available hakemistosta 000-default.conf -tiedosto. Tiedoston sisältä löytyikin kaksi lokeihin liittyvää kohtaa, jotka lisäsin omaan hattu.example.com.conf -tiedostoon.
+Tein tehtäviä hieman eri järjestyksessä, joten tässä tehtävässä on jo käytössä c) tehtävässä toteutettu sivujen vaihto. Aloin tutkimaan /var/log/apache2/access.log -tiedostoa. Hieman yllättäen se sisälsi vain vanhoja merkintöjä tuntien aikana tehdyistä kokeiluista. Tarkistin varalta myös other_vhosts_access.log -tiedoston ja löysin tuoreet lokimerkinnät sen sisältä. Ensimmäinen reaktioni oli tarkistaa Apache2 asennuksen oletusasetukset, tarkemmin ottaen sites-available hakemistosta 000-default.conf -tiedosto. Tiedoston sisältä löytyikin kaksi lokeihin liittyvää kohtaa, jotka lisäsin omaan hattu.example.com.conf -tiedostooni.
 
 ![confchange.png](confchange.png "confchange")
 
