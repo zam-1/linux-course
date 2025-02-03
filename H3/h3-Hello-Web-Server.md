@@ -38,7 +38,7 @@ Harddisk: 60GB
 
 ## Alkusanat
 
-Tämän raportin aiheena oli Apache2 asennus ja käyttöönotto paikallisesti VirtualBox VM:n päällä pyörivässä Debianissa. Koska itse asennus oli jo tehty aiemmin, raportti keskittyy lähinnä palvelimen oletussivun vaihtoon. Vaihdoin sivun onnistuusti yksinkertaiseen testitiedostoon, jonka korvasin myöhemmin itse tehdyllä HTML5-sivulla. Tehtävissä käytiin läpi myös aiheeseen liittyvää curl-komentoa ja Apachen lokitiedoston tulkintaa. Vapaaehtoisessa osiossa selvittelin useamman palvelimen käyttöä yhdessä IP-osoitteessa.
+Tämän raportin aiheena oli Apache2 asennus ja käyttöönotto paikallisesti VirtualBox VM:n päällä pyörivässä Debianissa. Koska itse asennus oli jo tehty aiemmin, raportti keskittyy lähinnä palvelimen oletussivun vaihtoon. Vaihdoin sivun onnistuusti yksinkertaiseen testitiedostoon, jonka korvasin myöhemmin itse tehdyllä HTML5-sivulla. Tehtävissä käytiin läpi myös aiheeseen liittyvää curl-komentoa ja Apachen lokitiedoston tulkintaa. Viimeisessä osiossa selvittelin useamman palvelimen käyttöä yhdessä IP-osoitteessa.
 
 ## a)
 
