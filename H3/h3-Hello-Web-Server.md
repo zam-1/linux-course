@@ -1,4 +1,5 @@
 # H3 Hello Web Server
+*Raportin toimenpiteet suoritettu 2.2.2025*
 
 ## x)
 
@@ -183,7 +184,7 @@ Redhat.com 2020: How to manage Linux permissions for users, groups, and others. 
 Serverfault.com 2011: Howto use Apache virtualHost with etc/hosts. https://serverfault.com/questions/288815/howto-use-apache-virtualhost-with-etc-hosts  
 Khanna, Gourav 2024: How to Fix Favicon.ico 404 Errors Like a Pro: Tips and Tricks. https://appwrk.com/resolving-favicon-ico-404-errors)
 <br />
-Raportin toimenpiteet suoritettu 2.2.2025.
+<br />
 <br />
 <br />
 <br />
