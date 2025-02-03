@@ -106,6 +106,7 @@ Ajattelin aluksi tehdä vain yksinkertaisimman mahdollisen HTML5-sivun, mutta in
 
 ![sivu.png](sivu.png "sivu")
 ![koodi.png](koodi.png "koodi")
+Validoin sivujen HTML-osuuden osoitteessa https://validator.w3.org/.
 ![validi.png](validi.png "validi")
  
 Ajauduin kuitenkin ongelmiin, kun yritin asettaa sivuja Apachen aloitussivuksi. En tehnyt sivuja virtuaalikoneen sisällä, joten tiedostojen siirtäminen ja käyttäminen eivät olleet niin helppoja kuin ajattelin. Ensimmäinen vaihe oli saada tiedostot virtuaalikoneen sisään. Tähän löysin virtuaalikoneen asetuksista osion Shared folders. Sen kautta oli epäilyttävän yksinkertaista jakaa kansio isäntäkoneelta ohjeiden avulla (https://docs.oracle.com/en/virtualization/virtualbox/6.0/user/sharedfolders.html).
