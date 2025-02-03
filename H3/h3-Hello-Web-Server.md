@@ -182,7 +182,8 @@ Wikipedia 2024: Ident protocol. https://en.wikipedia.org/wiki/Ident_protocol
 Oracle.com: Shared Folders. https://docs.oracle.com/en/virtualization/virtualbox/6.0/user/sharedfolders.html  
 Redhat.com 2020: How to manage Linux permissions for users, groups, and others. https://www.redhat.com/en/blog/manage-permissions  
 Serverfault.com 2011: Howto use Apache virtualHost with etc/hosts. https://serverfault.com/questions/288815/howto-use-apache-virtualhost-with-etc-hosts  
-Khanna, Gourav 2024: How to Fix Favicon.ico 404 Errors Like a Pro: Tips and Tricks. https://appwrk.com/resolving-favicon-ico-404-errors)
+Khanna, Gourav 2024: How to Fix Favicon.ico 404 Errors Like a Pro: Tips and Tricks. https://appwrk.com/resolving-favicon-ico-404-errors)  
+W3C 2024: Markup Validation Service. https://validator.w3.org/
 <br />
 <br />
 <br />
