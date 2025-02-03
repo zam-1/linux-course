@@ -1,5 +1,24 @@
 # H3 Hello Web Server
 
+## x)
+
+**Name-based Virtual Host Support**  
+(https://httpd.apache.org/docs/2.4/vhosts/name-based.html)
+
+* Name-based Virtual Hosting mahdollistaa useamman palvelimen käytön samassa IP-osoitteessa.
+* Apache käsittelee saapuvat yhteydet ensisijaisesti IP-osoitteen ja portin perusteella. Jos samalle IP-osoitteelle on asetettu useampi virtuaalipalvelin, Apache hyödyntää palvelinten ServerName tai ServerAlias asetuksia.
+* Palvelimen asetuksissa on oltava vähintään \<VirtualHost> blokki ja sen sisällä ServerName (tarjolla olevan palvelin) ja DocumentRoot (palvelimen sijainti tiedostojärjestelmässä) asetukset.
+* ServerAlias asetuksella voi määritellä vaihtoehtoisia nimiä ServerName:n lisäksi. Esimerkiksi ServerName: www.test.com, ServerAlias: test.com.
+* Apache:n asetusten lisäksi tulee myös lisätä nimet DNS-palvelimelle.
+
+**Name Based Virtual Hosts on Apache – Multiple Websites to Single IP Address**  
+(https://terokarvinen.com/2018/04/10/name-based-virtual-hosts-on-apache-multiple-websites-to-single-ip-address/)
+
+* Ohjeet antavat tarvittavat komennot ja asetustiedostojen sisällöt nimi-pohjaisen palvelimen käyttöönottoon Linux ympäristössä.
+* Operaatio aloitetaan asentamalla Apache2 Web Server.
+* Seuraavaksi luodaan uusi virtuaalinen palvelin, määrittelemällä sen asetustiedosto, luomalla sille kansio tiedostojärjestelmään ja aktivoimalla se Apachen sites-enabled hakemistoon.
+* Ohjeissa kerrotaan myös, kuinka voi ottaa käyttöön useamman virtuaalipalvelimen samassa IP-osoitteessa hosts tiedostoa hyödyntäen.
+
 ## Rauta & VirtualBox asetukset
 
 PC: Lenovo L14 Gen 5  
