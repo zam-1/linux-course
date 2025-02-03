@@ -13,7 +13,7 @@ Asensin Apache-weppipalvelimen tuntien aikana. Asennus onnistui hyvin tunnilla s
 <br />
 ## b)
 
-Tein tehtäviä hieman eri järjestyksessä, joten tässä tehtävässä on jo käytössä c) tehtävässä toteutettu oletussivun vaihto. Aloin tutkimaan /var/log/apache2/access.log -tiedostoa. Hieman yllättäen se sisälsi vain vanhoja merkintöjä tuntien aikana tehdyistä kokeiluista. Tarkistin varalta myös other_vhosts_access.log -tiedoston ja löysin tuoreet lokimerkinnät yllättäen sen sisältä. Ensimmäinen reaktioni oli tarkistaa Apache2 asennuksen oletussivu, tarkemmin ottaen sen asetustiedosto, 000-default.conf, sites-available -kansiossa. Oletusasetuksista löytyikin kaksi lokeihin liittyvää kohtaa, jotka lisäsin omaan hattu.example.com.conf -tiedostoon.
+Tein tehtäviä hieman eri järjestyksessä, joten tässä tehtävässä on jo käytössä c) tehtävässä toteutettu oletussivun vaihto. Aloin tutkimaan /var/log/apache2/access.log -tiedostoa. Hieman yllättäen se sisälsi vain vanhoja merkintöjä tuntien aikana tehdyistä kokeiluista. Tarkistin varalta myös other_vhosts_access.log -tiedoston ja löysin tuoreet lokimerkinnät sen sisältä. Ensimmäinen reaktioni oli tarkistaa Apache2 asennuksen oletussivu, tarkemmin ottaen sen asetustiedosto, 000-default.conf, sites-available -kansiossa. Oletusasetuksista löytyikin kaksi lokeihin liittyvää kohtaa, jotka lisäsin omaan hattu.example.com.conf -tiedostoon.
 
 ![confchange.png](confchange.png "confchange")
 
@@ -71,7 +71,7 @@ Ajauduin kuitenkin ongelmiin, kun yritin asettaa sivuja Apachen aloitussivuksi. 
 
 ![shared.png](shared.png "shared")
 
-En kuitenkaan osannut laittaa käyttöoikeuksia toimenpiteen aikana kuntoon, joten mountatut tiedostot vaativat root-oikeuksia. Tiedostojen siirto oikeaan paikkaan sujui sudoa hyödyntäen. Sivut tarjosivat aluksi 'Unable to access' virheilmoituksen. Error.logia tutkimalla löysin virheilmoituksen, joka kertoi hyvin selkeästi ongelman olevan käyttöoikeuksissa.
+En kuitenkaan osannut laittaa käyttöoikeuksia toimenpiteen aikana kuntoon, joten /media/ hakemistoon mountattu tiedostot sisältävä hakemisto vaati root-oikeuksia. Tiedostojen siirto oikeaan paikkaan sujui sudoa hyödyntäen. Sivut tarjosivat aluksi 'Unable to access' virheilmoituksen. Error.logia tutkimalla löysin virheilmoituksen, joka kertoi hyvin selkeästi ongelman olevan käyttöoikeuksissa.
 
 &emsp;*sudo tail -5 /var/log/apache2/error.log*
 
@@ -99,7 +99,39 @@ Tämän jälkeen selvitin ohjeista, miten muutan käyttöoikeuksia. Ohjeista lö
 
 ![perm4.png](perm4.png "perm4")
 
-Kaiken tämän jälkeen sivut avautuivat selaimessa. Tajusin myös vasta tässä vaiheessa, että tehtävässä pyydettiin vain tekemään validi HTML5-sivu. Sen asettamista palvelimen oletussivuksi ei pyydetty tekemään. No, oppimaanhan tänne on tultu.
+Kaiken tämän jälkeen sivut avautuivat selaimessa. Tajusin myös vasta tässä vaiheessa, että tehtävässä pyydettiin vain tekemään validi HTML5-sivu. Sen asettamista palvelimen oletussivuksi ei mainittu. No, oppimaanhan tänne on tultu.
+
+## f)
+
+Curlia käytetään manuaalin perusteella kahdensuuntaiseen tiedonsiirtoon palvelinten välillä. Ajattelin ensimmäiseksi yrittää hakea palvelimeltani localhost-osoitteesta aloitussivun sijaan sivun taustakuvan. Yritin ensin komentoa ilman mitään valintoja (curl http:<!-- -->//localhost/background.jpg), mutta sain vastaukseksi varoitusviestin, jossa ei suositeltu käyttämään käskyä näin. Viestissä mainittiin --output vaihtoehtoinen --output valinta. Tarkensin tietoja curlin ohjeista ja yritin seuraavaksi komentoa onnistuneesti. Siirsin siis kuvan palvelimeni sivujen hakemistosta käytössä olleeseen työhakemistoon eri nimellä.
+
+&emsp;*curl --output kuva.jpg http:<!-- -->//localhost/background.jpg*
+
+![curlkuva.png](curlkuva.png "curlkuva")
+
+curl-I näyttää yksityiskohtia (response header) suoritettavasta hausta ilman, että hakua varsinaisesti suoritetaan. Esimerkissä hain tiedot tekemiltäni sivuilta.
+
+&emsp;*curl -I localhost*
+
+![curli.png](curli.png "curli")
+
+Vastauksesta selviää päivämäärien lisäksi tietoa, kuten palvelintyyppi (server), joka tässä tapauksessa on käyttämämme Debianiin asennettu Apache. Tiedoista löytyy myös haetun tiedon tyyppi (Content-Type), joka on tuloksissa teksti/html. Haettu tieto, eli tässä tapauksessa index.html, on kooltaan (Content-Length) 758 tavua.
+
+## o)
+
+Olin löytänyt hosts tiedoston jo aiemmin tutkiesssani etc/ hakemiston sisältöä, joten säästin huomattavasti aikaa tehtävän tässä vaiheessa. Seuraavaksi loin toisen yksinkertaisen sivun noudatten aiemmin toimiviksi todettuja keinoja. Tein tarvittavan kansion, loin index.html tiedoston, kopioin hattu.example.com.conf tiedoston nimelle huivi.example.com.conf ja muutin sen sisällöstä oleelliset kohdat. Tämän jälkeen aktivoin sivun ja käynnistin Apachen uudestaan. Kokeilin uteliaisuudesta tässä vaiheessa hakea sivuja localhostin takaa ja sain esiin vain hattu.example.com:in. Seuraavaksi siirryin tutkimaan hosts tiedostoa. En ollut varma mitä sille tulisi tehdä, joten lähdin metsästämään netistä ohjeita. Lopulta löysin esimerkin (https://serverfault.com/questions/288815/howto-use-apache-virtualhost-with-etc-hosts)hyvin yksinkertaiseen muutokseen tiedostossa.
+
+![hosts.png](hosts.png "hosts")
+
+Tallensin tiedon ja koitin sivuja selaimessa ja komentokehoitteessa mainiosti käyttäen localhostin sijaan palvelinten nimiä (hattu.example.com ja huivi.example.com). Vaikka poistin localhostin hosts tiedostosta (luultavasti virhe), localhostin takaa löytyy silti hattu.example.com.
+
+&emsp;*curl -I hattu.example.com*  
+&emsp;*curl -I huivi.example.com*
+
+![curlx2.png](curlx2.png "curlx2")
+
+
+
 
 
 
