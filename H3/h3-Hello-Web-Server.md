@@ -129,6 +129,10 @@ Tallensin tiedon ja koitin sivuja selaimessa ja komentokehotteessa mainiosti kä
 &emsp;*curl -I huivi.example.com*
 
 ![curlx2.png](curlx2.png "curlx2")
+<br />
+<br />
+## Lähteet
+
 
 
 
