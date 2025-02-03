@@ -78,19 +78,19 @@ Löysin avukseni ohjeet (https://httpd.apache.org/docs/2.4/logs.html), joilla tu
 
 ## c)
 
-Koska en tiukasta aikarajasta johtuen ottanut ylös tunneilla tehtyjen toimenpiteideiden vaiheita, yritin seuraavaksi päästä toimivaan lopputulokseen tehtävässä annettun hattu.example.com -sivun kanssa. Tein alkuun /etc/apache2/sites-available kansioon hattu.example.com.conf tiedoston, johon kopion ja päivitin toimivaksi havaitun sisällön tunnilla tehdystä sivusta.
+Koska en tiukasta aikarajasta johtuen ottanut ylös tunneilla tehtyjen toimenpiteideiden vaiheita, yritin seuraavaksi päästä toimivaan lopputulokseen tehtävässä annettun hattu.example.com -palvelimen kanssa. Tein alkuun /etc/apache2/sites-available kansioon hattu.example.com.conf tiedoston, johon kopion ja päivitin toimivaksi havaitun sisällön tunnilla tehdystä tiedostosta.
 
 Tämä on tiedoston alkuperäinen sisältö. Lopullinen versio käsiteltiin kohdassa b).
 ![hattuconf.png](hattuconf.png "hattuconf")
 
-Tämän jälkeen tein hakemiston uusia sivuja varten ja lisäsin hakemistoon index.html tiedoston, joka sisälsi tekstin hattu.example.com.
+Tämän jälkeen tein hakemiston uutta palvelinta varten ja lisäsin hakemistoon index.html tiedoston, joka sisälsi tekstin hattu.example.com.
 
 > &emsp;mkdir /home/otus/public_sites/hattu.example.com  
 > &emsp;echo "hattu.example.com" > /home/otus/public_sites/hattu.example.com/index.html
 
 ![hattuhtml.png](hattuhtml.png "hattuhtml")
 
-Seuraavaksi lisäsin uuden sivun sites-enabled kansioon aktiiviseksi. Samassa yhteydessä varmistin, että kansiossa ei ollut muita sivuja aktiivisena. Kun sain kansion kuntoon, käynnistin Apachen uudelleen ja testasin uusien asetusten toimintaa. Sivut toimivat toivotulla tavalla.
+Seuraavaksi lisäsin uuden palvelimen sites-enabled kansioon aktiiviseksi. Samassa yhteydessä varmistin, että kansiossa ei mitään muuta aktiivisena. Kun sain kansion kuntoon, käynnistin Apachen uudelleen ja testasin uusien asetusten toimintaa. Kaikki toimi odotetulla tavalla.
 
 > &emsp;sudo a2ensite hattu.example.com.conf  
 > &emsp;sudo a2dissite test.example.com.conf  
