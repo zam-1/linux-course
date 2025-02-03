@@ -136,11 +136,11 @@ Vastauksesta selviää päivämäärien lisäksi tietoa, kuten palvelintyyppi (s
 
 ## o)
 
-Olin löytänyt hosts tiedoston jo aiemmin tutkiessani /etc/ hakemiston sisältöä, joten säästin huomattavasti aikaa tehtävän tässä vaiheessa. Seuraavaksi loin toisen yksinkertaisen sivun noudattaen aiemmin toimiviksi todettuja keinoja. Tein tarvittavan kansion, loin index.html tiedoston, kopioin hattu.example.com.conf tiedoston nimelle huivi.example.com.conf ja muutin sen sisällöstä oleelliset kohdat. Tämän jälkeen aktivoin sivun ja käynnistin Apachen uudestaan. Kokeilin uteliaisuudesta tässä vaiheessa hakea sivuja localhostin takaa ja sain esiin vain hattu.example.com:in. Seuraavaksi siirryin tutkimaan hosts tiedostoa. En ollut varma mitä sille tulisi tehdä, joten lähdin metsästämään netistä ohjeita. Lopulta löysin esimerkin (https://serverfault.com/questions/288815/howto-use-apache-virtualhost-with-etc-hosts)hyvin yksinkertaiseen muutokseen tiedostossa.
+Olin löytänyt hosts tiedoston jo aiemmin tutkiessani /etc/ hakemiston sisältöä, joten säästin huomattavasti aikaa tehtävän tässä vaiheessa. Seuraavaksi loin toisen yksinkertaisen sivun noudattaen aiemmin toimiviksi todettuja keinoja. Tein tarvittavan kansion, loin index.html tiedoston, kopioin hattu.example.com.conf tiedoston nimelle huivi.example.com.conf ja muutin sen sisällöstä oleelliset kohdat. Tämän jälkeen aktivoin sivun ja käynnistin Apachen uudestaan. Kokeilin uteliaisuudesta tässä vaiheessa hakea sivuja localhostin takaa ja sain esiin vain hattu.example.com:in. Seuraavaksi siirryin tutkimaan hosts tiedostoa. En ollut varma mitä sille tulisi tehdä, joten lähdin metsästämään netistä ohjeita. Lopulta löysin esimerkin (https://serverfault.com/questions/288815/howto-use-apache-virtualhost-with-etc-hosts)hyvin yksinkertaiseen muutokseen tiedostossa. Myöhemmin löysin vastaavat muutokset myös tehtävänannossa linkitetyistä ohjeista.
 
 ![hosts.png](hosts.png "hosts")
 
-Tallensin tiedon ja koitin sivuja selaimessa ja komentokehotteessa mainiosti käyttäen localhostin sijaan palvelinten nimiä (hattu.example.com ja huivi.example.com). Vaikka poistin localhostin hosts tiedostosta (luultavasti virhe), localhostin takaa löytyy silti hattu.example.com.
+Tallensin tiedon ja koitin sivuja selaimessa ja komentokehotteessa käyttäen localhostin sijaan palvelinten nimiä (hattu.example.com ja huivi.example.com). Kokeilu onnistui. Vaikka poistin localhostin hosts tiedostosta (luultavasti virhe), localhostin takaa löytyy silti hattu.example.com.
 
 &emsp;*curl -I hattu.example.com*  
 &emsp;*curl -I huivi.example.com*
