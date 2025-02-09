@@ -85,14 +85,17 @@ Seuraavaksi ajoin järjestelmään uusimmat päivitykset. Tässä vaiheessa palv
 
 ## c)
 
-Aloitin asentamalla Apache2-palvelimen aiemmista tehtävistä tutulla komennolla. Sen jälkeen vaihdoin oletussivun tunneilla annetulla komennolla.
+Aloitin asentamalla Apache2-palvelimen aiemmista tehtävistä tutulla komennolla. Sen jälkeen vaihdoin oletussivun tunneilla annetulla komennolla. Testasin sivua myös selaimella toiselta tietokoneelta onnistuneesti. 
 
 >&emsp;sudo apt-get -y install apache2  
 >&emsp;sudo systemctl status apache2  
->&emsp;echo Sivu | sudo tee /var/www/html/index.html
+>&emsp;echo Sivu | sudo tee /var/www/html/index.html  
+>&emsp;curl IP-osoite
 
 **kuva  
 **kuva
+
+## d)
 
 
 
