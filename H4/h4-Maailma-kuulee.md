@@ -20,15 +20,49 @@ Käyttöjärjestelmäksi tajrolla oli samoja vaihtoehtoja, kuin tunnilla esitell
 
 Seuraavaksi tarjolla oli lisää levytilaa ja automaattista varmuuskopiointia pienellä lisämaksulla. Ohitin ne ja siirryin valitsemaan Authentication Metodia. Tunneilla suositeltiin käyttämään SSH-avaimia, joten seuraavaksi siirryin virtuaalikoneeni puolelle asentamaan tarvittavia ohjelmia. Vastoin tunnilla nähtyä esimerkkiä, minulla oli openSSH-client jo valmiiksi asennettuna, joten siirryin luomaan SSH-avaimia.
 
-> sudo keygen
+>&emsp;sudo keygen
 
 **kuva
 
-Avaimet luotuani laitoin julkisen avaimen (id_rsa.pub) uuden palvelimen asetuksiin ja annoin sille nimeksi Key1. Lisäasetuksista otin käyttöön IPv6-verkon. Vaihdoin Hostnamen itselleni selkeämpään muotoon ja loin palvelimen Create Droplet-napista oletuksena olleeseen first-project -projektiin. Palvelimen luontiin kului noin minuutti, jonka jälkeen se löytyi first-projectin alta IP-osoitteen kanssa.
+Avaimet luotuani laitoin julkisen avaimen (id_rsa.pub) uuden palvelimen asetuksiin ja annoin sille nimeksi Key1. Lisäasetuksista otin käyttöön IPv6-verkon. Vaihdoin Hostnamen itselleni selkeämpään muotoon ja loin palvelimen Create Droplet-napista first-project-projektiin. Palvelimen luontiin kului noin minuutti, jonka jälkeen se löytyi first-projectin alta IP-osoitteen kanssa.
 
 **kuva
 **kuva
 **kuva
 
 ## b)
+
+Aloitin palvelimen käytön ottamalla SSH-yhteyden root-käyttäjänä palvelimelle annettuun IP-osoitteeseen omalta Debian-pohjaiselta virtuaalikoneeltani. Yhteydenotto onnistui ja löysin itseni palvelimen /root/ hakemistosta.
+
+**kuva
+
+Lähdin tekemään jatkotoimenpiteitä tunneilla tehdyssä järjestyksessä, mutta jälkikäteen ajateltuna olisi ehkä ollut hyvä laittaa palomuuri päälle ja päivitykset kuntoon heti aluksi. Palvelin oli turhaan suojaamatta tovin, kun selvittelin asioita. Ensimmäiseksi loin uuden otus-käyttäjän palvelimelle. Tämän jälkeen annoin käyttäjälle sudo-oikeudet ja testasin niitä.
+
+>&emsp;sudo adduser otus
+>&emsp;sudo adduser otus sudo
+
+**kuva
+
+Seuraavaksi kopioin uudelle käyttäjälle SSH-avaimet /root/.ssh/ kansioista ja vaihdoin niiden käyttöoikeudet vastaamaan käyttäjäänsä.
+
+>&emsp;cp -n -r /root/.ssh /home/otus/
+>&emsp;chown otus:otus /home/otus/.shh -R
+
+**kuva
+
+Olin käsittääkseni nyt valmis vaihtamaan käyttäjän otukseen. Poistuin palvelimelta ja kokeilin onnistuneesti yhteydenottoa uudella käyttäjänimellä.
+
+>&emsp;exit
+>&emsp;ssh otus@IP-osoite
+
+Muistiinpanoissani oli seuraavana root-tunnusten lukitseminen. Ajoin tunneilla kerrotun lukitsemiskäskyn ja sen jälkeen poistin SSH-avaimet root-käyttäjältä.
+
+>&emsp;sudo usermod --lock root
+>&emsp;sudo rm /root/.ssh -r
+
+
+
+
+
+
 
