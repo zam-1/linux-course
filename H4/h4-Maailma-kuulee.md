@@ -62,6 +62,38 @@ Muistiinpanoissani oli seuraavana root-tunnusten lukitseminen. Ajoin tunneilla k
 >&emsp;exit  
 >&emsp;ssh root@IP-osoite
 
+Kuten aiemmin mainitsin, tästä olisi ehkä ollut hyvä aloittaa. Asensin seuraavaksi UFW-palomuurin ja avasin sille portin SSH-yhteyttä varten. Hieman yllättäen palomuurin statuksen tarkasteluun annettu komento ei kertonut avatuista porteista mitään palomuurin ollessa pois päältä. Tarkistin porttien avaamiseen käytetyn käskyn ja käynnistin palomuurin. Käynnistämisen jälkeen olin edelleen yhteydessä palvelimeen, joten palomuurin asetukset näyttivät toimivan. Tarkistin asian vielä varalta erikseen.
+
+&emsp;sudo apt-get -y install ufw  
+&emsp;sudo ufw allow 22/tcp  
+&emsp;sudo ufw status verbose
+
+**kuva
+
+>&emsp;sudo apt-get update  
+>&emsp;sudo ufw enable  
+>&emsp;sudo ufw status verbose
+
+**kuva
+
+Seuraavaksi ajoin järjestelmään uusimmat päivitykset. Tässä vaiheessa palvelin olisi varmasti pitänyt käynnistää uudestaan, mutta jostain syystä unohdin asian kokonaan useaksi tunniksi. En ole täysin varma onko vuokrapalvelimissa mekanismeja, jotka vähentävät uudelleenkäynnistysten tarvetta, mutta päätin kuitenkin käynnistää palvelimen uudestaan myöhemmin Digital Oceanin ohjeiden avulla (https://www.digitalocean.com/community/tutorials/workflow-command-line-basics-shutdown-reboot).
+
+>&emsp;sudo apt-get -y dist-upgrade  
+>&emsp;sudo reboot
+
+**kuva
+
+## c)
+
+Aloitin asentamalla Apache2-palvelimen aiemmista tehtävistä tutulla komennolla. Sen jälkeen vaihdoin oletussivun tunneilla annetulla komennolla.
+
+>&emsp;sudo apt-get -y install apache2  
+>&emsp;sudo systemctl status apache2  
+>&emsp;echo Sivu | sudo tee /var/www/html/index.html
+
+**kuva  
+**kuva
+
 
 
 
