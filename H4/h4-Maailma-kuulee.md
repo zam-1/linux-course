@@ -55,10 +55,12 @@ Olin käsittääkseni nyt valmis vaihtamaan käyttäjän otukseen. Poistuin palv
 >&emsp;exit  
 >&emsp;ssh otus@IP-osoite
 
-Muistiinpanoissani oli seuraavana root-tunnusten lukitseminen. Ajoin tunneilla kerrotun lukitsemiskäskyn ja sen jälkeen poistin SSH-avaimet root-käyttäjältä.
+Muistiinpanoissani oli seuraavana root-tunnusten lukitseminen. Ajoin tunneilla kerrotun lukitsemiskäskyn ja sen jälkeen poistin SSH-avaimet root-käyttäjältä. Testasin SSH-yhteyttä root-käyttäjänä ja epäonnistuin onnistuneesti. Rootilla ei ollut oikeutta päästä palvelimelle.
 
 >&emsp;sudo usermod --lock root  
->&emsp;sudo rm /root/.ssh -r
+>&emsp;sudo rm /root/.ssh -r  
+>&emsp;exit  
+>&emsp;ssh root@IP-osoite
 
 
 
