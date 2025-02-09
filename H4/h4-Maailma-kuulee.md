@@ -38,26 +38,26 @@ Aloitin palvelimen käytön ottamalla SSH-yhteyden root-käyttäjänä palvelime
 
 Lähdin tekemään jatkotoimenpiteitä tunneilla tehdyssä järjestyksessä, mutta jälkikäteen ajateltuna olisi ehkä ollut hyvä laittaa palomuuri päälle ja päivitykset kuntoon heti aluksi. Palvelin oli turhaan suojaamatta tovin, kun selvittelin asioita. Ensimmäiseksi loin uuden otus-käyttäjän palvelimelle. Tämän jälkeen annoin käyttäjälle sudo-oikeudet ja testasin niitä.
 
->&emsp;sudo adduser otus
+>&emsp;sudo adduser otus  
 >&emsp;sudo adduser otus sudo
 
 **kuva
 
 Seuraavaksi kopioin uudelle käyttäjälle SSH-avaimet /root/.ssh/ kansioista ja vaihdoin niiden käyttöoikeudet vastaamaan käyttäjäänsä.
 
->&emsp;cp -n -r /root/.ssh /home/otus/
+>&emsp;cp -n -r /root/.ssh /home/otus/  
 >&emsp;chown otus:otus /home/otus/.shh -R
 
 **kuva
 
 Olin käsittääkseni nyt valmis vaihtamaan käyttäjän otukseen. Poistuin palvelimelta ja kokeilin onnistuneesti yhteydenottoa uudella käyttäjänimellä.
 
->&emsp;exit
+>&emsp;exit  
 >&emsp;ssh otus@IP-osoite
 
 Muistiinpanoissani oli seuraavana root-tunnusten lukitseminen. Ajoin tunneilla kerrotun lukitsemiskäskyn ja sen jälkeen poistin SSH-avaimet root-käyttäjältä.
 
->&emsp;sudo usermod --lock root
+>&emsp;sudo usermod --lock root  
 >&emsp;sudo rm /root/.ssh -r
 
 
