@@ -126,10 +126,18 @@ Koitin sivustoa selaimen kautta toiselta koneelta, mutta en saanut niihin yhteyt
 
 &emsp;sudo tail /var/log/apache2/error.log
 
-Vertasin virtuaalikoneen toimivan ratkaisun kansioiden ja tiedostojen käyttöoikeuksia ja löysinkin pieniä eroja. En valitettavasti ottanut ylös käyttöoikeuksia ennen muutoksia, mutta muutosten jälkeen sivut aukesivat onnistuneesti toisen koneen ja puhelimen kautta. Annoin /home/otus/public_sites/sivusto/ kansioille luku- ja ajo-oikeudet 'group' ja 'others' ryhmille. Ajoin esimerkin kaltaiset komennot public_sites ja sivusto kansioille, sekä sivujen vaatimille tiedostoille.
+![perm2.png](perm2.png "Error.log")
+
+Vertasin virtuaalikoneen toimivan ratkaisun kansioiden ja tiedostojen käyttöoikeuksia ja löysinkin pieniä eroja. En valitettavasti ottanut ylös käyttöoikeuksia ennen muutoksia, mutta annoin /home/otus/public_sites/sivusto/ kansioille luku- ja ajo-oikeudet 'group' ja 'others' ryhmille. Ajoin esimerkin kaltaiset komennot public_sites ja sivusto kansioille, sekä sivujen vaatimille tiedostoille.
 
 &emsp;sudo chmod 755 /home/otus/public_sites/sivusto
 &emsp;sudo chmod 644 /home/otus/public_sites/index.html
+
+![oikeudet.png](oikeudet.png "Permissions")
+
+Tämän jälkeen testasin sivuja onnistuneesti toiselta koneelta.
+
+![sivut.png](sivut.png "Sites")
 
 
 
