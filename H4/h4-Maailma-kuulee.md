@@ -136,7 +136,7 @@ Aloitin asentamalla Apache2-palvelimen aiemmista tehtävistä tutulla komennolla
 
 ## d)
 
-Vapaaehtoisessa osiossa päätin laittaa uudelle palvelimelle edellisen viikon tehtävässä paikallisesti tehdyt sivut. Tein ensin public_sites-hakemiston käyttäjän kotikansioon. Tämän jälkeen kopioin hakemistoon palvelimen vaatiman kansion uudella nimellä vanhalta virtuaalikoneeltani.
+Vapaaehtoisessa osiossa päätin laittaa uudelle palvelimelle edellisen viikon tehtävässä paikallisesti tehdyt sivut. Tein ensin public_sites-hakemiston käyttäjän kotikansioon. Tämän jälkeen kopioin hakemistoon palvelimen vaatiman kansion uudella nimellä vanhalta virtuaalikoneeltani. Scp-komento löytyi Aiempien viikkojen kurssimateriaalista (https://terokarvinen.com/2020/command-line-basics-revisited/?fromSearch=command%20line%20basics%20revisited).
 
 >&emsp;mkdir /home/otus/public_sites  
 >&emsp;exit  
@@ -175,10 +175,17 @@ Tämän jälkeen testasin sivuja onnistuneesti toiselta koneelta.
 ## Lähteet
 
 Karvinen, Tero 2025: Linux Palvelimet 2025 alkukevät. https://terokarvinen.com/linux-palvelimet/  
+<br />
 Karvinen, Tero 2017: First Steps on a New Virtual Private Server – an Example on DigitalOcean and Ubuntu 16.04 LTS. https://terokarvinen.com/2017/first-steps-on-a-new-virtual-private-server-an-example-on-digitalocean/  
+<br />
 Lehto, Susanna 2022: Teoriasta käytäntöön pilvipalvelimen avulla (h4). https://susannalehto.fi/2022/teoriasta-kaytantoon-pilvipalvelimen-avulla-h4/  
+<br />
 joshtronic 2019: Command-line Basics: Shutdown and Reboot. https://www.digitalocean.com/community/tutorials/workflow-command-line-basics-shutdown-reboot  
-Redhat.com 2020: How to manage Linux permissions for users, groups, and others. https://www.redhat.com/en/blog/manage-permissions
+<br />
+Redhat.com 2020: How to manage Linux permissions for users, groups, and others. https://www.redhat.com/en/blog/manage-permissions  
+<br />
+Karvinen, Tero 2020: Command Line Basics Revisited. https://terokarvinen.com/2020/command-line-basics-revisited/?fromSearch=command%20line%20basics%20revisited
+<br />
 <br />
 <br />
 <br />
