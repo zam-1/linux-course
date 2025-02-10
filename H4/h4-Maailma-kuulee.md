@@ -39,21 +39,23 @@ Palvelimen luontiin kului noin minuutti, jonka jälkeen se löytyi first-project
 
 Aloitin palvelimen käytön ottamalla SSH-yhteyden root-käyttäjänä palvelimelle annettuun IP-osoitteeseen omalta Debian-pohjaiselta virtuaalikoneeltani. Yhteydenotto onnistui ja löysin itseni palvelimen /root/ hakemistosta.
 
-**kuva
+>&emsp;ssh root@IP-osoite
+
+![root.png](root.png "Root")
 
 Lähdin tekemään jatkotoimenpiteitä tunneilla tehdyssä järjestyksessä, mutta jälkikäteen ajateltuna olisi ehkä ollut hyvä laittaa palomuuri päälle ja päivitykset kuntoon heti aluksi. Palvelin oli turhaan suojaamatta tovin, kun selvittelin asioita. Ensimmäiseksi loin uuden otus-käyttäjän palvelimelle. Tämän jälkeen annoin käyttäjälle sudo-oikeudet ja testasin niitä.
 
 >&emsp;sudo adduser otus  
 >&emsp;sudo adduser otus sudo
 
-**kuva
+![sudo.png](sudo.png "Sudo")
 
 Seuraavaksi kopioin uudelle käyttäjälle SSH-avaimet /root/.ssh/ kansioista ja vaihdoin niiden käyttöoikeudet vastaamaan käyttäjäänsä.
 
 >&emsp;cp -n -r /root/.ssh /home/otus/  
 >&emsp;chown otus:otus /home/otus/.shh -R
 
-**kuva
+![perm.png](perm.png "Permissions")
 
 Olin käsittääkseni nyt valmis vaihtamaan käyttäjän otukseen. Poistuin palvelimelta ja kokeilin onnistuneesti yhteydenottoa uudella käyttäjänimellä.
 
@@ -67,26 +69,30 @@ Muistiinpanoissani oli seuraavana root-tunnusten lukitseminen. Ajoin tunneilla k
 >&emsp;exit  
 >&emsp;ssh root@IP-osoite
 
-Kuten aiemmin mainitsin, tästä olisi ehkä ollut hyvä aloittaa. Asensin seuraavaksi UFW-palomuurin ja avasin sille portin SSH-yhteyttä varten. Hieman yllättäen palomuurin statuksen tarkasteluun annettu komento ei kertonut avatuista porteista mitään palomuurin ollessa pois päältä. Tarkistin porttien avaamiseen käytetyn käskyn ja käynnistin palomuurin. Käynnistämisen jälkeen olin edelleen yhteydessä palvelimeen, joten palomuurin asetukset näyttivät toimivan. Tarkistin asian vielä varalta erikseen.
+![rootd.png](rootd.png "Root denied")
 
+Asensin seuraavaksi UFW-palomuurin ja avasin sille portit SSH-yhteyttä ja tulevaa Apache2-palvelinta varten. Tarkistin porttien avaamiseen käytetyn käskyn ja käynnistin palomuurin. Käynnistämisen jälkeen olin edelleen yhteydessä palvelimeen, joten palomuurin asetukset näyttivät toimivan. Tarkistin asian vielä varalta erikseen.
+
+&emsp;sudo apt-get update 
 &emsp;sudo apt-get -y install ufw  
 &emsp;sudo ufw allow 22/tcp  
+&emsp;sudo ufw allow 80/tcp  
+&emsp;sudo ufw enable  
 &emsp;sudo ufw status verbose
 
-**kuva
+![ufwstatus.png](ufwstatus.png "UFW status")
 
->&emsp;sudo apt-get update  
->&emsp;sudo ufw enable  
->&emsp;sudo ufw status verbose
+Seuraavaksi ajoin järjestelmään uusimmat päivitykset. Päivityksen yhteydessä sain ilmoituksen SSH:n paikallisesti muokatusta asetustiedostosta, jonka päivitys olisi halunnut korvata uudella. Päädyin pitämään vanhan version tiedostosta, koska tiesin sen varmasti toimivaksi.
 
-**kuva
+>&emsp;sudo apt-get -y dist-upgrade
 
-Seuraavaksi ajoin järjestelmään uusimmat päivitykset. Tässä vaiheessa palvelin olisi varmasti pitänyt käynnistää uudestaan, mutta jostain syystä unohdin asian kokonaan useaksi tunniksi. En ole täysin varma onko vuokrapalvelimissa mekanismeja, jotka vähentävät uudelleenkäynnistysten tarvetta, mutta päätin kuitenkin käynnistää palvelimen uudestaan myöhemmin Digital Oceanin ohjeiden avulla (https://www.digitalocean.com/community/tutorials/workflow-command-line-basics-shutdown-reboot).
+![sshup.png](sshup.png "SSH conf alert")
 
->&emsp;sudo apt-get -y dist-upgrade  
+Tässä vaiheessa palvelin olisi varmasti pitänyt käynnistää uudestaan, mutta jostain syystä muistin asian vasta tuntien päästä palatessani tehtävän pariin. En ole täysin varma onko vuokrapalvelimissa mekanismeja, jotka vähentävät uudelleenkäynnistysten tarvetta, mutta päätin kuitenkin käynnistää palvelimen uudestaan Digital Oceanin ohjeiden avulla (https://www.digitalocean.com/community/tutorials/workflow-command-line-basics-shutdown-reboot).
+ 
 >&emsp;sudo reboot
 
-**kuva
+![reboot.png](reboot.png "Reboot")
 
 ## c)
 
