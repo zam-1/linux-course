@@ -2,7 +2,7 @@
 
 ## a)
 
-Aloitin virtuaalipalvelimen vuokraamisen ilmottautumalla GitHub Educationiin (GitHub Student Developer Pack). Vaikka hakemus hyväksyttiin heti, jouduin odottamaan luvattuja etuja noin neljä päivää. Onneksi tajusin hake niitä hyvissä ajoin. Tarjolla olevista eduista valitsin Digital Oceanin (https://www.digitalocean.com/), jolle oli tarjolla 200$ edestä krediittejä vuoden ajaksi.
+Aloitin virtuaalipalvelimen vuokraamisen ilmoittautumalla GitHub Educationiin (GitHub Student Developer Pack). Vaikka hakemus hyväksyttiin heti, jouduin odottamaan luvattuja etuja noin neljä päivää. Onneksi tajusin hake niitä hyvissä ajoin. Tarjolla olevista eduista valitsin Digital Oceanin (https://www.digitalocean.com/), jolle oli tarjolla 200$ edestä krediittejä vuoden ajaksi.
 
 ![docean.png](docean.png "Digital Ocean")
 
@@ -14,7 +14,7 @@ Löysin uusien palvelimien luomisen Create-napin takaa sivun oikeasta yläkulmas
 
 ![frankfurt.png](frankfurt.png "Location: Frankfurt")
 
-Käyttöjärjestelmäksi tajrolla oli samoja vaihtoehtoja, kuin tunnilla esitellyssä palvelussa. Valitsin käyttöön tutun ja turvallisen Debianin (12 x64). Valitsin pavelimelle halvimman mahdollisen CPU-tyypin (Basic, shared CPU). Huomasin, että halvimmassa palvelimessa oli vain 512MB muistia, joten päädyin ottamaan seuraavaksi halvimman vaihtoehdon, jossa muistia oli 1GB. Hintaa valinnalle tuli 6$. Ei ole riskiä siitä, että GitHubin tarjoama 200$ ylittyy seuraavan vuoden aikana.
+Käyttöjärjestelmäksi tarjolla oli samoja vaihtoehtoja, kuin tunnilla esitellyssä palvelussa. Valitsin käyttöön tutun ja turvallisen Debianin (12 x64). Valitsin palvelimelle halvimman mahdollisen CPU-tyypin (Basic, shared CPU). Huomasin, että halvimmassa palvelimessa oli vain 512MB muistia, joten päädyin ottamaan seuraavaksi halvimman vaihtoehdon, jossa muistia oli 1GB. Hintaa valinnalle tuli 6$. Ei ole riskiä siitä, että GitHubin tarjoama 200$ ylittyy seuraavan vuoden aikana.
 
 ![os.png](os.png "Operating System")
 ![type.png](type.png "Server Type")
@@ -116,7 +116,7 @@ Vapaaehtoisessa osiossa päätin laittaa uudelle palvelimelle edellisen viikon t
 
 ![scp.png](scp.png "SCP site")
 
-Seuraavaksi loin Apachen sites-available-kansioon uuden sivusto.conf tiedoston johon kopioin sisällön aiemmin tehdystä hattu.example.com.conf tiedostosta virtuaalikoneeltani. Tein tiedostoon tarvittavat muutokset ja asetin sen aktiiviseksi sites-enabled-kansioon. Samalla poistin käytöstä Apachen oletussivut.
+Seuraavaksi loin Apachen sites-available-kansioon uuden sivusto.conf tiedoston, johon kopioin sisällön aiemmin tehdystä hattu.example.com.conf tiedostosta virtuaalikoneeltani. Tein tiedostoon tarvittavat muutokset ja asetin sen aktiiviseksi sites-enabled-kansioon. Samalla poistin käytöstä Apachen oletussivut.
 
 >&emsp;micro sivusto.conf
 
