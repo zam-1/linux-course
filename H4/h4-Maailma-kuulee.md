@@ -1,5 +1,29 @@
 # H4 Maailma kuulee
 
+
+## Ajoympäristö
+
+PC: Lenovo L14 Gen 5  
+OS: Windows 11 Pro 24H2  
+CPU: AMD Ryzen 5 PRO 7535u  
+Muisti: 16 GB DDR5-5600MHz  
+Storage: 512 GB SSD M.2 2280 PCIe Gen4 TLC Opal  
+GPU: Integrated AMD Radeon™ 660M
+
+VirtualBox asetukset:  
+Oletusasetukset, muutamia poikkeuksia lukuunottamatta.  
+OS: Debian 12.9.0  
+Number of CPUs: 2  
+Video Memory: 256MB  
+Base Memory: 8192MB  
+Harddisk: 60GB
+
+VPS:
+Digital Ocean Droplet  
+OS: Debian 12 x64  
+CPU: Shared  
+Muisti: 1GB
+
 ## a)
 
 Aloitin virtuaalipalvelimen vuokraamisen ilmoittautumalla GitHub Educationiin (GitHub Student Developer Pack). Vaikka hakemus hyväksyttiin heti, jouduin odottamaan luvattuja etuja noin neljä päivää. Onneksi tajusin hake niitä hyvissä ajoin. Tarjolla olevista eduista valitsin Digital Oceanin (https://www.digitalocean.com/), jolle oli tarjolla 200$ edestä krediittejä vuoden ajaksi.
