@@ -71,7 +71,7 @@ Aloitin palvelimen käytön ottamalla SSH-yhteyden root-käyttäjänä palvelime
 
 ![root.png](root.png "Root")
 
-Lähdin tekemään jatkotoimenpiteitä tunneilla tehdyssä järjestyksessä, mutta jälkikäteen ajateltuna olisi ehkä ollut hyvä laittaa palomuuri päälle ja päivitykset kuntoon heti aluksi. Palvelin oli turhaan suojaamatta tovin, kun selvittelin asioita. Ensimmäiseksi loin uuden otus-käyttäjän palvelimelle. Tämän jälkeen annoin käyttäjälle sudo-oikeudet ja testasin niitä.
+Lähdin tekemään jatkotoimenpiteitä tunneilla tehdyssä järjestyksessä, mutta jälkikäteen ajateltuna olisi ehkä ollut hyvä laittaa palomuuri päälle ja päivitykset kuntoon heti aluksi. Palvelin oli turhaan suojaamatta tovin, kun selvittelin asioita. Ensimmäiseksi loin uuden otus-käyttäjän palvelimelle vahvalla salasanalla. Täytin käyttäjän tiedoista vain nimen. Tämän jälkeen annoin käyttäjälle sudo-oikeudet.
 
 >&emsp;sudo adduser otus  
 >&emsp;sudo adduser otus sudo
