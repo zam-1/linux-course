@@ -118,7 +118,9 @@ Vapaaehtoisessa osiossa päätin laittaa uudelle palvelimelle edellisen viikon t
 
 Seuraavaksi loin Apachen sites-available-kansioon uuden sivusto.conf tiedoston, johon kopioin sisällön aiemmin tehdystä hattu.example.com.conf tiedostosta virtuaalikoneeltani. Tein tiedostoon tarvittavat muutokset ja asetin sen aktiiviseksi sites-enabled-kansioon. Samalla poistin käytöstä Apachen oletussivut.
 
->&emsp;micro sivusto.conf
+>&emsp;micro sivusto.conf  
+>&emsp;sudo a2ensite sivusto.conf  
+>&emsp;sudo a2dissite 000-default.conf
 
 ![sconf.png](sconf.png "Sivusto.conf")
 
