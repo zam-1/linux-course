@@ -24,9 +24,13 @@ OS: Debian 12 x64
 CPU: Shared  
 Muisti: 1GB
 
+## Alkusanat
+
+Tämä raportti käsittelee palvelimen vuokraamista julkisilta tarjoajilta. Valitsin käyttöön Digital Oceanin (https://www.digitalocean.com/) lähinnä Githubin etujen takia. Tein palvelimen käyttöönottoon liittyviä toimenpiteitä ja asensin Apache2-palvelimen, joka tarjoaa maailmalle tekemääni alkeellista sivua. Suurimmat ongelmat raportissa esitettyjen toimenpiteiden suorittamisessa liittyivät tiedostojen ja hakemistojen käyttöoikeuksiin. Edellisten viikkojen opeilla selviydyin ongelmista kohtuu nopeasti.
+
 ## a)
 
-Aloitin virtuaalipalvelimen vuokraamisen ilmoittautumalla GitHub Educationiin (GitHub Student Developer Pack). Vaikka hakemus hyväksyttiin heti, jouduin odottamaan luvattuja etuja noin neljä päivää. Onneksi tajusin hake niitä hyvissä ajoin. Tarjolla olevista eduista valitsin Digital Oceanin (https://www.digitalocean.com/), jolle oli tarjolla 200$ edestä krediittejä vuoden ajaksi.
+Aloitin virtuaalipalvelimen vuokraamisen ilmoittautumalla GitHub Educationiin (GitHub Student Developer Pack). Vaikka hakemus hyväksyttiin heti, jouduin odottamaan luvattuja etuja noin neljä päivää. Onneksi tajusin hake niitä hyvissä ajoin. Tarjolla olevista eduista valitsin Digital Oceanin, jolle oli tarjolla 200$ edestä krediittejä vuoden ajaksi.
 
 ![docean.png](docean.png "Digital Ocean")
 
