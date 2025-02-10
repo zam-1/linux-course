@@ -23,13 +23,17 @@ Seuraavaksi tarjolla oli lisää levytilaa ja automaattista varmuuskopiointia pi
 
 >&emsp;sudo keygen
 
-**kuva
+![keys.png](keys.png "Keygen")
 
-Avaimet luotuani laitoin julkisen avaimen (id_rsa.pub) uuden palvelimen asetuksiin ja annoin sille nimeksi Key1. Lisäasetuksista otin käyttöön IPv6-verkon. Vaihdoin Hostnamen itselleni selkeämpään muotoon ja loin palvelimen Create Droplet-napista first-project-projektiin. Palvelimen luontiin kului noin minuutti, jonka jälkeen se löytyi first-projectin alta IP-osoitteen kanssa.
+Avaimet luotuani laitoin julkisen avaimen (id_rsa.pub) uuden palvelimen asetuksiin ja annoin sille nimeksi Key1. Lisäasetuksista otin käyttöön IPv6-verkon. Vaihdoin Hostnamen itselleni selkeämpään muotoon ja loin palvelimen Create Droplet-napista first-project-projektiin.
 
-**kuva
-**kuva
-**kuva
+![key.png](key.png "Key Conf")
+![ipv6.png](ipv6.png "IPv6")
+
+Palvelimen luontiin kului noin minuutti, jonka jälkeen se löytyi first-projectin alta IP-osoitteen kanssa.
+
+![serverdone.png](serverdone.png "Server done")
+
 
 ## b)
 
