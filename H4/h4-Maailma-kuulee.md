@@ -73,12 +73,12 @@ Muistiinpanoissani oli seuraavana root-tunnusten lukitseminen. Ajoin tunneilla k
 
 Asensin seuraavaksi UFW-palomuurin ja avasin sille portit SSH-yhteyttä ja tulevaa Apache2-palvelinta varten. Tarkistin porttien avaamiseen käytetyn käskyn ja käynnistin palomuurin. Käynnistämisen jälkeen olin edelleen yhteydessä palvelimeen, joten palomuurin asetukset näyttivät toimivan. Tarkistin asian vielä varalta erikseen.
 
-&emsp;sudo apt-get update 
-&emsp;sudo apt-get -y install ufw  
-&emsp;sudo ufw allow 22/tcp  
-&emsp;sudo ufw allow 80/tcp  
-&emsp;sudo ufw enable  
-&emsp;sudo ufw status verbose
+>&emsp;sudo apt-get update  
+>&emsp;sudo apt-get -y install ufw  
+>&emsp;sudo ufw allow 22/tcp  
+>&emsp;sudo ufw allow 80/tcp  
+>&emsp;sudo ufw enable  
+>&emsp;sudo ufw status verbose
 
 ![ufwstatus.png](ufwstatus.png "UFW status")
 
@@ -103,8 +103,8 @@ Aloitin asentamalla Apache2-palvelimen aiemmista tehtävistä tutulla komennolla
 >&emsp;echo Sivu | sudo tee /var/www/html/index.html  
 >&emsp;curl IP-osoite
 
-**kuva  
-**kuva
+![apstatus.png](apstatus.png "apstatus") 
+![curl.png](curl.png "Curl test") 
 
 ## d)
 
