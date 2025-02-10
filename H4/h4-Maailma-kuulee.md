@@ -110,28 +110,28 @@ Aloitin asentamalla Apache2-palvelimen aiemmista tehtävistä tutulla komennolla
 
 Vapaaehtoisessa osiossa päätin laittaa uudelle palvelimelle edellisen viikon tehtävässä paikallisesti tehdyt sivut. Tein ensin public_sites-hakemiston käyttäjän kotikansioon. Tämän jälkeen kopioin hakemistoon palvelimen vaatiman kansion uudella nimellä vanhalta virtuaalikoneeltani.
 
-&emsp;mkdir /home/otus/public_sites
-&emsp;exit
-&emsp;scp -r /home/otus/public_sites/hattu.example.com otus@IP-osoite:/home/otus/public_sites/sivusto
+>&emsp;mkdir /home/otus/public_sites  
+>&emsp;exit  
+>&emsp;scp -r /home/otus/public_sites/hattu.example.com otus@IP-osoite:/home/otus/public_sites/sivusto
 
 ![scp.png](scp.png "SCP site")
 
 Seuraavaksi loin Apachen sites-available-kansioon uuden sivusto.conf tiedoston johon kopioin sisällön aiemmin tehdystä hattu.example.com.conf tiedostosta virtuaalikoneeltani. Tein tiedostoon tarvittavat muutokset ja asetin sen aktiiviseksi sites-enabled-kansioon. Samalla poistin käytöstä Apachen oletussivut.
 
-&emsp;micro sivusto.conf
+>&emsp;micro sivusto.conf
 
 ![sconf.png](sconf.png "Sivusto.conf")
 
-Koitin sivustoa selaimen kautta toiselta koneelta, mutta en saanut niihin yhteyttä. Tarkistin merkintöjä Apachen error.logista, joka paljasti mahdolliseksi syyksi käyttöoikeuksien puutteen.
+Koitin sivuja selaimen kautta toiselta koneelta, mutta en saanut niihin yhteyttä. Tarkistin merkintöjä Apachen error.logista, joka paljasti mahdolliseksi syyksi käyttöoikeuksien puutteen.
 
-&emsp;sudo tail /var/log/apache2/error.log
+>&emsp;sudo tail /var/log/apache2/error.log
 
 ![perm2.png](perm2.png "Error.log")
 
 Vertasin virtuaalikoneen toimivan ratkaisun kansioiden ja tiedostojen käyttöoikeuksia ja löysinkin pieniä eroja. En valitettavasti ottanut ylös käyttöoikeuksia ennen muutoksia, mutta annoin /home/otus/public_sites/sivusto/ kansioille luku- ja ajo-oikeudet 'group' ja 'others' ryhmille. Ajoin esimerkin kaltaiset komennot public_sites ja sivusto kansioille, sekä sivujen vaatimille tiedostoille.
 
-&emsp;sudo chmod 755 /home/otus/public_sites/sivusto
-&emsp;sudo chmod 644 /home/otus/public_sites/index.html
+>&emsp;sudo chmod 755 /home/otus/public_sites/sivusto  
+>&emsp;sudo chmod 644 /home/otus/public_sites/index.html
 
 ![oikeudet.png](oikeudet.png "Permissions")
 
