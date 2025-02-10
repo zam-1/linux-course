@@ -7,8 +7,13 @@
 (https://susannalehto.fi/2022/teoriasta-kaytantoon-pilvipalvelimen-avulla-h4/)
 
 * Raportissa käydään läpi palvelimen (Digital Ocean) ja domainnimen (Namecheap) vuokraaminen hyödyntäen GitHub Education-etuja.
+* Sijainniksi palvelimelle valikoituu maantieteellisesti lähin vaihtoehto, Amsterdam.
+* Palvelimella valitaan Debian (11 x64) kääyttöjärjestelmä ja sille määritellään 1GB muistia.
+* Kirjoittaja valitsee autentikointimenetelmäksi salasanan, koska ei mielestään osaa käyttää SSH-avaimia.
 * Palvelimelle suoritetaan käyttöönottoon liittyviä toimenpiteitä, kuten järjestelmän päivittäminen ja palomuurin asennus.
+* Palomuurista avataan portit 22 ja 80 (tcp).
 * Rapportissa kuvaillaan Apache2-palvelimen asennusta ja sen käyttämistä sivujen julkaisemiseen.
+* Sivuiksi tehdään perusluontoiset HTML-sivut.
 * Lopuksi kirjoittaja analysoi lokeista löytyvää mahdollista murtautumisyritystä.
 
 **First Steps on a New Virtual Private Server – an Example on DigitalOcean and Ubuntu 16.04 LTS**  
