@@ -130,7 +130,7 @@ Koitin sivuja selaimen kautta toiselta koneelta, mutta en saanut niihin yhteytt�
 
 ![perm2.png](perm2.png "Error.log")
 
-Vertasin virtuaalikoneen toimivan ratkaisun kansioiden ja tiedostojen käyttöoikeuksia ja löysinkin pieniä eroja. En valitettavasti ottanut ylös käyttöoikeuksia ennen muutoksia, mutta annoin /home/otus/public_sites/sivusto/ kansioille luku- ja ajo-oikeudet 'group' ja 'others' ryhmille. Ajoin esimerkin kaltaiset komennot public_sites ja sivusto kansioille, sekä sivujen vaatimille tiedostoille.
+Vertasin virtuaalikoneen toimivan ratkaisun kansioiden ja tiedostojen käyttöoikeuksia palvelimella oleviin ja löysinkin pieniä eroja. En valitettavasti ottanut ylös käyttöoikeuksia ennen muutoksia, mutta annoin /home/otus/public_sites/sivusto/ kansioille luku- ja ajo-oikeudet 'group' ja 'others' ryhmille. Ajoin esimerkin kaltaiset komennot public_sites ja sivusto kansioille, sekä sivujen vaatimille tiedostoille.
 
 >&emsp;sudo chmod 755 /home/otus/public_sites/sivusto  
 >&emsp;sudo chmod 644 /home/otus/public_sites/index.html
