@@ -71,7 +71,7 @@ Nyt minulla oli tallessa paikallisesti käyttäjän muokattavissa olevat tiedost
 ![siirto.png](siirto.png "SCP")
 ![kansio.png](kansio.png "Server Folder")
 
-Seuraavaksi testasin sivut onnistuneesti koira.me ja www.koira.me osoitteilla sekä työpöydällä ja puhelinnäkymässä.
+Seuraavaksi testasin sivut onnistuneesti koira.me ja www<!-- -->.koira.me osoitteilla sekä työpöydällä ja puhelinnäkymässä.
 
 ![sivuok.png](sivuok.png "Site Working")
 
@@ -103,7 +103,7 @@ Asetusten muuttamisen jälkeen jäljellä oli enää uuden hostin aktivointi ja 
 >&emsp;sudo a2ensite isosivusto.conf  
 >&emsp;sudo systemctl restart apache2
 
-Kaiken tämän jälkeen, minulla oli pääsivu, joka totteli nimiä koira.me, www.koira.me ja pieni.koira.me. Sen lisäksi minulla oli toinen Name Based Virtual Host, joka totteli ainoastaan nimeä iso.koira.me.
+Kaiken tämän jälkeen, minulla oli pääsivu, joka totteli nimiä koira.me, www<!-- -->.koira.me ja pieni.koira.me. Sen lisäksi minulla oli toinen Name Based Virtual Host, joka totteli ainoastaan nimeä iso.koira.me.
 
 ![isokuva.png](isokuva.png "Dog")
 
