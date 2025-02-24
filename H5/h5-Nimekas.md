@@ -55,18 +55,18 @@ Seuraavaksi lähdin siirtämään sivujen tiedostoja palvelimelle. Tein tämän 
 
 Kopioin hakemiston käyttäjäni kotihakemiston Documents-kansioon helpompaa käsittelyä varten ja muutin sen ja sen sisältämien tiedostojen käyttöoikeudet haluamaani muotoon.
 
-sudo cp -r sf_sivut /home/otus/Documents
-cd /home/otus/Documents
-sudo chown otus:otus sf_sivut
-cd sf_sivut
-sudo chown otus:otus *
-sudo chmod 644 *
+>&emsp;sudo cp -r sf_sivut /home/otus/Documents  
+>&emsp;cd /home/otus/Documents  
+>&emsp;sudo chown otus:otus sf_sivut  
+>&emsp;cd sf_sivut  
+>&emsp;sudo chown otus:otus *  
+>&emsp;sudo chmod 644 *
 
 ![oikeudet.png](oikeudet.png "Permissions")
 
 Nyt minulla oli tallessa paikallisesti käyttäjän muokattavissa olevat tiedostot ja olin valmis siirtämään ne palvelimelle. Käytin taas aiemmista tehtävistä tuttua scp-komentoa. Nyt palvelimeltani löytyi kaikki tarvittavat tiedostot oikeasta paikasta /home/otus/public_sites/sivusto/-hakemistosta. Tiedostot ovat otus-käyttäjän muokattavissa.
 
-scp -r * otus@IP-osoite:/home/otus/public_sites/sivusto
+>&emsp;scp -r * otus@IP-osoite:/home/otus/public_sites/sivusto
 
 ![siirto.png](siirto.png "SCP")
 ![kansio.png](kansio.png "Server Folder")
@@ -100,8 +100,8 @@ Seuraavaksi muutin alkuperäisen sivusto.conf-tiedoston osoittamaan koira.me:n l
 
 Asetusten muuttamisen jälkeen jäljellä oli enää uuden hostin aktivointi ja Apache2:n resetointi.
 
-sudo a2ensite isosivusto.conf
-sudo systemctl restart apache2
+>&emsp;sudo a2ensite isosivusto.conf  
+>&emsp;sudo systemctl restart apache2
 
 Kaiken tämän jälkeen, minulla oli pääsivu, joka totteli nimiä koira.me, www.koira.me ja pieni.koira.me. Sen lisäksi minulla oli toinen Name Based Virtual Host, joka totteli ainoastaan nimeä iso.koira.me.
 
@@ -111,20 +111,20 @@ Kaiken tämän jälkeen, minulla oli pääsivu, joka totteli nimiä koira.me, ww
 
 ## Host
 
-host iso.koira.me
+>&emsp;host iso.koira.me
 
 Host komento omaan alidomainiini kertoo sen olevan alias päädomainille koira.me. Hausta selviää myös nimen takana vaikuttava IP-osoite, joka on sama kuin käytössä olevalla palvelimella. En ole muuttanut nimipalvelimeni sähköpostiasetuksia, mutta niiden oletusarvot ja host-komennon ulosanti vastaavat toisiaan. Asetuksissa määritelty sillisalaatti kertoo luultavasti oleelliset tiedot käytössä olevasta edelleenlähetyspalvelusta.
 
 ![hostme.png](hostme.png "Host")
 ![email.png](email.png "Email Settings")
 
-host bta3062.com
+>&emsp;host bta3062.com
 
 Kyseessä on Battletech-pelin modin sivusto. Tarjolla olevista lyhyistä tiedoista selviää domainin takana olevan palvelimen IP-osoite ja postin edelleenlähettämiseen liittyvät tiedot. Pieni projektisivusto tulee ilmeisesti toimeen pienemmällä postinkäsittelykapasiteetilla kuin suuri nimipalvelin.
 
 ![hostbta.png](hostbta.png "Host")
 
-host hs.fi
+>&emsp;host hs.fi
 
 Helsingien sanomien palvelimesta irtoaa muista poiketen useita osoitteita. IPv4-osotteita on peräti 4. Sen lisäksi hs.fi hyödyntää myös useampaa IPv6-osotteita. Postin käsittelyssä luotetaan Microsoftin tarjontaan, Outlook:ia hyödyntäen.
 
@@ -134,12 +134,12 @@ Helsingien sanomien palvelimesta irtoaa muista poiketen useita osoitteita. IPv4-
 
 Dig-komentoa ei löytynyt oletuksena omalta palvelimeltani, joten jouduin ensin selvittämään, miten sen saa asennettua. Asia selvisi Googlen avulla nopeasti (https://www.cloudns.net/blog/linux-dig-command-install-use/).
 
-sudo apt-get -y update
-sudo apt-get -y install dnsutils
+>&emsp;sudo apt-get -y update  
+>&emsp;sudo apt-get -y install dnsutils
 
 Seuraavaksi lähdin kokeilemaan komentoa omaan palvelimeeni.
 
-dig koira.me
+>&emsp;dig koira.me
 
 ![digme.png](digme.png "Dig")
 
@@ -149,11 +149,11 @@ dig koira.me
 * QUESTION ja ANSWER SECTION kertovat yhdessä sen mitä haetaan, ja mitä hakuun vastataan. Tässä tapauksessa haetaan tietoa koira.me-domainin A-record (A) tietoja internetissä (IN). Vastauksessa haettu tieto löytyy palvelimen IP-osoitteen muodossa.
 * Loppuosa kertoo DNS-palvelimesta, josta tietoa kysyttiin. Tiedot ovat hakuun kulunut aika, palvelimen osoite, haun ajankohta ja vastauksen koko.
 
-dig bta3062.com
+>&emsp;dig bta3062.com
 
 Tässä haussa ei ole juurikaan eroa edelliseen. Osoitteissa ja porteissa on luonnollisesti eroja, mutta vastaus on sisällöltään muuten sama.
 
-dig hs.fi
+>&emsp;dig hs.fi
 
 ![dighs.png](dighs.png "Dig")
 
@@ -163,9 +163,9 @@ HS.fi:n tiedot eroavat lähinnä IP-osotteiden määrässä. Käytössä on jo H
 
 Ensimmäiseksi lähden perehtymään siihen, mitä eri tietoja Dig-komennolla saa kaivettua esiin. Löysin avuksi sivut (https://www.cyberciti.biz/faq/linux-unix-dig-command-examples-usage-syntax/) internetissä, joilla listataan haettavia tyyppejä. Koitin muutamia haettavia tyyppejä, kuten AAAA (IPv6), NS (NameServer-nimi) ja MX (Email-palvelimien host-nimet).
 
-dig hs.fi AAAA
-dig hs.fi NS
-dig hs.fi MX
+>&emsp;dig hs.fi AAAA  
+>&emsp;dig hs.fi NS  
+>&emsp;dig hs.fi MX
 
 ![dighs6.png](dighs6.png "Dig")
 ![dighsns.png](dighsns.png "Dig")
@@ -173,7 +173,7 @@ dig hs.fi MX
 
 Mielenkiintoisin huomio ylläolevista tiedoista on se, että hs.fi käyttää Amazonin nimipalvelimia (esim. ns-1461.awsdns-54.org). Tarjolla on muitakin haettavia tyyppejä, mutta laitan niistä enää vain esimerkin CNAME-recordista, jota oma domainini iso.koira.me edustaa. Hausta selviää lähinnä juuridomain, eli koira.me.
 
-dig iso.koira.me CNAME
+>&emsp;dig iso.koira.me CNAME
 
 ![digiso.png](digiso.png "Dig")
 
