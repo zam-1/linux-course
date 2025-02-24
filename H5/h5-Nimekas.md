@@ -77,9 +77,13 @@ Seuraavaksi testasin sivut onnistuneesti koira.me ja www.koira.me osoitteilla se
 
 ## d)
 
+### Alidomainit
+
 Aloitin alidomainien tutkimisen googlehaulla ja löysin NameCheapin omat ohjeet alidomainien luomiselle (https://www.namecheap.com/support/knowledgebase/article.aspx/9776/2237/how-to-create-a-subdomain-for-my-domain/). Loin ensin pieni-alidomainin A-recordilla tehtävässä a) kuvatulla tavalla ja sen jälkeen CNAME-recordilla iso-alidomainin. Tähän alidomainiin ei kelvannut isännäksi IP-osoite, joten käytin sen tilalla domainnimeä. Apua löytyi internetistä (https://dnsmadeeasy.com/post/cname-records-explained), josta selvisi ettei CNAME:n pitää aina osoittaa toiseen domainiin, ei IP-osoitteeseen.
 
 **alidomain
+
+### Uusi Name Based Virtual Host
 
 Vapaaehtoisessa osiossa lähdin tekemään omaa Name Based Virtual Hostia iso.koira.me alidomainille. Päättelin aluksi, että minun pitää luoda uusi nimipalvelin (iso.koira.me) aiempien oppien mukaisesti ja muuttaa alkuperäisen sivun .conf tiedostoa tottelemaan koira.me:n lisäksi myös pieni- ja www-alidomaineja. Aloitin luomalla uudelle hostille kansion vanhan sivuston rinnalle. Uuteen kansioon tein yksinkertaisen index.html tiedoston, jonka tehtävän oli näyttää vain yksi kuva. Kuvan kopioin alkuperäisen sivuston tiedostoista.
 
@@ -101,7 +105,94 @@ sudo systemctl restart apache2
 
 Kaiken tämän jälkeen, minulla oli pääsivu, joka totteli nimiä koira.me, www.koira.me ja pieni.koira.me. Sen lisäksi minulla oli toinen Name Based Virtual Host, joka totteli ainoastaan nimeä iso.koira.me.
 
-**
+**isokuva
+
+## e)
+
+## Host
+
+host iso.koira.me
+
+Host komento omaan alidomainiini kertoo sen olevan alias päädomainille koira.me. Hausta selviää myös nimen takana vaikuttava IP-osoite, joka on sama kuin käytössä olevalla palvelimella. En ole muuttanut nimipalvelimeni sähköpostiasetuksia, mutta niiden oletusarvot ja host-komennon ulosanti vastaavat toisiaan. Asetuksissa määritelty sillisalaatti kertoo luultavasti oleelliset tiedot käytössä olevasta edelleenlähetyspalvelusta.
+
+**hostme
+
+host bta3062.com
+
+Kyseessä on Battletech-pelin modin sivusto. Tarjolla olevista lyhyistä tiedoista selviää domainin takana olevan palvelimen IP-osoite ja postin edelleenlähettämiseen liittyvät tiedot. Pieni projektisivusto tulee ilmeisesti toimeen pienemmällä postinkäsittelykapasiteetilla kuin suuri nimipalvelin.
+
+**hostbta
+
+host hs.fi
+
+Helsingien sanomien palvelimesta irtoaa muista poiketen useita osoitteita. IPv4-osotteita on peräti 4. Sen lisäksi hs.fi hyödyntää myös useampaa IPv6-osotteita. Postin käsittelyssä luotetaan Microsoftin tarjontaan, Outlook:ia hyödyntäen.
+
+**hosths
+
+### Dig
+
+Dig-komentoa ei löytynyt oletuksena omalta palvelimeltani, joten jouduin ensin selvittämään, miten sen saa asennettua. Asia selvisi Googlen avulla nopeasti (https://www.cloudns.net/blog/linux-dig-command-install-use/).
+
+sudo apt-get -y update
+sudo apt-get -y install dnsutils
+
+Seuraavaksi lähdin kokeilemaan komentoa omaan palvelimeeni.
+
+dig koira.me
+
+**digme
+
+* Internetistä löydettyjen tietojen (https://phoenixnap.com/kb/linux-dig-command-examples) avulla, lähdin tulkitsemaan Dig-komennon ulosantia. Ensimmäinen rivi kertoo haussa käytetyn ohjelmaversion ja haun kohteen.
+* Header-osiosta selviää tietoa tehdystä hausta. Se kertoo haun tyypin (query) ja miten se meni (NOERROR, onnistunut haku). Se sisältää myös haun attribuutteja, jotka kertovat tässä tapauksessa siitä, että kyseessä oli vastaus (qr) ja sen, että haku halusi (rd) tietoa rekursiivisesti. (ra) kertoo sen, että palvelimen on mahdollista toteuttaa rekursiivinen haku. Loppuosa kertoo vastauksen sisällöstä.
+* OPT PSEUDOSECTION-kertoo EDNS (Extension system for DNS) version, haun lisäasetuksia (joita tässä haussa ei ole) ja käytetyn portin. ENDS mahdollistaa suuremmat tiedostokoot vastauksissa ja perus-DNS laajemman työkalupakin.
+* QUESTION ja ANSWER SECTION kertovat yhdessä sen mitä haetaan, ja mitä hakuun vastataan. Tässä tapauksessa haetaan tietoa koira.me-domainin A-record (A) tietoja internetissä (IN). Vastauksessa haettu tieto löytyy palvelimen IP-osoitteen muodossa.
+* Loppuosa kertoo DNS-palvelimesta, josta tietoa kysyttiin. Tiedot ovat hakuun kulunut aika, palvelimen osoite, haun ajankohta ja vastauksen koko.
+
+dig bta3062.com
+
+**digbta
+
+Tässä haussa ei ole juurikaan eroa edelliseen. Osoitteissa ja porteissa on luonnollisesti eroja, mutta vastaus on sisällöltään muuten sama.
+
+dig hs.fi
+
+**dighs
+
+HS.fi:n tiedot eroavat lähinnä IP-osotteiden määrässä. Käytössä on jo HOST-komennosta tutut neljä osoitetta. Dig ei ilmeisesti oletuksena näytä IPv6-osotteita.
+
+### Kaivetaan syvemmälle
+
+Ensimmäiseksi lähden perehtymään siihen, mitä eri tietoja Dig-komennolla saa kaivettua esiin. Löysin avuksi sivut (https://www.cyberciti.biz/faq/linux-unix-dig-command-examples-usage-syntax/) internetissä, joilla listataan haettavia tyyppejä. Koitin muutamia haettavia tyyppejä, kuten AAAA (IPv6), NS (NameServer-nimi) ja MX (Email-palvelimien host-nimet).
+
+dig hs.fi AAAA
+dig hs.fi NS
+dig hs.fi MX
+
+**dighs6
+**dighsns
+**dighsmx
+
+Mielenkiintoisin huomio ylläolevista tiedoista on se, että hs.fi käyttää Amazonin nimipalvelimia (esim. ns-1461.awsdns-54.org). Tarjolla on muitakin haettavia tyyppejä, mutta laitan niistä enää vain esimerkin CNAME-recordista, jota oma domainini iso.koira.me edustaa. Hausta selviää lähinnä juuridomain, eli koira.me.
+
+dig iso.koira.me CNAME
+
+*digiso
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
