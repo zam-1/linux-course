@@ -114,6 +114,9 @@ Seuraavaksi testasin sivut onnistuneesti koira.me ja www<!-- -->.koira.me osoitt
 
 ## d)
 
+*Käsitteitä*
+*CNAME: DNS-tietue, joka yhdistää kaksi domainia toisiinsa. Ei voida liittää IP-osoitteeseen (vrt. A-record).* ([cloudflare.com](https://www.cloudflare.com/learning/dns/dns-records/))
+
 ### Alidomainit
 
 Aloitin alidomainien tutkimisen googlehaulla ja löysin NameCheapin omat ohjeet alidomainien luomiselle ([NameCheap.com](https://www.namecheap.com/support/knowledgebase/article.aspx/9776/2237/how-to-create-a-subdomain-for-my-domain/)). Loin ensin pieni-alidomainin A-recordilla tehtävässä a) kuvatulla tavalla ja sen jälkeen CNAME-recordilla iso-alidomainin. Tähän alidomainiin ei kelvannut isännäksi IP-osoite, joten käytin sen tilalla domainnimeä. Apua löytyi internetistä ([dnsmadeeasy.com](https://dnsmadeeasy.com/post/cname-records-explained)), josta selvisi ettei CNAME:n pitää aina osoittaa toiseen domainiin, ei IP-osoitteeseen.
