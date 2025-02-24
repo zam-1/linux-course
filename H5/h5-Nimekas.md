@@ -23,7 +23,7 @@ CPU: Shared
 Muisti: 1GB
 
 Nimipalvelin: Namecheap  
-Domain: [koira.me](www.koira.me)
+Domain: [koira.me](http://www.koira.me)
 
 ## a)
 
