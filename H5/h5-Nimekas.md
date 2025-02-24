@@ -178,13 +178,13 @@ Mielenkiintoisin huomio yllä olevista tiedoista on se, että hs.fi käyttää A
 ![digiso.png](digiso.png "Dig")
 
 ## Lähteet
-Karvinen, Tero 2025: Linux Palvelimet 2025 alkukevät. https://terokarvinen.com/linux-palvelimet/
-Zam-1 2025: H4 Maailma kuulee. https://github.com/zam-1/linux-course/blob/main/H4/h4-Maailma-kuulee.md
-namecheap.com 2024: How to Create a Subdomain for my Domain. https://www.namecheap.com/support/knowledgebase/article.aspx/9776/2237/how-to-create-a-subdomain-for-my-domain/
-Oliver, Heather: CNAME Records Explained. https://dnsmadeeasy.com/post/cname-records-explained
-Pramatarov, Martin 2025: Linux dig command, how to install it and use it. https://www.cloudns.net/blog/linux-dig-command-install-use/
-Zivanov, Sara 2024: dig Command in Linux with Examples. https://phoenixnap.com/kb/linux-dig-command-examples
-Gite, Vivek 2024: Linux and Unix dig Command Examples. https://www.cyberciti.biz/faq/linux-unix-dig-command-examples-usage-syntax/
+Karvinen, Tero 2025: Linux Palvelimet 2025 alkukevät. https://terokarvinen.com/linux-palvelimet/  
+Zam-1 2025: H4 Maailma kuulee. https://github.com/zam-1/linux-course/blob/main/H4/h4-Maailma-kuulee.md  
+namecheap.com 2024: How to Create a Subdomain for my Domain. https://www.namecheap.com/support/knowledgebase/article.aspx/9776/2237/how-to-create-a-subdomain-for-my-domain/  
+Oliver, Heather: CNAME Records Explained. https://dnsmadeeasy.com/post/cname-records-explained  
+Pramatarov, Martin 2025: Linux dig command, how to install it and use it. https://www.cloudns.net/blog/linux-dig-command-install-use/  
+Zivanov, Sara 2024: dig Command in Linux with Examples. https://phoenixnap.com/kb/linux-dig-command-examples  
+Gite, Vivek 2024: Linux and Unix dig Command Examples. https://www.cyberciti.biz/faq/linux-unix-dig-command-examples-usage-syntax/  
 https://validator.w3.org
 
 <br />
