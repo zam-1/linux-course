@@ -31,7 +31,7 @@ Seuraavaksi siirryin asetusten Advanced DNS-välilehdelle. Ensimmäiseksi huomio
 ![record.png](record.png "Records")
 ![custom.png](custom.png "Whois")
 
-Testasin sivuja sekä koira.com, että www.koira.com osoitteilla onnistuneesti.
+Testasin sivuja sekä koira.com, että www<!-- -->.koira.com osoitteilla onnistuneesti.
 
 ## b)
 
