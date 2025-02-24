@@ -114,8 +114,9 @@ Seuraavaksi testasin sivut onnistuneesti koira.me ja www<!-- -->.koira.me osoitt
 
 ## d)
 
-*Käsitteitä*
-*CNAME: DNS-tietue, joka yhdistää kaksi domainia toisiinsa. Ei voida liittää IP-osoitteeseen (vrt. A-record).* ([cloudflare.com](https://www.cloudflare.com/learning/dns/dns-records/))
+*Käsitteitä*  
+*CNAME: DNS-tietue, joka yhdistää kaksi domainia toisiinsa. Ei voida liittää IP-osoitteeseen (vrt. A-record).* ([cloudflare.com](https://www.cloudflare.com/learning/dns/dns-records/))  
+*Alidomain: Mahdollistaa päädomainin laajentamisen. Käytetään nimipalvelimeen liittyvien palveluiden ryhmittelyssä tai vaikka useamman Name Based Virtual Hostin luomisessa.* ([namecheap.com](https://www.namecheap.com/support/knowledgebase/article.aspx/9776/2237/how-to-create-a-subdomain-for-my-domain/))
 
 ### Alidomainit
 
