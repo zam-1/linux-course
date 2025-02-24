@@ -257,6 +257,12 @@ Vastauksen tulkitsemiseen löysin avukseni cloudflaren artikkelin ([cloudflare.c
 
 ### DMARC
 
+Komento DMARC-tietojen etsimiseen löytyi vähemmän yllättäen cloudflaren avulla ([cloudflare.com](https://www.cloudflare.com/learning/dns/dns-records/dns-dmarc-record/)).
+
+>&emsp;dig _dmarc.hs.fi TXT
+
+![dmarc.png](dmarc.png "DMARC")
+
 
 ## Lähteet
 Karvinen, Tero 2025: Linux Palvelimet 2025 alkukevät. https://terokarvinen.com/linux-palvelimet/  
