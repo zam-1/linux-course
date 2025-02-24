@@ -267,6 +267,11 @@ Komento DMARC-tietojen etsimiseen löytyi vähemmän yllättäen cloudflaren avu
 * p=none kertoo sen, mm. SPF:n hylkäämille viesteille tapahtuu. Tässä tapauksessa ne menevät edelleen läpi. Esimerkiksi p=reject estäisi kyseiset viestit.
 * rua= kertoo sähköpostiosoitteen, johon DMARCIN raportit lähetetään.
 * fo=1 määrittelee sen, milloin raportteja lähetetään. SPF:n lisäksi asialla on myös DKIM, jonka yksityskohdat ovat toisen päivän projekti. Arvo 1 kertoo sen, että molempien edellä mainittujen aiheuttamat epäonnistumiset todentamisessa raportoidaan.
+<br />
+<br />
+<br />
+<br />
+<br />
 
 
 ## Lähteet
