@@ -238,7 +238,7 @@ Mielenkiintoisin huomio yllä olevista tiedoista on se, että hs.fi käyttää A
 
 *Käsitteet*  
 *SPF: Sender Policy Framework on tietuetyyppi, joka liittyy yleensä sähköpostien varmentamiseen ja sisältää IP-osoitteet, jotka saavat lähettää postia domainilta* ([cloudflare.com](https://www.cloudflare.com/learning/dns/dns-records/dns-spf-record/))  
-*DMARC:*
+*DMARC: Domain-based Message Authentication Reporting And Conformance on SPF:n kanssa yhteistyössä toimiva metodi, joka pyrkii todentamaan sähköpostin ja estämään sähköpostidomainien väärinkäytön.* ([cloudflare.com](https://www.cloudflare.com/learning/dns/dns-records/dns-dmarc-record/))
 
 ### SPF
 
@@ -269,6 +269,7 @@ Zivanov, Sara 2023: Linux host Command wwith Examples. https://phoenixnap.com/kb
 Gite, Vivek 2024: Linux and Unix dig Command Examples. https://www.cyberciti.biz/faq/linux-unix-dig-command-examples-usage-syntax/  
 cloudflare.com: What is a DNS record?. https://www.cloudflare.com/learning/dns/dns-records/  
 cloudflare.com: What is a DNS SPF record?. https://www.cloudflare.com/learning/dns/dns-records/dns-spf-record/
+cloudflare.com: What is a DNS DMARC record?. https://www.cloudflare.com/learning/dns/dns-records/dns-dmarc-record/  
 domain.com 2024: What is WHOIS and How to Look UP a Domain. https://www.domain.com/blog/what-is-whois-and-how-is-it-used/  
 https://validator.w3.org
 
