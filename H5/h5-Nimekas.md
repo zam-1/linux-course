@@ -35,7 +35,7 @@ Testasin sivuja sekä koira.com, että www<!-- -->.koira.com osoitteilla onnistu
 
 ## b)
 
-Minulla oli jo IP-osoitteen takaa löytyvä Name Based Virtual Host palvelimella edellisen viikon tehtävien seurauksena. Edellisessä tehtävässä toteutettu nimipalvelimen ohjaaminen palvelimeni IP-osoitteeseen johti siis tässä tehtävässä toivoittuun lopputulokseen, eli koira.me takaa löytyviin ja tavallisena käyttäjänä muokattavissa oleviin sivuihin. Kertauksena voidaan sanoa, että loin /home/otus/public_sites/sivusto kansion, lisäsin sinne sivujen vaatimat tiedostot, tein uuden .conf tiedoston hostia varten /etc/apache2/sites-available-kansioon, aktivoin uuden tiedoston /etc/apache2/sites-enabled-kansioon ja disabloin apache2:n oletussivut. Tämän jälkeen käynnistin Apache2 uudelleen. Tarkemmat tiedot löytyvät edellisen viikon raportista kohdasta d) (https://github.com/zam-1/linux-course/blob/main/H4/h4-Maailma-kuulee.md).
+Minulla oli jo IP-osoitteen takaa löytyvä Name Based Virtual Host palvelimella edellisen viikon tehtävien seurauksena. Edellisessä tehtävässä toteutettu nimipalvelimen ohjaaminen palvelimeni IP-osoitteeseen johti siis tässä tehtävässä toivoittuun lopputulokseen, eli koira.me takaa löytyviin ja tavallisena käyttäjänä muokattavissa oleviin sivuihin. Kertauksena voidaan sanoa, että loin /home/otus/public_sites/sivusto kansion, lisäsin sinne sivujen vaatimat tiedostot, tein uuden .conf tiedoston hostia varten /etc/apache2/sites-available-kansioon, aktivoin uuden tiedoston /etc/apache2/sites-enabled-kansioon ja disabloin apache2:n oletussivut. Tämän jälkeen käynnistin Apache2 uudelleen. Tarkemmat tiedot löytyvät edellisen viikon raportista kohdasta d) [H4 - Maailma Kuulee](https://github.com/zam-1/linux-course/blob/main/H4/h4-Maailma-kuulee.md).
 
 ![conf.png](conf.png "Server Configuration")
 
@@ -79,7 +79,7 @@ Seuraavaksi testasin sivut onnistuneesti koira.me ja www<!-- -->.koira.me osoitt
 
 ### Alidomainit
 
-Aloitin alidomainien tutkimisen googlehaulla ja löysin NameCheapin omat ohjeet alidomainien luomiselle (https://www.namecheap.com/support/knowledgebase/article.aspx/9776/2237/how-to-create-a-subdomain-for-my-domain/). Loin ensin pieni-alidomainin A-recordilla tehtävässä a) kuvatulla tavalla ja sen jälkeen CNAME-recordilla iso-alidomainin. Tähän alidomainiin ei kelvannut isännäksi IP-osoite, joten käytin sen tilalla domainnimeä. Apua löytyi internetistä (https://dnsmadeeasy.com/post/cname-records-explained), josta selvisi ettei CNAME:n pitää aina osoittaa toiseen domainiin, ei IP-osoitteeseen.
+Aloitin alidomainien tutkimisen googlehaulla ja löysin NameCheapin omat ohjeet alidomainien luomiselle [NameCheap.com](https://www.namecheap.com/support/knowledgebase/article.aspx/9776/2237/how-to-create-a-subdomain-for-my-domain/). Loin ensin pieni-alidomainin A-recordilla tehtävässä a) kuvatulla tavalla ja sen jälkeen CNAME-recordilla iso-alidomainin. Tähän alidomainiin ei kelvannut isännäksi IP-osoite, joten käytin sen tilalla domainnimeä. Apua löytyi internetistä [dnsmadeeasy.com(https://dnsmadeeasy.com/post/cname-records-explained), josta selvisi ettei CNAME:n pitää aina osoittaa toiseen domainiin, ei IP-osoitteeseen.
 
 ![alidomain.png](alidomain.png "SubDomain")
 
