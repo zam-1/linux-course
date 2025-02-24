@@ -161,7 +161,7 @@ Kaiken tämän jälkeen, minulla oli pääsivu, joka totteli nimiä koira.me, ww
 *Host: Komentorivin työkalu, jolla voidaan hakea IP-osoitetta hostnamella, tai päinvastoin.* ([phoenixnap.com](https://phoenixnap.com/kb/linux-host))  
 *Dig: Komentorivin työkalu, jolla voidaan kerätä DNS-tietoa kohteesta, kuten domain tai IP-osoite.* ([phoenixnap.com](https://phoenixnap.com/kb/linux-dig-command-examples))
 
-## Host
+### Host
 
 >&emsp;host iso.koira.me
 
