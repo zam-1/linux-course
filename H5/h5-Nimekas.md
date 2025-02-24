@@ -27,6 +27,11 @@ Domain: [koira.me](http://www.koira.me)
 
 ## a)
 
+*Käsitteitä*  
+*A-record: A-record on DNS-tietue, joka kertoo domainin takaa löytyvän IPv4-osoitteen.* ([cloudflare.com](https://www.cloudflare.com/learning/dns/dns-records/))  
+*whois: Whois on julkinen tietokanta, johon kerätään tietoa domainien omistuksista, ja josta voidaan hakea tietoa whois-työkaluilla.* ([domain.com](https://www.domain.com/blog/what-is-whois-and-how-is-it-used/))
+
+
 ### GitHub Education
 
 Päätin hyödyntää tehtävässä GitHub education-pakettia, jonka kautta on mahdollista saada NameCheapin .me-domain vuodeksi käyttöön ilmaiseksi. Etupaketin aktivointi onnistui hyvin, mutta laitoin alkuasetuksissa vahingossa nimen osoittamaan GitHub Pages-sivuille. Tämä aiheutti lievää sekaannusta myöhemmin. Koska tuleva domain on tarkoitettu lähinnä koulutehtäviä varten, en valinnut nimeksi mitään henkilökohtaista tai ammattimaista. Yllätyksekseni koira.me oli vapaana, joten koirien ystävänä päädyin siihen.
@@ -225,6 +230,8 @@ Oliver, Heather: CNAME Records Explained. https://dnsmadeeasy.com/post/cname-rec
 Pramatarov, Martin 2025: Linux dig command, how to install it and use it. https://www.cloudns.net/blog/linux-dig-command-install-use/  
 Zivanov, Sara 2024: dig Command in Linux with Examples. https://phoenixnap.com/kb/linux-dig-command-examples  
 Gite, Vivek 2024: Linux and Unix dig Command Examples. https://www.cyberciti.biz/faq/linux-unix-dig-command-examples-usage-syntax/  
+cloudflare.com 2025: What is a DNS record?. https://www.cloudflare.com/learning/dns/dns-records/  
+domain.com 2024: What is WHOIS and How to Look UP a Domain. https://www.domain.com/blog/what-is-whois-and-how-is-it-used/  
 https://validator.w3.org
 
 <br />
