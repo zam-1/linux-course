@@ -217,7 +217,7 @@ HS.fi:n tiedot eroavat lähinnä IP-osoitteiden määrässä. Käytössä on jo 
 
 ### Kaivetaan syvemmälle
 
-Ensimmäiseksi lähden perehtymään siihen, mitä eri tietoja Dig-komennolla saa kaivettua esiin. Löysin avuksi sivut ([cyberciti.biz](https://www.cyberciti.biz/faq/linux-unix-dig-command-examples-usage-syntax/)) internetissä, joilla listataan haettavia tyyppejä. Koitin muutamia haettavia tyyppejä, kuten AAAA (IPv6), NS (NameServer-nimi) ja MX (Email-palvelimien host-nimet).
+Ensimmäiseksi lähden perehtymään siihen, mitä eri tietoja Dig-komennolla saa kaivettua esiin. Löysin avuksi sivut ([cyberciti.biz](https://www.cyberciti.biz/faq/linux-unix-dig-command-examples-usage-syntax/)), joilla listataan haettavia tyyppejä. Koitin muutamia eri tyyppejä, kuten AAAA (IPv6), NS (NameServer-nimi) ja MX (Email-palvelimien host-nimet).
 
 >&emsp;dig hs.fi AAAA  
 >&emsp;dig hs.fi NS  
