@@ -234,6 +234,30 @@ Mielenkiintoisin huomio yllä olevista tiedoista on se, että hs.fi käyttää A
 
 ![digiso.png](digiso.png "Dig")
 
+## f)
+
+*Käsitteet*  
+*SPF: Sender Policy Framework on tietuetyyppi, joka liittyy yleensä sähköpostien varmentamiseen ja sisältää IP-osoitteet, jotka saavat lähettää postia domainilta* ([cloudflare.com](https://www.cloudflare.com/learning/dns/dns-records/dns-spf-record/))  
+*DMARC:*
+
+### SPF
+
+Kun aiemmissa tehtävissä tutkin oman nimipalvelimeni sähköpostiasetuksia, huomasin tarjolla olevan SPF-rimpsun olevan TXT-Record. Tämän perusteella arvasin seuraavan komennon ja kohdistin sen taas Helsingin Sanomiin. Vastauksesta löytyi tutun näköinen tekstinpätkä.
+
+>&emsp;dig hs.fi TXT
+
+![spf.png](spf.png "SPF")
+
+Vastauksen tulkitsemiseen löysin avukseni cloudflaren artikkelin ([cloudflare.com](https://www.cloudflare.com/learning/dns/dns-records/dns-spf-record/)).
+
+* v=spf1 kertoo kyseessä olevan SPF-tietue. Löytyy aina niiden alusta.
+* IP-osoitteet (tai tässä tapauksessa IP-osoite avaruudet) kertovat osoitteet, joilla on oikeus lähettää postia domainin puolesta.
+* Includen takaa löytyvät osoitteet ovat kolmansien osapuolien domaineja (ja niiden IP-osoitteita), joilla on myös oikeus viestien lähettämiseen.
+* -all kertoo sen, että kaikkien muiden kuin aiemmin sallittujen osoitteiden lähettämät viestit hylätään.
+
+### DMARC
+
+
 ## Lähteet
 Karvinen, Tero 2025: Linux Palvelimet 2025 alkukevät. https://terokarvinen.com/linux-palvelimet/  
 Zam-1 2025: H4 Maailma kuulee. https://github.com/zam-1/linux-course/blob/main/H4/h4-Maailma-kuulee.md  
@@ -243,7 +267,8 @@ Pramatarov, Martin 2025: Linux dig command, how to install it and use it. https:
 Zivanov, Sara 2024: dig Command in Linux with Examples. https://phoenixnap.com/kb/linux-dig-command-examples  
 Zivanov, Sara 2023: Linux host Command wwith Examples. https://phoenixnap.com/kb/linux-host  
 Gite, Vivek 2024: Linux and Unix dig Command Examples. https://www.cyberciti.biz/faq/linux-unix-dig-command-examples-usage-syntax/  
-cloudflare.com 2025: What is a DNS record?. https://www.cloudflare.com/learning/dns/dns-records/  
+cloudflare.com: What is a DNS record?. https://www.cloudflare.com/learning/dns/dns-records/  
+cloudflare.com: What is a DNS SPF record?. https://www.cloudflare.com/learning/dns/dns-records/dns-spf-record/
 domain.com 2024: What is WHOIS and How to Look UP a Domain. https://www.domain.com/blog/what-is-whois-and-how-is-it-used/  
 https://validator.w3.org
 
