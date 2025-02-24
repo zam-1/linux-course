@@ -153,6 +153,10 @@ Kaiken tämän jälkeen, minulla oli pääsivu, joka totteli nimiä koira.me, ww
 
 ## e)
 
+*Käsitteitä*  
+*Host: Komentorivin työkalu, jolla voidaan hakea IP-osoitetta hostnamella, tai päinvastoin.* ([phoenixnap.com](https://phoenixnap.com/kb/linux-host))  
+*Dig: Komentorivin työkalu, jolla voidaan kerätä DNS-tietoa kohteesta, kuten domain tai IP-osoite.* ([phoenixnap.com](https://phoenixnap.com/kb/linux-dig-command-examples))
+
 ## Host
 
 >&emsp;host iso.koira.me
@@ -233,6 +237,7 @@ namecheap.com 2024: How to Create a Subdomain for my Domain. https://www.nameche
 Oliver, Heather: CNAME Records Explained. https://dnsmadeeasy.com/post/cname-records-explained  
 Pramatarov, Martin 2025: Linux dig command, how to install it and use it. https://www.cloudns.net/blog/linux-dig-command-install-use/  
 Zivanov, Sara 2024: dig Command in Linux with Examples. https://phoenixnap.com/kb/linux-dig-command-examples  
+Zivanov, Sara 2023: Linux host Command wwith Examples. https://phoenixnap.com/kb/linux-host  
 Gite, Vivek 2024: Linux and Unix dig Command Examples. https://www.cyberciti.biz/faq/linux-unix-dig-command-examples-usage-syntax/  
 cloudflare.com 2025: What is a DNS record?. https://www.cloudflare.com/learning/dns/dns-records/  
 domain.com 2024: What is WHOIS and How to Look UP a Domain. https://www.domain.com/blog/what-is-whois-and-how-is-it-used/  
