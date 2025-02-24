@@ -38,24 +38,28 @@ Päätin hyödyntää tehtävässä GitHub education-pakettia, jonka kautta on m
 Lähdin seuraamaan tunneilla tekemiäni muistiinpanoja ja löysin NameCheapin sivuilta Account-painikkeen alta listan käytössäni olevista domaineista (Domain list).
 
 ![nimi.png](nimi.png "Domain Name")
-
+<br />
+<br />
 Seuraavaksi siirryin uuden nimeni Manage-napin kautta asetusvalikkoon. Asetusten Domain-välilehdellä tajusin, että kaikki palveluun syöttämäni tiedot ovat periaatteessa julkisia. Lähtökohtaisesti kuka tahansa pääsee käsiksi nimipalvelimelle annettuihin henkilötietoihin, kuten nimi, osoite ja puhelinnumero. Kyseessä on nimien hallinnointiin liittyvä vaatimus. Tiedot löytyvät esimerkiksi whois-komennolla Linuxin komentokehotteesta.
 
 >&emsp;whois haaga-helia.fi
 
 ![whois.png](whois.png "Whois")
-
+<br />
+<br />
 Joillain nimipalvelimilla on kuitenkin käytössä tiedot piilottava ominaisuus. NameCheapilla löytyy asetuksista WithHeldForPrivacy, joka on onneksi oletuksena päällä. Suojauksen seurauksena whois-komento ei enää tarjoa hyödyllistä tietoa domainin omistajasta.
 
 >&emsp;whois koira.me
 
 ![whois2.png](whois2.png "Whois")
-
+<br />
+<br />
 Seuraavaksi siirryin asetusten Advanced DNS-välilehdelle. Ensimmäiseksi huomioni kiinnittyi tunneilla nähdystä esimerkistä poikkeaviin recordeihin. Näissä oli kyse aiemmin tekemästäni valinnasta GitHub-sivuihin liittyen. Käytännössä uusi nimeni, koira.me, ohjautui nyt oletuksena tiliini linkitettyihin GitHub-sivuihin. Lisäsin uudet A-recordit osoittamaan palvelimelleni ja poistin kaikki muut. Samalla poistin myös GitHubin-sivujen asetuksista Custom Domain-maininnan.
 
 ![record.png](record.png "Records")
 ![custom.png](custom.png "Whois")
-
+<br />
+<br />
 Testasin sivuja sekä koira.com, että www<!-- -->.koira.com osoitteilla onnistuneesti.
 
 ## b)
@@ -77,7 +81,8 @@ Minulla oli jo toimiva sivu, joten päädyin vain muokkaamaan sitä uuden nimen 
 Seuraavaksi lähdin siirtämään sivujen tiedostoja palvelimelle. Tein tämän hyödyntäen edellisten viikkojen tehtävissä käyttämääni Shared Folders-ominaisuutta VirtualBoxin asetuksissa. Jaettavaksi määritelty kansio ilmestyy /media/sf_sivut/-hakemistoon.
 
 ![shared.png](shared.png "Shared Folders")
-
+<br />
+<br />
 Kopioin hakemiston käyttäjäni kotihakemiston Documents-kansioon helpompaa käsittelyä varten ja muutin sen ja sen sisältämien tiedostojen käyttöoikeudet haluamaani muotoon.
 
 >&emsp;sudo cp -r sf_sivut /home/otus/Documents  
@@ -88,14 +93,16 @@ Kopioin hakemiston käyttäjäni kotihakemiston Documents-kansioon helpompaa kä
 >&emsp;sudo chmod 644 *
 
 ![oikeudet.png](oikeudet.png "Permissions")
-
+<br />
+<br />
 Nyt minulla oli tallessa paikallisesti käyttäjän muokattavissa olevat tiedostot ja olin valmis siirtämään ne palvelimelle. Käytin taas aiemmista tehtävistä tuttua scp-komentoa. Nyt palvelimeltani löytyi kaikki tarvittavat tiedostot oikeasta paikasta, /home/otus/public_sites/sivusto/-hakemistosta. Tiedostot ovat otus-käyttäjän muokattavissa.
 
 >&emsp;scp -r * otus@IP-osoite:/home/otus/public_sites/sivusto
 
 ![siirto.png](siirto.png "SCP")
 ![kansio.png](kansio.png "Server Folder")
-
+<br />
+<br />
 Seuraavaksi testasin sivut onnistuneesti koira.me ja www<!-- -->.koira.me osoitteilla sekä työpöydällä ja puhelinnäkymässä.
 
 ![sivuok.png](sivuok.png "Site Working")
@@ -114,15 +121,18 @@ Vapaaehtoisessa osiossa lähdin tekemään omaa Name Based Virtual Hostia iso.ko
 
 ![sfold2.png](sfold2.png "Server Folder")
 ![koodit2.png](koodit2.png "HTML")
-
+<br />
+<br />
 Tämän jälkeen kopioin /etc/apache2/sites-available/-kansioon uuden isosivusto.conf tiedoston pääsivun sivusto.conf-tiedostosta. Tein uuteen tiedostoon muutokset, jotka viittaavat uuteen iso.koira.me-alidomainiin. Oleellisia kohtia olivat ServerName ja hakemistot.
 
 ![isokconf.png](isokconf.png "Server Configuration")
-
+<br />
+<br />
 Seuraavaksi muutin alkuperäisen sivusto.conf-tiedoston osoittamaan koira.me:n lisäksi myös muihin alidomaineihin. ServerNamen muutosten lisäksi otin käyttöön myös ServerAlias ominaisuuden, jonka alle listasin tarvittavat alidomainit.
 
 ![sivuconf.png](sivuconf.png "Server Configuration")
-
+<br />
+<br />
 Asetusten muuttamisen jälkeen jäljellä oli enää uuden hostin aktivointi ja Apache2:n resetointi.
 
 >&emsp;sudo a2ensite isosivusto.conf  
@@ -142,13 +152,15 @@ Host komento omaan alidomainiini kertoo sen olevan alias päädomainille koira.m
 
 ![hostme.png](hostme.png "Host")
 ![email.png](email.png "Email Settings")
-
+<br />
+<br />
 >&emsp;host bta3062.com
 
 Kyseessä on Battletech-pelin modin sivusto. Tarjolla olevista lyhyistä tiedoista selviää domainin takana olevan palvelimen IP-osoite ja postin edelleenlähettämiseen liittyvät tiedot. Pieni projektisivusto tulee ilmeisesti toimeen pienemmällä postinkäsittelykapasiteetilla kuin suuri nimipalvelin.
 
 ![hostbta.png](hostbta.png "Host")
-
+<br />
+<br />
 >&emsp;host hs.fi
 
 Helsingin Sanomien palvelimesta irtoaa muista poiketen useita osoitteita. IPv4-osotteita on peräti 4. Sen lisäksi hs.fi hyödyntää myös useampaa IPv6-osotteita. Postin käsittelyssä luotetaan Microsoftin tarjontaan, Outlook:ia hyödyntäen.
@@ -167,7 +179,8 @@ Seuraavaksi lähdin kokeilemaan komentoa omaan palvelimeeni.
 >&emsp;dig koira.me
 
 ![digme.png](digme.png "Dig")
-
+<br />
+<br />
 * Internetistä löydettyjen tietojen ([phoenixnap.com](https://phoenixnap.com/kb/linux-dig-command-examples)) avulla, lähdin tulkitsemaan Dig-komennon ulosantia. Ensimmäinen rivi kertoo haussa käytetyn ohjelmaversion ja haun kohteen.
 * Header-osiosta selviää tietoa tehdystä hausta. Se kertoo haun tyypin (query) ja miten se meni (NOERROR, onnistunut haku). Se sisältää myös haun attribuutteja, jotka kertovat tässä tapauksessa siitä, että kyseessä oli vastaus (qr) ja sen, että haku halusi (rd) tietoa rekursiivisesti. (ra) kertoo sen, että palvelimen on mahdollista toteuttaa rekursiivinen haku. Loppuosa kertoo vastauksen sisällöstä.
 * OPT PSEUDOSECTION-kertoo EDNS (Extension system for DNS) version, haun lisäasetuksia (joita tässä haussa ei ole) ja käytetyn portin. ENDS mahdollistaa suuremmat tiedostokoot vastauksissa ja perus-DNS laajemman työkalupakin.
@@ -181,7 +194,8 @@ Tässä haussa ei ole juurikaan eroa edelliseen. Osoitteissa ja porteissa on luo
 >&emsp;dig hs.fi
 
 ![dighs.png](dighs.png "Dig")
-
+<br />
+<br />
 HS.fi:n tiedot eroavat lähinnä IP-osoitteiden määrässä. Käytössä on jo HOST-komennosta tutut neljä osoitetta. Dig ei ilmeisesti oletuksena näytä IPv6-osotteita.
 
 ### Kaivetaan syvemmälle
@@ -195,7 +209,8 @@ Ensimmäiseksi lähden perehtymään siihen, mitä eri tietoja Dig-komennolla sa
 ![dighs6.png](dighs6.png "Dig")
 ![dighsns.png](dighsns.png "Dig")
 ![dighsmx.png](dighsmx.png "Dig")
-
+<br />
+<br />
 Mielenkiintoisin huomio yllä olevista tiedoista on se, että hs.fi käyttää Amazonin nimipalvelimia (esim. ns-1461.awsdns-54.org). Tarjolla on muitakin haettavia tyyppejä, mutta laitan niistä enää vain esimerkin CNAME-recordista, jota oma domainini iso.koira.me edustaa. Hausta selviää lähinnä juuridomain, eli koira.me.
 
 >&emsp;dig iso.koira.me CNAME
