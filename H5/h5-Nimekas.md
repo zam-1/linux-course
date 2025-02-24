@@ -35,7 +35,7 @@ Testasin sivuja sekä koira.com, että www<!-- -->.koira.com osoitteilla onnistu
 
 ## b)
 
-Minulla oli jo IP-osoitteen takaa löytyvä Name Based Virtual Host palvelimella edellisen viikon tehtävien seurauksena. Edellisessä tehtävässä toteutettu nimipalvelimen ohjaaminen palvelimeni IP-osoitteeseen johti siis tässä tehtävässä toivoittuun lopputulokseen, eli koira.me takaa löytyviin ja tavallisena käyttäjänä muokattavissa oleviin sivuihin. Kertauksena voidaan sanoa, että loin /home/otus/public_sites/sivusto kansion, lisäsin sinne sivujen vaatimat tiedostot, tein uuden .conf tiedoston hostia varten /etc/apache2/sites-available-kansioon, aktivoin uuden tiedoston /etc/apache2/sites-enabled-kansioon ja disabloin apache2:n oletussivut. Tämän jälkeen käynnistin Apache2 uudelleen. Tarkemmat tiedot löytyvät edellisen viikon raportista kohdasta d) [H4 - Maailma Kuulee](https://github.com/zam-1/linux-course/blob/main/H4/h4-Maailma-kuulee.md).
+Minulla oli jo IP-osoitteen takaa löytyvä Name Based Virtual Host palvelimella edellisen viikon tehtävien seurauksena. Edellisessä tehtävässä toteutettu nimipalvelimen ohjaaminen palvelimeni IP-osoitteeseen johti siis tässä tehtävässä toivoittuun lopputulokseen, eli koira.me takaa löytyviin ja tavallisena käyttäjänä muokattavissa oleviin sivuihin. Kertauksena voidaan sanoa, että loin /home/otus/public_sites/sivusto kansion, lisäsin sinne sivujen vaatimat tiedostot, tein uuden .conf tiedoston hostia varten /etc/apache2/sites-available-kansioon, aktivoin uuden tiedoston /etc/apache2/sites-enabled-kansioon ja disabloin apache2:n oletussivut. Tämän jälkeen käynnistin Apache2 uudelleen. Tarkemmat tiedot löytyvät edellisen viikon raportista kohdasta d) ([H4 - Maailma Kuulee](https://github.com/zam-1/linux-course/blob/main/H4/h4-Maailma-kuulee.md)).
 
 ![conf.png](conf.png "Server Configuration")
 
@@ -79,7 +79,7 @@ Seuraavaksi testasin sivut onnistuneesti koira.me ja www<!-- -->.koira.me osoitt
 
 ### Alidomainit
 
-Aloitin alidomainien tutkimisen googlehaulla ja löysin NameCheapin omat ohjeet alidomainien luomiselle [NameCheap.com](https://www.namecheap.com/support/knowledgebase/article.aspx/9776/2237/how-to-create-a-subdomain-for-my-domain/). Loin ensin pieni-alidomainin A-recordilla tehtävässä a) kuvatulla tavalla ja sen jälkeen CNAME-recordilla iso-alidomainin. Tähän alidomainiin ei kelvannut isännäksi IP-osoite, joten käytin sen tilalla domainnimeä. Apua löytyi internetistä [dnsmadeeasy.com(https://dnsmadeeasy.com/post/cname-records-explained), josta selvisi ettei CNAME:n pitää aina osoittaa toiseen domainiin, ei IP-osoitteeseen.
+Aloitin alidomainien tutkimisen googlehaulla ja löysin NameCheapin omat ohjeet alidomainien luomiselle ([NameCheap.com](https://www.namecheap.com/support/knowledgebase/article.aspx/9776/2237/how-to-create-a-subdomain-for-my-domain/)). Loin ensin pieni-alidomainin A-recordilla tehtävässä a) kuvatulla tavalla ja sen jälkeen CNAME-recordilla iso-alidomainin. Tähän alidomainiin ei kelvannut isännäksi IP-osoite, joten käytin sen tilalla domainnimeä. Apua löytyi internetistä ([dnsmadeeasy.com](https://dnsmadeeasy.com/post/cname-records-explained)), josta selvisi ettei CNAME:n pitää aina osoittaa toiseen domainiin, ei IP-osoitteeseen.
 
 ![alidomain.png](alidomain.png "SubDomain")
 
@@ -132,7 +132,7 @@ Helsingien sanomien palvelimesta irtoaa muista poiketen useita osoitteita. IPv4-
 
 ### Dig
 
-Dig-komentoa ei löytynyt oletuksena omalta palvelimeltani, joten jouduin ensin selvittämään, miten sen saa asennettua. Asia selvisi Googlen avulla nopeasti (https://www.cloudns.net/blog/linux-dig-command-install-use/).
+Dig-komentoa ei löytynyt oletuksena omalta palvelimeltani, joten jouduin ensin selvittämään, miten sen saa asennettua. Asia selvisi Googlen avulla nopeasti ([cloudns.net](https://www.cloudns.net/blog/linux-dig-command-install-use/)).
 
 >&emsp;sudo apt-get -y update  
 >&emsp;sudo apt-get -y install dnsutils
@@ -143,7 +143,7 @@ Seuraavaksi lähdin kokeilemaan komentoa omaan palvelimeeni.
 
 ![digme.png](digme.png "Dig")
 
-* Internetistä löydettyjen tietojen (https://phoenixnap.com/kb/linux-dig-command-examples) avulla, lähdin tulkitsemaan Dig-komennon ulosantia. Ensimmäinen rivi kertoo haussa käytetyn ohjelmaversion ja haun kohteen.
+* Internetistä löydettyjen tietojen ([phoenixnap.com](https://phoenixnap.com/kb/linux-dig-command-examples)) avulla, lähdin tulkitsemaan Dig-komennon ulosantia. Ensimmäinen rivi kertoo haussa käytetyn ohjelmaversion ja haun kohteen.
 * Header-osiosta selviää tietoa tehdystä hausta. Se kertoo haun tyypin (query) ja miten se meni (NOERROR, onnistunut haku). Se sisältää myös haun attribuutteja, jotka kertovat tässä tapauksessa siitä, että kyseessä oli vastaus (qr) ja sen, että haku halusi (rd) tietoa rekursiivisesti. (ra) kertoo sen, että palvelimen on mahdollista toteuttaa rekursiivinen haku. Loppuosa kertoo vastauksen sisällöstä.
 * OPT PSEUDOSECTION-kertoo EDNS (Extension system for DNS) version, haun lisäasetuksia (joita tässä haussa ei ole) ja käytetyn portin. ENDS mahdollistaa suuremmat tiedostokoot vastauksissa ja perus-DNS laajemman työkalupakin.
 * QUESTION ja ANSWER SECTION kertovat yhdessä sen mitä haetaan, ja mitä hakuun vastataan. Tässä tapauksessa haetaan tietoa koira.me-domainin A-record (A) tietoja internetissä (IN). Vastauksessa haettu tieto löytyy palvelimen IP-osoitteen muodossa.
@@ -161,7 +161,7 @@ HS.fi:n tiedot eroavat lähinnä IP-osotteiden määrässä. Käytössä on jo H
 
 ### Kaivetaan syvemmälle
 
-Ensimmäiseksi lähden perehtymään siihen, mitä eri tietoja Dig-komennolla saa kaivettua esiin. Löysin avuksi sivut (https://www.cyberciti.biz/faq/linux-unix-dig-command-examples-usage-syntax/) internetissä, joilla listataan haettavia tyyppejä. Koitin muutamia haettavia tyyppejä, kuten AAAA (IPv6), NS (NameServer-nimi) ja MX (Email-palvelimien host-nimet).
+Ensimmäiseksi lähden perehtymään siihen, mitä eri tietoja Dig-komennolla saa kaivettua esiin. Löysin avuksi sivut ([cyberciti.biz](https://www.cyberciti.biz/faq/linux-unix-dig-command-examples-usage-syntax/)) internetissä, joilla listataan haettavia tyyppejä. Koitin muutamia haettavia tyyppejä, kuten AAAA (IPv6), NS (NameServer-nimi) ja MX (Email-palvelimien host-nimet).
 
 >&emsp;dig hs.fi AAAA  
 >&emsp;dig hs.fi NS  
