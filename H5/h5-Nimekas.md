@@ -4,7 +4,7 @@
 
 ### GitHub Education
 
-Päätin hyödyntää tehtävässä GitHub education-pakettia, jonka kautta on mahdollista saada NameCheapin .me-domain vuodeksi käyttöön ilmaisesksi. Etupaketin aktivointi onnistui hyvin, mutta laitoin alkuasetuksissa vahingossa nimen osoittamaan GitHub Pages-sivuille. Tämä aiheutti lievää sekaannusta myöhemmin. Koska tuleva domain on tarkoitettu lähinnä koulutehtäviä varten, en valinnut nimeksi mitään henkilökohtaista tai ammattimaista. Yllätyksekseni koira.me oli vapaana, joten koirien ystävänä päädyin siihen.
+Päätin hyödyntää tehtävässä GitHub education-pakettia, jonka kautta on mahdollista saada NameCheapin .me-domain vuodeksi käyttöön ilmaiseksi. Etupaketin aktivointi onnistui hyvin, mutta laitoin alkuasetuksissa vahingossa nimen osoittamaan GitHub Pages-sivuille. Tämä aiheutti lievää sekaannusta myöhemmin. Koska tuleva domain on tarkoitettu lähinnä koulutehtäviä varten, en valinnut nimeksi mitään henkilökohtaista tai ammattimaista. Yllätyksekseni koira.me oli vapaana, joten koirien ystävänä päädyin siihen.
 
 ![getu.png](getu.png "GitHub Education")
 
@@ -35,7 +35,7 @@ Testasin sivuja sekä koira.com, että www<!-- -->.koira.com osoitteilla onnistu
 
 ## b)
 
-Minulla oli jo IP-osoitteen takaa löytyvä Name Based Virtual Host palvelimella edellisen viikon tehtävien seurauksena. Edellisessä tehtävässä toteutettu nimipalvelimen ohjaaminen palvelimeni IP-osoitteeseen johti siis tässä tehtävässä toivoittuun lopputulokseen, eli koira.me takaa löytyviin ja tavallisena käyttäjänä muokattavissa oleviin sivuihin. Kertauksena voidaan sanoa, että loin /home/otus/public_sites/sivusto kansion, lisäsin sinne sivujen vaatimat tiedostot, tein uuden .conf tiedoston hostia varten /etc/apache2/sites-available-kansioon, aktivoin uuden tiedoston /etc/apache2/sites-enabled-kansioon ja disabloin apache2:n oletussivut. Tämän jälkeen käynnistin Apache2 uudelleen. Tarkemmat tiedot löytyvät edellisen viikon raportista kohdasta d) ([H4 - Maailma Kuulee](https://github.com/zam-1/linux-course/blob/main/H4/h4-Maailma-kuulee.md)).
+Minulla oli jo IP-osoitteen takaa löytyvä Name Based Virtual Host palvelimella edellisen viikon tehtävien seurauksena. Edellisessä tehtävässä toteutettu nimipalvelimen ohjaaminen palvelimeni IP-osoitteeseen johti siis tässä tehtävässä toivottuun lopputulokseen, eli koira.me takaa löytyviin ja tavallisena käyttäjänä muokattavissa oleviin sivuihin. Kertauksena voidaan sanoa, että loin /home/otus/public_sites/sivusto kansion, lisäsin sinne sivujen vaatimat tiedostot, tein uuden .conf tiedoston hostia varten /etc/apache2/sites-available-kansioon, aktivoin uuden tiedoston /etc/apache2/sites-enabled-kansioon ja disabloin apache2:n oletussivut. Tämän jälkeen käynnistin Apache2 uudelleen. Tarkemmat tiedot löytyvät edellisen viikon raportista kohdasta d) ([H4 - Maailma Kuulee](https://github.com/zam-1/linux-course/blob/main/H4/h4-Maailma-kuulee.md)).
 
 ![conf.png](conf.png "Server Configuration")
 
@@ -43,7 +43,7 @@ Minulla oli jo IP-osoitteen takaa löytyvä Name Based Virtual Host palvelimella
 
 ### Sivujen teko
 
-Minulla oli jo toimiva sivu, joten päädyin vain muokkaamaan sitä uuden nimen koira-teeman mukaan. Lisäsin sivuille muutamia koiran kuvia erillisille sivuille (index.html, koira1.html jne.). Linkitys tapahtuu thumbnail-tyylisistä kuvista pääkuvan alta. Aloitin sivujen tekemisen VS coden avulla poistamalla vanhasta index.html tiedostosta kaiken turhan. Tämän jälkeen lisäsin siihen pääkuvan ja sen alle loput kuvat pienemmässä koossa. Kun sain tämän vaiheen toimimaan (div elementtien asemointi on tuskaa...), lisäsin pienempiin kuviin linkit alasivuille. Alasivut tein kopioimalla index.html:n ja tekemällä tarvittavat muutokset uusiin tiedostoihin. Lopputulos oli tyydyttävä, vaikka en saanutkaan pikkukuvia riviin kännykkänäkymässä. Annoin alta löytyvän koodin validaattorille, joka ei löytänyt virheitä.
+Minulla oli jo toimiva sivu, joten päädyin vain muokkaamaan sitä uuden nimen koirateeman mukaan. Lisäsin sivuille muutamia koiran kuvia erillisille sivuille (index.html, koira1.html jne.). Linkitys tapahtuu thumbnail-tyylisistä kuvista pääkuvan alta. Aloitin sivujen tekemisen VS coden avulla poistamalla vanhasta index.html tiedostosta kaiken turhan. Tämän jälkeen lisäsin siihen pääkuvan ja sen alle loput kuvat pienemmässä koossa. Kun sain tämän vaiheen toimimaan (div elementtien asemointi on tuskaa...), lisäsin pienempiin kuviin linkit alasivuille. Alasivut tein kopioimalla index.html:n ja tekemällä tarvittavat muutokset uusiin tiedostoihin. Lopputulos oli tyydyttävä, vaikka en saanutkaan pikkukuvia riviin kännykkänäkymässä. Annoin alta löytyvän koodin validaattorille, joka ei löytänyt virheitä.
 
 ![koodit.png](koodit.png "HTML")
 
@@ -126,7 +126,7 @@ Kyseessä on Battletech-pelin modin sivusto. Tarjolla olevista lyhyistä tiedois
 
 >&emsp;host hs.fi
 
-Helsingien sanomien palvelimesta irtoaa muista poiketen useita osoitteita. IPv4-osotteita on peräti 4. Sen lisäksi hs.fi hyödyntää myös useampaa IPv6-osotteita. Postin käsittelyssä luotetaan Microsoftin tarjontaan, Outlook:ia hyödyntäen.
+Helsingin Sanomien palvelimesta irtoaa muista poiketen useita osoitteita. IPv4-osotteita on peräti 4. Sen lisäksi hs.fi hyödyntää myös useampaa IPv6-osotteita. Postin käsittelyssä luotetaan Microsoftin tarjontaan, Outlook:ia hyödyntäen.
 
 ![hosths.png](hosths.png "Host")
 
@@ -157,7 +157,7 @@ Tässä haussa ei ole juurikaan eroa edelliseen. Osoitteissa ja porteissa on luo
 
 ![dighs.png](dighs.png "Dig")
 
-HS.fi:n tiedot eroavat lähinnä IP-osotteiden määrässä. Käytössä on jo HOST-komennosta tutut neljä osoitetta. Dig ei ilmeisesti oletuksena näytä IPv6-osotteita.
+HS.fi:n tiedot eroavat lähinnä IP-osoitteiden määrässä. Käytössä on jo HOST-komennosta tutut neljä osoitetta. Dig ei ilmeisesti oletuksena näytä IPv6-osotteita.
 
 ### Kaivetaan syvemmälle
 
@@ -171,7 +171,7 @@ Ensimmäiseksi lähden perehtymään siihen, mitä eri tietoja Dig-komennolla sa
 ![dighsns.png](dighsns.png "Dig")
 ![dighsmx.png](dighsmx.png "Dig")
 
-Mielenkiintoisin huomio ylläolevista tiedoista on se, että hs.fi käyttää Amazonin nimipalvelimia (esim. ns-1461.awsdns-54.org). Tarjolla on muitakin haettavia tyyppejä, mutta laitan niistä enää vain esimerkin CNAME-recordista, jota oma domainini iso.koira.me edustaa. Hausta selviää lähinnä juuridomain, eli koira.me.
+Mielenkiintoisin huomio yllä olevista tiedoista on se, että hs.fi käyttää Amazonin nimipalvelimia (esim. ns-1461.awsdns-54.org). Tarjolla on muitakin haettavia tyyppejä, mutta laitan niistä enää vain esimerkin CNAME-recordista, jota oma domainini iso.koira.me edustaa. Hausta selviää lähinnä juuridomain, eli koira.me.
 
 >&emsp;dig iso.koira.me CNAME
 
