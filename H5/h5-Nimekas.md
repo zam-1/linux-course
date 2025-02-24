@@ -25,6 +25,10 @@ Muisti: 1GB
 Nimipalvelin: Namecheap  
 Domain: [koira.me](http://www.koira.me)
 
+## Alkusanat
+
+Tämän viikon tehtävissä oli tarkoitus vuokrata Domain Name sopivalta palveluntarjoajalta, tehdä uuden nimen kautta näkyvät sivut palvelimelle ja perehtyä Host- ja Dig-komentoihin. Valitsin namecheapin lähinnä GitHub Educationin ehdoilla. Koska kyseessä on lähinnä harjoituskäyttöön varattu domain, en ottanut suuria paineita sen nimestä ja löysinkin sopivan vapaana olevan nimen aika nopeasti. Tehtävistä ehkä alkuun epäselvimmät hoituivat hyvin tunnilla otettujen muistiinpanojen ansoista. HTML-sivuihin liittyvät tehtävät olivat osin päällekkäisiä edellisen viikon vapaaehtoisen tehtävän kanssa ja Name Based Virtual Hostin luominen (ainakin näin yksinkertaisena) menee jo kohtuu sujuvasti. Uutena asiana itselleni tuli Host- ja Dig komennot, joiden tutkiminen oli varsin mielenkiintoista.
+
 ## a)
 
 *Käsitteitä*  
