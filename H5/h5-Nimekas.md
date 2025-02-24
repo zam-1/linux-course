@@ -22,6 +22,9 @@ OS: Debian 12 x64
 CPU: Shared  
 Muisti: 1GB
 
+Nimipalvelin: Namecheap  
+Domain: [koira.me](www.koira.me)
+
 ## a)
 
 ### GitHub Education
