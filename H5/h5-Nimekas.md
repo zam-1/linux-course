@@ -69,7 +69,7 @@ Seuraavaksi siirryin asetusten Advanced DNS-välilehdelle. Ensimmäiseksi huomio
 ![custom.png](custom.png "Whois")
 <br />
 <br />
-Testasin sivuja sekä koira.com, että www<!-- -->.koira.com osoitteilla onnistuneesti.
+Testasin sivuja sekä koira.com, että www<!-- -->.koira.com osoitteilla onnistuneesti selaimen osoiteriviltä.
 
 ## b)
 
