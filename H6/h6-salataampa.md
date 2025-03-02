@@ -11,7 +11,7 @@ Ensimmäiseksi totesin, että sivut toimivat normaalisti käynnistämällä palv
 
 ### Testisertifikaatit
 
-Hain testiympäristön Let's Encryptin sivuilta ([letsencrypt.org](https://letsencrypt.org/fi/docs/staging-environment/)).
+Aloitin asentamalla Legon, jolla on tarkoitus hakea sertificaatit salausta varten Let's Encrypt-palvelun kautta. Testasin Legoa ensin sen testiympäristössä, jonka osoitteen hain Let's Encryptin sivuilta ([letsencrypt.org](https://letsencrypt.org/fi/docs/staging-environment/)).
 
 ![acmetest.png](acmetest.png "Test Environment")
 
