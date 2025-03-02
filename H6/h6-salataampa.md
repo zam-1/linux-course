@@ -9,6 +9,8 @@ Ensimmäiseksi totesin, että sivut toimivat normaalisti käynnistämällä palv
 *sivut
 
 
+### Testisertifikaatit
+
 Hain testiympäristön Let's Encryptin sivuilta ([letsencrypt.org](https://letsencrypt.org/fi/docs/staging-environment/)).
 
 **acmetest
@@ -23,6 +25,8 @@ Loin /home/otus/Lego-kansion ja ajoin seuraavan komennon sertifikaatin hakemisek
 
 **acmeresult
 
+### Oikeat sertifikaatit
+
 Muutin testissä käytetyn lego-kansion nimen ja loin uuden /home/otus/lego-kansion. Tarkistin kansion ja totesin sen olevan tyhjä.
 
 **emptylego
@@ -36,6 +40,25 @@ Koska testi toimi moitteetta, lähdin hakemaan oikeita sertifikaatteja sivustoll
 
 **realresult
 **lego
+
+### Apache2-asetukset
+
+Lähden tekemään muutoksia palvelimen asetustiedostoon, /etc/apache2/sites-available/sivusto.conf, tunnilla tehtyjen muistiinpanojen ja tehtävänannon ohjeiden perusteella. Kopioin tiedostoon toisen virtualhostin ja muutin sen portin salatun liikenteen oletusporttiin 443. Sen jälkeen lisäsin tämän uuden virtualhostin alle rivit jotka mahdollistavat salauksen käytön (SSLEngine On) ja määrittelevät sertifikaattiin liittyvät hakemistopolut.
+
+sudoedit /etc/apache2/sites-available/sivusto.conf
+
+**sivuconf
+
+Seuraavaksi aktivoin Apache2-palvelimen SSL ominaisuudet a2enmod-komennolla. Tämän jälkeen käynnistin palvelimen uudestaan ja ajoin asetusten testikomennon, joka antoi vastaukseksi lyhyesti ja ytimekkäästi 'Syntax OK'. Jäljellä oli enää palomuurin käsittely. Avasin palomuurista portin 443 ja tarkistin viel palomuurin toiminnan ja säännöt.
+
+>sudo a2enmod ssl  
+>sudo systemctl apache2 restart  
+>sudo apache2ctl configtest  
+>sudo ufw allow 443/tcp  
+>sudo ufw status
+
+*ufwstatus
+
 
 
 
