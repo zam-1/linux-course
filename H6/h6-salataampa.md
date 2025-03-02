@@ -86,20 +86,23 @@ Etsin Googlella apua siihen, miten saisin ohjattua kaikki porttiin 80 tulevat ha
 ![redirect.png](redirect.png "Redirect")
 ![letsenc.png](letsenc.png "Let's Encrypt")
 
-### b)
+## b)
+
+### SSL Labs testi
 
 Lähdin tarkastelemaan sivujani tehtävänannossa mainitulla SSL labsin työkalulla ([ssllabs.com](https://www.ssllabs.com/ssltest/)). Hetken odottelun jälkeen sain tulokseksi A-arvosanan.
 
 ![ssllabs.png](ssllabs.png "ssllabs")
 ![arating.png](arating.png "A-rating")
-<br />
-<br />
-Testistä ei arvosanasta huolimatta kuitenkaan tullut täysiä pisteitä, joten tutkin tuloksia tarkemmin. Löysin niistä kolme epäkohtaa, jotka saattoivat laskea pisteitäni. Ensimmäisestä osiosta löytyi kohta DNS CAA, jota minulla ei ollut käytössä.
+
+### Ongelmat
+
+Testistä ei arvosanasta huolimatta kuitenkaan tullut täysiä pisteitä, joten tutkin tuloksia tarkemmin. Löysin niistä kolme epäkohtaa, jotka saattoivat laskea pisteitäni. Ensimmäisestä osiosta löytyi kohta DNS CAA, jota minulla ei ollut käytössä. Pikaisen googlauksen avulla löysin Let's Encryptin CAA ohjeet ([letencrypt.org](https://letsencrypt.org/fi/docs/caa/)). Ohjeiden perusteella Domainille luotu CAA-record varmistaa sen, että ainoastaan se taho, jolle recordissa on myönnetty lupa, voi myöntää domainille uusia sertifikaatteja. Kyseessä on yksi turvallisuuden osa palvelimen pyörittämisessä, mutta tässä vaiheessa on vaikea täysin hahmottaa, miten CAA-recordin puutetta voi käyttää koiruuksiin.
 
 ![caa.png](caa.png "DNS CAA")
 <br />
 <br />
-Pikaisen googlauksen avulla löysin Let's Encryptin CAA ohjeet ([letencrypt.org](https://letsencrypt.org/fi/docs/caa/)), joiden avulla päädyin nimipalvelilmeni (Namecheap) asetuksiin. CAA-recordi lisättiin advanced DNS-välilehden takaa löytyviin Host Recordseihin, samalla tavalla kuin aiemmatkin recordit. Lisäsin sinne ohjeista löydetyn esimerkin mukaisen recordin. DNS CAA-kohta SSL labsin raportissa näkyi nyt miellyttävän vihreänä. Toivottavasti tämä ei tule aiheuttamaan ongelmia myöhemmin, esimerkiksi sertifikaatin uusimisen kanssa.
+Ohjeiden perusteella päädyin nimipalvelilmeni (Namecheap) asetuksiin. CAA-record lisättiin advanced DNS-välilehden takaa löytyviin Host Recordseihin, samalla tavalla kuin edellisten viikkojen tehtävissä. Lisäsin sinne ohjeista löydetyn esimerkin mukaisen CAA-recordin. DNS CAA-kohta SSL labsin raportissa näkyi nyt miellyttävän vihreänä. Toivottavasti tämä ei tule aiheuttamaan ongelmia myöhemmin, esimerkiksi sertifikaatin uusimisen kanssa.
 
 ![caarecord.png](caarecord.png "CAA-Record")
 ![caaok.png](caaok.png "DNS CAA")
@@ -110,7 +113,13 @@ Seuraavat kyseenalaiset tulokset löytyivät käytössä olevista salauksista. I
 ![cipher.png](cipher.png "Ciphers")
 <br />
 <br />
-Löysin Apachen dokumentaatiosta artikkelin ([apache.org](https://httpd.apache.org/docs/2.4/ssl/ssl_howto.html)), joka käsitteli salausten määrittelyä palvelimen asetuksissa. Artikkelista sai sellaisen kuvan, että ne kannattanee tässä vaiheessa jättää oletusasekuksiinsa. Muutoksista voi olla enemmän haittaa kuin hyötyöä. Kokeilin kuitenkin artikkelsita löytynyttä 'SSLCipherSuite HIGH:!aNULL:!MD5' riviä, jonka kuvaksen mukaisesti sallisi vain vahvat salausmetodit. Lisäsin rivin palvelimeni .conf tiedostoon muiden SSL-rivien alle ja käynnistin palvelimen uudestaan onnistuneesti.
+Löysin Apachen dokumentaatiosta artikkelin ([apache.org](https://httpd.apache.org/docs/2.4/ssl/ssl_howto.html)), joka käsitteli salausten määrittelyä palvelimen asetuksissa. Artikkelista sai sellaisen kuvan, että ne kannattanee tässä vaiheessa jättää oletusasekuksiinsa. Muutoksista voi olla enemmän haittaa kuin hyötyä. Kokeilin kuitenkin artikkelsita löytynyttä 'SSLCipherSuite HIGH:!aNULL:!MD5' riviä, jonka kuvaksen mukaisesti sallisi vain vahvat salausmetodit. Lisäsin rivin palvelimeni .conf tiedostoon muiden SSL-rivien alle ja käynnistin palvelimen uudestaan onnistuneesti. SSL Labsin raportti ei muuttunut ollenkaan.
+
+Viimeinen huomiota herättäny kohta, oli epäonnistunut handshake. Kyseessä oli kuitenkin vain yksi epäonnistuminen monista, ja sekin tapahtu ikivanhan chromeversion kanssa. En ole tästä kohdasta erityisen huolissani.
+
+![chrome.png](chrome.png "Hand Shake Failure")
+
+
 
 
 
