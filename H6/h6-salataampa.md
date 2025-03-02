@@ -115,8 +115,7 @@ Seuraavat kyseenalaiset tulokset löytyivät käytössä olevista salauksista. I
 <br />
 Löysin Apachen dokumentaatiosta artikkelin ([apache.org](https://httpd.apache.org/docs/2.4/ssl/ssl_howto.html)), joka käsitteli salausten määrittelyä palvelimen asetuksissa. Artikkelista sai sellaisen kuvan, että ne kannattanee tässä vaiheessa jättää oletusasekuksiinsa. Muutoksista voi olla enemmän haittaa kuin hyötyä. Kokeilin kuitenkin artikkelsita löytynyttä 'SSLCipherSuite HIGH:!aNULL:!MD5' riviä, jonka kuvaksen mukaisesti sallisi vain vahvat salausmetodit. Lisäsin rivin palvelimeni .conf tiedostoon muiden SSL-rivien alle ja käynnistin palvelimen uudestaan onnistuneesti. SSL Labsin raportti ei muuttunut ollenkaan.
 
-Viimeinen huomiota herättäny kohta, oli epäonnistunut handshake. Kyseessä oli kuitenkin vain yksi epäonnistuminen monista, ja sekin tapahtui ikivanhan chromeversion kanssa. En ole tästä kohdasta erityisen huolissani. Jos joku vielä tässä vaiheessa käyttää XP:n aikaisia selaimia, on turha odottaa kaiken sujuvan.
-
+Viimeinen huomiota herättäny kohta, oli epäonnistunut handshake. Kyseessä oli kuitenkin vain yksi epäonnistuminen monista, ja sekin tapahtui ikivanhan chromeversion kanssa. En ole tästä kohdasta erityisen huolissani.
 ![chrome.png](chrome.png "Hand Shake Failure")
 
 
