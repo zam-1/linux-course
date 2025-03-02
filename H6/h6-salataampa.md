@@ -74,7 +74,7 @@ Kokeilin sivuja selaimessa ja petyin pahasti. Salaus ei näyttänyt toimivan toi
 ![wwwuns.png](wwwuns.png "Unsecure")
 <br />
 <br />
-Kokeilin kuitenkin varalta pakottaa selaimen hakemaan salattua versiota lisäämällä osoitteen alkuun https:/. Hieman yllättäen salaus näytti tämän perusteella toimivan, mutta sivut eivät jostain syystä halua ladata salattuja sivuja oletuksena. Koitin uudestaan kolmella eri laitteella, myös sellaisella jolla sivuja ei ollut aiemmin käytetty. Tuloksets olivat samanlaisia.
+Kokeilin kuitenkin varalta pakottaa selaimen hakemaan salattua versiota lisäämällä osoitteen alkuun https:/. Hieman yllättäen salaus näytti tämän perusteella toimivan, mutta sivut eivät jostain syystä halua ladata salattuja sivuja oletuksena. Koitin uudestaan kolmella eri laitteella, myös sellaisella jolla sivuja ei ollut aiemmin käytetty. Tuloksets olivat samanlaisia. Jälkikäteen ajatellen saatoin olla tässä kohtaa välimuistin uhri. Vaikka koitin sivuja useammalla laittella, olin käynyt niillä sivuillani aiemmin.
 
 >https:<!-- -->//www<!-- -->.koira.me
 
