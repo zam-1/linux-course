@@ -76,10 +76,8 @@ Kokeilin sivuja selaimessa ja petyin pahasti. Salaus ei näyttänyt toimivan toi
 <br />
 Kokeilin kuitenkin varalta pakottaa selaimen hakemaan salattua versiota lisäämällä osoitteen alkuun https:/. Hieman yllättäen salaus näytti tämän perusteella toimivan, mutta sivut eivät jostain syystä halua ladata salattuja sivuja oletuksena. Koitin uudestaan kolmella eri laitteella, myös sellaisella jolla sivuja ei ollut aiemmin käytetty. Tuloksets olivat samanlaisia.
 
->https<!-- -->://koira.me  
 >https:<!-- -->//www<!-- -->.koira.me
 
-![perussec.png](perussec.png "Secure")
 ![wwwsec.png](wwwsec.png "Secure")
 <br />
 <br />
