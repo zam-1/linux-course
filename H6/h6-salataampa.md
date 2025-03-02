@@ -77,7 +77,7 @@ Kokeilin sivuja selaimessa ja petyin pahasti. Salaus ei näyttänyt toimivan toi
 Kokeilin kuitenkin varalta pakottaa selaimen hakemaan salattua versiota lisäämällä osoitteen alkuun https:/. Hieman yllättäen salaus näytti tämän perusteella toimivan, mutta sivut eivät jostain syystä halua ladata salattuja sivuja oletuksena. Koitin uudestaan kolmella eri laitteella, myös sellaisella jolla sivuja ei ollut aiemmin käytetty. Tuloksets olivat samanlaisia.
 
 >https<!-- -->://koira.me  
->https<!-- -->://www.koira.me
+>https://www<!-- -->.koira.me
 
 ![perussec.png](perussec.png "Secure")
 ![wwwsec.png](wwwsec.png "Secure")
@@ -86,7 +86,6 @@ Kokeilin kuitenkin varalta pakottaa selaimen hakemaan salattua versiota lisääm
 Etsin Googlella apua siihen, miten saisin ohjattua kaikki porttiin 80 tulevat haut porttiin 443. Löysin hetken etsimisen jälkeen palvelimen .conf tiedostoon lisättävän Redirect ominaisuuden. Lisäsin sen salaamattoman (port 80) virtualhostin alle Apache2-dokumentaatiosta löydetyillä ohjeilla ([apache2.org](https://httpd.apache.org/docs/2.4/rewrite/remapping.html)). Tämän muutoksen jälkeen sivut vaikuttavat toimivan salattuina oletuksena.
 
 ![redirect.png](redirect.png "Redirect")
-![Redirect.png](Redirect.png "Redirect")
 ![letsenc.png](letsenc.png "Let's Encrypt")
 
 
