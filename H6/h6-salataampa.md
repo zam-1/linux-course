@@ -42,7 +42,7 @@ Lähdin hakemaan oikeita sertifikaatteja sivustolleni /home/otus/lego-kansioon. 
 >--pem run
 
 ![realresult.png](realresult.png "Results")
-![lego2.png](lego.png "Lego2")
+![legofolder.png](legofolder.png "Lego2")
 
 ### Apache2-asetukset
 
