@@ -2,7 +2,7 @@
 
 ## a)
 
-Ensimmäiseksi totesin, että sivut toimivat normaalisti käynnistämällä palvelimen uudelleen ja kokeilemalla sivuja selaimessa.
+Ensimmäiseksi totesin, että sivut toimivat normaalisti käynnistämällä palvelimen uudelleen ja kokeilemalla sivuja selaimessa. Sivut eivät olleet vaikuttivat toimivan.
 
 >sudo systemctl restart apache2
 
