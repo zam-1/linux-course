@@ -14,8 +14,9 @@ Ensimmäiseksi totesin, että sivut toimivat normaalisti käynnistämällä palv
 Aloitin asentamalla Legon, jolla on tarkoitus hakea sertificaatit salausta varten Let's Encrypt-palvelun kautta. Testasin Legoa ensin sen testiympäristössä, jonka osoitteen hain Let's Encryptin sivuilta ([letsencrypt.org](https://letsencrypt.org/fi/docs/staging-environment/)).
 
 ![acmetest.png](acmetest.png "Test Environment")
-
-Loin /home/otus/Lego-kansion ja ajoin seuraavan komennon sertifikaatin hakemiseksi Let's Encryptin testipalvelimelta. Tarkistin komennon jälkeen, että uudesta kansioista löytyi sertifikaatin tiedostot.
+<br />
+<br />
+Loin /home/otus/Lego-kansion ja ajoin seuraavan komennon sertifikaatin hakemiseksi Let's Encryptin testipalvelimelta. Testaaminen kannattaa, koska Let's Encrypt ei arvosta epäonnistuineita yrityksiä oikeilta palvelimilta. Virheellisistä komennoista saattaa seurata odottelua bannin muodossa. Tarkistin komennon jälkeen, että uudesta kansioista löytyi sertifikaatin tiedostot.
  
 >lego --server=https:<!-- -->//acme-staging-v02.api.letsencrypt.org/directory  
 >--accept-tos --email=nimi<!-- -->@outlook.com  
@@ -27,11 +28,12 @@ Loin /home/otus/Lego-kansion ja ajoin seuraavan komennon sertifikaatin hakemisek
 
 ### Oikeat sertifikaatit
 
-Muutin testissä käytetyn lego-kansion nimen ja loin uuden /home/otus/lego-kansion. Tarkistin kansion ja totesin sen olevan tyhjä.
+Koska testi onnistui, muutin testissä käytetyn lego-kansion nimen ja loin uuden /home/otus/lego-kansion oikeita sertifikaatteja varten. Tarkistin kansion ja totesin sen olevan tyhjä ja valmis käyttöön.
 
 ![emptylego.png](emptylego.png "Empty folder")
-
-Koska testi toimi moitteetta, lähdin hakemaan oikeita sertifikaatteja sivustolleni /home/otus/lego-kansioon. Käytin samaa komentoa kuin aiemmin, mutta muutin sitä tunnilla läpi käytyjen ohjeiden mukaan. Poistin ajetusta komennosta viittauksen testiympäristön palvelimeen. Komennon jälkeen tarkistin taas, että tiedostot oli luoti lego-kansioon.
+<br />
+<br />
+Lähdin hakemaan oikeita sertifikaatteja sivustolleni /home/otus/lego-kansioon. Käytin samaa komentoa kuin aiemmin, mutta muutin sitä tunnilla läpi käytyjen ohjeiden mukaan. Poistin ajetusta komennosta viittauksen testiympäristön palvelimeen. Komennon jälkeen tarkistin taas, että tiedostot oli luotu oikein lego-kansioon.
 
 >lego --accept-tos --email=email<!-- -->@outlook.com  
 >--domains=koira.me --domains=www<!-- -->.koira.me  
@@ -48,8 +50,9 @@ Lähden tekemään muutoksia palvelimen asetustiedostoon, /etc/apache2/sites-ava
 sudoedit /etc/apache2/sites-available/sivusto.conf
 
 ![sivuconf.png](sivuconf.png "Configuration")
-
-Seuraavaksi aktivoin Apache2-palvelimen SSL ominaisuudet a2enmod-komennolla. Tämän jälkeen käynnistin palvelimen uudestaan ja ajoin asetusten testikomennon, joka antoi vastaukseksi lyhyesti ja ytimekkäästi 'Syntax OK'. Jäljellä oli enää palomuurin käsittely. Avasin palomuurista portin 443 ja tarkistin viel palomuurin toiminnan ja säännöt.
+<br />
+<br />
+Seuraavaksi aktivoin Apache2-palvelimen SSL ominaisuudet a2enmod-komennolla. Tämän jälkeen käynnistin palvelimen uudestaan ja ajoin asetusten testikomennon, joka antoi vastaukseksi lyhyesti ja ytimekkäästi 'Syntax OK'. Jäljellä oli enää palomuurin käsittely. Avasin palomuurista portin 443 ja tarkistin vielä palomuurin toiminnan ja säännöt.
 
 >sudo a2enmod ssl  
 >sudo systemctl apache2 restart  
@@ -59,7 +62,7 @@ Seuraavaksi aktivoin Apache2-palvelimen SSL ominaisuudet a2enmod-komennolla. Tä
 
 ![ufwstatus.png](ufwstatus.png "UFW Status")
 
-*** Salauksen testaaminen
+### Salauksen testaaminen
 
 Kokeilin sivuja selaimessa ja petyin pahasti. Salaus ei näyttänyt toimivan toivotulla tavalla. Sekä koira<!-- -->.me, että www<!-- -->.koira.me kertoivat salauksen puuttuvan.
 
@@ -68,19 +71,24 @@ Kokeilin sivuja selaimessa ja petyin pahasti. Salaus ei näyttänyt toimivan toi
 
 ![perusuns.png](perusuns.png "Unsecure")
 ![wwwuns.png](wwwuns.png "Unsecure")
-
-Kokeilin kuitenkin varalta pakottaa sivun hakemaan salattua versiota
+<br />
+<br />
+Kokeilin kuitenkin varalta pakottaa selaimen hakemaan salattua versiota lisäämällä osoitteen alkuun https:/. Hieman yllättäen salaus näytti tämän perusteella toimivan, mutta sivut eivät jostain syystä halua ladata salattuja sivuja oletuksena. Koitin uudestaan kolmella eri laitteella, myös sellaisella jolla sivuja ei ollut aiemmin käytetty. Tuloksets olivat samanlaisia.
 
 >https://koira.me  
 >https://www.koira.me
 
 ![perussec.png](perussec.png "Secure")
 ![wwwsec.png](wwwsec.png "Secure")
-
+<br />
+<br />
 Etsin Googlella apua siihen, miten saisin ohjattua kaikki porttiin 80 tulevat haut porttiin 443. Löysin hetken etsimisen jälkeen palvelimen .conf tiedostoon lisättävän Redirect ominaisuuden. Lisäsin sen salaamattoman (port 80) virtualhostin alle Apache2-dokumentaatiosta löydetyillä ohjeilla ([apache2.org](https://httpd.apache.org/docs/2.4/rewrite/remapping.html)). Tämän muutoksen jälkeen sivut vaikuttavat toimivan salattuina oletuksena.
 
 ![redirect.png](redirect.png "Redirect")
 ![Redirect.png](Redirect.png "Redirect")
+![letsenc.png](letsenc.png "Let's Encrypt")
+
+
 
 
 
