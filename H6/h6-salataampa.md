@@ -99,9 +99,10 @@ Testistä ei arvosanasta huolimatta kuitenkaan tullut täysiä pisteitä, joten 
 ![caa.png](caa.png "DNS CAA")
 <br />
 <br />
-Pikaisen googlauksen avulla löysin Let's Encryptin CAA ohjeet ([letencrypt.org](https://letsencrypt.org/fi/docs/caa/)), joiden avulla päädyin nimipalvelilmeni (Namecheap) asetuksiin. CAA-recordi lisättiin advanced DNS-välilehden takaa löytyviin Host Recordseihin, samalla tavalla kuin aiemmatkin recordit. Lisäsin sinne ohjeista löydetyn esimerkin mukaisen recordin. Toivottavasti tämä ei tule aiheuttamaan ongelmia myöhemmin, esimerkiksi sertifikaatin uusimisen kanssa...
+Pikaisen googlauksen avulla löysin Let's Encryptin CAA ohjeet ([letencrypt.org](https://letsencrypt.org/fi/docs/caa/)), joiden avulla päädyin nimipalvelilmeni (Namecheap) asetuksiin. CAA-recordi lisättiin advanced DNS-välilehden takaa löytyviin Host Recordseihin, samalla tavalla kuin aiemmatkin recordit. Lisäsin sinne ohjeista löydetyn esimerkin mukaisen recordin. DNS CAA-kohta SSL labsin raportissa näkyi nyt miellyttävän vihreänä. Toivottavasti tämä ei tule aiheuttamaan ongelmia myöhemmin, esimerkiksi sertifikaatin uusimisen kanssa.
 
 ![caarecord.png](caarecord.png "CAA-Record")
+![caaok.png](caaok.png "DNS CAA")
 <br />
 <br />
 Seuraavat kyseenalaiset tulokset löytyivät käytössä olevista salauksista. Ilmeisesti osa palvelimen tukemista salausmetodeista on vanhoja tai muuten vaan heikkoja.
@@ -109,7 +110,7 @@ Seuraavat kyseenalaiset tulokset löytyivät käytössä olevista salauksista. I
 ![cipher.png](cipher.png "Ciphers")
 <br />
 <br />
-Löysin Apachen dokumentaatiosta artikkelin ([apache.org](https://httpd.apache.org/docs/2.4/ssl/ssl_howto.html)), joka käsitteli salausten määrittelyä palvelimen asetuksissa 
+Löysin Apachen dokumentaatiosta artikkelin ([apache.org](https://httpd.apache.org/docs/2.4/ssl/ssl_howto.html)), joka käsitteli salausten määrittelyä palvelimen asetuksissa. Artikkelista sai sellaisen kuvan, että ne kannattanee tässä vaiheessa jättää oletusasekuksiinsa. Muutoksista voi olla enemmän haittaa kuin hyötyöä. Kokeilin kuitenkin artikkelsita löytynyttä 'SSLCipherSuite HIGH:!aNULL:!MD5' riviä, jonka kuvaksen mukaisesti sallisi vain vahvat salausmetodit. Lisäsin rivin palvelimeni .conf tiedostoon muiden SSL-rivien alle ja käynnistin palvelimen uudestaan onnistuneesti.
 
 
 
