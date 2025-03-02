@@ -29,8 +29,8 @@ Muutin testissä käytetyn lego-kansion nimen ja loin uuden /home/otus/lego-kans
 
 Koska testi toimi moitteetta, lähdin hakemaan oikeita sertifikaatteja sivustolleni /home/otus/lego-kansioon. Käytin samaa komentoa kuin aiemmin, mutta muutin sitä tunnilla läpi käytyjen ohjeiden mukaan. Poistin ajetusta komennosta viittauksen testiympäristön palvelimeen. Komennon jälkeen tarkistin taas, että tiedostot oli luoti lego-kansioon.
 
->lego --accept-tos --email=email@outlook.com  
->--domains=koira.me --domains=www.koira.me  
+>lego --accept-tos --email=email<!-- -->@outlook.com  
+>--domains=koira.me --domains=www<!-- -->.koira.me  
 >--http --http.webroot='/home/otus/public_sites/sivusto' --path='/home/otus/lego'  
 >--pem run
 
