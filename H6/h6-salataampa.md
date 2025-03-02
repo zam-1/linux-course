@@ -86,6 +86,38 @@ Etsin Googlella apua siihen, miten saisin ohjattua kaikki porttiin 80 tulevat ha
 ![redirect.png](redirect.png "Redirect")
 ![letsenc.png](letsenc.png "Let's Encrypt")
 
+### b)
+
+Lähdin tarkastelemaan sivujani tehtävänannossa mainitulla SSL labsin työkalulla ([ssllabs.com](https://www.ssllabs.com/ssltest/)). Hetken odottelun jälkeen sain tulokseksi A-arvosanan.
+
+![ssllabs.png](ssllabs.png "ssllabs")
+![arating.png](arating.png "A-rating")
+<br />
+<br />
+Testistä ei arvosanasta huolimatta kuitenkaan tullut täysiä pisteitä, joten tutkin tuloksia tarkemmin. Löysin niistä kolme epäkohtaa, jotka saattoivat laskea pisteitäni. Ensimmäisestä osiosta löytyi kohta DNS CAA, jota minulla ei ollut käytössä.
+
+![caa.png](caa.png "DNS CAA")
+<br />
+<br />
+Pikaisen googlauksen avulla löysin Let's Encryptin CAA ohjeet ([letencrypt.org](https://letsencrypt.org/fi/docs/caa/)), joiden avulla päädyin nimipalvelilmeni (Namecheap) asetuksiin. CAA-recordi lisättiin advanced DNS-välilehden takaa löytyviin Host Recordseihin, samalla tavalla kuin aiemmatkin recordit. Lisäsin sinne ohjeista löydetyn esimerkin mukaisen recordin. Toivottavasti tämä ei tule aiheuttamaan ongelmia myöhemmin, esimerkiksi sertifikaatin uusimisen kanssa...
+
+![caarecord.png](caarecord.png "CAA-Record")
+<br />
+<br />
+Seuraavat kyseenalaiset tulokset löytyivät käytössä olevista salauksista. Ilmeisesti osa palvelimen tukemista salausmetodeista on vanhoja tai muuten vaan heikkoja.
+
+![cipher.png](cipher.png "Ciphers")
+<br />
+<br />
+Löysin Apachen dokumentaatiosta artikkelin ([apache.org](https://httpd.apache.org/docs/2.4/ssl/ssl_howto.html)), joka käsitteli salausten määrittelyä palvelimen asetuksissa 
+
+
+
+
+
+
+
+
 
 
 
