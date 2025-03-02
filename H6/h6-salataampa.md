@@ -25,6 +25,7 @@ Loin /home/otus/Lego-kansion ja ajoin seuraavan komennon sertifikaatin hakemisek
 >--pem run
 
 ![acmeresult.png](acmeresult.png "Results")
+![lego.png](lego.png "Lego")
 
 ### Oikeat sertifikaatit
 
@@ -41,7 +42,7 @@ Lähdin hakemaan oikeita sertifikaatteja sivustolleni /home/otus/lego-kansioon. 
 >--pem run
 
 ![realresult.png](realresult.png "Results")
-![lego.png](lego.png "Lego")
+![lego2.png](lego.png "Lego2")
 
 ### Apache2-asetukset
 
