@@ -59,6 +59,26 @@ Seuraavaksi aktivoin Apache2-palvelimen SSL ominaisuudet a2enmod-komennolla. Tä
 
 *ufwstatus
 
+*** Salauksen testaaminen
+
+Kokeilin sivuja selaimessa ja petyin pahasti. Salaus ei näyttänyt toimivan toivotulla tavalla. Sekä koira<!-- -->.me, että www<!-- -->.koira.me kertoivat salauksen puuttuvan.
+
+>koira.me  
+>www.koira.me
+
+**perusuns
+**wwwuns
+
+Kokeilin kuitenkin varalta pakottaa sivun hakemaan salattua versiota
+
+>https://koira.me  
+>https://www.koira.me
+
+**perussec
+**wwwsec
+
+Etsin Googlella apua siihen, miten saisin ohjattua kaikki porttiin 80 tulevat haut porttiin 443. Löysin hetken etsimisen jälkeen palvelimen .conf tiedostoon lisättävän Redirect ominaisuuden. Lisäsin sen salaamattiman virtualhostin alle Apache2-dokumentaatiosta löydetyillä ohjeilla ([apache2.org](https://httpd.apache.org/docs/2.4/rewrite/remapping.html)).
+
 
 
 
