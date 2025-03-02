@@ -65,7 +65,7 @@ Seuraavaksi aktivoin Apache2-palvelimen SSL ominaisuudet a2enmod-komennolla. Tä
 
 ### Salauksen testaaminen
 
-Kokeilin sivuja selaimessa ja petyin pahasti. Salaus ei näyttänyt toimivan toivotulla tavalla. Sekä koira<!-- -->.me, että www<!-- -->.koira.me kertoivat salauksen puuttuvan.
+Kokeilin sivuja selaimessa ja petyin pahasti. Salaus ei näyttänyt toimivan toivotulla tavalla. Sekä koira<!-- -->.me, että www<!-- -->.koira.me kertoivat salauksen puuttuvan. Kokeilin sivuja kolmella eri laittella huonoin tuloksin.
 
 >koira<!-- -->.me  
 >www<!-- -->.koira.me
