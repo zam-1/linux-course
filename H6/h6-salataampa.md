@@ -88,6 +88,36 @@ Etsin Googlella apua siihen, miten saisin ohjattua kaikki porttiin 80 tulevat ha
 
 ### Sertifikaatin uusiminen ja Cron
 
+Aloitin sertifikaattien uusimisen Cronin avulla tutkimalla Cronia. Tiesin etukäteen, että Cron on tarkoitettu komentojen ja toimintojen ajastamiseen, mutta en tuntenut sen yksityiskohtia. Koitin ensin kokeilemalla Cron-komentoa, jota ei löytynyt järjestelmästä. Tiesin kuitenkin, että Cron on olemassa, koska olin nähnyt merkkejä sen toiminnasta aiemmin lokitiedoista. Seuraavaksi testasin onko Cron toiminnassa tarkistamalla sen statuksen ja totesin olevan käynnissä taustalla.
+
+>sudo systemctl status cron
+
+![crons.png](crons.png "Cron Status")
+<br />
+<br />
+Seuraavaksi koitin löytyykö järjestelmästä croniin liittyviä käskyjä syöttämällä komentokehoitteeseen 'cron' ja painamalla tabulaattoria. Tunsin oloni voittajaksi, kun ruudulle ilmestyi crontab-komento. Tutkin löytyneen komennon --help tietoja ja totesin ne poikkeuksellisen yksinkertaisiksi. Kuten allaolevasta kuvasta näkyy, annettu komento oli väärä, mutta johti silti oikeaan lopputulokseen. Oikea komento olisi ollut 'crontab -h'.
+
+>crontab --help
+
+![cronhelp.png](cronhelp.png "Crontab help")
+<br />
+<br />
+Koitin seuraavaksi ohjeista löytynyttä komentoa, joka mahdollistaa käyttäjän crontabin muokkaamisen. Ohjelma jatkoi edelleen helppokäyttöisenä ja eteeni aukesivat selkeät ohjeet tehtävien ajoittamiseen ja paikka, johon ne lisätään. Syötin ohjeiden alle rivin, jonka tarkoituksena oli luoda muutaman minuutin päästä uusi test.txt tiedosto ja sen sisälle tekstiä. Muutaman minuutin odottelun jälkeen tekstitiedosto ilmestyi määriteltyyn kansioon kello 10:07. Tarkistin myös journalctl:sta, että komento oli ajettu.
+
+crontab -e  
+journalctl -u cron -n
+
+![cronedit.png](cronedit.png "Crontab Edit")
+![crontest.png](crontest.png "Crontab Test")
+![crontctl.png](cronctl.png "Crontab Journalctl")
+
+<br />
+<br />
+Olin nyt valmis koittamaan sertifikaattien uusimista oikealla komennolla. Löysin GitHubista ohjeet ([go-acme.github.io](https://go-acme.github.io/lego/usage/cli/renew-a-certificate/index.html), joiden perusteella muokkasin komemmonen crontabiin. Laitoin uusiutumisen tapahtumaan muutaman minuutin päästä tekohetkestä ja toistumaan kuukauden välein.
+
+
+
+
 
 
 ## b)
