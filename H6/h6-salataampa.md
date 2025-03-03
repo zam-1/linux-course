@@ -126,10 +126,6 @@ Kun yllä määritelty ajankohta oli mennyt, tarkistin journalctl:sta, että kom
 ![jrenew.png](jrenew.png "Renew Journalctl")
 ![astatus.png](astatus.png "Apache2 Status")
 
-
-
-fawerg
-
 ## b)
 
 ### SSL Labs testi
