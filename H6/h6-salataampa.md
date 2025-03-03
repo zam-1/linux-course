@@ -72,7 +72,7 @@ Aloitin asentamalla Legon, jolla on tarkoitus hakea sertifikaatit salausta varte
 Loin /home/otus/Lego-kansion ja ajoin seuraavan komennon sertifikaatin hakemiseksi Let's Encryptin testipalvelimelta. Testaaminen kannattaa, koska Let's Encrypt ei arvosta epäonnistuneita yrityksiä oikeilta palvelimilta. Virheellisistä komennoista saattaa seurata odottelua bannin muodossa. Tarkistin komennon jälkeen, että uusista kansioista löytyi sertifikaatin tiedostot.
  
 >lego --server=https:<!-- -->//acme-staging-v02.api.letsencrypt.org/directory  
->--accept-tos --email=nimi<!-- -->@outlook.com  
+>--accept-tos --email=email<!-- -->@outlook.com  
 >--domains=koira.me --domains=www<!-- -->.koira.me  
 >--http --http.webroot='/home/otus/public_sites/sivusto' --path='/home/otus/lego'  
 >--pem run
