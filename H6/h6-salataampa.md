@@ -21,6 +21,33 @@
   * SSLEngineON (mahdollistaa SSL-salauksen käytön palvelimella)
   * SSLCertificateFile "hakemistopolku" (kertoo käytössä olevan sertifikaatin sijainnin)
   * SSLCertificateKeyFile "hakemistopolku" (kertoo sertifikaatin avaimen sijainnin)
+ 
+## Ajoympäristö
+
+Ajoympäristö
+
+PC: Lenovo L14 Gen 5  
+OS: Windows 11 Pro 24H2  
+CPU: AMD Ryzen 5 PRO 7535u  
+Muisti: 16 GB DDR5-5600MHz  
+Storage: 512 GB SSD M.2 2280 PCIe Gen4 TLC Opal  
+GPU: Integrated AMD Radeon™ 660M
+
+VirtualBox asetukset:  
+Oletusasetukset, muutamia poikkeuksia lukuunottamatta.  
+OS: Debian 12.9.0  
+Number of CPUs: 2  
+Video Memory: 256MB  
+Base Memory: 8192MB  
+Harddisk: 60GB
+
+VPS: Digital Ocean Droplet  
+OS: Debian 12 x64  
+CPU: Shared  
+Muisti: 1GB
+
+Nimipalvelin: Namecheap  
+Domain: koira.me
 
 ## a)
 
@@ -175,7 +202,7 @@ Seuraavat kyseenalaiset tulokset löytyivät käytössä olevista salauksista. I
 ![cipher.png](cipher.png "Ciphers")
 <br />
 <br />
-Löysin Apachen dokumentaatiosta artikkelin ([apache.org](https://httpd.apache.org/docs/2.4/ssl/ssl_howto.html)), joka käsitteli salausten määrittelyä palvelimen asetuksissa. Artikkelista sai sellaisen kuvan, että ne kannattanee tässä vaiheessa jättää oletusasekuksiinsa. Muutoksista voi olla enemmän haittaa kuin hyötyä. Kokeilin kuitenkin artikkelista löytynyttä 'SSLCipherSuite HIGH:!aNULL:!MD5' riviä, jonka kuvaksen mukaisesti sallisi vain vahvat salausmetodit. Lisäsin rivin palvelimeni .conf tiedostoon muiden SSL-rivien alle ja käynnistin palvelimen uudestaan onnistuneesti. SSL Labsin raportti ei muuttunut ollenkaan. Seuraavaksi koitin ohjeista 'SSLCipherSuite RC4-SHA:AES128-SHA:HIGH:!aNULL:!MD5' riviä, joka ei sekään muuttannut SSL labsin testin listattuja salauksia. Lopuksi lisäsin vielä rivin 'SSLHonorCipherOrder on', jonka seurauksena palvelin suosii nyt ensin voimakkaampia salauksia. Tämä oli havaittavissa myös testituloksessa.
+Tutkin tehtävänannossa kerrotun artikkelin ([apache.org](https://httpd.apache.org/docs/2.4/ssl/ssl_howto.html)), joka käsitteli salausten määrittelyä palvelimen asetuksissa. Artikkelista sai sellaisen kuvan, että ne kannattanee tässä vaiheessa jättää oletusasekuksiinsa. Muutoksista voi olla enemmän haittaa kuin hyötyä. Kokeilin kuitenkin artikkelista löytynyttä 'SSLCipherSuite HIGH:!aNULL:!MD5' riviä, jonka kuvaksen mukaisesti sallisi vain vahvat salausmetodit. Lisäsin rivin palvelimeni .conf tiedostoon muiden SSL-rivien alle ja käynnistin palvelimen uudestaan onnistuneesti. SSL Labsin raportti ei muuttunut ollenkaan. Seuraavaksi koitin ohjeista 'SSLCipherSuite RC4-SHA:AES128-SHA:HIGH:!aNULL:!MD5' riviä, joka ei sekään muuttannut SSL labsin testin listattuja salauksia. Lopuksi lisäsin vielä rivin 'SSLHonorCipherOrder on', jonka seurauksena palvelin suosii ensin voimakkaampia salauksia. Tämä oli havaittavissa myös testituloksessa.
 
 ![ccconf.png](cconf.png "Configuration")
 ![newcipher.png](newcipher.png "Ciphers")
