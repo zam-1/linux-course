@@ -126,6 +126,8 @@ Viimeinen huomiota herättäny kohta, oli epäonnistunut handshake. Kyseessä ol
 
 ![chrome.png](chrome.png "Hand Shake Failure")
 
+Vaikka yllä mainitut muutokset paransivat hieman testituloksia, pisteet pysyivät edelleen samoina. Mahdollista jatkoselvitystä vaatisi heikkojen salausmenetelmien poistaminen tuettujen listalta kokonaan. Tosin, tämä saattaisi tuoda lisää yhteensopivuusongelmia vanhempien selainversioiden kanssa.
+
 
 
 
