@@ -51,7 +51,7 @@ Domain: koira.me
 
 ## Alkusanat
 
-Tämän viikon tehtäväsä hankin Let's Encryptin kautta SSL-sertifikaatin sivuilleni. Tunneila saatujen ohjeiden ja muistiinpanojen avulla tämä vaihe sujui aika kivuttomasti. Laitoin sertifikaatin myös uusiutumaan Cronia käyttäen. Ajoin sivut SSL-testin läpi löytämättä suuria ongelmia. Tuloksissa oli kuitenkin pieniä omituisuuksia, joita koitin korjailla. Vapaaehtoisessa osiossa perehdyin HTTP-liikenteen haisteluun Ngrepin avulla. Tätä varten toteutin myös yksinkertaisen nettilomakkeen, jonka liikennettä seurasin.
+Tämän viikon tehtävässä hankin Let's Encryptin kautta SSL-sertifikaatin sivuilleni. Tunneilla saatujen ohjeiden ja muistiinpanojen avulla. Tämä vaihe sujui aika kivuttomasti. Laitoin sertifikaatin myös uusiutumaan Cronia käyttäen. Ajoin sivut SSL-testin läpi löytämättä suuria ongelmia, mutta tuloksissa oli kuitenkin pieniä omituisuuksia, joita koitin korjailla. Vapaaehtoisessa osiossa perehdyin HTTP-liikenteen haisteluun Ngrepin avulla. Tätä varten toteutin myös yksinkertaisen nettilomakkeen, jonka liikennettä seurasin.
 
 ## a)
 
