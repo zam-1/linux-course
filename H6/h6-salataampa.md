@@ -122,6 +122,13 @@ $ sudo crontab -e
 34 11 3 * * systemctl restart apache
 ```
 
+Kun yllä määritelty ajankohta oli mennyt, tarkistin journalctl:sta, että komennot oli ajettu. Varmistin vielä sen, että Apache2 oli käynnistynyt uudestaan.
+
+![jrenew.png](jrenew.png "Renew Journalctl")
+![astatus.png](astatus.png "Apache2 Status")
+
+
+
 fawerg
 
 ## b)
