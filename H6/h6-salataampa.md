@@ -1,5 +1,13 @@
 # H6 Salataampa
 
+## x)
+
+### Let's Encrypt 2024 ([letsencrypt.org](https://letsencrypt.org/how-it-works/))
+
+### Lange 2024: Lego: Obtain a Certificate ([https://go-acme.github.io/lego/usage/cli/obtain-a-certificate/index.html#using-an-existing-running-web-server]())
+
+### Apache HTTP Server Version 2.4 Documentation: SSL/TLS Strong Encryption: How-To ([](https://httpd.apache.org/docs/2.4/ssl/ssl_howto.html#configexample))
+
 ## a)
 
 Ensimmäiseksi totesin, että sivut toimivat käynnistämällä palvelimen uudelleen ja kokeilemalla sivuja selaimessa. Sivujen vaikuttivat toimivan normaalisti, joten siirryin tehtävässä eteenpäin.
