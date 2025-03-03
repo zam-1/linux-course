@@ -4,9 +4,18 @@
 
 ### Let's Encrypt 2024 ([letsencrypt.org](https://letsencrypt.org/how-it-works/))
 
-### Lange 2024: Lego: Obtain a Certificate ([https://go-acme.github.io/lego/usage/cli/obtain-a-certificate/index.html#using-an-existing-running-web-server]())
+* Artikkelissa kerotaan, miten certifikaatti otetaan käyttöön ja kuinka se pidetään päivitettynä.
+* Varmistus tapahtuu avainparilla, joka luodaan sertifikaatin luonnin yhteydessä.
+* Sertifikaatin hakuun käytetty ohjelma kommunikoi Let's Encryptin palvelinten kanssa ja varmistaa HTTP tai DNS menetelmin, sen että hakija hallitsee palvelinta.
+* Sertifikaatin uusiminen tapahtuu avainparin avulla.
+  
+### Lange 2024: Lego: Obtain a Certificate ([go-acme.github.io](https://go-acme.github.io/lego/usage/cli/obtain-a-certificate/index.html#using-an-existing-running-web-server))
 
-### Apache HTTP Server Version 2.4 Documentation: SSL/TLS Strong Encryption: How-To ([](https://httpd.apache.org/docs/2.4/ssl/ssl_howto.html#configexample))
+* Tekstissä kerrotaan se, miten sertifikaatti hankitaan olemassa olevalle palvelimelle.
+* Komentonta käytetään rakennetta: lego --accept-tos --email you@example.com --http --http.webroot /path/to/webroot --domains example.com run.
+* --http kertoo käytetyn varmistusmenetelmän ja --http.webroot taas kohdesivuston julkisen hakemiston juuren.
+
+### Apache HTTP Server Version 2.4 Documentation: SSL/TLS Strong Encryption: How-To ([apache.org](https://httpd.apache.org/docs/2.4/ssl/ssl_howto.html#configexample))
 
 ## a)
 
