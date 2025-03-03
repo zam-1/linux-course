@@ -222,6 +222,8 @@ Tein yksinkertaisen sivun nettilomaketta varten. Sivu ei varsinaisesti tee mitä
 
 ![webform.png](webform.png "Webform")
 
+### Ngrep
+
 Tämän jälkeen asensin ngrep-ohjelman, joka löytyi komennolla 'apt search ngrep'.
 
 >sudo apt-get -y install ngrep
@@ -231,6 +233,26 @@ Seuraavaksi lähdin selailemaan ngrepin manuaalia ja yritin löytää mahdollisi
 >sudo ngrep -W byline 'POST' port 80
 
 ![reveal.png](reveal.png "ngrep")
+
+Tiedot näyttävät aluksi kohtuu harmittomilta. Dramaattinen paljastus löytyy vasta viimeiseltä riviltä. Käyttäjä syötti nimekseen Juuseri ja antoi salasanan SalaSana1. Tietoturvan kannalta tämä tarkoittaa sitä, että kuka tahansa, joka pääsee käsiksi palvelimelle saapuvaan liikenteeseen voi tarkastella sitä selkokielisenä. Käsittääkseni hyökkääjä ei voi napata tietoja ilmasta, vaan hänellä täytyy olla pääsy johonkin laitteeseen tai palvelimeen liikenteen reitillä. Tämä laite voi olla vaikka kaapattu reititin, palvelin tai haittaohjelma, joka välittää tietoa. Tietoja voi myös lukea tylsistynyt insinööri Elisan tai vastaavan kellarissa.
+
+## Lähteet
+Karvinen, Tero 2025: Linux Palvelimet 2025 alkukevät. https://terokarvinen.com/linux-palvelimet/  
+Letsencrypt.org 2024: How it works. https://letsencrypt.org/how-it-works/
+Lange, Nick J. 2024: Using an existing, running web server. https://go-acme.github.io/lego/usage/cli/obtain-a-certificate/index.html#using-an-existing-running-web-server
+apache.org: SSL/TLS Strong Encryption: How-To. https://httpd.apache.org/docs/2.4/ssl/ssl_howto.html#configexample
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+Tätä dokumenttia saa kopioida ja muokata GNU General Public License (versio 2 tai uudempi) mukaisesti. http://www.gnu.org/licenses/gpl.html
+Pohjana Tero Karvinen 2012: Linux kurssi, http://terokarvinen.com
+
 
 
 
