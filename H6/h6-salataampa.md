@@ -214,6 +214,26 @@ Viimeinen huomiota herättänyt kohta, oli epäonnistunut handshake. Kyseessä o
 
 Vaikka yllä mainitut muutokset paransivat hieman testituloksia, pisteet pysyivät edelleen samoina. Mahdollista jatkoselvitystä vaatisi heikkojen salausmenetelmien poistaminen tuettujen listalta kokonaan. Tosin, tämä saattaisi tuoda lisää yhteensopivuusongelmia vanhempien selainversioiden kanssa.
 
+## c)
+
+### Webform
+
+Tein yksinkertaisen sivun nettilomaketta varten. Sivu ei varsinaisesti tee mitään, kunhan kysyy ja vastaanottaa tiedot. Laitoin sivun aiemmin tehtyyn toiseen virtualhostiin, iso.koira.me, jonka jätin tarkoituksella SSL-sertifikaatin ulkopuolelle.
+
+![webform.png](webform.png "Webform")
+
+Tämän jälkeen asensin ngrep-ohjelman, joka löytyi komennolla 'apt search ngrep'.
+
+>sudo apt-get -y install ngrep
+
+Seuraavaksi lähdin selailemaan ngrepin manuaalia ja yritin löytää mahdollisimman minimalistisen käskyn, jolla seurata liikennettä. Manuaali oli taas perinteisen sekava, mutta löysin sieltä -W byline-option, jonka kuvauksessa kerrottiin, että se sopii HTTP-liikenteen seuraamiseen. Tämän lisäksi löysin kohdan, johon määritellään haettava stringi. Koska, olin sivuilleni määritellyt POST-metodin lomakkeen käsittelyyn, laitoin sen myös tähän. Viimeisenä osana lisäsin komennon loppuun bpf filter-osioon 'port 80'. Kokeilin ensin muitakin vaihtoehtoja, mutta ne olivat epäselviä ja usein myös vääriä. Ngrepin pyöriessä menin toiselta koneelta sivuille ja syötin käyttäjätunnuksen ja salasanan. Ngrep ilmoitti liikenteestä alla olevalla tavalla.
+
+>sudo ngrep -W byline 'POST' port 80
+
+![reveal.png](reveal.png "ngrep")
+
+
+
 
 
 
