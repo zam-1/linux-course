@@ -12,7 +12,7 @@
 ### Lange 2024: Lego: Obtain a Certificate ([go-acme.github.io](https://go-acme.github.io/lego/usage/cli/obtain-a-certificate/index.html#using-an-existing-running-web-server))
 
 * Tekstissä kerrotaan se, miten sertifikaatti hankitaan olemassa olevalle palvelimelle.
-* Komentonta käytetään rakennetta: lego --accept-tos --email you@example.com --http --http.webroot /path/to/webroot --domains example.com run.
+* Komentonta käytetään rakennetta: lego --accept-tos --email you<!-- -->@example.com --http --http.webroot /path/to/webroot --domains example.com run.
 * --http kertoo käytetyn varmistusmenetelmän ja --http.webroot taas kohdesivuston julkisen hakemiston juuren.
 
 ### Apache HTTP Server Version 2.4 Documentation: SSL/TLS Strong Encryption: How-To ([apache.org](https://httpd.apache.org/docs/2.4/ssl/ssl_howto.html#configexample))
