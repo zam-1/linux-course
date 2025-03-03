@@ -88,7 +88,7 @@ Etsin Googlella apua siihen, miten saisin ohjattua kaikki porttiin 80 tulevat ha
 
 ### Sertifikaatin uusiminen ja Cron
 
-Aloitin sertifikaattien uusimisen Cronin avulla tutkimalla Cronia. Tiesin etukäteen, että Cron on tarkoitettu komentojen ja toimintojen ajastamiseen, mutta en tuntenut sen yksityiskohtia. Koitin ensin kokeilemalla Cron-komentoa, jota ei löytynyt järjestelmästä. Tiesin kuitenkin, että Cron on olemassa, koska olin nähnyt merkkejä sen toiminnasta aiemmin lokitiedoista. Seuraavaksi testasin onko Cron toiminnassa tarkistamalla sen statuksen ja totesin olevan käynnissä taustalla.
+Aloitin sertifikaattien uusimisen ajastettuna tutkimalla Cronia. Tiesin etukäteen, että Cron on tarkoitettu komentojen ja toimintojen ajastamiseen, mutta en tuntenut sen yksityiskohtia. Koitin ensin kokeilemalla Cron-komentoa, jota ei löytynyt järjestelmästä. Tiesin kuitenkin, että Cron on olemassa, koska olin nähnyt merkkejä sen toiminnasta aiemmin lokitiedoista. Seuraavaksi testasin onko Cron toiminnassa tarkistamalla sen statuksen ja totesin olevan käynnissä taustalla.
 
 >sudo systemctl status cron
 
