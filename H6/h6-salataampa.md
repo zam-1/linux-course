@@ -113,8 +113,16 @@ journalctl -u cron -n
 
 <br />
 <br />
-Olin nyt valmis koittamaan sertifikaattien uusimista oikealla komennolla. Löysin GitHubista ohjeet ([go-acme.github.io](https://go-acme.github.io/lego/usage/cli/renew-a-certificate/index.html), joiden perusteella muokkasin komemmonen crontabiin. Laitoin uusiutumisen tapahtumaan muutaman minuutin päästä tekohetkestä ja toistumaan kuukauden välein.
+Olin nyt valmis koittamaan sertifikaattien uusimista oikealla komennolla. Löysin GitHubista ohjeet ([go-acme.github.io](https://go-acme.github.io/lego/usage/cli/renew-a-certificate/index.html), joiden perusteella muokkasin komemmonen crontabiin. Laitoin uusiutumisen tapahtumaan muutaman minuutin päästä tekohetkestä ja toistumaan kuukauden välein. Käytin renew komentona hieman muokattua versiota komennosta, jota käytettiin sertifikaatin hankintaan. Kokeilin komentoa ja sain vastaukseksi, että se toimii vasta sitten, kun sertifikaatti on voimassa enää 30 päivää. Laitoin komennon toistumaan kerran kuukaudessa tästä hetkestä lähtien. Se tuskin aiheuttaa Legon palvelimille kohtuutonta ruuhkaa. Tein muutokset rootin crontabiin käyttäjän sijaan, koska en halunnut taistella apache2:n uudelleenkäynnistyksen kanssa sudo-oikeuksilla. Crontabin ajastus noudasttaa muotoa 'minuutti tuntu kuukauden-päivä kuukausi viikonpäivä'. * tarkoittaa mitä tahansa. Eli alta löytyvät rivit ajavat komentonsa klo 11:34 kuukauden kolmantena päivänä.
 
+>sudo crontab-e
+
+---
+34 11 3 * * lego --accept-tos --email="email@email.com" --domains="koira.me" --domains="www.koira.me"  
+--http --http.webroot="/home/otus/public_sites/sivusto" --path="/home/otus/lego" --pem renew
+<br />
+34 11 3 * * systemctl restart apache
+---
 
 
 
