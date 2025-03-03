@@ -17,6 +17,11 @@
 
 ### Apache HTTP Server Version 2.4 Documentation: SSL/TLS Strong Encryption: How-To ([apache.org](https://httpd.apache.org/docs/2.4/ssl/ssl_howto.html#configexample))
 
+* SSL-salaukseen mahdollistavat lisäykset palvelimen asetuksiin ovat:
+  * SSLEngineON (mahdollistaa SSL-salauksen käytön palvelimella)
+  * SSLCertificateFile "hakemistopolku" (kertoo käytössä olevan sertifikaatin sijainnin)
+  * SSLCertificateKeyFile "hakemistopolku" (kertoo sertifikaatin avaimen sijainnin)
+
 ## a)
 
 Ensimmäiseksi totesin, että sivut toimivat käynnistämällä palvelimen uudelleen ja kokeilemalla sivuja selaimessa. Sivujen vaikuttivat toimivan normaalisti, joten siirryin tehtävässä eteenpäin.
