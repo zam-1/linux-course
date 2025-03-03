@@ -4,7 +4,7 @@
 
 ### Let's Encrypt 2024 ([letsencrypt.org](https://letsencrypt.org/how-it-works/))
 
-* Artikkelissa kerotaan, miten certifikaatti otetaan käyttöön ja kuinka se pidetään päivitettynä.
+* Artikkelissa kerrotaan, miten sertifikaatti otetaan käyttöön ja kuinka se pidetään päivitettynä.
 * Varmistus tapahtuu avainparilla, joka luodaan sertifikaatin luonnin yhteydessä.
 * Sertifikaatin hakuun käytetty ohjelma kommunikoi Let's Encryptin palvelinten kanssa ja varmistaa HTTP tai DNS menetelmin, sen että hakija hallitsee palvelinta.
 * Sertifikaatin uusiminen tapahtuu avainparin avulla.
@@ -12,7 +12,7 @@
 ### Lange 2024: Lego: Obtain a Certificate ([go-acme.github.io](https://go-acme.github.io/lego/usage/cli/obtain-a-certificate/index.html#using-an-existing-running-web-server))
 
 * Tekstissä kerrotaan se, miten sertifikaatti hankitaan olemassa olevalle palvelimelle.
-* Komentonta käytetään rakennetta: lego --accept-tos --email you<!-- -->@example.com --http --http.webroot /path/to/webroot --domains example.com run.
+* Komentona käytetään rakennetta: lego --accept-tos --email you<!-- -->@example.com --http --http.webroot /path/to/webroot --domains example.com run.
 * --http kertoo käytetyn varmistusmenetelmän ja --http.webroot taas kohdesivuston julkisen hakemiston juuren.
 
 ### Apache HTTP Server Version 2.4 Documentation: SSL/TLS Strong Encryption: How-To ([apache.org](https://httpd.apache.org/docs/2.4/ssl/ssl_howto.html#configexample))
@@ -33,12 +33,12 @@ Ensimmäiseksi totesin, että sivut toimivat käynnistämällä palvelimen uudel
 
 ### Testisertifikaatit
 
-Aloitin asentamalla Legon, jolla on tarkoitus hakea sertificaatit salausta varten Let's Encrypt-palvelun kautta. Testasin Legoa ensin sen testiympäristössä, jonka osoitteen hain Let's Encryptin sivuilta ([letsencrypt.org](https://letsencrypt.org/fi/docs/staging-environment/)).
+Aloitin asentamalla Legon, jolla on tarkoitus hakea sertifikaatit salausta varten Let's Encrypt-palvelun kautta. Testasin Legoa ensin sen testiympäristössä, jonka osoitteen hain Let's Encryptin sivuilta ([letsencrypt.org](https://letsencrypt.org/fi/docs/staging-environment/)).
 
 ![acmetest.png](acmetest.png "Test Environment")
 <br />
 <br />
-Loin /home/otus/Lego-kansion ja ajoin seuraavan komennon sertifikaatin hakemiseksi Let's Encryptin testipalvelimelta. Testaaminen kannattaa, koska Let's Encrypt ei arvosta epäonnistuineita yrityksiä oikeilta palvelimilta. Virheellisistä komennoista saattaa seurata odottelua bannin muodossa. Tarkistin komennon jälkeen, että uudesta kansioista löytyi sertifikaatin tiedostot.
+Loin /home/otus/Lego-kansion ja ajoin seuraavan komennon sertifikaatin hakemiseksi Let's Encryptin testipalvelimelta. Testaaminen kannattaa, koska Let's Encrypt ei arvosta epäonnistuneita yrityksiä oikeilta palvelimilta. Virheellisistä komennoista saattaa seurata odottelua bannin muodossa. Tarkistin komennon jälkeen, että uusista kansioista löytyi sertifikaatin tiedostot.
  
 >lego --server=https:<!-- -->//acme-staging-v02.api.letsencrypt.org/directory  
 >--accept-tos --email=nimi<!-- -->@outlook.com  
@@ -96,7 +96,7 @@ Kokeilin sivuja selaimessa ja petyin pahasti. Salaus ei näyttänyt toimivan toi
 ![wwwuns.png](wwwuns.png "Unsecure")
 <br />
 <br />
-Kokeilin kuitenkin varalta pakottaa selaimen hakemaan salattua versiota lisäämällä osoitteen alkuun https:/. Hieman yllättäen salaus näytti tämän perusteella toimivan, mutta sivut eivät jostain syystä halua ladata salattuja sivuja oletuksena. Koitin uudestaan kolmella eri laitteella, myös sellaisella jolla sivuja ei ollut aiemmin käytetty. Tuloksets olivat samanlaisia. Jälkikäteen ajatellen saatoin olla tässä kohtaa välimuistin uhri. Vaikka koitin sivuja useammalla laittella, olin käynyt niillä sivuillani aiemmin.
+Kokeilin kuitenkin varalta pakottaa selaimen hakemaan salattua versiota lisäämällä osoitteen alkuun https:/. Hieman yllättäen salaus näytti tämän perusteella toimivan, mutta sivut eivät jostain syystä halua ladata salattuja sivuja oletuksena. Koitin uudestaan kolmella eri laitteella, mutta tulokset olivat samanlaisia. Jälkikäteen ajatellen saatoin olla tässä kohtaa välimuistin uhri. Vaikka koitin sivuja useammalla laittella, olin käynyt niillä sivuillani aiemmin.
 
 >https:<!-- -->//www<!-- -->.koira.me
 
@@ -110,21 +110,21 @@ Etsin Googlella apua siihen, miten saisin ohjattua kaikki porttiin 80 tulevat ha
 
 ### Sertifikaatin uusiminen ja Cron
 
-Aloitin sertifikaattien uusimisen ajastettuna tutkimalla Cronia. Tiesin etukäteen, että Cron on tarkoitettu komentojen ja toimintojen ajastamiseen, mutta en tuntenut sen yksityiskohtia. Koitin ensin kokeilemalla Cron-komentoa, jota ei löytynyt järjestelmästä. Tiesin kuitenkin, että Cron on olemassa, koska olin nähnyt merkkejä sen toiminnasta aiemmin lokitiedoista. Seuraavaksi testasin onko Cron toiminnassa tarkistamalla sen statuksen ja totesin olevan käynnissä taustalla.
+Aloitin sertifikaattien uusimisen ajastettuna tutkimalla Cronia. Tiesin etukäteen, että Cron on tarkoitettu komentojen ja toimintojen ajastamiseen, mutta en tuntenut sen yksityiskohtia. Koitin ensin kokeilemalla Cron-komentoa, jota ei löytynyt järjestelmästä. Tiesin kuitenkin, että Cron on olemassa, koska olin nähnyt merkkejä sen toiminnasta aiemmin lokitiedoista. Seuraavaksi testasin Cronin toiminnan tarkistamalla sen statuksen ja totesin olevan käynnissä taustalla.
 
 >sudo systemctl status cron
 
 ![crons.png](crons.png "Cron Status")
 <br />
 <br />
-Seuraavaksi koitin löytyykö järjestelmästä croniin liittyviä käskyjä syöttämällä komentokehoitteeseen 'cron' ja painamalla tabulaattoria. Tunsin oloni voittajaksi, kun ruudulle ilmestyi crontab-komento. Tutkin löytyneen komennon --help tietoja ja totesin ne poikkeuksellisen yksinkertaisiksi. Kuten allaolevasta kuvasta näkyy, annettu komento oli väärä, mutta johti silti oikeaan lopputulokseen. Oikea komento olisi ollut 'crontab -h'.
+Seuraavaksi yritin löytää järjestelmästä croniin liittyviä käskyjä syöttämällä komentokehotteeseen 'cron' ja painamalla tabulaattoria. Tunsin oloni voittajaksi, kun ruudulle ilmestyi crontab-komento. Tutkin löytyneen komennon --help tietoja ja totesin ne poikkeuksellisen yksinkertaisiksi. Kuten alla olevasta kuvasta näkyy, annettu komento oli väärä, mutta johti silti oikeaan lopputulokseen. Oikea komento olisi ollut 'crontab -h'.
 
 >crontab --help
 
 ![cronhelp.png](cronhelp.png "Crontab help")
 <br />
 <br />
-Koitin seuraavaksi ohjeista löytynyttä komentoa, joka mahdollistaa käyttäjän crontabin muokkaamisen. Ohjelma jatkoi edelleen helppokäyttöisenä ja eteeni aukesivat selkeät ohjeet tehtävien ajoittamiseen ja paikka, johon ne lisätään. Syötin ohjeiden alle rivin, jonka tarkoituksena oli luoda hetken päästä uusi test.txt tiedosto ja sen sisälle tekstiä. Muutaman minuutin odottelun jälkeen tekstitiedosto ilmestyi määriteltyyn kansioon kello 10:07. Tarkistin myös journalctl:sta, että komento oli ajettu. Crontabin ajastus noudattaa muotoa 'minuutti tunti kuukauden-päivä kuukausi viikonpäivä'.  Merkki * tarkoittaa mitä tahansa (any).
+Koitin seuraavaksi ohjeista löytynyttä komentoa, joka mahdollistaa käyttäjän crontabin muokkaamisen. Ohjelma jatkoi edelleen helppokäyttöisenä ja eteeni aukesivat selkeät ohjeet tehtävien ajoittamiseen ja paikka, johon ne lisätään. Syötin ohjeiden alle rivin, jonka tarkoituksena oli luoda hetken päästä uusi test.txt tiedosto ja sen sisälle tekstiä. Muutaman minuutin odottelun jälkeen tekstitiedosto ilmestyi määriteltyyn kansioon kello 10:07. Tarkistin myös journalctl:sta, että komento oli ajettu. Crontabin ajastus noudattaa muotoa 'minuutti tunti kuukaudenpäivä kuukausi viikonpäivä'.  Merkki * tarkoittaa mitä tahansa (any).
 
 >crontab -e  
 >journalctl -u cron -n
@@ -164,7 +164,7 @@ Testistä ei arvosanasta huolimatta kuitenkaan tullut täysiä pisteitä, joten 
 ![caa.png](caa.png "DNS CAA")
 <br />
 <br />
-Ohjeiden perusteella päädyin nimipalvelilmeni (Namecheap) asetuksiin. CAA-record lisättiin advanced DNS-välilehden takaa löytyviin Host Recordseihin, samalla tavalla kuin edellisten viikkojen tehtävissä. Lisäsin sinne ohjeista löydetyn esimerkin mukaisen CAA-recordin. DNS CAA-kohta SSL labsin raportissa näkyi nyt miellyttävän vihreänä. Toivottavasti tämä ei tule aiheuttamaan ongelmia myöhemmin, esimerkiksi sertifikaatin uusimisen kanssa.
+Ohjeiden perusteella päädyin nimipalvelimeni (Namecheap) asetuksiin. CAA-record lisättiin advanced DNS-välilehden takaa löytyviin Host Recordseihin, samalla tavalla kuin edellisten viikkojen tehtävissä. Lisäsin sinne ohjeista löydetyn esimerkin mukaisen CAA-recordin. DNS CAA-kohta SSL labsin raportissa näkyi nyt miellyttävän vihreänä. Toivottavasti tämä ei tule aiheuttamaan ongelmia myöhemmin, esimerkiksi sertifikaatin uusimisen kanssa.
 
 ![caarecord.png](caarecord.png "CAA-Record")
 ![caaok.png](caaok.png "DNS CAA")
@@ -175,13 +175,13 @@ Seuraavat kyseenalaiset tulokset löytyivät käytössä olevista salauksista. I
 ![cipher.png](cipher.png "Ciphers")
 <br />
 <br />
-Löysin Apachen dokumentaatiosta artikkelin ([apache.org](https://httpd.apache.org/docs/2.4/ssl/ssl_howto.html)), joka käsitteli salausten määrittelyä palvelimen asetuksissa. Artikkelista sai sellaisen kuvan, että ne kannattanee tässä vaiheessa jättää oletusasekuksiinsa. Muutoksista voi olla enemmän haittaa kuin hyötyä. Kokeilin kuitenkin artikkelsita löytynyttä 'SSLCipherSuite HIGH:!aNULL:!MD5' riviä, jonka kuvaksen mukaisesti sallisi vain vahvat salausmetodit. Lisäsin rivin palvelimeni .conf tiedostoon muiden SSL-rivien alle ja käynnistin palvelimen uudestaan onnistuneesti. SSL Labsin raportti ei muuttunut ollenkaan. Seuraavaksi koitin ohjeista 'SSLCipherSuite RC4-SHA:AES128-SHA:HIGH:!aNULL:!MD5' riviä, joka ei sekään muuttannut SSL labsin testin listattuja salauksia. Lopuksi lisäsin vielä rivin 'SSLHonorCipherOrder on', jonka seurauksena palvelin suosii nyt ensin voimakkaampia salauksia. Tämä oli havaittavissa myös testituloksessa.
+Löysin Apachen dokumentaatiosta artikkelin ([apache.org](https://httpd.apache.org/docs/2.4/ssl/ssl_howto.html)), joka käsitteli salausten määrittelyä palvelimen asetuksissa. Artikkelista sai sellaisen kuvan, että ne kannattanee tässä vaiheessa jättää oletusasekuksiinsa. Muutoksista voi olla enemmän haittaa kuin hyötyä. Kokeilin kuitenkin artikkelista löytynyttä 'SSLCipherSuite HIGH:!aNULL:!MD5' riviä, jonka kuvaksen mukaisesti sallisi vain vahvat salausmetodit. Lisäsin rivin palvelimeni .conf tiedostoon muiden SSL-rivien alle ja käynnistin palvelimen uudestaan onnistuneesti. SSL Labsin raportti ei muuttunut ollenkaan. Seuraavaksi koitin ohjeista 'SSLCipherSuite RC4-SHA:AES128-SHA:HIGH:!aNULL:!MD5' riviä, joka ei sekään muuttannut SSL labsin testin listattuja salauksia. Lopuksi lisäsin vielä rivin 'SSLHonorCipherOrder on', jonka seurauksena palvelin suosii nyt ensin voimakkaampia salauksia. Tämä oli havaittavissa myös testituloksessa.
 
 ![ccconf.png](cconf.png "Configuration")
 ![newcipher.png](newcipher.png "Ciphers")
 
 
-Viimeinen huomiota herättäny kohta, oli epäonnistunut handshake. Kyseessä oli kuitenkin vain yksi epäonnistuminen, ja sekin tapahtui chromen ikivanhan version kanssa. En ole tästä kohdasta erityisen huolissani.
+Viimeinen huomiota herättänyt kohta, oli epäonnistunut handshake. Kyseessä oli kuitenkin vain yksi epäonnistuminen, ja sekin tapahtui chromen ikivanhan version kanssa. En ole tästä kohdasta erityisen huolissani.
 
 ![chrome.png](chrome.png "Hand Shake Failure")
 
