@@ -66,6 +66,8 @@ Ensimmäiseksi totesin, että sivut toimivat käynnistämällä palvelimen uudel
 
 Aloitin asentamalla Legon, jolla on tarkoitus hakea sertifikaatit salausta varten Let's Encrypt-palvelun kautta. Testasin Legoa ensin sen testiympäristössä, jonka osoitteen hain Let's Encryptin sivuilta ([letsencrypt.org](https://letsencrypt.org/fi/docs/staging-environment/)).
 
+>sudo apt-get -y lego
+
 ![acmetest.png](acmetest.png "Test Environment")
 <br />
 <br />
