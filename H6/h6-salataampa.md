@@ -119,6 +119,7 @@ Seuraavat kyseenalaiset tulokset löytyivät käytössä olevista salauksista. I
 <br />
 Löysin Apachen dokumentaatiosta artikkelin ([apache.org](https://httpd.apache.org/docs/2.4/ssl/ssl_howto.html)), joka käsitteli salausten määrittelyä palvelimen asetuksissa. Artikkelista sai sellaisen kuvan, että ne kannattanee tässä vaiheessa jättää oletusasekuksiinsa. Muutoksista voi olla enemmän haittaa kuin hyötyä. Kokeilin kuitenkin artikkelsita löytynyttä 'SSLCipherSuite HIGH:!aNULL:!MD5' riviä, jonka kuvaksen mukaisesti sallisi vain vahvat salausmetodit. Lisäsin rivin palvelimeni .conf tiedostoon muiden SSL-rivien alle ja käynnistin palvelimen uudestaan onnistuneesti. SSL Labsin raportti ei muuttunut ollenkaan. Seuraavaksi koitin ohjeista 'SSLCipherSuite RC4-SHA:AES128-SHA:HIGH:!aNULL:!MD5' riviä, joka ei sekään muuttannut SSL labsin testin listattuja salauksia. Lopuksi lisäsin vielä rivin 'SSLHonorCipherOrder on', jonka seurauksena palvelin suosii nyt ensin voimakkaampia salauksia. Tämä oli havaittavissa myös testituloksessa.
 
+![ccconf.png](cconf.png "Configuration")
 ![newcipher.png](newcipher.png "Ciphers")
 
 
