@@ -206,12 +206,13 @@ Tutkin tehtävänannossa kerrotun artikkelin ([apache.org](https://httpd.apache.
 
 ![ccconf.png](cconf.png "Configuration")
 ![newcipher.png](newcipher.png "Ciphers")
-
-
+<br />
+<br />
 Viimeinen huomiota herättänyt kohta, oli epäonnistunut handshake. Kyseessä oli kuitenkin vain yksi epäonnistuminen, ja sekin tapahtui chromen ikivanhan version kanssa. En ole tästä kohdasta erityisen huolissani.
 
 ![chrome.png](chrome.png "Hand Shake Failure")
-
+<br />
+<br />
 Vaikka yllä mainitut muutokset paransivat hieman testituloksia, pisteet pysyivät edelleen samoina. Mahdollista jatkoselvitystä vaatisi heikkojen salausmenetelmien poistaminen tuettujen listalta kokonaan. Tosin, tämä saattaisi tuoda lisää yhteensopivuusongelmia vanhempien selainversioiden kanssa.
 
 ## c)
@@ -233,14 +234,25 @@ Seuraavaksi lähdin selailemaan ngrepin manuaalia ja yritin löytää mahdollisi
 >sudo ngrep -W byline 'POST' port 80
 
 ![reveal.png](reveal.png "ngrep")
-
+<br />
+<br />
 Tiedot näyttävät aluksi kohtuu harmittomilta. Dramaattinen paljastus löytyy vasta viimeiseltä riviltä. Käyttäjä syötti nimekseen Juuseri ja antoi salasanan SalaSana1. Tietoturvan kannalta tämä tarkoittaa sitä, että kuka tahansa, joka pääsee käsiksi palvelimelle saapuvaan liikenteeseen voi tarkastella sitä selkokielisenä. Käsittääkseni hyökkääjä ei voi napata tietoja ilmasta, vaan hänellä täytyy olla pääsy johonkin laitteeseen tai palvelimeen liikenteen reitillä. Tämä laite voi olla vaikka kaapattu reititin, palvelin tai haittaohjelma, joka välittää tietoa. Tietoja voi myös lukea tylsistynyt insinööri Elisan tai vastaavan kellarissa.
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
 
 ## Lähteet
 Karvinen, Tero 2025: Linux Palvelimet 2025 alkukevät. https://terokarvinen.com/linux-palvelimet/  
-Letsencrypt.org 2024: How it works. https://letsencrypt.org/how-it-works/
-Lange, Nick J. 2024: Using an existing, running web server. https://go-acme.github.io/lego/usage/cli/obtain-a-certificate/index.html#using-an-existing-running-web-server
-apache.org: SSL/TLS Strong Encryption: How-To. https://httpd.apache.org/docs/2.4/ssl/ssl_howto.html#configexample
+letsencrypt.org 2024: How it works. https://letsencrypt.org/how-it-works/  
+letsencrypt.org 2023: Certificate Authority Authorization (CAA). https://letsencrypt.org/fi/docs/caa/  
+letsencrypt.org 2024: Staging Environment. https://letsencrypt.org/fi/docs/staging-environment/  
+Lange, Nick J. 2024: Using an existing, running web server. https://go-acme.github.io/lego/usage/cli/obtain-a-certificate/index.html#using-an-existing-running-web-server  
+apache.org: SSL/TLS Strong Encryption: How-To. https://httpd.apache.org/docs/2.4/ssl/ssl_howto.html#configexample  
+apache.org: Redirecting and Remapping with mod_rewrite. https://httpd.apache.org/docs/2.4/rewrite/remapping.html  
+ssllabs.com: SSL Server Test. https://www.ssllabs.com/ssltest/
 <br />
 <br />
 <br />
