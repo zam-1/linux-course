@@ -49,6 +49,10 @@ Muisti: 1GB
 Nimipalvelin: Namecheap  
 Domain: koira.me
 
+## Alkusanat
+
+Tämän viikon tehtäväsä hankin Let's Encryptin kautta SSL-sertifikaatin sivuilleni. Tunneila saatujen ohjeiden ja muistiinpanojen avulla tämä vaihe sujui aika kivuttomasti. Laitoin sertifikaatin myös uusiutumaan Cronia käyttäen. Ajoin sivut SSL-testin läpi löytämättä suuria ongelmia. Tuloksissa oli kuitenkin pieniä omituisuuksia, joita koitin korjailla. Vapaaehtoisessa osiossa perehdyin HTTP-liikenteen haisteluun Ngrepin avulla. Tätä varten toteutin myös yksinkertaisen nettilomakkeen, jonka liikennettä seurasin.
+
 ## a)
 
 Ensimmäiseksi totesin, että sivut toimivat käynnistämällä palvelimen uudelleen ja kokeilemalla sivuja selaimessa. Sivujen vaikuttivat toimivan normaalisti, joten siirryin tehtävässä eteenpäin.
