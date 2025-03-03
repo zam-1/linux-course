@@ -102,7 +102,7 @@ Seuraavaksi koitin löytyykö järjestelmästä croniin liittyviä käskyjä sy�
 ![cronhelp.png](cronhelp.png "Crontab help")
 <br />
 <br />
-Koitin seuraavaksi ohjeista löytynyttä komentoa, joka mahdollistaa käyttäjän crontabin muokkaamisen. Ohjelma jatkoi edelleen helppokäyttöisenä ja eteeni aukesivat selkeät ohjeet tehtävien ajoittamiseen ja paikka, johon ne lisätään. Syötin ohjeiden alle rivin, jonka tarkoituksena oli luoda muutaman minuutin päästä uusi test.txt tiedosto ja sen sisälle tekstiä. Muutaman minuutin odottelun jälkeen tekstitiedosto ilmestyi määriteltyyn kansioon kello 10:07. Tarkistin myös journalctl:sta, että komento oli ajettu. Crontabin ajastus noudasttaa muotoa 'minuutti tunti kuukauden-päivä kuukausi viikonpäivä'.  Merkki * tarkoittaa mitä tahansa (any).
+Koitin seuraavaksi ohjeista löytynyttä komentoa, joka mahdollistaa käyttäjän crontabin muokkaamisen. Ohjelma jatkoi edelleen helppokäyttöisenä ja eteeni aukesivat selkeät ohjeet tehtävien ajoittamiseen ja paikka, johon ne lisätään. Syötin ohjeiden alle rivin, jonka tarkoituksena oli luoda hetken päästä uusi test.txt tiedosto ja sen sisälle tekstiä. Muutaman minuutin odottelun jälkeen tekstitiedosto ilmestyi määriteltyyn kansioon kello 10:07. Tarkistin myös journalctl:sta, että komento oli ajettu. Crontabin ajastus noudattaa muotoa 'minuutti tunti kuukauden-päivä kuukausi viikonpäivä'.  Merkki * tarkoittaa mitä tahansa (any).
 
 >crontab -e  
 >journalctl -u cron -n
