@@ -86,6 +86,10 @@ Etsin Googlella apua siihen, miten saisin ohjattua kaikki porttiin 80 tulevat ha
 ![redirect.png](redirect.png "Redirect")
 ![letsenc.png](letsenc.png "Let's Encrypt")
 
+### Sertifikaatin uusiminen ja Cron
+
+
+
 ## b)
 
 ### SSL Labs testi
@@ -113,7 +117,10 @@ Seuraavat kyseenalaiset tulokset löytyivät käytössä olevista salauksista. I
 ![cipher.png](cipher.png "Ciphers")
 <br />
 <br />
-Löysin Apachen dokumentaatiosta artikkelin ([apache.org](https://httpd.apache.org/docs/2.4/ssl/ssl_howto.html)), joka käsitteli salausten määrittelyä palvelimen asetuksissa. Artikkelista sai sellaisen kuvan, että ne kannattanee tässä vaiheessa jättää oletusasekuksiinsa. Muutoksista voi olla enemmän haittaa kuin hyötyä. Kokeilin kuitenkin artikkelsita löytynyttä 'SSLCipherSuite HIGH:!aNULL:!MD5' riviä, jonka kuvaksen mukaisesti sallisi vain vahvat salausmetodit. Lisäsin rivin palvelimeni .conf tiedostoon muiden SSL-rivien alle ja käynnistin palvelimen uudestaan onnistuneesti. SSL Labsin raportti ei muuttunut ollenkaan.
+Löysin Apachen dokumentaatiosta artikkelin ([apache.org](https://httpd.apache.org/docs/2.4/ssl/ssl_howto.html)), joka käsitteli salausten määrittelyä palvelimen asetuksissa. Artikkelista sai sellaisen kuvan, että ne kannattanee tässä vaiheessa jättää oletusasekuksiinsa. Muutoksista voi olla enemmän haittaa kuin hyötyä. Kokeilin kuitenkin artikkelsita löytynyttä 'SSLCipherSuite HIGH:!aNULL:!MD5' riviä, jonka kuvaksen mukaisesti sallisi vain vahvat salausmetodit. Lisäsin rivin palvelimeni .conf tiedostoon muiden SSL-rivien alle ja käynnistin palvelimen uudestaan onnistuneesti. SSL Labsin raportti ei muuttunut ollenkaan. Seuraavaksi koitin ohjeista 'SSLCipherSuite RC4-SHA:AES128-SHA:HIGH:!aNULL:!MD5' riviä, joka ei sekään muuttannut SSL labsin testin listattuja salauksia. Lopuksi lisäsin vielä rivin 'SSLHonorCipherOrder on', jonka seurauksena palvelin suosii nyt ensin voimakkaampia salauksia. Tämä oli havaittavissa myös testituloksessa.
+
+![newcipher.png](newcipher.png "Ciphers")
+
 
 Viimeinen huomiota herättäny kohta, oli epäonnistunut handshake. Kyseessä oli kuitenkin vain yksi epäonnistuminen, ja sekin tapahtui chromen ikivanhan version kanssa. En ole tästä kohdasta erityisen huolissani.
 
