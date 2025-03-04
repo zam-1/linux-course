@@ -167,12 +167,12 @@ Koitin seuraavaksi ohjeista löytynyttä komentoa, joka mahdollistaa käyttäjä
 <br />
 Olin nyt valmis koittamaan sertifikaattien uusimista oikealla komennolla. Loin Renew-komennon käyttämällä vanhaa komentoa, jolla loin sertifikaatin ja vaihtamalla sen loppuun runin sijasta renew. Kokeilin komentoa ja sain vastaukseksi, että se toimii vasta sitten, kun sertifikaatti on voimassa enää 30 päivää. Laitoin uusiutumisen tapahtumaan muutaman minuutin päästä crontabin muuttamisesta ja toistumaan kuukauden välein. Tämä tuskin aiheuttaa Legon palvelimille kohtuutonta ruuhkaa. Tein muutokset rootin crontabiin käyttäjän sijaan, koska en halunnut taistella apache2:n uudelleenkäynnistyksen kanssa sudo-oikeuksilla. Alta löytyvät rivit ajavat komentonsa klo 11:34 kuukauden kolmantena päivänä.
 
-```
-$ sudo crontab -e  
-34 11 3 * * lego --accept-tos --email="email@email.com" --domains="koira.me" --domains="www.koira.me"  
---http --http.webroot="/home/otus/public_sites/sivusto" --path="/home/otus/lego" --pem renew  
-34 11 3 * * systemctl restart apache
-```
+
+>$ sudo crontab -e  
+>34 11 3 * * lego --accept-tos --email="email@email.com" --domains="koira.me" --domains="www.koira.me"  
+>--http --http.webroot="/home/otus/public_sites/sivusto" --path="/home/otus/lego" --pem renew  
+>34 11 3 * * systemctl restart apache
+
 
 Kun yllä määritelty ajankohta oli mennyt, tarkistin journalctl:sta, että komennot oli ajettu. Varmistin vielä sen, että Apache2 oli käynnistynyt uudestaan.
 
