@@ -176,6 +176,9 @@ Olin nyt valmis koittamaan sertifikaattien uusimista oikealla komennolla. Loin R
 
 Kun yllä määritelty ajankohta oli mennyt, tarkistin journalctl:sta, että komennot oli ajettu. Varmistin vielä sen, että Apache2 oli käynnistynyt uudestaan.
 
+>journalctl -u cron -n  
+>sudo systemctl status apache2
+
 ![jrenew.png](jrenew.png "Renew Journalctl")
 ![astatus.png](astatus.png "Apache2 Status")
 
