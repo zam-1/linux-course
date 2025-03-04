@@ -169,7 +169,7 @@ Olin nyt valmis koittamaan sertifikaattien uusimista oikealla komennolla. Loin R
 
 
 >$ sudo crontab -e  
->34 11 3 * * lego --accept-tos --email="email@email.com" --domains="koira.me" --domains="www.koira.me"  
+>34 11 3 * * lego --accept-tos --email="email<!-- -->@email.com" --domains="koira<!-- -->.me" --domains="www<!-- -->.koira.me"  
 >--http --http.webroot="/home/otus/public_sites/sivusto" --path="/home/otus/lego" --pem renew  
 >34 11 3 * * systemctl restart apache
 
