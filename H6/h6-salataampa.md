@@ -233,7 +233,7 @@ Tämän jälkeen asensin ngrep-ohjelman, joka löytyi komennolla 'apt search ngr
 
 >sudo apt-get -y install ngrep
 
-Seuraavaksi lähdin selailemaan ngrepin manuaalia ja yritin löytää mahdollisimman minimalistisen käskyn, jolla seurata liikennettä. Manuaali oli taas perinteisen sekava, mutta löysin sieltä -W byline-option, jonka kuvauksessa kerrottiin, että se sopii HTTP-liikenteen seuraamiseen. Tämän lisäksi löysin kohdan, johon määritellään haettava stringi. Koska, olin sivuilleni määritellyt POST-metodin lomakkeen käsittelyyn, laitoin sen myös tähän. Viimeisenä osana lisäsin komennon loppuun bpf filter-osioon 'port 80'. Kokeilin ensin muitakin vaihtoehtoja, mutta ne olivat epäselviä ja usein myös vääriä. Ngrepin pyöriessä menin toiselta koneelta sivuille ja syötin käyttäjätunnuksen ja salasanan. Ngrep ilmoitti liikenteestä alla olevalla tavalla.
+Seuraavaksi lähdin selailemaan ngrepin manuaalia ja yritin löytää mahdollisimman minimalistisen käskyn, jolla seurata liikennettä. Manuaali oli taas perinteisen sekava, mutta löysin sieltä -W byline-option, jonka kuvauksessa kerrottiin, että se sopii HTTP-liikenteen seuraamiseen. Tämän lisäksi löysin kohdan, johon määritellään haettava stringi. Koska olin asettanut sivulleni POST-metodin lomakkeen käsittelyyn, laitoin sen myös tähän. Viimeisenä osana lisäsin komennon loppuun bpf filter-osioon 'port 80'. Kokeilin ensin muitakin vaihtoehtoja, mutta ne olivat epäselviä ja usein myös vääriä. Ngrepin pyöriessä menin toiselta koneelta sivuille ja syötin käyttäjätunnuksen ja salasanan. Ngrep ilmoitti liikenteestä alla olevalla tavalla.
 
 >sudo ngrep -W byline 'POST' port 80
 
