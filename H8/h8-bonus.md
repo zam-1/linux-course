@@ -10,7 +10,7 @@ Guest Additions-asennus
 ## ([H2](https://github.com/zam-1/linux-course/blob/main/H2/h2-komentaja-pingviini.md))
 
 g) Analysoin journactl-komennon lokitietoja.  
-h) Asensin ja kokeilin Micron pluginia Palettero.'
+h) Asensin ja kokeilin Micron pluginia Palettero.
 
 ## ([H3](https://github.com/zam-1/linux-course/blob/main/H3/h3-Hello-Web-Server.md))
 
