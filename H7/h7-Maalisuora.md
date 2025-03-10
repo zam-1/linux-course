@@ -219,6 +219,10 @@ Aloitin tehtävän asentamalla openssh-serverin ja lukemalla aiemman viikon rapo
 
 Seuraavaksi loin uuden SSH-avainparin. Luonti tapahtui oletuksena /home/otus/.ssh/ kansioon. Tarkistin tiedostojen ja hakemistojen oikeudet, ja ne vaikuttivat hyviltä, enkä puuttunut niihin tässä vaiheessa.
 
+>ssh-keygen
+
+![keygen.png](keygen.png "KeyGen")
+<br />
 ![sshp1.png](sshp1.png ".ssh permissions")
 ![sshp2.png](sshp2.png ".ssh permissions")
 
