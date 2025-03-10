@@ -266,3 +266,26 @@ Sisältöä ei ole käsitelty kurssilla.
 ### i)
 
 Sisältöä ei ole käsitelty kurssilla.
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+## Lähteet
+Karvinen, Tero 2025: Linux Palvelimet 2025 alkukevät. https://terokarvinen.com/linux-palvelimet/  
+Zam-1 2025: h3-Hello-Web-Server. https://github.com/zam-1/linux-course/blob/main/H3/h3-Hello-Web-Server.md  
+Zam-1 2025: h4-Maailma-kuulee. https://github.com/zam-1/linux-course/blob/main/H4/h4-Maailma-kuulee.md
+
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+Tätä dokumenttia saa kopioida ja muokata GNU General Public License (versio 2 tai uudempi) mukaisesti. http://www.gnu.org/licenses/gpl.html
+Pohjana Tero Karvinen 2012: Linux kurssi, http://terokarvinen.com
