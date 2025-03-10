@@ -26,10 +26,6 @@ public class HelloJava {
 
 ![codes.png](codes.png "Code")
 
->chmod ugo+x *
-
-![cowp.png](cowp.png "File permissions")
-
 >bash HelloBash  
 >python3 HelloPython  
 >javac HelloJava.java  
@@ -67,6 +63,10 @@ if valinta == "y":
 else:
 	print("Ok...")
 ```
+
+>chmod ugo+x cowtime
+
+![cowp.png](cowp.png "File permissions")
 
 >cp -n cowtime /usr/local/bin  
 >cowtime (tyhjässä hakemistossa)
