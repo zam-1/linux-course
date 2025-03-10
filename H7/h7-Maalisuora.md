@@ -1,4 +1,5 @@
 # Ajoympäristö
+*Siistitty 10.3.2025*
 
 OS: Windows 11 Pro  
 CPU: Intel Core i7-9700k @ 3.6GHz, 8 Core  
@@ -177,10 +178,12 @@ Loin pyyttoni-tiedoston, johon lisäsin rivin python koodia. Tämän jälkeen aj
 <br />
 ### f) Etusivu uusiksi
 
-Aloitin uusien sivujen tekemisen asentamalla Apache2:n. Tämän jälkeen tarkistin, että se on käynnissä. Testasin myös oletussivujen toiminnan localhost-osoitteella.
+Aloitin uusien sivujen tekemisen asentamalla Apache2:n. Tämän jälkeen tarkistin, että se on käynnissä. Testasin myös oletussivujen toiminnan localhost-osoitteella. Lisäsin palomuuriin aukon portille 80.
+
 
 >sudo apt-get -y install apache2  
->sudo systemctl status apache2
+>sudo systemctl status apache2  
+>sudo ufw allow 22/tcp
 
 ![status.png](status.png "Apache2 Status")
 ![webtest.png](webtest.png "Web Test")
@@ -247,10 +250,11 @@ Maija-Liisa Vähäaho-Virtaoja	maija 		mLvV@2025$Wave!
 
 ### i) Etänä
 
-Aloitin tehtävän asentamalla openssh-serverin ja lukemalla aiemman viikon raporttiani ([H4](https://github.com/zam-1/linux-course/blob/main/H4/h4-Maailma-kuulee.md)). Asennuksen jälkeen tarkistin sen statuksen ja koitin ottaa yhteyttä localhostiin ssh:n yli. Vaikka tämä tuntunut erityisen käytännölliseltä, ainakin se toimi. Yhteys vaati odotetusti salasanan.
+Aloitin tehtävän asentamalla openssh-serverin ja lukemalla aiemman viikon raporttiani ([H4](https://github.com/zam-1/linux-course/blob/main/H4/h4-Maailma-kuulee.md)). Asennuksen jälkeen tarkistin sen statuksen ja koitin ottaa yhteyttä localhostiin ssh:n yli. Vaikka tämä tuntunut erityisen käytännölliseltä, ainakin se toimi. Yhteys vaati odotetusti salasanan. Avasin palomuuriin aukon portille 22.
 
 >sudo apt-get -y install openssh-server  
 >sudo systemctl status ssh  
+>sudo ufw allow 80/tcp  
 >ssh otus@localhost
 
 ![sshs.png](sshs.png "SSH status")
