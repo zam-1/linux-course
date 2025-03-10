@@ -151,7 +151,7 @@ Aloitin uusien sivujen tekemisen asentamalla Apache2:n. Tämän jälkeen tarkist
 ![status.png](status.png "Apache2 Status")
 ![webtest.png](webtest.png "Web Test")
 
-Seuraavaksi loin käyttäjäni kotihakemistoon index.html tiedoston tulevaa sivua varten. Polku tiedostoon oli /home/otus/public_sites/free.speech.europe. Lisäsin tiedostoon lyhyen tekstin.
+Seuraavaksi loin käyttäjäni kotihakemistoon index.html tiedoston tulevaa sivua varten. Polku tiedostoon oli /home/otus/public_sites/free.speech.europe/. Lisäsin tiedostoon lyhyen tekstin.
 
 >mkdir public_sites  
 >mkdir public_sites/free.speech.europe  
