@@ -36,3 +36,7 @@ public class HelloJava {
 >ls -l
 
 ![cfiles.png](cfiles.png "File permissions")
+
+### b) Edellisten viikkotehtävien lähteiden päivittämistä ja yleistä siistimistä. Ei raportoitavaa.
+
+### c)
