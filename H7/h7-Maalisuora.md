@@ -85,7 +85,7 @@ Tehtävässä tehdään ilmeisesti virtuaalikoneeseen index.md tiedosto raportoi
 
 ### c) Ei kolmea sekoseiskaa
 
-Asetin index.md tiedostolle käyttöoikeudet, jotka antavat käyttäjälle täydet oikeudet ja poistavat oikeudet muilta.
+Loin index.md tiedoston /home/otus/report/-hakemistoon ja asetin sille käyttöoikeudet, jotka antavat käyttäjälle täydet oikeudet ja poistavat oikeudet muilta.
 
 >mkdir /home/otus/report  
 >cd /home/otus/report  
