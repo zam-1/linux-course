@@ -230,7 +230,7 @@ Aika ; Koneen nimi ; Sudo-komento [prosessin yksilöivä numero?] ; Käyttäjä 
 
 Seuraava rivi liittyi luultavasti käyttäjän oikeuksien väliaikaiseen korottamiseen sudo-komennon seurauksena. Koska sudo[3089] täsmää molemmissa, oletin sen kertovan, että ne liittyvät samaan tapahtumaan.
 
-## f)
+## h)
 
 Aloitin etsimällä Micron manuaalista plugineihin liittyviä kohtia. Manuaalista löytyi komento, joka listasi tarjolla olevia plugineja. Valitsin listalta tehtävän ohjeissa mainitun Paletteron ja asensin sen. Seuraavaksi hain tietoa pluginin toiminnasta ja päädyin yllättäen (olisihan se pitänyt pluginin nimestä jo arvata) tutun miehen githubiin (https://github.com/terokarvinen/palettero). Ohjeiden tutkimisen jälkeen testasin pluginin toimintaa.
 
