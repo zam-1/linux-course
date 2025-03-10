@@ -2,7 +2,7 @@
 
 ## x)
 
--Command Line Basics Revisited -Sivut sisältävät hyödyllistä tietoa Linuxin komentokehotteen käytöstä ja sen peruskäskyistä.  
+-Command Line Basics Revisited -Sivut ([terokarvinen.com](https://terokarvinen.com/2020/command-line-basics-revisited/?fromSearch=command%20line%20basics%20revisited)) sisältävät hyödyllistä tietoa Linuxin komentokehotteen käytöstä ja sen peruskäskyistä.  
 
 -Ohjeet sisältävät käskyjä tiedostojen ja hakemistojen kanssa työskentelyyn ja ohjeista käskyjä esimerkiksi hakemistojen välillä liikkumiseen, niiden sisällön tutkimiseen ja niiden muokkaamiseen. Tiedostoihin käsittelyyn on tarjolla käskyjä niiden siirtelyyn, kopioimiseen, poistamiseen ja muokkaamiseen liittyen.
 
