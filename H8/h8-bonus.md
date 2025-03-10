@@ -29,7 +29,7 @@ f) tutkin DNS-tiedoista SPF ja DMARC tietoja.
 c) Tein webbilomakkeen, jonka tietoja haistelin onnistuneesti ngrep-ohjelmalla.
 Vinkit) Tein vinkeistä löytyneen ajastetun sertifikaatin uusimisen käyttäen cronia.
 
-## ([H7](https://github.com/zam-1/linux-course/blob/main/H6/h6-salataampa.md))
+## ([H7](https://github.com/zam-1/linux-course/blob/main/H7/h7-Maalisuora.md))
 
 Ei vapaaehtoisia tehtäviä tarjolla.
 
