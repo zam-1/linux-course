@@ -222,7 +222,10 @@ Seuraavaksi loin uuden SSH-avainparin. Luonti tapahtui oletuksena /home/otus/.ss
 ![sshp1.png](sshp1.png ".ssh permissions")
 ![sshp2.png](sshp2.png ".ssh permissions")
 
-Kopioin id_rsa.pub tiedoston sisällön authorized_keys tiedostoon ([digitalocean.com](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server)).
+Kopioin id_rsa.pub tiedoston sisällön authorized_keys tiedostoon. Apua sain Digital Oceanin materiaalista ([digitalocean.com](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server)). Koitin uudestaan SSH-yhteyttä, ja tällä kertaa se muodostui ilman salasanaa. Ymmärtääkseni tehtävä oli tässä vaiheessa suoritettu.
+
+>cp id_rsa.pub authorized_keys  
+>ssh otus@localhost
 
 
 
