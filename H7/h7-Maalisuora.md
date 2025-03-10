@@ -1,4 +1,4 @@
-### a)
+# a)
 
 Aloitin tehtävän luomalla kolme tiedosoa, joissa hyödynsin Bash, Python ja Java kieliä. Bash ja Python olivat yksinkertaisia, ja toimivat suoraan tiedoston luonnin jälkeen ajamalla ne bash- ja python3-komennoilla. Java vaati pienen välivaiheen, jossa lähdekoodi (.java) käännetään JVM-ympäristöön sopivaan muotoon luokka-tiedostoksi (.class). Tiedostoilla on tässä vaiheessa vain rajallisesti käyttöoikeuksia, mutta tämän tehtävän kannalta sillä ei ole merkitystä, koska esimerkiksi ajo-oikeuksia (x) ei tarvita.
 
@@ -72,3 +72,29 @@ else:
 >cowtime (tyhjässä hakemistossa)
 
 ![cowtime.png](cowtime.png "Running Cow")
+
+# d)
+
+### a) Taustatiedot
+
+Taustatiedot eivät ole tässä vaiheessa oleellisia.
+
+### b) Tiivistelmä
+
+Tehtävässä tehdään ilmeisesti virtuaalikoneeseen index.md tiedosto raportointia varten /home/user/report/-hakemistoon. Luon tiedoston, vaikka raportointi tapahtuu GitHubin avulla.
+
+>mkdir /home/otus/report  
+>touch index.md
+
+### c) Ei kolmea sekoseiskaa
+
+Asetan index.md tiedostolle käyttöoikeudet, jotka antavat käyttäjälle täydet oikeudet ja poistavat oikeudet muilta.
+
+>chmod 700 /home/otus/report/index.md
+
+tai
+
+>chmod u+x /home/otus/report/index.md  
+>chmod go-r /home/otus/report/index.md
+
+
