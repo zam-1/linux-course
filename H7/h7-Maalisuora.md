@@ -132,11 +132,16 @@ Tämän jälkeen kopioin komento-tiedoston /usr/local/bin/-hakemistoon ja kokeil
 
 ![komtest2.png](komtest2.png "Komento test")
 
-e) Python
+### e) Python
 
-Loin tiedoston, johon lisäsin rivin python koodia. Tämän jälkeen ajoin kyseisen tiedoston python-komentotulkin kautta.
+Loin pyyttoni-tiedoston, johon lisäsin rivin python koodia. Tämän jälkeen ajoin kyseisen tiedoston python-komentotulkin kautta.
+
+>micro pyyttoni  
+>python3 pyyttoni
 
 ![pyyttoni.png](pyyttoni.png "Python Test")
+
+### f) Etusivu uusiksi
 
 
 
