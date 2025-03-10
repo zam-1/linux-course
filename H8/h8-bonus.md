@@ -4,17 +4,17 @@ Tein mielestäni kaikki vapaahtoiset tehtävät.
 
 ## ([H1](https://github.com/zam-1/linux-course/blob/main/H1/h1-oma-linux.md))
 
-
-k) Raportoin Spotifyn asentamisesta ja kokeilusta.
+k) Raportoin Spotifyn asentamisesta ja kokeilusta.  
+Guest Additions-asennus
 
 ## ([H2](https://github.com/zam-1/linux-course/blob/main/H2/h2-komentaja-pingviini.md))
 
-g) Analysoin journactl-komennon lokitietoja.
+g) Analysoin journactl-komennon lokitietoja.  
 h) Asensin ja kokeilin Micron pluginia Palettero.'
 
 ## ([H3](https://github.com/zam-1/linux-course/blob/main/H3/h3-Hello-Web-Server.md))
 
-m) Hankin GitHub Education-paketin. En raportoinut tätä, mutta sen käyttö on nähtävissä seuraavilla viikoilla.
+m) Hankin GitHub Education-paketin. En raportoinut tätä, mutta sen käyttö on nähtävissä seuraavilla viikoilla.  
 o) Laitoin tietokoneen vastaamaan kahdella eri sivulla kahdesta eri osoitteesta.
 
 ## ([H4](https://github.com/zam-1/linux-course/blob/main/H4/h4-Maailma-kuulee.md))
@@ -23,12 +23,12 @@ d) Laitoin julkiselle palvelimelleni uuden Name Based Virtual Hostin.
 
 ## ([H5](https://github.com/zam-1/linux-course/blob/main/H5/h5-Nimekas.md))
 
-d) Tein tietueet käyttäen CNAME- ja A-tietueita. Tein erillisen Name Based Virtual Hostin alidomainiin.
+d) Tein tietueet käyttäen CNAME- ja A-tietueita. Tein erillisen Name Based Virtual Hostin alidomainiin.  
 f) tutkin DNS-tiedoista SPF ja DMARC tietoja.
 
 ## ([H6](https://github.com/zam-1/linux-course/blob/main/H6/h6-salataampa.md))
 
-c) Tein webbilomakkeen, jonka tietoja haistelin onnistuneesti ngrep-ohjelmalla.
+c) Tein webbilomakkeen, jonka tietoja haistelin onnistuneesti ngrep-ohjelmalla.  
 Vinkit) Tein vinkeistä löytyneen ajastetun sertifikaatin uusimisen käyttäen cronia.
 
 ## ([H7](https://github.com/zam-1/linux-course/blob/main/H7/h7-Maalisuora.md))
