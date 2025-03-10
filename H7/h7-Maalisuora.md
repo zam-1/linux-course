@@ -254,5 +254,5 @@ Lopuksi aktivoin uudet sivut, käynnistin Apache2:n uudestaan ja testasin niitä
 >sudo a2ensite johnpages.hep  
 >sudo systemctl restart apache2
 
-![johntest.png](johntest.png "John Test")
-![eriktest.png](eriktest.png "Erik Test")
+![johntesti.png](johntesti.png "John Test")
+![eriktesti.png](eriktesti.png "Erik Test")
