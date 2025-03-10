@@ -26,8 +26,6 @@ public class HelloJava {
 
 >chmod ugo+x *
 
-![codes.png](codes.png "Code")
-
 >bash HelloBash  
 >python3 HelloPython  
 >javac HelloJava.java  
