@@ -1,4 +1,4 @@
-#Ajoympäristö
+# Ajoympäristö
 
 OS: Windows 11 Pro  
 CPU: Intel Core i7-9700k @ 3.6GHz, 8 Core  
@@ -16,6 +16,10 @@ Number of CPUs: 2
 Video Memory: 256MB  
 Base Memory: 6192MB  
 Harddisk: 50GB
+
+# Alkusanat
+
+Tämän viikon tehtävässä oli pari yksinkertaista tehtävää Hello World-ohjelmiin ja uusien komentojen luomiseen. Molemmat oli käsitelty hyvin tunnilla, joten ne eivät tuottaneet juurikaan ongelmia. Raportin loppupuoliskossa teen syksyn 2024 arvioitavaa laboratorioharjoitusta. Sekin meni hyvin kertauksena, joten pyrin luottamaan myös omiin edellisten viikkojen raportteihin.
 
 # a)
 
