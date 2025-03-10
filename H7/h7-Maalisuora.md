@@ -162,5 +162,21 @@ Seuraavaksi loin käyttäjäni kotihakemistoon index.html tiedoston tulevaa sivu
 
 ![html.png](html.png "index.html")
 
+Seuraavaksi siirryin luomaan palvelimelle tarvittavaa .conf tiedostoa /etc/apache2/sites-available/-hakemistoon. Käytin pohjana toimivaksi havaittua tiedostoa edelliseltä viikolta ([H4](https://github.com/zam-1/linux-course/blob/main/H4/h4-Maailma-kuulee.md)).
 
+>sudoedit free.speech.europe.conf
 
+![freeconf.png](freeconf.png "Site Conf.html")
+
+Aktivoin uudet sivut ja poistin oletussivut käytöstä. Lopuksi käynnistin Apachen uudestaan.
+
+>sudo a2ensite free.speech.europe.conf  
+>sudo a2dissite 000-default.conf  
+>sudo systemctl restart apache2
+
+![enable.png](enable.png "Enabling Site")
+![sites.png](sites.png "Sites")
+
+Lopuksi kokeilin vielä uusia sivuja selaimessa onnistuneesti localhost-osoitteella.
+
+![webtest2.png](webtest2.png "Web Test")
