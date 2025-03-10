@@ -254,7 +254,7 @@ Aloitin tehtävän asentamalla openssh-serverin ja lukemalla aiemman viikon rapo
 
 >sudo apt-get -y install openssh-server  
 >sudo systemctl status ssh  
->sudo ufw allow 80/tcp  
+>sudo ufw allow 22/tcp  
 >ssh otus@localhost
 
 ![sshs.png](sshs.png "SSH status")
