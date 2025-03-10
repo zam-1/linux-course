@@ -32,11 +32,13 @@ public class HelloJava {
 >java HelloJava
 
 ![crun.png](crun.png "Running Code")
-
+<br />
+<br />
 >ls -l
 
 ![cfiles.png](cfiles.png "File permissions")
-
+<br />
+<br />
 ### b) 
 
 Edellisten viikkotehtävien lähteiden päivittämistä ja yleistä siistimistä. Ei raportoitavaa.
@@ -67,12 +69,14 @@ else:
 >chmod ugo+x cowtime
 
 ![cowp.png](cowp.png "File permissions")
-
+<br />
+<br />
 >cp -n cowtime /usr/local/bin  
 >cowtime (tyhjässä hakemistossa)
 
 ![cowtime.png](cowtime.png "Running Cow")
-
+<br />
+<br />
 # d)
 
 ### a) Taustatiedot
@@ -99,7 +103,8 @@ tai
 >chmod go-r index.md
 
 ![index.png](index.png "Permissions")
-
+<br />
+<br />
 ### d) 'howdy'
 
 Tässä vaiheessa oli hyvä asentaa micro-tekstieditori. Laitoin sen samalla myös oletuseditoriksi tähän sessioon.
@@ -119,19 +124,22 @@ echo "Kello on $(date +"%H.%M"), Käyttäjänimesi on $(whoami) ja koneesi nimi 
 >chmod ugo+x komento
 
 ![komp.png](komp.png "Permissions")
-
+<br />
+<br />
 Tämän jälkeen kopioin komento-tiedoston /usr/local/bin/-hakemistoon ja kokeilin sen käyttämistä tyhjästä kansiosta. Tein myös uuden testuser käyttäjän, jolla toistin saman kokeilun onnistuneesti.
 
 >komento
 
 ![komtest1.png](komtest1.png "Komento test")
-
+<br />
+<br />
 >sudo adduser testuser
 >su testuser
 >komento
 
 ![komtest2.png](komtest2.png "Komento test")
-
+<br />
+<br />
 ### e) Python
 
 Loin pyyttoni-tiedoston, johon lisäsin rivin python koodia. Tämän jälkeen ajoin kyseisen tiedoston python-komentotulkin kautta.
@@ -140,7 +148,8 @@ Loin pyyttoni-tiedoston, johon lisäsin rivin python koodia. Tämän jälkeen aj
 >python3 pyyttoni
 
 ![pyyttoni.png](pyyttoni.png "Python Test")
-
+<br />
+<br />
 ### f) Etusivu uusiksi
 
 Aloitin uusien sivujen tekemisen asentamalla Apache2:n. Tämän jälkeen tarkistin, että se on käynnissä. Testasin myös oletussivujen toiminnan localhost-osoitteella.
@@ -150,7 +159,8 @@ Aloitin uusien sivujen tekemisen asentamalla Apache2:n. Tämän jälkeen tarkist
 
 ![status.png](status.png "Apache2 Status")
 ![webtest.png](webtest.png "Web Test")
-
+<br />
+<br />
 Seuraavaksi loin käyttäjäni kotihakemistoon index.html tiedoston tulevaa sivua varten. Polku tiedostoon oli /home/otus/public_sites/free.speech.europe/. Lisäsin tiedostoon lyhyen tekstin.
 
 >mkdir public_sites  
@@ -161,13 +171,15 @@ Seuraavaksi loin käyttäjäni kotihakemistoon index.html tiedoston tulevaa sivu
 >cat index.html
 
 ![html.png](html.png "index.html")
-
+<br />
+<br />
 Seuraavaksi siirryin luomaan palvelimelle tarvittavaa .conf tiedostoa /etc/apache2/sites-available/-hakemistoon. Käytin pohjana toimivaksi havaittua tiedostoa edelliseltä viikolta ([H4](https://github.com/zam-1/linux-course/blob/main/H4/h4-Maailma-kuulee.md)).
 
 >sudoedit free.speech.europe.conf
 
 ![freeconf.png](freeconf.png "Site Conf.html")
-
+<br />
+<br />
 Aktivoin uudet sivut ja poistin oletussivut käytöstä. Lopuksi käynnistin Apachen uudestaan.
 
 >sudo a2ensite free.speech.europe.conf  
@@ -176,11 +188,13 @@ Aktivoin uudet sivut ja poistin oletussivut käytöstä. Lopuksi käynnistin Apa
 
 ![enable.png](enable.png "Enabling Site")
 ![sites.png](sites.png "Sites")
-
+<br />
+<br />
 Lopuksi kokeilin vielä uusia sivuja selaimessa onnistuneesti localhost-osoitteella.
 
 ![webtest2.png](webtest2.png "Web Test")
-
+<br />
+<br />
 ### g) DJ hatut
 
 Sisältöä ei ole käsitelty kurssilla.
@@ -216,7 +230,8 @@ Aloitin tehtävän asentamalla openssh-serverin ja lukemalla aiemman viikon rapo
 
 ![sshs.png](sshs.png "SSH status")
 ![sshtest1.png](sshtest1.png "SSH test")
-
+<br />
+<br />
 Seuraavaksi loin uuden SSH-avainparin. Luonti tapahtui oletuksena /home/otus/.ssh/ kansioon. Tarkistin tiedostojen ja hakemistojen oikeudet, ja ne vaikuttivat hyviltä, enkä puuttunut niihin tässä vaiheessa.
 
 >ssh-keygen
@@ -225,12 +240,14 @@ Seuraavaksi loin uuden SSH-avainparin. Luonti tapahtui oletuksena /home/otus/.ss
 <br />
 ![sshp1.png](sshp1.png ".ssh permissions")
 ![sshp2.png](sshp2.png ".ssh permissions")
-
+<br />
+<br />
 Kopioin id_rsa.pub tiedoston sisällön authorized_keys tiedostoon. Apua sain Digital Oceanin materiaalista ([digitalocean.com](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server)). Koitin uudestaan SSH-yhteyttä, ja tällä kertaa se muodostui ilman salasanaa. Ymmärtääkseni tehtävä oli tässä vaiheessa suoritettu.
 
 >cp id_rsa.pub authorized_keys  
 >ssh otus@localhost
-
+<br />
+<br />
 ![sshf.png](sshf.png "SSH files")
 ![sshtest2.png](sshtest2.png "SSH test")
 
@@ -240,15 +257,18 @@ Kopioin id_rsa.pub tiedoston sisällön authorized_keys tiedostoon. Apua sain Di
 Käytin apuna vanhaa tehtävää ([H3](https://github.com/zam-1/linux-course/blob/main/H3/h3-Hello-Web-Server.md)), jonka avulla lähdin luomaan sivuja käyttäjille. Loin tehtävän aika sivut vain kahdelle käyttäjälle, koska loput olisivat vain olleet saman kopioimista. Tehtävä noudattelee suurimmaksi osin kohdassa 'f) Etusivu uusiksi' tehtyjä toimenpiteitä. Erona oli se, että käytin index.html tiedoston tekemiseen sivuja ylläpitäviä käyttäjiä, koska halusin, että käyttöoikeudet menevät kerralla oikein. Loput toimenpiteet pystyin tekemään pääkäyttäjälläni. Tein kahdelle käyttäjälle, john ja erik, kotikansioihin tarvittavat tiedostot. Käytän jatkossa esimerkkinä john-käyttäjän sivuja, mutta tein samalla myös erikin sivut.
 
 ![johnindex.png](johnindex.png "Index.html")
-
+<br />
+<br />
 Seuraavaksi kopioin ja muuntelin .conf tiedoston edellisessä osiossa tehdystä free.speech.europe.conf tiedostosta.
 
 ![johnconf.png](johnconf.png "John Conf")
-
+<br />
+<br />
 Viimeisenä työnä lisäsin /etc/hosts tiedostoon tarvittavat lisäykset.
 
 ![hosts.png](hosts.png "Hosts")
-
+<br />
+<br />
 Lopuksi aktivoin uudet sivut, käynnistin Apache2:n uudestaan ja testasin niitä selaimen kautta.
 
 >sudo a2ensite johnpages.hep  
@@ -256,7 +276,8 @@ Lopuksi aktivoin uudet sivut, käynnistin Apache2:n uudestaan ja testasin niitä
 
 ![johntesti.png](johntesti.png "John Test")
 ![eriktesti.png](eriktesti.png "Erik Test")
-
+<br />
+<br />
 Loput käyttäjät saisivat sivunsa samoilla keinoilla.
 
 ### k)
