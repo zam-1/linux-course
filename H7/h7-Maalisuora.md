@@ -87,12 +87,9 @@ Tehtävässä tehdään ilmeisesti virtuaalikoneeseen index.md tiedosto raportoi
 >cd /home/otus/report  
 >touch index.md
 
-![index.png](index.png "index.md")
-
-
 ### c) Ei kolmea sekoseiskaa
 
-Asetan index.md tiedostolle käyttöoikeudet, jotka antavat käyttäjälle täydet oikeudet ja poistavat oikeudet muilta.
+Asetin index.md tiedostolle käyttöoikeudet, jotka antavat käyttäjälle täydet oikeudet ja poistavat oikeudet muilta.
 
 >chmod 700 index.md
 
@@ -105,7 +102,7 @@ tai
 
 ### d) 'howdy'
 
-Tässä vaiheessa on hyvä asentaa micro-tekstieditori. Laitan sen samalla myös oletuseditoriksi tähän sessioon.
+Tässä vaiheessa oli hyvä asentaa micro-tekstieditori. Laitoin sen samalla myös oletuseditoriksi tähän sessioon.
 
 >sudo apt-get -y install micro  
 >export EDITOR=micro
