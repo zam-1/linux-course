@@ -1,5 +1,7 @@
 # H1 Oma Linux
 
+*Siistitty 10.3.2025*
+
 ## x)
 
 ### Raportin kirjoittaminen ([terokarvinen.com](https://terokarvinen.com/2006/raportin-kirjoittaminen-4/))
