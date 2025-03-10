@@ -180,3 +180,28 @@ Aktivoin uudet sivut ja poistin oletussivut käytöstä. Lopuksi käynnistin Apa
 Lopuksi kokeilin vielä uusia sivuja selaimessa onnistuneesti localhost-osoitteella.
 
 ![webtest2.png](webtest2.png "Web Test")
+
+### g) DJ hatut
+
+Sisältöä ei ole käsitelty kurssilla.
+
+### h) Käyttäjät
+
+Loin tehtävänannossa annetuille nimille käyttäjät adduser-komennolla. Annoin käyttäjille vahvat salasanat.
+
+>sudo adduser  john  
+>sudo adduser  erik  
+>sudo adduser  amun  
+>sudo adduser  paiva  
+>sudo adduser  maija
+
+![users.png](users.png "Users")
+
+```
+*Nimi*				*Tunnus*	*Salasana*
+John Doe			john		nOH!1990$Tree
+Erik Vähäkäähkä			erik		EkR@SunShine!22
+Akhmad Amun			amun		aM*Horizon8$
+Päivä Ångström			paiva		Day$5Bright*Star
+Maija-Liisa Vähäaho-Virtaoja	maija 		mLvV@2025$Wave!
+```
