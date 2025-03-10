@@ -9,6 +9,14 @@ VM SSD: 1TB Samsung EVO 860, Vapaana 280GB
 GPU: Nvidia RTX 4070 12GB  
 Näyttö: MSI OPTIX MAG341CQ
 
+VirtualBox asetukset:  
+Oletusasetukset, muutamia poikkeuksia lukuunottamatta.  
+OS: Debian 12.9.0  
+Number of CPUs: 2  
+Video Memory: 256MB  
+Base Memory: 6192MB  
+Harddisk: 50GB
+
 # a)
 
 Aloitin tehtävän luomalla kolme tiedostoa, joissa hyödynsin Bash, Python ja Java kieliä. Bash ja Python olivat yksinkertaisia, ja toimivat suoraan tiedoston luonnin jälkeen ajamalla ne bash- ja python3-komennoilla. Java vaati pienen välivaiheen, jossa lähdekoodi (.java) käännetään JVM-ympäristöön sopivaan muotoon luokkatiedostoksi (.class). Tiedostoilla on tässä vaiheessa vain rajallisesti käyttöoikeuksia, joten lisäsin kaikille käyttäjille ajo-oikeudet.
