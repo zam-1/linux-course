@@ -1,5 +1,7 @@
 # A)  Lista kurssilla tehdyistä vapaaehtoisista tehtävistä
 
+Tein mielestäni kaikki vapaahtoiset tehtävät.
+
 ## ([H1](https://github.com/zam-1/linux-course/blob/main/H1/h1-oma-linux.md))
 
 
