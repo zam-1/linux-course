@@ -2,7 +2,7 @@
 
 ## x)
 
-### Raportin kirjoittaminen (https://terokarvinen.com/2006/raportin-kirjoittaminen-4/)
+### Raportin kirjoittaminen ([terokarvinen.com](https://terokarvinen.com/2006/raportin-kirjoittaminen-4/))
 
 Raportin tulee olla:
 
