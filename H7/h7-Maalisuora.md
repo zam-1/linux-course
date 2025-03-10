@@ -81,15 +81,15 @@ Taustatiedot eivät ole tässä vaiheessa oleellisia.
 
 ### b) Tiivistelmä
 
-Tehtävässä tehdään ilmeisesti virtuaalikoneeseen index.md tiedosto raportointia varten /home/user/report/-hakemistoon. Luon tiedoston, vaikka raportointi tapahtuu GitHubin avulla.
-
->mkdir /home/otus/report  
->cd /home/otus/report  
->touch index.md
+Tehtävässä tehdään ilmeisesti virtuaalikoneeseen index.md tiedosto raportointia varten /home/user/report/-hakemistoon. Koska raportointi tapahtuu tällä kertaa GitHubin avulla, teen tiedoston vasta seuraavassa osioissa.
 
 ### c) Ei kolmea sekoseiskaa
 
 Asetin index.md tiedostolle käyttöoikeudet, jotka antavat käyttäjälle täydet oikeudet ja poistavat oikeudet muilta.
+
+>mkdir /home/otus/report  
+>cd /home/otus/report  
+>touch index.md
 
 >chmod 700 index.md
 
@@ -98,7 +98,7 @@ tai
 >chmod u+x index.md  
 >chmod go-r index.md
 
-![perm.png](perm.png "Permissions")
+![index.png](index.png "Permissions")
 
 ### d) 'howdy'
 
