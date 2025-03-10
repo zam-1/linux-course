@@ -4,7 +4,7 @@
 ## x)
 
 **Name-based Virtual Host Support**  
-(https://httpd.apache.org/docs/2.4/vhosts/name-based.html)
+([apache.org](https://httpd.apache.org/docs/2.4/vhosts/name-based.html))
 
 * Name-based Virtual Hosting mahdollistaa useamman palvelimen käytön samassa IP-osoitteessa.
 * Apache käsittelee saapuvat yhteydet ensisijaisesti IP-osoitteen ja portin perusteella. Jos samalle IP-osoitteelle on asetettu useampi virtuaalipalvelin, Apache hyödyntää palvelinten ServerName tai ServerAlias asetuksia.
@@ -13,7 +13,7 @@
 * Apache:n asetusten lisäksi tulee myös lisätä nimet DNS-palvelimelle.
 
 **Name Based Virtual Hosts on Apache – Multiple Websites to Single IP Address**  
-(https://terokarvinen.com/2018/04/10/name-based-virtual-hosts-on-apache-multiple-websites-to-single-ip-address/)
+([terokarvinen.com](https://terokarvinen.com/2018/04/10/name-based-virtual-hosts-on-apache-multiple-websites-to-single-ip-address/))
 
 * Ohjeet antavat tarvittavat komennot ja asetustiedostojen sisällöt nimi-pohjaisen palvelimen käyttöönottoon Linux ympäristössä.
 * Operaatio aloitetaan asentamalla Apache2 Web Server.
@@ -43,7 +43,7 @@ Tämän raportin aiheena oli Apache2 asennus ja käyttöönotto paikallisesti Vi
 
 ## a)
 
-Asensin Apache2 Web Serverin tuntien aikana. Asennus onnistui hyvin tunnilla saatujen ohjeiden ja tehtävänannossakin mainittujen ohjeiden avulla (https://terokarvinen.com/2018/04/10/name-based-virtual-hosts-on-apache-multiple-websites-to-single-ip-address/). Palvelin ei vaatinut erillistä käynnistämistä, vaan toimi automaattisesti heti asennuksen jälkeen. Vaihdoin tunneilla myös palvelimen aloitussivun, joten curl-komento ei enää hae asennuksen oletussivua.
+Asensin Apache2 Web Serverin tuntien aikana. Asennus onnistui hyvin tunnilla saatujen ohjeiden ja tehtävänannossakin mainittujen ohjeiden avulla ([terokarvinen.com](https://terokarvinen.com/2018/04/10/name-based-virtual-hosts-on-apache-multiple-websites-to-single-ip-address/)). Palvelin ei vaatinut erillistä käynnistämistä, vaan toimi automaattisesti heti asennuksen jälkeen. Vaihdoin tunneilla myös palvelimen aloitussivun, joten curl-komento ei enää hae asennuksen oletussivua.
 
 > &emsp;sudo systemctl status apache2  
 > &emsp;curl localhost
@@ -64,12 +64,12 @@ Muutoksen jälkeen Access.log -tiedostoon tuli selaimella tehdyn yhteydenoton se
 
 ![access.png](access.png "access")
 
-Ensimmäinen lokirivi kertoo onnistuneesta (200) yrityksestä hakea tietoa sivuille määritellystä juuresta. Apache2 tarjoilee oletuksena palvelimen juuresta löytyvän index.html tiedoston. Seuraava rivi kertoo epäonnistuneesta yrityksestä (404, file not found). Haettu favicon.ico on käsittääkseni oletushaku, jonka selaimet tekevät löytääkseen osoiteriville ikonin (https://appwrk.com/resolving-favicon-ico-404-errors). Kyseessä ei ole siis apache2:n asetuksiin liittyvä ongelma.
+Ensimmäinen lokirivi kertoo onnistuneesta (200) yrityksestä hakea tietoa sivuille määritellystä juuresta. Apache2 tarjoilee oletuksena palvelimen juuresta löytyvän index.html tiedoston. Seuraava rivi kertoo epäonnistuneesta yrityksestä (404, file not found). Haettu favicon.ico on käsittääkseni oletushaku, jonka selaimet tekevät löytääkseen osoiteriville ikonin ([appwrk.com](https://appwrk.com/resolving-favicon-ico-404-errors)). Kyseessä ei ole siis apache2:n asetuksiin liittyvä ongelma.
 
 Löysin avukseni ohjeet (https://httpd.apache.org/docs/2.4/logs.html), joilla tulkitsin lokitiedostoa seuraavasti:
 
 * IP-osoite alussa yksilöi sivuihin yhteyden ottaneen laitteen.
-* Ensimmäinen '-' kertoo ettei kohdassa haettavaa tietoa löydy. Tieto olisi liittynyt yhteyden omistajan määrittelyyn Ident-protokollan (https://en.wikipedia.org/wiki/Ident_protocol) avulla. Tieto ei lähteiden perusteella vaikuta luotettavalta tai nykyaikaiselta.
+* Ensimmäinen '-' kertoo ettei kohdassa haettavaa tietoa löydy. Tieto olisi liittynyt yhteyden omistajan määrittelyyn Ident-protokollan ([en.wikipedia.org](https://en.wikipedia.org/wiki/Ident_protocol)) avulla. Tieto ei lähteiden perusteella vaikuta luotettavalta tai nykyaikaiselta.
 * Seuraava '-' kertoo taas tiedosta, jota ei ole tarjolla. Tässä kohdassa olisi yhteyden ottaneen käyttäjän userid, jolla pyritään tunnistamaan käyttäjä ja tämän oikeus päästä käsiksi haluttuun tietoon.
 * Tiedossa on seuraavaksi yhteydenoton aika, päivämäärä ja aikavyöhyke.
 * "-merkkien sisältä löytyy tieto siitä, mitä metodia yhteyteen käytetään. Tässä tapauksessa kyseessä on GET (Hakee tietoa, esim. .html ja kuvatiedostoja). Tästä osiosta löytyy myös se mitä haetaan (/ ei tässä tapauksessa ole ymmärtääkseni järjestelmän juuri, vaan Apachen asetuksissa mainittu hakemistojuuri /home/otus/public_sites.hattu.example.com/) ja hakuun käytetty protokolla (HTTP/1.1).
