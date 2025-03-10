@@ -16,7 +16,7 @@ Raportin tulee olla:
 
 **Rehellisyys**: Kaiken raportissa olevan pitää perustua todellisiin kokeiluihin ja havaintoihin. Sepittely on rangaistavaa. Tekoälyä ei tule käyttää tekstin luontiin ja sen käytöstä on mainittava lähteissä. Myös Plagiointi on rangaistavaa.
 
-### What is free software? (https://www.gnu.org/philosophy/free-sw.html)
+### What is free software? ([gnu.org](https://www.gnu.org/philosophy/free-sw.html)).
 
 Vapaa ohjelmisto kunnioittaa käyttäjän oikeutta käyttää, kopioida, tutkia, jakaa tai muokata ohjelmistoa. Vapaa ei siis tässä yhteydessä liity ohjelmiston hintaan oston tai myynnin yhteydessä, vaan edellä mainittuihin oikeuksiin.
 
