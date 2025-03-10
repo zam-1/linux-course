@@ -275,7 +275,8 @@ Sisältöä ei ole käsitelty kurssilla.
 ## Lähteet
 Karvinen, Tero 2025: Linux Palvelimet 2025 alkukevät. https://terokarvinen.com/linux-palvelimet/  
 Zam-1 2025: h3-Hello-Web-Server. https://github.com/zam-1/linux-course/blob/main/H3/h3-Hello-Web-Server.md  
-Zam-1 2025: h4-Maailma-kuulee. https://github.com/zam-1/linux-course/blob/main/H4/h4-Maailma-kuulee.md
+Zam-1 2025: h4-Maailma-kuulee. https://github.com/zam-1/linux-course/blob/main/H4/h4-Maailma-kuulee.md  
+Ellingwood, Justin & Boucheron, Brian & Singh, Anish 2025: How to Create an SSH Key in Linux: Easy Step-by-Step Guide. https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server
 
 
 <br />
