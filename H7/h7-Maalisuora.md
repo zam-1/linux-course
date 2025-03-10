@@ -153,12 +153,12 @@ Aloitin uusien sivujen tekemisen asentamalla Apache2:n. Tämän jälkeen tarkist
 
 Seuraavaksi loin käyttäjäni kotihakemistoon index.html tiedoston tulevaa sivua varten. Polku tiedostoon oli /home/otus/public_sites/free.speech.europe. Lisäsin tiedostoon lyhyen tekstin.
 
-mkdir public_sites  
-mkdir public_sites/free.speech.europe  
-cd public_sites/free.speech.europe  
-pwd  
-echo Free Speech Europe > index.html  
-cat index.html
+>mkdir public_sites  
+>mkdir public_sites/free.speech.europe  
+>cd public_sites/free.speech.europe  
+>pwd  
+>echo Free Speech Europe > index.html  
+>cat index.html
 
 ![html.png](html.png "index.html")
 
