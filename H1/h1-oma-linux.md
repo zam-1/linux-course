@@ -92,8 +92,8 @@ Kirjautumisen yhteydessä ei mielestäni auennut ohjeissa mainittua 'Welcome' pa
 
 Käynnistin terminaalin (Terminal Emulator) Applications-valikosta ja aloin ajamaan tehtävänannossa kerrottuja komentoja:
 
-*sudo apt-get update*
-*sudo apt-get -y dist-upgrade*
+>sudo apt-get update  
+>sudo apt-get -y dist-upgrade
 
 Salasanan antamisen jälkeen komennot suorittivat tehtävänsä ilman virheilmoituksia. Komentojen tuottama sekava ulosanti ei kertonut minulle juuri mitään tässä vaiheessa, mutta oleellisinta, että ne toimivat oikein.
 
@@ -103,8 +103,8 @@ Salasanan antamisen jälkeen komennot suorittivat tehtävänsä ilman virheilmoi
 
 Seuraavaksi asensin ja käynnistin palomuurin komennoilla:
 
-*sudo apt-get -y install ufw*
-*sudo ufw enable*
+>sudo apt-get -y install ufw  
+>sudo ufw enable
 
 Komennot tuntuivat toimivan oikein ja sain ilmoituksen, että palomuuri toimii uudelleenkäynnistämisen jälkeen.
 
@@ -133,24 +133,24 @@ Tässä vaiheessa otin virtuaalikoneesta snapshotin. 'Take snapshot' löytyin Vi
 
 Suosikkiohjelmani on muissa käyttöjärjestelmissä Spotify, joten miksei myös Linuxissa. Koska sen käyttö ei poikkea Linuxissa mitenkään muista käyttöjärjestelmistä, valitsin yksinkertaisiksi toimenpiteiksi sen asentamisen ja sisäänkirjautumisen. Audion toimivaksi saattaminen on tässä vaiheessa ehkä liian vaativa toimenpide. Ennen suorien asennusohjeiden hakemista Googlen kautta, halusin kokeilla aiemmin opittuja komentoja.
 
-*apt*
+>apt
 
 Komentokehotteista aiemmin opittuna asiana ajoin ensimmäiseksi apt ohjelman ilman lisäkomentoja. Odotetusti se tarjosi listan mahdollisia komentoja.
 
-*apt list*
+>apt list
 
 Seuraavaksi katsoin listaa tarjolla olevista paketeista, mutta lista oli aivan liian pitkä ollakseen hyödyllinen.
 
-*apt search spotify*
+>apt search spotify
 
 Komennon tuloksena sain lyhyen listan paketeista, jotka eivät ainakaan päällisin puolin liittyneet hakuun mitenkään.
 
 Tässä vaiheessa osaamiseni loppui, joten hain Googlesta apua. Haku johdatti minut Spotifyn sivuille asennusohjeisiin. Ohjeissa annettiin seuraavat komennot asennukseen seuraavassa muodossa: 
 
-*curl -sS https:<!-- -->//download.spotify.com/debian/pubkey_C85668DF69375001.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg*
-*echo "deb http:<!-- -->//repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list*
+>curl -sS https:<!-- -->//download.spotify.com/debian/pubkey_C85668DF69375001.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg  
+>echo "deb http:<!-- -->//repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 
-*sudo apt-get update && sudo apt-get install spotify-client*
+>sudo apt-get update && sudo apt-get install spotify-client
 
 Ensimmäiset kaksi riviä liittyvät ilmeisesti siihen, että spotifyn paketti ylipäätään löytyy asennettavaksi. Komentojen yksityiskohdista en osaa sanoa tarkemmin.
 
