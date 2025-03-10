@@ -1,3 +1,14 @@
+#Ajoympäristö
+
+OS: Windows 11 Pro  
+CPU: Intel Core i7-9700k @ 3.6GHz, 8 Core  
+Emolevy: Z390 AORUS ELITE-CF  
+Muisti: 32GB DDR4-3200  
+OS SSD: 250GB Samsung EVO 860, Vapaana 116GB  
+VM SSD: 1TB Samsung EVO 860, Vapaana 280GB  
+GPU: Nvidia RTX 4070 12GB  
+Näyttö: MSI OPTIX MAG341CQ
+
 # a)
 
 Aloitin tehtävän luomalla kolme tiedostoa, joissa hyödynsin Bash, Python ja Java kieliä. Bash ja Python olivat yksinkertaisia, ja toimivat suoraan tiedoston luonnin jälkeen ajamalla ne bash- ja python3-komennoilla. Java vaati pienen välivaiheen, jossa lähdekoodi (.java) käännetään JVM-ympäristöön sopivaan muotoon luokkatiedostoksi (.class). Tiedostoilla on tässä vaiheessa vain rajallisesti käyttöoikeuksia, joten lisäsin kaikille käyttäjille ajo-oikeudet.
