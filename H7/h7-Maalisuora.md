@@ -208,7 +208,7 @@ Maija-Liisa Vähäaho-Virtaoja	maija 		mLvV@2025$Wave!
 
 ### i) Etänä
 
-Aloitin tehtävän asentamalla openssh-serverin. Asennuksen jälkeen tarkistin sen statuksen ja koitin ottaa yhteyttä localhostiin ssh:n yli. Vaikka tämä tuntunut erityisen käytännölliseltä, ainakin se toimi.
+Aloitin tehtävän asentamalla openssh-serverin ja lukemalla aiemman viikon raporttiani ([H4](https://github.com/zam-1/linux-course/blob/main/H4/h4-Maailma-kuulee.md)). Asennuksen jälkeen tarkistin sen statuksen ja koitin ottaa yhteyttä localhostiin ssh:n yli. Vaikka tämä tuntunut erityisen käytännölliseltä, ainakin se toimi. Yhteys vaati odotetusti salasanan.
 
 >sudo apt-get -y install openssh-server  
 >sudo systemctl status ssh  
@@ -226,6 +226,8 @@ Kopioin id_rsa.pub tiedoston sisällön authorized_keys tiedostoon. Apua sain Di
 
 >cp id_rsa.pub authorized_keys  
 >ssh otus@localhost
+
+### j) Tee käyttäjille mahdollisuus tehdä kotisivuja
 
 
 
