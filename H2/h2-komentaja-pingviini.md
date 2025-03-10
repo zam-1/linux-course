@@ -34,7 +34,7 @@ Harddisk: 60GB
 
 ## Alkusanat
 
-Käyn tässä raportissa läpi kurssin Linux-palvelimet (https://terokarvinen.com/linux-palvelimet/) h2-tehtävän asioita. Luettuani tehtävänannon, en odottanut suuria ongelmia tehtävien parissa ja ne sujuivatkin suurin piirtein ongelmitta. Lähdin liikkeelle sillä ajatuksella, että en etsi netistä valmiita vastauksia vaan yritän suoriutua etupäässä Linuxin oman dokumentaation avulla. Tässä yhteydessä huomasin, että osa ohjeista oli aika sekavia, ja niiden tulkitseminen vaatisi ehkä parempaa kokonaisymmärrystä Linuxista. Vaikka jotkut asiat jäivät vielä epäselviksi, oletan niiden selkeytyvän kurssin edetessä.
+Käyn tässä raportissa läpi kurssin Linux-palvelimet ([terokarvinen.com](https://terokarvinen.com/linux-palvelimet/)) h2-tehtävän asioita. Luettuani tehtävänannon, en odottanut suuria ongelmia tehtävien parissa ja ne sujuivatkin suurin piirtein ongelmitta. Lähdin liikkeelle sillä ajatuksella, että en etsi netistä valmiita vastauksia vaan yritän suoriutua etupäässä Linuxin oman dokumentaation avulla. Tässä yhteydessä huomasin, että osa ohjeista oli aika sekavia, ja niiden tulkitseminen vaatisi ehkä parempaa kokonaisymmärrystä Linuxista. Vaikka jotkut asiat jäivät vielä epäselviksi, oletan niiden selkeytyvän kurssin edetessä.
 
 ## a)
 
