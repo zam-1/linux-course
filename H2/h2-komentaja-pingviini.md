@@ -1,5 +1,7 @@
 # H2 Komentaja Pingviini
 
+*Siistitty 10.3.2025*
+
 ## x)
 
 -Command Line Basics Revisited -Sivut ([terokarvinen.com](https://terokarvinen.com/2020/command-line-basics-revisited/?fromSearch=command%20line%20basics%20revisited)) sisältävät hyödyllistä tietoa Linuxin komentokehotteen käytöstä ja sen peruskäskyistä.  
