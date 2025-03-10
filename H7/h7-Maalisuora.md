@@ -84,17 +84,21 @@ Taustatiedot eivät ole tässä vaiheessa oleellisia.
 Tehtävässä tehdään ilmeisesti virtuaalikoneeseen index.md tiedosto raportointia varten /home/user/report/-hakemistoon. Luon tiedoston, vaikka raportointi tapahtuu GitHubin avulla.
 
 >mkdir /home/otus/report  
+>cd /home/otus/report  
 >touch index.md
+
+![index.png](index.png "index.md")
+
 
 ### c) Ei kolmea sekoseiskaa
 
 Asetan index.md tiedostolle käyttöoikeudet, jotka antavat käyttäjälle täydet oikeudet ja poistavat oikeudet muilta.
 
->chmod 700 /home/otus/report/index.md
+>chmod 700 index.md
 
 tai
 
->chmod u+x /home/otus/report/index.md  
->chmod go-r /home/otus/report/index.md
+>chmod u+x index.md  
+>chmod go-r index.md
 
-
+![perm.png](perm.png "Permissions")
