@@ -198,10 +198,31 @@ Loin tehtävänannossa annetuille nimille käyttäjät adduser-komennolla. Annoi
 ![users.png](users.png "Users")
 
 ```
-*Nimi*				*Tunnus*	*Salasana*
+NIMI				TUNNUS		SALASANA
 John Doe			john		nOH!1990$Tree
 Erik Vähäkäähkä			erik		EkR@SunShine!22
 Akhmad Amun			amun		aM*Horizon8$
 Päivä Ångström			paiva		Day$5Bright*Star
 Maija-Liisa Vähäaho-Virtaoja	maija 		mLvV@2025$Wave!
 ```
+
+### i) Etänä
+
+Aloitin tehtävän asentamalla openssh-serverin. Asennuksen jälkeen tarkistin sen statuksen ja koitin ottaa yhteyttä localhostiin ssh:n yli. Vaikka tämä tuntunut erityisen käytännölliseltä, ainakin se toimi.
+
+>sudo apt-get -y install openssh-server  
+>sudo systemctl status ssh  
+>ssh otus@localhost
+
+![sshs.png](sshs.png "SSH status")
+![sshtest1.png](sshtest1.png "SSH test")
+
+Seuraavaksi loin uuden SSH-avainparin. Luonti tapahtui oletuksena /home/otus/.ssh/ kansioon. Tarkistin tiedostojen ja hakemistojen oikeudet, ja ne vaikuttivat hyviltä, enkä puuttunut niihin tässä vaiheessa.
+
+![sshp1.png](sshp1.png ".ssh permissions")
+![sshp2.png](sshp2.png ".ssh permissions")
+
+Kopioin id_rsa.pub tiedoston sisällön authorized_keys tiedostoon ([digitalocean.com](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server)).
+
+
+
