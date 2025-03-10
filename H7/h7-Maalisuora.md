@@ -187,7 +187,7 @@ Sisältöä ei ole käsitelty kurssilla.
 
 ### h) Käyttäjät
 
-Loin tehtävänannossa annetuille nimille käyttäjät adduser-komennolla. Annoin käyttäjille vahvat salasanat.
+Loin tehtävänannossa annetuille nimille käyttäjät adduser-komennolla. Annoin käyttäjille vahvat salasanat, jotka on perustuvat mahdollisesti johonkin todelliseen ja ovat ainakin teoriassa muistettavissa. Password-managereita hyödyntämällä salasanat voisivat olla kokonaan satunnaista sekasotkua.
 
 >sudo adduser  john  
 >sudo adduser  erik  
