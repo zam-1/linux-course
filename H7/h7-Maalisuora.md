@@ -256,3 +256,13 @@ Lopuksi aktivoin uudet sivut, käynnistin Apache2:n uudestaan ja testasin niitä
 
 ![johntesti.png](johntesti.png "John Test")
 ![eriktesti.png](eriktesti.png "Erik Test")
+
+Loput käyttäjät saisivat sivunsa samoilla keinoilla.
+
+### k)
+
+Sisältöä ei ole käsitelty kurssilla.
+
+### i)
+
+Sisältöä ei ole käsitelty kurssilla.
