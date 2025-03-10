@@ -237,5 +237,22 @@ Kopioin id_rsa.pub tiedoston sisällön authorized_keys tiedostoon. Apua sain Di
 
 ### j) Tee käyttäjille mahdollisuus tehdä kotisivuja
 
+Käytin apuna vanhaa tehtävää ([H3](https://github.com/zam-1/linux-course/blob/main/H3/h3-Hello-Web-Server.md)), jonka avulla lähdin luomaan sivuja käyttäjille. Loin tehtävän aika sivut vain kahdelle käyttäjälle, koska loput olisivat vain olleet saman kopioimista. Tehtävä noudattelee suurimmaksi osin kohdassa 'f) Etusivu uusiksi' tehtyjä toimenpiteitä. Erona oli se, että käytin index.html tiedoston tekemiseen sivuja ylläpitäviä käyttäjiä, koska halusin, että käyttöoikeudet menevät kerralla oikein. Loput toimenpiteet pystyin tekemään pääkäyttäjälläni. Tein kahdelle käyttäjälle, john ja erik, kotikansioihin tarvittavat tiedostot. Käytän jatkossa esimerkkinä john-käyttäjän sivuja, mutta tein samalla myös erikin sivut.
 
+![johnindex.png](johnindex.png "Index.html")
 
+Seuraavaksi kopioin ja muuntelin .conf tiedoston edellisessä osiossa tehdystä free.speech.europe.conf tiedostosta.
+
+![johnconf.png](johnconf.png "John Conf")
+
+Viimeisenä työnä lisäsin /etc/hosts tiedostoon tarvittavat lisäykset.
+
+![hosts.png](hosts.png "Hosts")
+
+Lopuksi aktivoin uudet sivut, käynnistin Apache2:n uudestaan ja testasin niitä selaimen kautta.
+
+>sudo a2ensite johnpages.hep  
+>sudo systemctl restart apache2
+
+![johntest.png](johntest.png "John Test")
+![eriktest.png](eriktest.png "Erik Test")
