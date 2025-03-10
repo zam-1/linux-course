@@ -24,6 +24,8 @@ public class HelloJava {
 }
 ```
 
+>chmod ugo+x *
+
 ![codes.png](codes.png "Code")
 
 >bash HelloBash  
