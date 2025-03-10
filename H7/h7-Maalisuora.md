@@ -183,7 +183,7 @@ Aloitin uusien sivujen tekemisen asentamalla Apache2:n. Tämän jälkeen tarkist
 
 >sudo apt-get -y install apache2  
 >sudo systemctl status apache2  
->sudo ufw allow 22/tcp
+>sudo ufw allow 80/tcp
 
 ![status.png](status.png "Apache2 Status")
 ![webtest.png](webtest.png "Web Test")
