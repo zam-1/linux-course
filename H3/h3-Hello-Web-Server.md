@@ -1,5 +1,5 @@
 # H3 Hello Web Server
-*Raportin toimenpiteet suoritettu 2.2.2025*
+*Siistitty 10.3.2025*
 
 ## x)
 
@@ -66,7 +66,7 @@ Muutoksen jälkeen Access.log -tiedostoon tuli selaimella tehdyn yhteydenoton se
 
 Ensimmäinen lokirivi kertoo onnistuneesta (200) yrityksestä hakea tietoa sivuille määritellystä juuresta. Apache2 tarjoilee oletuksena palvelimen juuresta löytyvän index.html tiedoston. Seuraava rivi kertoo epäonnistuneesta yrityksestä (404, file not found). Haettu favicon.ico on käsittääkseni oletushaku, jonka selaimet tekevät löytääkseen osoiteriville ikonin ([appwrk.com](https://appwrk.com/resolving-favicon-ico-404-errors)). Kyseessä ei ole siis apache2:n asetuksiin liittyvä ongelma.
 
-Löysin avukseni ohjeet (https://httpd.apache.org/docs/2.4/logs.html), joilla tulkitsin lokitiedostoa seuraavasti:
+Löysin avukseni ohjeet ([apache.org](https://httpd.apache.org/docs/2.4/logs.html)), joilla tulkitsin lokitiedostoa seuraavasti:
 
 * IP-osoite alussa yksilöi sivuihin yhteyden ottaneen laitteen.
 * Ensimmäinen '-' kertoo ettei kohdassa haettavaa tietoa löydy. Tieto olisi liittynyt yhteyden omistajan määrittelyyn Ident-protokollan ([en.wikipedia.org](https://en.wikipedia.org/wiki/Ident_protocol)) avulla. Tieto ei lähteiden perusteella vaikuta luotettavalta tai nykyaikaiselta.
@@ -102,7 +102,7 @@ Seuraavaksi lisäsin uuden palvelimen sites-enabled kansioon aktiiviseksi. Samas
 
 ## e)
 
-Ajattelin aluksi tehdä vain yksinkertaisimman mahdollisen HTML5-sivun, mutta innostuin kertaamaan myös CSS-perusteita. Tuloksena syntyi aavistuksen tyylitelty, mutta silti yksinkertainen aloitussivu. HTML-osuus tehtävästä meni kivuttomasti, joten siitä ei ole juuri raportoitavaa kuvan lisäksi. CSS aiheutti sitäkin enemmän harmaita hiuksia, mutta se ei varsinaisesti kuulu tehtävänannon piiriin, joten en kommentoi sitä sen tarkemmin. Validoin HTML-osuuden osoitteessa https://validator.w3.org/.
+Ajattelin aluksi tehdä vain yksinkertaisimman mahdollisen HTML5-sivun, mutta innostuin kertaamaan myös CSS-perusteita. Tuloksena syntyi aavistuksen tyylitelty, mutta silti yksinkertainen aloitussivu. HTML-osuus tehtävästä meni kivuttomasti, joten siitä ei ole juuri raportoitavaa kuvan lisäksi. CSS aiheutti sitäkin enemmän harmaita hiuksia, mutta se ei varsinaisesti kuulu tehtävänannon piiriin, joten en kommentoi sitä sen tarkemmin. Validoin HTML-osuuden osoitteessa ([validator.w3.org](https://validator.w3.org/)).
 
 ![sivu.png](sivu.png "sivu")
 ![koodi.png](koodi.png "koodi")
@@ -124,7 +124,7 @@ Menin sivujen hakemistoon, jonka sisältöä tutkimalla kävi heti selväksi, et
 
 ![perm1.png](perm1.png "perm1")
 
-Ensimmäinen toimenpide oli selvittää, kuinka käyttöoikeuksista vaihdetaan selkein osuus, eli 'root' korvataan arvolla 'otus'. Löysin Google-haulla lähteeksi ohjeet (https://www.redhat.com/en/blog/manage-permissions), joiden avulla muutin käyttäjän ja ryhmän oikeudet rootin sijaan käyttäjälle 'otus'. Suoritin ohjeista selvitetyn komennon kaikille tiedostoille hakemistossa.
+Ensimmäinen toimenpide oli selvittää, kuinka käyttöoikeuksista vaihdetaan selkein osuus, eli 'root' korvataan arvolla 'otus'. Löysin Google-haulla lähteeksi ohjeet ([redhat.com](https://www.redhat.com/en/blog/manage-permissions)), joiden avulla muutin käyttäjän ja ryhmän oikeudet rootin sijaan käyttäjälle 'otus'. Suoritin ohjeista selvitetyn komennon kaikille tiedostoille hakemistossa.
 
 > &emsp;sudo chown otus:otus index.html
 
