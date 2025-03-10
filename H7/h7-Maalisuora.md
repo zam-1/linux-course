@@ -58,11 +58,11 @@ public class HelloJava {
 ![cfiles.png](cfiles.png "File permissions")
 <br />
 <br />
-### b) 
+# b) 
 
 Edellisten viikkotehtävien lähteiden päivittämistä ja yleistä siistimistä. Ei raportoitavaa.
 
-### c)
+# c)
 
 Aloitin luomalla kevyen Python-komennon, jossa pyydetään lehmää (cowsay) kertomaan kellonaika. Loin tarvittavan tiedoston käyttäjäni kotihakemistoon ja asetin sille ajo(x) oikeudet kaikille käyttäjille. Kun ohjelma toimi odotetusti, lisäsin tiedoston alkuun Pythonin komentotulkin rivillä '#!/usr/bin/python3'. Tämän jälkeen kopioin tiedoston kaikille käyttäjille tarkoitettujen komentojen /usr/local/bin/-hakemistoon. Tämän jälkeen testasin komentoa tyhjässä kansiossa. Tehtävä meni hyvin tunnilla saatujen ohjeiden avulla, ja selvisin ilman vastoinkäymisiä.
 
@@ -97,6 +97,8 @@ else:
 <br />
 <br />
 # d)
+
+Tästä eteenpäin tehtävät perustuvat syksyn 2024 laboratorioharjoitukseen ([terokarvinen.com](https://terokarvinen.com/2024/arvioitava-laboratorioharjoitus-2024-syksy-linux-palvelimet/)).
 
 ### a) Taustatiedot
 
@@ -317,7 +319,8 @@ Karvinen, Tero 2025: Linux Palvelimet 2025 alkukevät. https://terokarvinen.com/
 Zam-1 2025: h3-Hello-Web-Server. https://github.com/zam-1/linux-course/blob/main/H3/h3-Hello-Web-Server.md  
 Zam-1 2025: h4-Maailma-kuulee. https://github.com/zam-1/linux-course/blob/main/H4/h4-Maailma-kuulee.md  
 Ellingwood, Justin & Boucheron, Brian & Singh, Anish 2025: How to Create an SSH Key in Linux: Easy Step-by-Step Guide. https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server  
-Hira, Zaira 2023: Bash Scripting Tutorial – Linux Shell Script and Command Line for Beginners. https://www.freecodecamp.org/news/bash-scripting-tutorial-linux-shell-script-and-command-line-for-beginners/
+Hira, Zaira 2023: Bash Scripting Tutorial – Linux Shell Script and Command Line for Beginners. https://www.freecodecamp.org/news/bash-scripting-tutorial-linux-shell-script-and-command-line-for-beginners/  
+Karvinen, Tero 2024: arvioitava-laboratorioharjoitus-2024-syksy-linux-palvelimet. https://terokarvinen.com/2024/arvioitava-laboratorioharjoitus-2024-syksy-linux-palvelimet/
 
 
 <br />
