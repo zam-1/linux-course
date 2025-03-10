@@ -227,6 +227,10 @@ Kopioin id_rsa.pub tiedoston sisällön authorized_keys tiedostoon. Apua sain Di
 >cp id_rsa.pub authorized_keys  
 >ssh otus@localhost
 
+![sshf.png](sshf.png "SSH files")
+![sshtest2.png](sshtest2.png "SSH test")
+
+
 ### j) Tee käyttäjille mahdollisuus tehdä kotisivuja
 
 
