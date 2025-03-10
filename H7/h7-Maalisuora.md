@@ -110,5 +110,33 @@ Tässä vaiheessa on hyvä asentaa micro-tekstieditori. Laitan sen samalla myös
 >sudo apt-get -y install micro  
 >export EDITOR=micro
 
+Loin komennon joka kertoo kellonajan, käyttäjän nimen ja hostnamen ja muutin sen oikeuksiin ajo(x)-oikeudet kaikille käyttäjille.
+
+>micro komento
+
+```
+#!/usr/bin/bash
+echo "Kello on $(date +"%H.%M"), Käyttäjänimesi on $(whoami) ja koneesi nimi on $(hostname)"
+```
+
+>chmod ugo+x komento
+
+![komp.png](komp.png "Permissions")
+
+Tämän jälkeen kopioin komento-tiedoston /usr/local/bin/-hakemistoon ja kokeilin sen käyttämistä tyhjästä kansiosta. Tein myös uuden testuser käyttäjän, jolla toistin saman kokeilun onnistuneesti.
+
+>komento
+
+![komtest1.png](komtest1.png "Komento test")
+
+>sudo adduser testuser
+>su testuser
+>komento
+
+![komtest2.png](komtest2.png "Komento test")
+
+
+
+
 
 
