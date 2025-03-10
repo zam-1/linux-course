@@ -1,10 +1,10 @@
 # H4 Maailma kuulee
-**Raportin toimenpiteet suoritettu 9-10.2.2025*
+*Siistitty 10.3.2025*
 
 ## x)
 
 **Teoriasta käytäntöön pilvipalvelimen avulla (h4)**  
-(https://susannalehto.fi/2022/teoriasta-kaytantoon-pilvipalvelimen-avulla-h4/)
+([susannalehto.fi](https://susannalehto.fi/2022/teoriasta-kaytantoon-pilvipalvelimen-avulla-h4/))
 
 * Raportissa käydään läpi palvelimen (Digital Ocean) ja domainnimen (Namecheap) vuokraaminen hyödyntäen GitHub Education-etuja.
 * Sijainniksi palvelimelle valikoituu maantieteellisesti lähin vaihtoehto, Amsterdam.
@@ -17,7 +17,7 @@
 * Lopuksi kirjoittaja analysoi lokeista löytyvää mahdollista murtautumisyritystä.
 
 **First Steps on a New Virtual Private Server – an Example on DigitalOcean and Ubuntu 16.04 LTS**  
-(https://terokarvinen.com/2017/first-steps-on-a-new-virtual-private-server-an-example-on-digitalocean/)
+([terokarvinen.com](https://terokarvinen.com/2017/first-steps-on-a-new-virtual-private-server-an-example-on-digitalocean/))
 
 * Hyvät salasanat ovat erittäin tärkeitä.
 * Palvelimia on tarjolla monelta yritykseltä, kuten Digital Ocean, Linode ja Gandi.
@@ -50,7 +50,7 @@ Muisti: 1GB
 
 ## Alkusanat
 
-Tämä raportti käsittelee palvelimen vuokraamista julkisilta tarjoajilta. Valitsin käyttöön Digital Oceanin (https://www.digitalocean.com/) lähinnä Githubin etujen takia. Tein palvelimen käyttöönottoon liittyviä toimenpiteitä ja asensin Apache2-palvelimen, joka tarjoaa maailmalle tekemääni alkeellista sivua. Suurimmat ongelmat raportissa esitettyjen toimenpiteiden suorittamisessa liittyivät tiedostojen ja hakemistojen käyttöoikeuksiin. Edellisten viikkojen opeilla selviydyin ongelmista kohtuu nopeasti.
+Tämä raportti käsittelee palvelimen vuokraamista julkisilta tarjoajilta. Valitsin käyttöön Digital Oceanin ([digitalocean.com](https://www.digitalocean.com/)) lähinnä Githubin etujen takia. Tein palvelimen käyttöönottoon liittyviä toimenpiteitä ja asensin Apache2-palvelimen, joka tarjoaa maailmalle tekemääni alkeellista sivua. Suurimmat ongelmat raportissa esitettyjen toimenpiteiden suorittamisessa liittyivät tiedostojen ja hakemistojen käyttöoikeuksiin. Edellisten viikkojen opeilla selviydyin ongelmista kohtuu nopeasti.
 
 ## a)
 
@@ -140,7 +140,7 @@ Seuraavaksi ajoin järjestelmään uusimmat päivitykset. Päivityksen yhteydess
 
 ![sshup.png](sshup.png "SSH conf alert")
 
-Tässä vaiheessa palvelin olisi varmasti pitänyt käynnistää uudestaan, mutta jostain syystä muistin asian vasta tuntien päästä palatessani tehtävän pariin. En ole täysin varma onko vuokrapalvelimissa mekanismeja, jotka vähentävät uudelleenkäynnistysten tarvetta, mutta päätin kuitenkin käynnistää palvelimen uudestaan Digital Oceanin ohjeiden avulla (https://www.digitalocean.com/community/tutorials/workflow-command-line-basics-shutdown-reboot).
+Tässä vaiheessa palvelin olisi varmasti pitänyt käynnistää uudestaan, mutta jostain syystä muistin asian vasta tuntien päästä palatessani tehtävän pariin. En ole täysin varma onko vuokrapalvelimissa mekanismeja, jotka vähentävät uudelleenkäynnistysten tarvetta, mutta päätin kuitenkin käynnistää palvelimen uudestaan Digital Oceanin ohjeiden avulla ([digitalocean.com](https://www.digitalocean.com/community/tutorials/workflow-command-line-basics-shutdown-reboot)).
  
 >&emsp;sudo reboot
 
@@ -160,7 +160,7 @@ Aloitin asentamalla Apache2-palvelimen aiemmista tehtävistä tutulla komennolla
 
 ## d)
 
-Vapaaehtoisessa osiossa päätin laittaa uudelle palvelimelle edellisen viikon tehtävässä paikallisesti tehdyt sivut. Tein ensin public_sites-hakemiston käyttäjän kotikansioon. Tämän jälkeen kopioin hakemistoon palvelimen vaatiman kansion uudella nimellä vanhalta virtuaalikoneeltani. Scp-komento löytyi Aiempien viikkojen kurssimateriaalista (https://terokarvinen.com/2020/command-line-basics-revisited/?fromSearch=command%20line%20basics%20revisited).
+Vapaaehtoisessa osiossa päätin laittaa uudelle palvelimelle edellisen viikon tehtävässä paikallisesti tehdyt sivut. Tein ensin public_sites-hakemiston käyttäjän kotikansioon. Tämän jälkeen kopioin hakemistoon palvelimen vaatiman kansion uudella nimellä vanhalta virtuaalikoneeltani. Scp-komento löytyi Aiempien viikkojen kurssimateriaalista ([terokarvinen.com](https://terokarvinen.com/2020/command-line-basics-revisited/?fromSearch=command%20line%20basics%20revisited)).
 
 >&emsp;mkdir /home/otus/public_sites  
 >&emsp;exit  
