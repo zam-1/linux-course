@@ -1,4 +1,4 @@
-# Lista kurssilla tehdyistä vapaaehtoisista tehtävistä
+# A)  Lista kurssilla tehdyistä vapaaehtoisista tehtävistä
 
 ## H1 ([H1](https://github.com/zam-1/linux-course/blob/main/H1/h1-oma-linux.md))
 
@@ -36,6 +36,10 @@ Ei vapaaehtoisia tehtäviä tarjolla.
 ## H8
 
 Tämä raportti.
+
+## B)
+
+En saanut ristiinarvioissa parannusehdotuksia yhtä linkkiä lukuunottamatta. Korjasin linkkejä ja tein yleistä siistmistä uusien opittujen keinojen avulla tehtävän H7 aikana.
 
 
 
